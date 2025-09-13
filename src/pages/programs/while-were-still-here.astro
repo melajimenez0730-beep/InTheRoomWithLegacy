@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle } from "lucide-react";
+import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown } from "lucide-react";
 ---
 
 <BaseLayout
@@ -425,45 +425,95 @@ import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle }
           FAQ
         </h2>
 
-        <div class="space-y-8">
-          <div class="border-b border-border/50 pb-6">
-            <h3 class="text-xl font-display font-semibold text-primary mb-3">What if my family members don't want to participate?</h3>
-            <p class="text-foreground/80">
-              That's normal. We help frame this experience as a celebration of love and legacy, not a heavy planning session. Our approach focuses on stories and connection first, which helps reluctant family members feel more comfortable. We're also happy to speak with them directly to address any concerns.
-            </p>
-          </div>
-          
-          <div class="border-b border-border/50 pb-6">
-            <h3 class="text-xl font-display font-semibold text-primary mb-3">Is this only for families with wealth or land?</h3>
-            <p class="text-foreground/80">
-              No. Every family has legacy — stories, values, and traditions are just as important as money or property. Our process is designed to honor all forms of legacy, from family recipes to business succession plans.
-            </p>
-          </div>
-          
-          <div class="border-b border-border/50 pb-6">
-            <h3 class="text-xl font-display font-semibold text-primary mb-3">Is this therapy or legal advice?</h3>
-            <p class="text-foreground/80">
-              No. This is guided facilitation. We don't provide legal or financial services, but we do create a space where important conversations can happen. Many families use our sessions to prepare for meetings with their attorneys, financial advisors, or estate planners.
-            </p>
-          </div>
-          
-          <div class="border-b border-border/50 pb-6">
-            <h3 class="text-xl font-display font-semibold text-primary mb-3">Can this be done virtually?</h3>
-            <p class="text-foreground/80">
-              Yes. We offer a three-part virtual series designed for families across different locations. While the in-person experience offers certain advantages, our virtual format is thoughtfully designed to create meaningful connection across distances.
-            </p>
-          </div>
-          
-          <div class="pb-6">
-            <h3 class="text-xl font-display font-semibold text-primary mb-3">How many people can attend?</h3>
-            <p class="text-foreground/80">
-              Ideal groups are 6–15 family members, but we adapt to your unique family needs. We've facilitated intimate sessions with just a parent and adult children, and larger gatherings that include extended family. We'll work with you to determine the right mix for your goals.
-            </p>
+        <div class="bg-white rounded-lg shadow-sm border border-border/30">
+          <!-- Custom FAQ accordion implementation -->
+          <div class="divide-y divide-border/50">
+            <!-- Question 1 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>What if my family members don't want to participate?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>That's normal. We help frame this experience as a celebration of love and legacy, not a heavy planning session. Our approach focuses on stories and connection first, which helps reluctant family members feel more comfortable. We're also happy to speak with them directly to address any concerns.</p>
+              </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>Is this only for families with wealth or land?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>No. Every family has legacy — stories, values, and traditions are just as important as money or property. Our process is designed to honor all forms of legacy, from family recipes to business succession plans.</p>
+              </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>Is this therapy or legal advice?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>No. This is guided facilitation. We don't provide legal or financial services, but we do create a space where important conversations can happen. Many families use our sessions to prepare for meetings with their attorneys, financial advisors, or estate planners.</p>
+              </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>Can this be done virtually?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>Yes. We offer a three-part virtual series designed for families across different locations. While the in-person experience offers certain advantages, our virtual format is thoughtfully designed to create meaningful connection across distances.</p>
+              </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>How many people can attend?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>Ideal groups are 6–15 family members, but we adapt to your unique family needs. We've facilitated intimate sessions with just a parent and adult children, and larger gatherings that include extended family. We'll work with you to determine the right mix for your goals.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Client-side script for FAQ accordion functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const icon = trigger.querySelector('svg');
+        
+        trigger.addEventListener('click', () => {
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.querySelector('.faq-content').classList.add('hidden');
+              otherItem.querySelector('svg').classList.remove('rotate-180');
+            }
+          });
+          
+          // Toggle current item
+          content.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        });
+      });
+    });
+  </script>
 
   <!-- Contact Form Section -->
   <section class="py-24 bg-muted/30" id="contact">
