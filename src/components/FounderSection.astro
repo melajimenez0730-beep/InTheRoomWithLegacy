@@ -1,0 +1,54 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+---
+
+<section class="py-24 bg-white">
+  <div class="container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1">
+        <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 text-primary">
+          Rooted in legacy, built for the future.
+        </h2>
+        
+        <div class="prose prose-lg max-w-none text-foreground/80">
+          <p>
+            In the Room with Legacy was born from the lived experience of founder Lauren Rosa Miller, who discovered firsthand the importance of preserving family stories and creating intergenerational wealth through intentional conversation.
+          </p>
+          <p>
+            After experiencing personal loss and witnessing how quickly family histories can fade, Lauren created a framework to help others capture their family's legacy while there's still time—turning abstract concepts of inheritance into practical tools for building connection.
+          </p>
+          <p>
+            Today, this vision has grown into a comprehensive approach that meets families where they are—whether just beginning to document their history or actively building generational wealth through businesses and assets.
+          </p>
+        </div>
+        
+        <div class="mt-8">
+          <a 
+            href="/about/founder-letter" 
+            class={buttonVariants({
+              variant: "outline",
+              class: "border-primary text-primary hover:bg-primary/10"
+            })}
+          >
+            Read the Letter from Our Founder
+          </a>
+        </div>
+      </div>
+      
+      <div class="order-1 md:order-2 relative">
+        <div class="rounded-lg overflow-hidden shadow-xl relative">
+          <img 
+            src="https://images.unsplash.com/photo-1707995673778-f7ded37a4c17?w=400&h=600&auto=format&fit=crop&q=80" 
+            alt="Lauren Rosa Miller, Founder of In the Room with Legacy" 
+            class="w-full h-auto object-cover aspect-[3/4]"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/30"></div>
+        </div>
+        
+        <!-- Decorative element -->
+        <div class="absolute -bottom-6 -left-6 w-40 h-40 rounded-lg bg-secondary/30 -z-10"></div>
+        <div class="absolute -top-6 -right-6 w-24 h-24 rounded-lg border-2 border-primary/20 -z-10"></div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,159 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { BookOpen, Library, Users, Home, BookOpenCheck, Lightbulb } from "lucide-react";
+---
+
+<section class="py-24 bg-muted/50">
+  <div class="container">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-primary">
+        Stories & Resources for Every Stage of the Legacy Journey
+      </h2>
+      <p class="text-lg text-foreground/80">
+        Whether you're building new traditions, stewarding something handed down, or creating something together—IRL meets you where you are with stories, guidance, and tools made for your path.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 mb-12">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
+        <div class="bg-primary/10 p-5 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <BookOpen className="text-primary" size={20} />
+            <h3 class="font-display font-semibold text-primary">Family Stories</h3>
+          </div>
+          <span class="bg-white text-primary text-xs py-1 px-3 rounded-full font-medium">New</span>
+        </div>
+        <div class="p-6">
+          <p class="text-foreground/80 mb-4">
+            Personal accounts and interviews from families who have successfully documented and preserved their legacy.
+          </p>
+          <a 
+            href="/blog/category/family-stories" 
+            class="text-primary font-medium group-hover:underline inline-flex items-center gap-2"
+          >
+            Read stories <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
+        <div class="bg-secondary/20 p-5 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <Library className="text-primary" size={20} />
+            <h3 class="font-display font-semibold text-primary">Family Business</h3>
+          </div>
+          <span class="bg-white text-accent text-xs py-1 px-3 rounded-full font-medium">Featured</span>
+        </div>
+        <div class="p-6">
+          <p class="text-foreground/80 mb-4">
+            Resources for building, growing, and transitioning family-owned businesses to the next generation.
+          </p>
+          <a 
+            href="/programs/black-family-business-network" 
+            class="text-primary font-medium group-hover:underline inline-flex items-center gap-2"
+          >
+            Learn more <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
+        <div class="bg-accent/20 p-5 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <Users className="text-primary" size={20} />
+            <h3 class="font-display font-semibold text-primary">Intergenerational Wealth</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-foreground/80 mb-4">
+            Tools and guidance for building wealth that lasts across multiple generations of your family.
+          </p>
+          <a 
+            href="/tools-resources/wealth-building" 
+            class="text-primary font-medium group-hover:underline inline-flex items-center gap-2"
+          >
+            Explore resources <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
+        <div class="bg-primary/10 p-5 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <Home className="text-primary" size={20} />
+            <h3 class="font-display font-semibold text-primary">Traditions & Culture</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-foreground/80 mb-4">
+            Ideas and frameworks for creating meaningful family traditions that reinforce your values.
+          </p>
+          <a 
+            href="/blog/category/traditions" 
+            class="text-primary font-medium group-hover:underline inline-flex items-center gap-2"
+          >
+            Get inspired <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
+        <div class="bg-secondary/20 p-5 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <BookOpenCheck className="text-primary" size={20} />
+            <h3 class="font-display font-semibold text-primary">Documentation</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-foreground/80 mb-4">
+            Templates and systems for capturing family stories, histories, and important information.
+          </p>
+          <a 
+            href="/tools-resources/documentation" 
+            class="text-primary font-medium group-hover:underline inline-flex items-center gap-2"
+          >
+            Get templates <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
+        <div class="bg-accent/20 p-5 flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <Lightbulb className="text-primary" size={20} />
+            <h3 class="font-display font-semibold text-primary">Future Planning</h3>
+          </div>
+        </div>
+        <div class="p-6">
+          <p class="text-foreground/80 mb-4">
+            Guidance for thinking ahead and creating a positive legacy impact for generations to come.
+          </p>
+          <a 
+            href="/tools-resources/future-planning" 
+            class="text-primary font-medium group-hover:underline inline-flex items-center gap-2"
+          >
+            Plan ahead <span class="transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a 
+        href="#join-the-room" 
+        class={buttonVariants({
+          size: "lg",
+          class: "font-medium"
+        })}
+      >
+        Join the Room
+      </a>
+    </div>
+  </div>
+</section>

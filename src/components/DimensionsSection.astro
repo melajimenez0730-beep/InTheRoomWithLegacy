@@ -1,0 +1,79 @@
+---
+import { buttonVariants } from "@/components/ui/button";
+import { Brain, Users, ShoppingBag } from "lucide-react";
+---
+
+<section class="py-24 bg-muted/30">
+  <div class="container">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-primary">
+        Legacy, made real across 3 dimensions.
+      </h2>
+      <p class="text-lg text-foreground/80">
+        At In the Room with Legacy, legacy isn't abstract. It's lived. Measured through tools, protected through conversations, and expressed through culture.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <!-- The Tool -->
+      <div class="bg-white rounded-lg shadow-md p-8 flex flex-col h-full border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
+        <div class="p-3 bg-primary/10 rounded-full w-fit mb-5">
+          <Brain size={24} className="text-primary" />
+        </div>
+        <h3 class="text-xl font-display font-semibold mb-3 text-primary">The Tool</h3>
+        <p class="text-foreground/80 mb-6 flex-grow">
+          AI-powered Legacy Assessment helps you understand where you are in your legacy journey and provides actionable steps forward.
+        </p>
+        <a 
+          href="/legacy-assessment" 
+          class={buttonVariants({
+            variant: "default",
+            class: "w-full justify-center mt-auto"
+          })}
+        >
+          Take the Assessment
+        </a>
+      </div>
+
+      <!-- The Program -->
+      <div class="bg-white rounded-lg shadow-md p-8 flex flex-col h-full border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
+        <div class="p-3 bg-secondary/20 rounded-full w-fit mb-5">
+          <Users size={24} className="text-primary" />
+        </div>
+        <h3 class="text-xl font-display font-semibold mb-3 text-primary">The Program</h3>
+        <p class="text-foreground/80 mb-6 flex-grow">
+          While We're Still Here provides guided conversations and frameworks to preserve your family's stories and values for generations to come.
+        </p>
+        <a 
+          href="/programs/while-were-still-here" 
+          class={buttonVariants({
+            variant: "default",
+            class: "w-full justify-center mt-auto"
+          })}
+        >
+          Learn More
+        </a>
+      </div>
+
+      <!-- The Culture -->
+      <div class="bg-white rounded-lg shadow-md p-8 flex flex-col h-full border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
+        <div class="p-3 bg-accent/20 rounded-full w-fit mb-5">
+          <ShoppingBag size={24} className="text-primary" />
+        </div>
+        <h3 class="text-xl font-display font-semibold mb-3 text-primary">The Culture</h3>
+        <p class="text-foreground/80 mb-6 flex-grow">
+          Ethical Nepotism™ merch allows you to wear your values and spark important conversations about building generational wealth and opportunity.
+        </p>
+        <a 
+          href="/shop" 
+          class={buttonVariants({
+            variant: "default",
+            class: "w-full justify-center mt-auto"
+          })}
+        >
+          Shop Drop 1
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

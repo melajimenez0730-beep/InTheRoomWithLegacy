@@ -1,29 +1,65 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
+import Navigation from "@/components/Navigation";
 ---
 
 <header
   class="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur"
 >
   <div
-    class="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0"
+    class="container flex h-20 items-center space-x-4 sm:justify-between sm:space-x-0"
   >
     <div class="flex gap-6 md:gap-10">
       <a href="/" class="flex items-center space-x-2">
-        <span class="inline-block font-bold">Home</span>
+        <span class="inline-block font-display text-xl font-bold tracking-tight text-primary">In the Room With Legacy</span>
       </a>
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">
-      <nav class="flex items-center space-x-1">
-        <a
-          href="https://github.com/"
-          target="_blank"
-          rel="noreferrer"
-          class={buttonVariants({ variant: 'ghost' })}
-        >
-          Example link
-        </a>
-      </nav>
+      <div class="hidden md:flex">
+        <Navigation client:load />
+      </div>
+      <a
+        href="/legacy-assessment"
+        class={buttonVariants({
+          variant: "default",
+          size: "sm",
+          class: "hidden md:inline-flex"
+        })}
+      >
+        Take the Legacy Assessment
+      </a>
+      <a
+        href="#join-the-room"
+        class={buttonVariants({
+          variant: "outline",
+          size: "sm",
+          class: "hidden md:inline-flex border-primary text-primary hover:bg-primary/10"
+        })}
+      >
+        Join the Room
+      </a>
+      <button 
+        class="md:hidden flex items-center p-2 text-primary"
+        aria-label="Toggle menu"
+        data-toggle-menu
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/>
+          <line x1="4" x2="20" y1="6" y2="6"/>
+          <line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+      </button>
     </div>
   </div>
 </header>
+
+<script>
+  // Mobile menu functionality (to be implemented)
+  const menuButton = document.querySelector('[data-toggle-menu]');
+  if (menuButton) {
+    menuButton.addEventListener('click', () => {
+      // Toggle mobile menu visibility
+      console.log('Mobile menu toggled');
+    });
+  }
+</script>
