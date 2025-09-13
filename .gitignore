@@ -1,0 +1,14 @@
+CLAUDE.md
+.claude.json
+claude_log.log
+.claude/
+.config/
+.local/
+.npm/
+node_modules/
+.vercel/
+dist/
+screenshots/
+.cache/
+media/
+copytext/
