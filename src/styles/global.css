@@ -95,42 +95,42 @@
 
 @layer base {
   :root {
-    /* Rich burgundy as primary color */
-    --primary: 345 70% 30%;
+    /* Deep blue as primary color (#052D3F) */
+    --primary: 197 85% 13%;
     --primary-foreground: 0 0% 98%;
     
-    /* Warm gold as secondary color */
-    --secondary: 35 85% 65%;
-    --secondary-foreground: 345 70% 30%;
+    /* Brown copper as secondary color (#9A4A0B) */
+    --secondary: 30 85% 32%;
+    --secondary-foreground: 0 0% 98%;
     
-    /* Deep teal as accent color */
-    --accent: 175 65% 25%;
-    --accent-foreground: 0 0% 98%;
+    /* Complementary accent color */
+    --accent: 35 80% 60%;
+    --accent-foreground: 197 85% 13%;
     
     /* Neutral colors */
-    --background: 30 20% 97%;
-    --foreground: 345 30% 15%;
+    --background: 197 15% 97%;
+    --foreground: 197 70% 15%;
     
     /* Supporting colors */
-    --card: 30 30% 99%;
-    --card-foreground: 345 30% 15%;
-    --popover: 30 30% 99%;
-    --popover-foreground: 345 30% 15%;
-    --muted: 345 10% 90%;
-    --muted-foreground: 345 30% 35%;
+    --card: 0 0% 100%;
+    --card-foreground: 197 70% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 197 70% 15%;
+    --muted: 197 10% 90%;
+    --muted-foreground: 197 30% 40%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 345 20% 85%;
-    --input: 345 20% 90%;
-    --ring: 345 70% 30%;
+    --border: 197 20% 85%;
+    --input: 197 20% 90%;
+    --ring: 197 85% 13%;
     --radius: 0.5rem;
     
     /* Chart colors */
-    --chart-1: 345 70% 50%;
-    --chart-2: 35 85% 65%;
-    --chart-3: 175 65% 35%;
-    --chart-4: 345 50% 70%;
-    --chart-5: 35 60% 80%;
+    --chart-1: 197 85% 30%;
+    --chart-2: 30 85% 50%;
+    --chart-3: 35 80% 60%;
+    --chart-4: 197 50% 50%;
+    --chart-5: 30 60% 70%;
   }
 }
 
