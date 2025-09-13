@@ -18,12 +18,16 @@ export default function ContactForm() {
     setSubmitStatus(null);
 
     try {
+      // Create FormData object for multipart/form-data submission
+      const formDataObj = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataObj.append(key, value);
+      });
+      
       const response = await fetch("https://api.new.website/api/submit-form/", {
         method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        body: JSON.stringify(formData),
+        // No Content-Type header - browser will set it with boundary for multipart/form-data
+        body: formDataObj,
       });
 
       if (response.ok) {
