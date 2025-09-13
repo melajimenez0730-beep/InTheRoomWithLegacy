@@ -1,0 +1,551 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle } from "lucide-react";
+---
+
+<BaseLayout
+  title="While We're Still Here™ | In the Room With Legacy"
+  description="Bring your family together across generations for an unforgettable day of truth-telling, storytelling, and preparation — while you still can."
+>
+  <!-- Hero Section -->
+  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
+          Because love and legacy can't wait until it's too late.
+        </h1>
+        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+          Bring your family together across generations for an unforgettable day of truth-telling, storytelling, and preparation — while you still can.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#apply" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium"
+            })}
+          >
+            Apply for a Family Session
+          </a>
+          <a 
+            href="#partner" 
+            class={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              class: "border-primary text-primary hover:bg-primary/10 font-medium"
+            })}
+          >
+            Partner With Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What It Is Section -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
+          What is While We're Still Here™?
+        </h2>
+        <p class="text-lg text-foreground/80 mb-6 text-center">
+          Too many families wait until crisis to have the conversations that matter most. While We're Still Here™ creates a sacred space for love, legacy, and preparation — guided by a skilled facilitator who ensures every voice is heard.
+        </p>
+        <p class="text-lg text-foreground/80 mb-10 text-center font-medium">
+          This is not a lecture or a workshop. It's a once-in-a-lifetime experience designed for your family alone.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-muted/30 p-6 md:p-8 rounded-lg">
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <span class="text-foreground/80">Preserved stories and memories from your elders</span>
+              </li>
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <span class="text-foreground/80">Stronger bonds across generations</span>
+              </li>
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <span class="text-foreground/80">Clarity around wishes and values</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-muted/30 p-6 md:p-8 rounded-lg">
+            <ul class="space-y-4">
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <span class="text-foreground/80">Tools for health, wealth, and succession conversations</span>
+              </li>
+              <li class="flex gap-3">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                  <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <span class="text-foreground/80">A recorded keepsake and a personalized Legacy Guidebook</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why It Matters Section -->
+  <section class="py-24 bg-muted/30">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+          Don't wait until it's too late.
+        </h2>
+        <p class="text-lg text-foreground/80 mb-10">
+          We've seen too many families torn apart, not by lack of love, but by silence and unspoken wishes. While We're Still Here™ ensures those conversations happen in time — while your loved ones are still here to speak for themselves.
+        </p>
+        
+        <div class="relative bg-white p-8 md:p-10 rounded-lg shadow-md border border-primary/10 my-12">
+          <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary/10 p-2 rounded-full">
+            <Quote className="text-primary w-6 h-6" />
+          </div>
+          <p class="text-xl md:text-2xl font-display italic text-primary/90">
+            "Legacy is not what you leave behind. It's what you live, share, and protect while you're here."
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Experience Section -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
+          What to Expect
+        </h2>
+        <p class="text-lg text-foreground/80 mb-10 text-center">
+          Every session follows a carefully guided flow designed to bring your family closer:
+        </p>
+
+        <div class="space-y-8 mt-8">
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Users className="text-primary w-6 h-6" />
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Gather</h3>
+              <p class="text-foreground/80">We create a safe, sacred space for your family to come together.</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Heart className="text-primary w-6 h-6" />
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Share</h3>
+              <p class="text-foreground/80">Elders and children tell stories, express wishes, and honor values.</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Sparkles className="text-primary w-6 h-6" />
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Align</h3>
+              <p class="text-foreground/80">Together, you build clarity around health, wealth, and transitions.</p>
+            </div>
+          </div>
+          
+          <div class="flex gap-6 items-start">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+              <Book className="text-primary w-6 h-6" />
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Preserve</h3>
+              <p class="text-foreground/80">You leave with a recorded keepsake and a Legacy Guidebook to carry forward.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6 bg-muted/30 rounded-lg p-6 mt-12">
+          <div class="flex-1 border-b md:border-b-0 md:border-r border-border/50 pb-4 md:pb-0 md:pr-6">
+            <h3 class="text-lg font-semibold text-primary mb-2">In-Person Full-Day Retreat</h3>
+            <p class="text-foreground/80 text-sm">An immersive, face-to-face experience for your family, facilitated in your home or a meaningful location.</p>
+          </div>
+          <div class="flex-1 pt-4 md:pt-0 md:pl-6">
+            <h3 class="text-lg font-semibold text-primary mb-2">Virtual 3-Part Guided Series</h3>
+            <p class="text-foreground/80 text-sm">Connect across distances with a thoughtfully paced series of facilitated virtual sessions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who It's For Section -->
+  <section class="py-24 bg-primary/5">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-10 text-center">
+          This is for your family if…
+        </h2>
+
+        <div class="bg-white rounded-lg shadow-md p-8 md:p-10">
+          <ul class="space-y-6">
+            <li class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+              <p class="text-foreground/80 text-lg">You want to honor your elders while they're still here.</p>
+            </li>
+            <li class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+              <p class="text-foreground/80 text-lg">You want your children to know where they come from.</p>
+            </li>
+            <li class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+              <p class="text-foreground/80 text-lg">You're navigating family land, a business, or inheritance.</p>
+            </li>
+            <li class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+              <p class="text-foreground/80 text-lg">You want peace of mind knowing your family is aligned.</p>
+            </li>
+            <li class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-1">
+                <div class="w-2 h-2 rounded-full bg-primary"></div>
+              </div>
+              <p class="text-foreground/80 text-lg">You believe love, unity, and preparation are part of your legacy.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment & Options Section -->
+  <section class="py-24 bg-white" id="apply">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
+          An Investment in Love & Legacy
+        </h2>
+        <p class="text-lg text-foreground/80 mb-12 text-center">
+          This is not just a program — it's a gift to your family, and to generations not yet born.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-muted/20 rounded-lg p-6 border border-primary/10 hover:border-primary/30 transition-all hover:shadow-md">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <Clock className="text-primary w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-display font-semibold text-primary">Flagship Experience</h3>
+            </div>
+            <p class="text-foreground/80 mb-6">In-person, full-day retreat tailored to your family's unique needs.</p>
+            <div class="bg-white rounded p-3 text-center mb-6">
+              <span class="text-primary font-medium">$5,000–$10,000</span>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Full-day facilitated experience</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Personal facilitator</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Professional recording</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Custom Legacy Guidebook</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-muted/20 rounded-lg p-6 border border-primary/10 hover:border-primary/30 transition-all hover:shadow-md">
+            <div class="flex items-center gap-4 mb-4">
+              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                <MessageCircle className="text-primary w-6 h-6" />
+              </div>
+              <h3 class="text-xl font-display font-semibold text-primary">Virtual Experience</h3>
+            </div>
+            <p class="text-foreground/80 mb-6">3-part guided series designed for families across different locations.</p>
+            <div class="bg-white rounded p-3 text-center mb-6">
+              <span class="text-primary font-medium">$1,500–$3,000</span>
+            </div>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Three 90-minute sessions</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Personal facilitator</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Session recordings</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary mt-1">✓</span>
+                <span class="text-foreground/80 text-sm">Digital Legacy Guidebook</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <a 
+            href="#contact" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium"
+            })}
+          >
+            Apply for a Session
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsored Access Section -->
+  <section class="py-24 bg-muted/30" id="partner">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
+          Supported by Partners Who Believe in Family
+        </h2>
+        <p class="text-lg text-foreground/80 mb-10 text-center">
+          Select families may qualify for sponsored sessions through our partners — banks, insurers, and organizations who believe in preserving legacy.
+        </p>
+
+        <div class="bg-white rounded-lg shadow-md p-8 border border-primary/10">
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+              <DollarSign className="text-primary w-8 h-8" />
+            </div>
+            <div class="flex-1 text-center md:text-left">
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Partnership Opportunities</h3>
+              <p class="text-foreground/80 mb-6">
+                Financial institutions, insurers, law firms, and community organizations can partner with us to offer While We're Still Here™ to their clients or members.
+              </p>
+              <a 
+                href="#contact" 
+                class={buttonVariants({
+                  size: "default",
+                  class: "font-medium"
+                })}
+              >
+                Inquire About Sponsorship
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials / Stories Section (Placeholder) -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+          Family Stories
+        </h2>
+        <p class="text-lg text-foreground/80 italic">
+          Testimonials coming soon...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing CTA Section -->
+  <section class="py-24 bg-primary/5">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+          Don't wait until the funeral to hear the stories that matter most.
+        </h2>
+        <p class="text-xl text-foreground/80 mb-10">
+          Let's talk — while we're still here.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#contact" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium"
+            })}
+          >
+            Apply for a Family Session
+          </a>
+          <a 
+            href="#contact" 
+            class={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              class: "border-primary text-primary hover:bg-primary/10 font-medium"
+            })}
+          >
+            Partner With Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-white" id="faq">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-12 text-center">
+          FAQ
+        </h2>
+
+        <div class="space-y-8">
+          <div class="border-b border-border/50 pb-6">
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">What if my family members don't want to participate?</h3>
+            <p class="text-foreground/80">
+              That's normal. We help frame this experience as a celebration of love and legacy, not a heavy planning session. Our approach focuses on stories and connection first, which helps reluctant family members feel more comfortable. We're also happy to speak with them directly to address any concerns.
+            </p>
+          </div>
+          
+          <div class="border-b border-border/50 pb-6">
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">Is this only for families with wealth or land?</h3>
+            <p class="text-foreground/80">
+              No. Every family has legacy — stories, values, and traditions are just as important as money or property. Our process is designed to honor all forms of legacy, from family recipes to business succession plans.
+            </p>
+          </div>
+          
+          <div class="border-b border-border/50 pb-6">
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">Is this therapy or legal advice?</h3>
+            <p class="text-foreground/80">
+              No. This is guided facilitation. We don't provide legal or financial services, but we do create a space where important conversations can happen. Many families use our sessions to prepare for meetings with their attorneys, financial advisors, or estate planners.
+            </p>
+          </div>
+          
+          <div class="border-b border-border/50 pb-6">
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">Can this be done virtually?</h3>
+            <p class="text-foreground/80">
+              Yes. We offer a three-part virtual series designed for families across different locations. While the in-person experience offers certain advantages, our virtual format is thoughtfully designed to create meaningful connection across distances.
+            </p>
+          </div>
+          
+          <div class="pb-6">
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">How many people can attend?</h3>
+            <p class="text-foreground/80">
+              Ideal groups are 6–15 family members, but we adapt to your unique family needs. We've facilitated intimate sessions with just a parent and adult children, and larger gatherings that include extended family. We'll work with you to determine the right mix for your goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-24 bg-muted/30" id="contact">
+    <div class="container">
+      <div class="max-w-xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-display font-bold text-primary mb-6 text-center">
+          Get in Touch
+        </h2>
+        <p class="text-foreground/80 mb-8 text-center">
+          Fill out the form below to inquire about While We're Still Here™ sessions or partnership opportunities.
+        </p>
+        
+        <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+          <form class="space-y-5">
+            <div>
+              <label for="name" class="block text-sm font-medium text-foreground mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
+              />
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-foreground mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
+              />
+            </div>
+            
+            <div>
+              <label for="inquiry-type" class="block text-sm font-medium text-foreground mb-1">
+                I'm interested in:
+              </label>
+              <select
+                id="inquiry-type"
+                name="inquiry_type"
+                required
+                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
+              >
+                <option value="">Please select...</option>
+                <option value="family-session">A family session</option>
+                <option value="partnership">Partnership opportunities</option>
+                <option value="sponsorship">Sponsorship information</option>
+                <option value="other">Other inquiry</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium text-foreground mb-1">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
+              ></textarea>
+            </div>
+            
+            <input name="form_name" type="hidden" value="While We're Still Here Inquiry" />
+            
+            <button
+              type="submit"
+              class="w-full py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
+            >
+              Submit Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
