@@ -85,6 +85,7 @@ export default function Navigation() {
       <NavDropdown 
         trigger="Programs" 
         items={[
+          { href: "/programs", label: "Programs" },
           { href: "/programs/while-were-still-here", label: "While We're Still Here" },
           { href: "/programs/black-family-business-network", label: "Black Family Business Network" }
         ]} 
