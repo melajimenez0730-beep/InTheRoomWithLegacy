@@ -2,6 +2,8 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Building, Users, ChevronRight, Sparkles, Clock, Award, MessageCircle, ChevronDown, Share2, Send } from "lucide-react";
+import StoryReferralForm from "@/components/StoryReferralForm";
+import UpdatesSignupForm from "@/components/UpdatesSignupForm";
 ---
 
 <BaseLayout
@@ -86,7 +88,7 @@ import { Building, Users, ChevronRight, Sparkles, Clock, Award, MessageCircle, C
         </p>
 
         <div class="bg-white rounded-lg shadow-md p-6 md:p-8 border border-primary/10">
-          <form class="space-y-5">
+          <form class="space-y-5" action="https://api.new.website/api/submit-form/" method="POST" enctype="multipart/form-data">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label for="business_name" class="block text-sm font-medium text-foreground mb-1">
@@ -206,95 +208,7 @@ import { Building, Users, ChevronRight, Sparkles, Clock, Award, MessageCircle, C
             </div>
           </div>
           
-          <form class="space-y-5">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label for="referral_business_name" class="block text-sm font-medium text-foreground mb-1">
-                  Business Name
-                </label>
-                <input
-                  type="text"
-                  id="referral_business_name"
-                  name="referral_business_name"
-                  required
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-              
-              <div>
-                <label for="referral_contact_name" class="block text-sm font-medium text-foreground mb-1">
-                  Contact Person
-                </label>
-                <input
-                  type="text"
-                  id="referral_contact_name"
-                  name="referral_contact_name"
-                  required
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label for="referral_email" class="block text-sm font-medium text-foreground mb-1">
-                Contact Email
-              </label>
-              <input
-                type="email"
-                id="referral_email"
-                name="referral_email"
-                required
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              />
-            </div>
-            
-            <div>
-              <label for="referral_note" class="block text-sm font-medium text-foreground mb-1">
-                Additional Notes (Optional)
-              </label>
-              <textarea
-                id="referral_note"
-                name="referral_note"
-                rows={3}
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              ></textarea>
-            </div>
-            
-            <div>
-              <label for="your_name" class="block text-sm font-medium text-foreground mb-1">
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="your_name"
-                name="your_name"
-                required
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              />
-            </div>
-            
-            <div>
-              <label for="your_email" class="block text-sm font-medium text-foreground mb-1">
-                Your Email
-              </label>
-              <input
-                type="email"
-                id="your_email"
-                name="your_email"
-                required
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              />
-            </div>
-            
-            <input name="form_name" type="hidden" value="Black Family Business Referral" />
-            
-            <button
-              type="submit"
-              class="w-full py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
-            >
-              Submit Referral
-            </button>
-          </form>
+          <StoryReferralForm client:load />
         </div>
       </div>
     </div>
@@ -324,73 +238,7 @@ import { Building, Users, ChevronRight, Sparkles, Clock, Award, MessageCircle, C
             </div>
           </div>
           
-          <form class="space-y-5">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label for="signup_name" class="block text-sm font-medium text-foreground mb-1">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="signup_name"
-                  name="signup_name"
-                  required
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-              
-              <div>
-                <label for="signup_email" class="block text-sm font-medium text-foreground mb-1">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  id="signup_email"
-                  name="signup_email"
-                  required
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label for="business_owner" class="block text-sm font-medium text-foreground mb-1">
-                Are you a Black family business owner or representative?
-              </label>
-              <select
-                id="business_owner"
-                name="business_owner"
-                required
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              >
-                <option value="">Please select...</option>
-                <option value="yes">Yes, I own or represent a Black family business</option>
-                <option value="future">Not yet, but I plan to start one</option>
-                <option value="no">No, but I'm interested in supporting Black family businesses</option>
-              </select>
-            </div>
-            
-            <div>
-              <label for="interests" class="block text-sm font-medium text-foreground mb-1">
-                What aspects of the Network are you most interested in? (Optional)
-              </label>
-              <textarea
-                id="interests"
-                name="interests"
-                rows={3}
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              ></textarea>
-            </div>
-            
-            <input name="form_name" type="hidden" value="Black Family Business Network Updates" />
-            
-            <button
-              type="submit"
-              class="w-full py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
-            >
-              Sign Up for Updates
-            </button>
-          </form>
+          <UpdatesSignupForm client:load />
         </div>
       </div>
     </div>
