@@ -90,8 +90,8 @@ export default function Navigation() {
       <NavDropdown 
         trigger="Tools & Resources" 
         items={[
-          { href: "/tools-resources", label: "View All Tools & Resources" },
-          { href: "/legacy-assessment", label: "Legacy Assessment" }
+          { href: "/tools", label: "View All Tools & Resources" },
+          { href: "/tools/legacy-assessment", label: "Legacy Assessment" }
         ]} 
       />
       
