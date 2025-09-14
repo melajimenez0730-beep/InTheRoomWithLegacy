@@ -1,0 +1,148 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
+---
+
+<BaseLayout
+  title="Frequently Asked Questions | In the Room With Legacy"
+  description="Find answers to common questions about In the Room with Legacy™ programs, services, and approach to legacy building."
+>
+  <!-- Hero Section -->
+  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
+          Frequently Asked Questions
+        </h1>
+        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+          Find answers to common questions about our programs, services, and approach to legacy building.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-lg shadow-sm border border-border/30">
+          <!-- Custom FAQ accordion implementation -->
+          <div class="divide-y divide-border/50">
+            <!-- Question 1 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>What exactly is "legacy" in your context?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>We define legacy as the complete story of your life's impact – encompassing your values, relationships, financial resources, cultural heritage, and the stories that shape your family's identity. Legacy isn't just what you leave behind financially; it's the full spectrum of what you've lived and how you've impacted those around you.</p>
+              </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>How is In the Room with Legacy™ different from estate planning?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>Estate planning is a crucial part of legacy, but it's only one piece. While estate planning focuses on the legal and financial aspects of wealth transfer, we take a holistic approach that includes the intangible aspects of legacy – your stories, values, cultural traditions, and family dynamics. We work alongside your legal and financial advisors to ensure that your full legacy – both tangible and intangible – is preserved and transferred with intention.</p>
+              </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>Do I need to have significant wealth to work with you?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>Not at all. Legacy is for everyone, regardless of wealth. While we do work with high-net-worth families on complex succession planning, we believe that every family has valuable stories, traditions, and values worth preserving. Our programs and resources are designed to be accessible to families across the economic spectrum.</p>
+              </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>What's the difference between IRL Non-Profit and IRL Advisors?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>IRL Non-Profit focuses on education, community-building, and accessible programs that help families preserve their cultural heritage and stories. IRL Advisors is our for-profit arm that provides personalized advisory services, tools like the Legacy Assessment, and custom solutions for more complex legacy planning needs. They work together to create a complete ecosystem of support for families at every stage of their legacy journey.</p>
+              </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>How can my organization partner with In the Room with Legacy™?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>We partner with financial institutions, family offices, community organizations, and more to bring legacy programming to their clients or members. This can include custom workshops, speaking engagements, access to our digital tools, or co-branded resources. Visit our Partnership Pathways page or contact us directly to explore possibilities for collaboration.</p>
+              </div>
+            </div>
+            
+            <!-- Question 6 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>When should I start thinking about legacy planning?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>The best time to begin legacy planning is now – regardless of your age, family status, or wealth. Legacy is not just about end-of-life planning; it's about how you live and the impact you're creating today. Starting early allows you to be intentional about building and preserving your legacy while you have time to enjoy the process and make adjustments as your life evolves.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+          <p class="text-foreground/80 mb-6">
+            Don't see your question answered here?
+          </p>
+          <a 
+            href="/contact" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium"
+            })}
+          >
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client-side script for FAQ accordion functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const icon = trigger.querySelector('svg');
+        
+        trigger.addEventListener('click', () => {
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.querySelector('.faq-content').classList.add('hidden');
+              otherItem.querySelector('svg').classList.remove('rotate-180');
+            }
+          });
+          
+          // Toggle current item
+          content.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        });
+      });
+    });
+  </script>
+</BaseLayout>

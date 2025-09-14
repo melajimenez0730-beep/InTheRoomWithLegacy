@@ -1,0 +1,326 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMarked, Quote, Star } from "lucide-react";
+---
+
+<BaseLayout
+  title="About Us | In the Room With Legacy"
+  description="In the Room with Legacy™ was born in a sacred transition, helping families build and preserve legacy across generations."
+>
+  <!-- Hero Section -->
+  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
+          This didn't start with strategy. It started with a story.
+        </h1>
+        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+          In the Room with Legacy™ was born in a sacred transition.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Origin Story Section -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-10 text-center">
+          Origin Story
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div>
+            <p class="text-foreground/80 mb-6">
+              In the Room with Legacy™ was born from a deeply personal truth experienced by its founder, Lauren S. Miller. As a daughter, caregiver, inheritor, and business owner, Lauren walked through the complexities of succession firsthand. She witnessed how fragile legacy can be without preparation - and how powerful it becomes when families embrace it with intention, structure, and celebration.
+            </p>
+            <p class="text-foreground/80 mb-6">
+              Her journey revealed that too often, legacy conversations happen in silence or at the last minute, leaving families unprepared for transition. Designing to change, Lauren created In the Room with Legacy™, a full-scale legacy ecosystem that merges culture with commerce, tradition with technology, and story with strategy.
+            </p>
+            <p class="text-foreground/80">
+              Today, "In the Room with Legacy" guides families, founders, and stewards in not just preparing for what's next—but for who's next.
+            </p>
+          </div>
+
+          <div class="relative rounded-lg overflow-hidden shadow-xl bg-muted/20 aspect-square flex items-center justify-center">
+            <div class="text-muted-foreground/50 text-center">
+              <p class="font-medium">Founder Image</p>
+              <p class="text-sm">(Image placeholder)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Believe Section -->
+  <section class="py-24 bg-muted/30">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-12 text-center">
+          What We Believe
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-primary/10">
+            <div class="flex items-start gap-4 mb-2">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-3 h-3 rotate-45 bg-secondary"></div>
+              </div>
+              <p class="text-foreground/80 font-medium">
+                Families are powerful institutions — not just personal relationships
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-primary/10">
+            <div class="flex items-start gap-4 mb-2">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-3 h-3 rotate-45 bg-secondary"></div>
+              </div>
+              <p class="text-foreground/80 font-medium">
+                Intangible wealth is just as valuable as money
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-primary/10">
+            <div class="flex items-start gap-4 mb-2">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-3 h-3 rotate-45 bg-secondary"></div>
+              </div>
+              <p class="text-foreground/80 font-medium">
+                Storytelling is a strategic asset
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-primary/10">
+            <div class="flex items-start gap-4 mb-2">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-3 h-3 rotate-45 bg-secondary"></div>
+              </div>
+              <p class="text-foreground/80 font-medium">
+                Stewardship should be taught, not assumed
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-primary/10">
+            <div class="flex items-start gap-4 mb-2">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-3 h-3 rotate-45 bg-secondary"></div>
+              </div>
+              <p class="text-foreground/80 font-medium">
+                Strong families are the blueprint for economic and cultural resilience
+              </p>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 md:p-8 rounded-lg shadow-sm border border-primary/10">
+            <div class="flex items-start gap-4 mb-2">
+              <div class="flex-shrink-0 mt-1">
+                <div class="w-3 h-3 rotate-45 bg-secondary"></div>
+              </div>
+              <p class="text-foreground/80 font-medium">
+                Legacy is not something you leave — it's something you live.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Vision Section -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-10 text-center">
+          Our Vision
+        </h2>
+        
+        <div class="bg-muted/10 rounded-lg p-8 md:p-10 border border-primary/10 mb-16 text-center">
+          <p class="text-lg text-foreground/80">
+            We've all seen the mess and confusion in the aftermath of a family's transition of wealth. It's a sad, preventable story that happens when wealth transfer is not taken seriously. At In the Room with Legacy, we have a radical idea: to empower all families—of all shapes and sizes—to prepare for the future. We believe that a strong family culture is the foundation for a strong legacy.
+          </p>
+        </div>
+        
+        <h3 class="text-2xl md:text-3xl font-display font-bold text-primary mb-10 text-center">
+          Five Pillars of In the Room With Legacy
+        </h3>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div class="bg-white rounded-lg border-t-4 border-primary shadow-sm p-5 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Home className="w-6 h-6 text-primary" />
+            </div>
+            <h4 class="font-display font-semibold text-primary mb-2">Family Legacy</h4>
+            <p class="text-foreground/70 text-sm">Preservation, Charters, Governance</p>
+          </div>
+          
+          <div class="bg-white rounded-lg border-t-4 border-secondary shadow-sm p-5 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+              <Users className="w-6 h-6 text-secondary" />
+            </div>
+            <h4 class="font-display font-semibold text-primary mb-2">Next Gen Stewardship</h4>
+            <p class="text-foreground/70 text-sm">Youth, Heirs, Succession Prep</p>
+          </div>
+          
+          <div class="bg-white rounded-lg border-t-4 border-accent shadow-sm p-5 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+              <BookOpen className="w-6 h-6 text-accent" />
+            </div>
+            <h4 class="font-display font-semibold text-primary mb-2">Storytelling & Culture</h4>
+            <p class="text-foreground/70 text-sm">Oral History, Memory, Identity</p>
+          </div>
+          
+          <div class="bg-white rounded-lg border-t-4 border-primary shadow-sm p-5 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <DollarSign className="w-6 h-6 text-primary" />
+            </div>
+            <h4 class="font-display font-semibold text-primary mb-2">Economic Empowerment</h4>
+            <p class="text-foreground/70 text-sm">Family Business, Wealth Building</p>
+          </div>
+          
+          <div class="bg-white rounded-lg border-t-4 border-secondary shadow-sm p-5 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-4">
+              <Heart className="w-6 h-6 text-secondary" />
+            </div>
+            <h4 class="font-display font-semibold text-primary mb-2">Transitions & Healing</h4>
+            <p class="text-foreground/70 text-sm">End-of-life, Grief, Inheritance Readiness</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two Arms, One Mission Section -->
+  <section class="py-24 bg-muted/30">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
+          Two Arms. One Mission.
+        </h2>
+        <p class="text-lg text-foreground/80 mb-12 text-center max-w-3xl mx-auto">
+          IRL Advisors and IRL Non-profit create a holistic ecosystem for families and institutions—weaving mission-driven programs with strategic advisory and tools.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-primary text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-display font-semibold mb-6">IRL Non Profit</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Programs & Retreats</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Guiding Legacy Conversations While We're Still Here!</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Storytelling & Cultural Missions</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Community & Convenings</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-secondary text-white p-8 rounded-lg">
+            <h3 class="text-2xl font-display font-semibold mb-6">IRL Advisors (For Profit)</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>AI-powered Legacy Assessment Tool</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Strategic Advisory & Governance Design</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Products & Licensing</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Immersive Retreats to look to the land</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-white mt-1">⦁</span>
+                <span>Events & Experiences</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <p class="text-center text-lg text-foreground/80 mt-8 max-w-3xl mx-auto">
+          IRL builds community and culture. IRL Advisors builds tools and strategy. Together, they help families move in unison across generations.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Founder Section -->
+  <section class="py-24 bg-white">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div class="relative rounded-lg overflow-hidden shadow-xl bg-muted/20 aspect-square flex items-center justify-center">
+            <div class="text-muted-foreground/50 text-center">
+              <p class="font-medium">Founder Image</p>
+              <p class="text-sm">(Image placeholder)</p>
+            </div>
+          </div>
+
+          <div>
+            <h2 class="text-3xl font-display font-bold text-primary mb-6">
+              About the Founder, Lauren S. Miller
+            </h2>
+            <p class="text-foreground/80 mb-6">
+              Lauren is a serial entrepreneur, business builder, speaker, and visionary reimagining the foundation of legacy. She believes that legacy is not only something you leave—it's something you live—on purpose.
+            </p>
+            <p class="text-foreground/80 mb-6">
+              Lauren's work is deeply rooted in the foundation of her parent's legacy, a trailblazer in the economic empowerment of Milwaukee's Black community. She served through the complexities of succession firsthand. She's a graduate of Boston University, the Harvard Kennedy School, and the Howard University School of Law, and worked with diverse corporations and institutions to advance equity and innovation.
+            </p>
+            <p class="text-foreground/80">
+              Influenced by her heritage, Lauren has carried her family's ethos into her own path of global citizenship. From building a thriving, fast-paced marketing company that merged a new generation of Black women in venture capital to embarking on a deeply personal journey toward inspiring families through storytelling, Lauren's mission is to heal and re-imagine what we believe is possible for ourselves, our families, and communities. She believes legacy is not something you leave—it's something you live—on purpose.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="py-24 bg-primary/5">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+          Want to support the mission?
+        </h2>
+        <p class="text-lg text-foreground/80 mb-10">
+          We're actively seeking aligned partners, sponsors, and collaborators who believe in preserving and amplifying family legacy.
+        </p>
+        <a 
+          href="/contact" 
+          class={buttonVariants({
+            size: "lg",
+            class: "font-medium mb-8"
+          })}
+        >
+          Contact Us
+        </a>
+        
+        <p class="text-foreground/70">Email us – <a href="mailto:hello@intheroomwithlegacy.com" class="text-primary hover:underline">hello@intheroomwithlegacy.com</a></p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

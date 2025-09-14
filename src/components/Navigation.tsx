@@ -75,7 +75,10 @@ export default function Navigation() {
       <NavDropdown 
         trigger="About" 
         items={[
-          { href: "/about/founder-letter", label: "Read the Letter from Our Founder" }
+          { href: "/about", label: "About Us" },
+          { href: "/about/founder-letter", label: "Letter from Our Founder" },
+          { href: "/about/partnership-pathways", label: "Partnership Pathways" },
+          { href: "/about/faq", label: "Frequently Asked Questions" }
         ]} 
       />
       
