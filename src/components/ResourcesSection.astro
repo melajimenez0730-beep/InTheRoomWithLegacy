@@ -3,9 +3,9 @@ import { buttonVariants } from "@/components/ui/button";
 import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-react";
 ---
 
-<section class="py-24 bg-muted/50">
+<section class="py-24 bg-muted/5">
   <div class="container">
-    <div class="text-center max-w-3xl mx-auto mb-16">
+    <div class="text-center max-w-3xl mx-auto mb-12">
       <h2 class="text-3xl md:text-4xl font-display font-bold mb-4 text-primary">
         Stories & Resources for Every Stage of the Legacy Journey
       </h2>
@@ -14,160 +14,148 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
       </p>
     </div>
 
-    <!-- Grid Layout - Fixed dimensions for consistent card sizes -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
-      <!-- Card 1: Founders -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group h-[240px] flex flex-col">
-        <div class="bg-primary/10 p-4 flex items-center gap-3">
-          <Building className="text-primary" size={20} />
-          <h3 class="font-display font-semibold text-primary">Founders</h3>
-        </div>
-        <div class="p-4 flex flex-col flex-grow">
-          <p class="text-foreground/80 mb-4 text-sm font-medium line-clamp-2">
-            First-Gen Legacy Builder Steps
-          </p>
-          <div class="mt-auto">
+    <!-- Single row layout with horizontal scrolling on smaller screens -->
+    <div class="relative -mx-4 px-4 md:mx-0 md:px-0 mb-10">
+      <div class="flex flex-nowrap overflow-x-auto gap-4 pb-6 snap-x md:justify-between">
+        <!-- Card 1: Founders -->
+        <div class="snap-center min-w-[220px] w-[220px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+          <div class="p-5 flex justify-center">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+              <Building className="text-secondary/80" size={20} />
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <h3 class="font-display font-semibold text-primary text-center mb-3">Founders</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+              First-generation wealth and legacy builders creating a foundation.
+            </p>
             <a 
               href="/resources/founders" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "sm",
-                class: "w-full justify-center border-primary text-primary hover:bg-primary/10"
-              })}
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
             >
-              Learn More
+              Learn More <span class="ml-1">→</span>
             </a>
           </div>
         </div>
-      </div>
 
-      <!-- Card 2: Inheritors & Heirs -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group h-[240px] flex flex-col">
-        <div class="bg-secondary/20 p-4 flex items-center gap-3">
-          <Sparkles className="text-primary" size={20} />
-          <h3 class="font-display font-semibold text-primary">Inheritors & Heirs</h3>
-        </div>
-        <div class="p-4 flex flex-col flex-grow">
-          <p class="text-foreground/80 mb-4 text-sm font-medium line-clamp-2">
-            'Heir Readiness' Conversations
-          </p>
-          <div class="mt-auto">
+        <!-- Card 2: Inheritors & Heirs -->
+        <div class="snap-center min-w-[220px] w-[220px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+          <div class="p-5 flex justify-center">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+              <Sparkles className="text-secondary/80" size={20} />
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <h3 class="font-display font-semibold text-primary text-center mb-3">Inheritors & Heirs</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+              Those preparing to receive or steward family assets and traditions.
+            </p>
             <a 
               href="/resources/inheritors" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "sm",
-                class: "w-full justify-center border-primary text-primary hover:bg-primary/10"
-              })}
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
             >
-              Learn More
+              Learn More <span class="ml-1">→</span>
             </a>
           </div>
         </div>
-      </div>
 
-      <!-- Card 3: Families Building Together -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group h-[240px] flex flex-col">
-        <div class="bg-accent/20 p-4 flex items-center gap-3">
-          <Users className="text-primary" size={20} />
-          <h3 class="font-display font-semibold text-primary">Families Building Together</h3>
-        </div>
-        <div class="p-4 flex flex-col flex-grow">
-          <p class="text-foreground/80 mb-4 text-sm font-medium line-clamp-2">
-            Family Meetings That Work
-          </p>
-          <div class="mt-auto">
+        <!-- Card 3: Families Building Together -->
+        <div class="snap-center min-w-[220px] w-[220px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+          <div class="p-5 flex justify-center">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+              <Users className="text-secondary/80" size={20} />
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <h3 class="font-display font-semibold text-primary text-center mb-3">Families Building Together</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+              Multi-generational families creating shared legacy.
+            </p>
             <a 
               href="/resources/families" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "sm",
-                class: "w-full justify-center border-primary text-primary hover:bg-primary/10"
-              })}
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
             >
-              Learn More
+              Learn More <span class="ml-1">→</span>
             </a>
           </div>
         </div>
-      </div>
 
-      <!-- Card 4: Collective Builders & Chosen Kin -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group h-[240px] flex flex-col">
-        <div class="bg-primary/10 p-4 flex items-center gap-3">
-          <Heart className="text-primary" size={20} />
-          <h3 class="font-display font-semibold text-primary">Collective Builders</h3>
-        </div>
-        <div class="p-4 flex flex-col flex-grow">
-          <p class="text-foreground/80 mb-4 text-sm font-medium line-clamp-2">
-            Forming Your Cousin Corps
-          </p>
-          <div class="mt-auto">
+        <!-- Card 4: Collective Builders -->
+        <div class="snap-center min-w-[220px] w-[220px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+          <div class="p-5 flex justify-center">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+              <Heart className="text-secondary/80" size={20} />
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <h3 class="font-display font-semibold text-primary text-center mb-3">Collective Builders</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+              Chosen family and kin creating community-based legacy.
+            </p>
             <a 
               href="/resources/collective-builders" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "sm",
-                class: "w-full justify-center border-primary text-primary hover:bg-primary/10"
-              })}
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
             >
-              Learn More
+              Learn More <span class="ml-1">→</span>
             </a>
           </div>
         </div>
-      </div>
 
-      <!-- Card 5: Curious Seekers -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group h-[240px] flex flex-col">
-        <div class="bg-secondary/20 p-4 flex items-center gap-3">
-          <BookOpen className="text-primary" size={20} />
-          <h3 class="font-display font-semibold text-primary">Curious Seekers</h3>
-        </div>
-        <div class="p-4 flex flex-col flex-grow">
-          <p class="text-foreground/80 mb-4 text-sm font-medium line-clamp-2">
-            Why Legacy Matters Now
-          </p>
-          <div class="mt-auto">
+        <!-- Card 5: Curious Seekers -->
+        <div class="snap-center min-w-[220px] w-[220px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+          <div class="p-5 flex justify-center">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+              <BookOpen className="text-secondary/80" size={20} />
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <h3 class="font-display font-semibold text-primary text-center mb-3">Curious Seekers</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+              Individuals exploring family history and legacy concepts.
+            </p>
             <a 
               href="/blog/why-legacy-matters" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "sm",
-                class: "w-full justify-center border-primary text-primary hover:bg-primary/10"
-              })}
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
             >
-              Learn More
+              Learn More <span class="ml-1">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 6: Partners & Institutions -->
+        <div class="snap-center min-w-[220px] w-[220px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+          <div class="p-5 flex justify-center">
+            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+              <Briefcase className="text-secondary/80" size={20} />
+            </div>
+          </div>
+          <div class="px-5 pb-5">
+            <h3 class="font-display font-semibold text-primary text-center mb-3">Partners & Institutions</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+              Funders, advisors, and aligned organizations.
+            </p>
+            <a 
+              href="/resources/partners" 
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
+            >
+              Learn More <span class="ml-1">→</span>
             </a>
           </div>
         </div>
       </div>
-
-      <!-- Card 6: Partners & Institutions -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group h-[240px] flex flex-col">
-        <div class="bg-accent/20 p-4 flex items-center gap-3">
-          <Briefcase className="text-primary" size={20} />
-          <h3 class="font-display font-semibold text-primary">Partners & Institutions</h3>
-        </div>
-        <div class="p-4 flex flex-col flex-grow">
-          <p class="text-foreground/80 mb-4 text-sm font-medium line-clamp-2">
-            Funders, advisors, and aligned organizations
-          </p>
-          <div class="mt-auto">
-            <a 
-              href="/resources/partners" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "sm",
-                class: "w-full justify-center border-primary text-primary hover:bg-primary/10"
-              })}
-            >
-              Learn More
-            </a>
-          </div>
-        </div>
+      
+      <!-- Scroll indicators for mobile -->
+      <div class="flex gap-1 justify-center mt-4 md:hidden">
+        <span class="w-2 h-2 rounded-full bg-primary/60"></span>
+        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
+        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
+        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
+        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
+        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
       </div>
     </div>
 
-    <div class="text-center mt-12">
+    <div class="text-center">
       <a 
         href="#join-the-room" 
         class={buttonVariants({
