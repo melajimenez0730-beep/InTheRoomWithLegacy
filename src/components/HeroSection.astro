@@ -2,30 +2,30 @@
 import { buttonVariants } from "@/components/ui/button";
 ---
 
-<section class="relative overflow-hidden py-24 md:py-32 bg-background">
+<section class="relative overflow-hidden py-16 sm:py-20 md:py-32 bg-background">
   <!-- Decorative pattern -->
   <div class="absolute inset-0 z-0 opacity-5">
     <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
   </div>
 
   <div class="container relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-      <div class="flex flex-col space-y-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+      <div class="flex flex-col space-y-6 md:space-y-8">
         <div>
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-4">
-            Making Legacy a Lifestyle, <br/><span class="text-secondary">Not just an Inheritance.</span>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-4">
+            Making Legacy a Lifestyle, <span class="text-secondary block sm:inline">Not just an Inheritance.</span>
           </h1>
-          <p class="text-lg md:text-xl text-foreground/80 max-w-lg">
+          <p class="text-base sm:text-lg md:text-xl text-foreground/80 max-w-lg">
             We help families thrive across generations with tools, guided conversations, and cultural touchstones that keep legacy alive while we're still here.
           </p>
         </div>
         
-        <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex flex-col gap-4 w-full">
           <a 
             href="/tools/legacy-assessment" 
             class={buttonVariants({
               size: "lg",
-              class: "font-medium"
+              class: "font-medium w-full sm:w-auto justify-center"
             })}
           >
             Take the Legacy Assessment
@@ -35,7 +35,7 @@ import { buttonVariants } from "@/components/ui/button";
             class={buttonVariants({
               variant: "outline",
               size: "lg",
-              class: "border-primary text-primary hover:bg-primary/10 font-medium"
+              class: "border-primary text-primary hover:bg-primary/10 font-medium w-full sm:w-auto justify-center"
             })}
           >
             Join the Room
@@ -43,7 +43,7 @@ import { buttonVariants } from "@/components/ui/button";
         </div>
       </div>
       
-      <div class="relative rounded-lg overflow-hidden shadow-2xl">
+      <div class="relative rounded-lg overflow-hidden shadow-2xl mt-6 md:mt-0">
         <img 
           src="https://images.unsplash.com/photo-1528569937393-ee892b976859?w=1200&h=600&auto=format&fit=crop&q=80"
           alt="Family legacy photo album" 

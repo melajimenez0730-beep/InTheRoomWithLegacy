@@ -1,6 +1,7 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
+import MobileNav from "@/components/MobileNav";
 ---
 
 <header
@@ -11,7 +12,7 @@ import Navigation from "@/components/Navigation";
   >
     <div class="flex gap-6 md:gap-10">
       <a href="/" class="flex items-center space-x-2">
-        <span class="inline-block font-display text-xl font-bold tracking-tight text-primary">In the Room With Legacy</span>
+        <span class="inline-block font-display text-base md:text-xl font-bold tracking-tight text-primary">In the Room With Legacy</span>
       </a>
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">
@@ -53,13 +54,36 @@ import Navigation from "@/components/Navigation";
   </div>
 </header>
 
+<!-- Mobile Navigation -->
+<div id="mobile-nav-container"></div>
+<MobileNav client:load isOpen={false} onClose={() => {}} />
+
 <script>
-  // Mobile menu functionality (to be implemented)
+  // Mobile menu functionality
+  let isMenuOpen = false;
   const menuButton = document.querySelector('[data-toggle-menu]');
+  const mobileNavContainer = document.getElementById('mobile-nav-container');
+  
+  // Custom event to communicate with React component
+  const toggleMobileNav = (isOpen) => {
+    const event = new CustomEvent('toggleMobileNav', { detail: { isOpen } });
+    document.dispatchEvent(event);
+    
+    // Update body scroll
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    isMenuOpen = isOpen;
+  };
+  
   if (menuButton) {
     menuButton.addEventListener('click', () => {
-      // Toggle mobile menu visibility
-      console.log('Mobile menu toggled');
+      toggleMobileNav(!isMenuOpen);
     });
   }
+  
+  // Close mobile menu on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen) {
+      toggleMobileNav(false);
+    }
+  });
 </script>

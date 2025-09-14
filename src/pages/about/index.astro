@@ -300,24 +300,26 @@ import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMa
   </section>
 
   <!-- Call to Action Section -->
-  <section class="py-24 bg-primary/5">
+  <section class="py-16 sm:py-20 md:py-24 bg-primary/5">
     <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary mb-4 sm:mb-6">
           Want to support the mission?
         </h2>
-        <p class="text-lg text-foreground/80 mb-10">
+        <p class="text-base sm:text-lg text-foreground/80 mb-6 sm:mb-10">
           We're actively seeking aligned partners, sponsors, and collaborators who believe in preserving and amplifying family legacy.
         </p>
-        <a 
-          href="/contact" 
-          class={buttonVariants({
-            size: "lg",
-            class: "font-medium mb-8"
-          })}
-        >
-          Contact Us
-        </a>
+        <div class="w-full max-w-md mx-auto mb-8">
+          <a 
+            href="/contact" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium w-full justify-center"
+            })}
+          >
+            Contact Us
+          </a>
+        </div>
         
         <p class="text-foreground/70">Email us – <a href="mailto:hello@intheroomwithlegacy.com" class="text-primary hover:underline">hello@intheroomwithlegacy.com</a></p>
       </div>
