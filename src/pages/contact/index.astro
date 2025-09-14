@@ -1,0 +1,165 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { MailPlus, Building, Megaphone, DollarSign, MailCheck } from "lucide-react";
+import ContactPageForm from "@/components/ContactPageForm";
+---
+
+<BaseLayout
+  title="Contact | In the Room With Legacy"
+  description="Connect with us to build legacy together. Reach out for general inquiries, partnerships, speaking engagements, or investment opportunities."
+>
+  <!-- Hero Section -->
+  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-5">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
+          Let's Build Legacy Together.
+        </h1>
+        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+          We believe in collaboration, conversation, and shared purpose. Whether you're a family looking for support, an organization exploring partnership, or someone inspired by our mission — we'd love to hear from you.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ways to Connect Section -->
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <!-- General Inquiries -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
+                <MailPlus className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-semibold text-primary mb-2">General Inquiries</h3>
+                <p class="text-foreground/80 mb-4">Have a question, idea, or invitation? Reach out via the contact form below.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Partner With Us -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
+                <Building className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-semibold text-primary mb-2">Partner With Us</h3>
+                <p class="text-foreground/80 mb-4">Interested in sponsoring a program or co-creating an initiative?</p>
+                <a 
+                  href="#contact-form"
+                  class={buttonVariants({
+                    variant: "outline",
+                    size: "sm",
+                    class: "border-primary text-primary hover:bg-primary/10"
+                  })}
+                >
+                  Submit a Partnership Inquiry →
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Speaking + Media -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
+                <Megaphone className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-semibold text-primary mb-2">Speaking + Media</h3>
+                <p class="text-foreground/80 mb-4">For speaking requests, media features, or press inquiries —</p>
+                <a 
+                  href="#contact-form"
+                  class={buttonVariants({
+                    variant: "outline",
+                    size: "sm",
+                    class: "border-primary text-primary hover:bg-primary/10"
+                  })}
+                >
+                  Click Here →
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Investor or Donor Inquiries -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
+                <DollarSign className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-semibold text-primary mb-2">Investor or Donor Inquiries</h3>
+                <p class="text-foreground/80 mb-4">If you're interested in supporting this work at a foundational level, we'd love to connect.</p>
+                <a 
+                  href="#contact-form"
+                  class={buttonVariants({
+                    variant: "outline",
+                    size: "sm",
+                    class: "border-primary text-primary hover:bg-primary/10"
+                  })}
+                >
+                  Share Your Interest →
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Stay in the Loop -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm md:col-span-2">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
+                <MailCheck className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="font-display text-xl font-semibold text-primary mb-2">Stay in the Loop</h3>
+                <p class="text-foreground/80 mb-4">Be the first to know about upcoming programs, tools, and events.</p>
+                <a 
+                  href="#contact-form"
+                  class={buttonVariants({
+                    variant: "outline",
+                    size: "sm",
+                    class: "border-primary text-primary hover:bg-primary/10"
+                  })}
+                >
+                  Join the IRL Newsletter →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="py-16 bg-muted/10" id="contact-form">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-xl shadow-lg border border-primary/10 overflow-hidden">
+          <div class="p-8">
+            <h2 class="font-display text-3xl font-bold text-primary mb-4">Get in Touch</h2>
+            <p class="text-foreground/80 mb-8">
+              We read every message and take each connection seriously. Thank you for being in the room with us.
+            </p>
+            
+            <ContactPageForm client:load />
+            
+            <p class="mt-8 text-foreground/70 text-sm">
+              Prefer email? Reach out directly to <a href="mailto:hello@intheroomwithlegacy.com" class="text-primary hover:underline">hello@intheroomwithlegacy.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
