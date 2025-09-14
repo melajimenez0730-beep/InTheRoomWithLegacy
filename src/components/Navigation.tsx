@@ -72,15 +72,11 @@ const NavDropdown = ({ trigger, items, className }: NavDropdownProps) => {
 export default function Navigation() {
   return (
     <nav className="flex items-center gap-1 md:gap-2">
-      <NavItem href="/about">About</NavItem>
-      
       <NavDropdown 
-        trigger="About Us" 
+        trigger="About" 
         items={[
-          { href: "/about", label: "About Us" },
           { href: "/about/founder-letter", label: "Read the Letter from Our Founder" }
         ]} 
-        className="hidden"
       />
       
       <NavDropdown 

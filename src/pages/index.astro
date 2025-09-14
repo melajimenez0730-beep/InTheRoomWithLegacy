@@ -9,13 +9,16 @@ import ResourcesSection from '@/components/ResourcesSection.astro';
 ---
 
 <BaseLayout
-  title="In the Room With Legacy | Making Legacy a Lifestyle, Not just an Inheritance"
+  title="In the Room With Legacy | Making Legacy, Not just an Inheritance"
   description="We help families thrive across generations with tools, guided conversations, and cultural touchstones that keep legacy alive while we're still here."
 >
   <HeroSection />
+  <DimensionsSection />
+  <FounderSection />
+  <LeadMagnetSection />
   <ResourcesSection />
   
-  <section class="py-24 container max-w-3xl" id="join-the-room">
+  <section class="py-24 container max-w-3xl">
     <!-- KEEP ALL FORMS client:load !! DO NOT USE client:visible AS THIS CAUSES HYDRATION ISSUES!!-->
     <ContactForm client:load />
   </section>

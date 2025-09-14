@@ -1,6 +1,6 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
-import { BookOpen, Building, Users, Heart, Sparkles, BookOpenCheck, Briefcase } from "lucide-react";
+import { BookOpen, Building, Users, Heart, Sparkles, BookOpenCheck } from "lucide-react";
 ---
 
 <section class="py-24 bg-muted/50">
@@ -16,7 +16,7 @@ import { BookOpen, Building, Users, Heart, Sparkles, BookOpenCheck, Briefcase } 
 
     <!-- Horizontally scrollable cards on mobile, grid on desktop -->
     <div class="relative -mx-4 px-4 md:mx-0 md:px-0">
-      <div class="flex overflow-x-auto pb-6 md:pb-0 md:grid md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5 snap-x">
+      <div class="flex overflow-x-auto pb-6 md:pb-0 md:grid md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5 snap-x">
         <!-- Card 1: Founders -->
         <div class="snap-center min-w-[280px] sm:min-w-[320px] md:min-w-0 bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
           <div class="bg-primary/10 p-5 flex items-center gap-3">
@@ -126,34 +126,11 @@ import { BookOpen, Building, Users, Heart, Sparkles, BookOpenCheck, Briefcase } 
             </a>
           </div>
         </div>
-
-        <!-- Card 6: Partners & Institutions -->
-        <div class="snap-center min-w-[280px] sm:min-w-[320px] md:min-w-0 bg-white rounded-lg shadow-md overflow-hidden border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg group">
-          <div class="bg-accent/20 p-5 flex items-center gap-3">
-            <Briefcase className="text-primary" size={20} />
-            <h3 class="font-display font-semibold text-primary">Partners & Institutions</h3>
-          </div>
-          <div class="p-6">
-            <p class="text-foreground/80 mb-4 font-medium">
-              Funders, advisors, and aligned organizations.
-            </p>
-            <a 
-              href="/resources/partners" 
-              class={buttonVariants({
-                variant: "outline",
-                class: "w-full justify-center border-primary text-primary hover:bg-primary/10"
-              })}
-            >
-              Learn More
-            </a>
-          </div>
-        </div>
       </div>
       
       <!-- Scroll indicators for mobile -->
       <div class="flex gap-1 justify-center mt-4 md:hidden">
         <span class="w-2 h-2 rounded-full bg-primary/60"></span>
-        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
         <span class="w-2 h-2 rounded-full bg-primary/30"></span>
         <span class="w-2 h-2 rounded-full bg-primary/30"></span>
         <span class="w-2 h-2 rounded-full bg-primary/30"></span>
