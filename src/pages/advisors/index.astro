@@ -1,10 +1,10 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Target, Building, Briefcase, ExternalLink, ArrowRight } from "lucide-react";
 ---
 
-<MainLayout title="IRL Advisors - In the Room With Legacy" description="IRL Advisors is the consulting and advisory arm of In the Room with Legacy™, serving families, institutions, and ecosystems.">
+<BaseLayout title="IRL Advisors - In the Room With Legacy" description="IRL Advisors is the consulting and advisory arm of In the Room with Legacy™, serving families, institutions, and ecosystems.">
   <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
@@ -153,4 +153,4 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight } from "lucide-re
       </div>
     </div>
   </section>
-</MainLayout>
+</BaseLayout>
