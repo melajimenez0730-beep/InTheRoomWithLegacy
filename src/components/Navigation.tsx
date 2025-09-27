@@ -107,6 +107,8 @@ export default function Navigation() {
         ]} 
       />
       
+      <NavItem href="/advisors">IRL Advisors</NavItem>
+      
       <NavItem href="/contact">Contact</NavItem>
     </nav>
   );

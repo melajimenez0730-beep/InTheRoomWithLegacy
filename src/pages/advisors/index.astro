@@ -1,0 +1,156 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { Target, Building, Briefcase, ExternalLink, ArrowRight } from "lucide-react";
+---
+
+<MainLayout title="IRL Advisors - In the Room With Legacy" description="IRL Advisors is the consulting and advisory arm of In the Room with Legacy™, serving families, institutions, and ecosystems.">
+  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
+          Legacy takes more than vision. It&nbsp;takes&nbsp;strategy.
+        </h1>
+        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+          IRL Advisors is the consulting and advisory arm of In the Room with Legacy™, serving families, institutions, and ecosystems that are building toward generational continuity and wealth.
+        </p>
+        <p class="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto">
+          Whether you're formalizing family governance, navigating succession, or designing legacy-centered programs for your organization — we bring culturally rooted, future-focused guidance to the table.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <!-- Column 1: We help families operate with structure -->
+        <div class="bg-muted/10 p-8 rounded-lg border border-border/10 text-center flex flex-col items-center">
+          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+            <Building class="text-primary h-7 w-7" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">We help families operate with structure.</h3>
+          <p class="text-foreground/80">
+            From family meeting facilitation to governance design, we help legacy-builders create systems that work.
+          </p>
+        </div>
+        
+        <!-- Column 2: We help institutions engage with depth -->
+        <div class="bg-muted/10 p-8 rounded-lg border border-border/10 text-center flex flex-col items-center">
+          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+            <Briefcase class="text-primary h-7 w-7" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">We help institutions engage with depth.</h3>
+          <p class="text-foreground/80">
+            Our work with organizations centers authentic community building and culturally relevant programming.
+          </p>
+        </div>
+        
+        <!-- Column 3: We help legacy live — with intention -->
+        <div class="bg-muted/10 p-8 rounded-lg border border-border/10 text-center flex flex-col items-center">
+          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+            <Target class="text-primary h-7 w-7" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">We help legacy live — with intention.</h3>
+          <p class="text-foreground/80">
+            Every engagement is designed to move beyond theory into actionable, measurable impact across generations.
+          </p>
+        </div>
+      </div>
+      
+      <!-- CTA Section -->
+      <div class="bg-secondary/10 p-8 md:p-12 rounded-lg text-center max-w-3xl mx-auto">
+        <h3 class="text-2xl md:text-3xl font-display font-semibold mb-6 text-primary">Ready to build legacy with intention?</h3>
+        <a 
+          href="https://IRLAdvisors.com" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class={buttonVariants({
+            size: "lg",
+            class: "font-medium text-base px-8 group"
+          })}
+        >
+          👇🏾 Visit IRLAdvisors.com <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Clarification Section -->
+  <section class="py-16 md:py-24 bg-muted/5">
+    <div class="container">
+      <h2 class="text-2xl md:text-3xl font-display font-semibold text-primary text-center mb-10">
+        Not sure whether you need IRL or IRL Advisors?
+      </h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <!-- IRL Card -->
+        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm">
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL</h3>
+          <p class="text-foreground/80 mb-6">
+            IRL is for families and individuals seeking resources, connection, and tools for their personal legacy journeys.
+          </p>
+          <ul class="space-y-2 text-foreground/80 mb-6">
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
+              <span>Self-guided resources</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
+              <span>Educational content</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
+              <span>Community connection</span>
+            </li>
+          </ul>
+          <div class="text-center mt-8">
+            <a
+              href="/"
+              class={buttonVariants({
+                variant: "outline",
+                class: "border-primary text-primary hover:bg-primary/10 font-medium"
+              })}
+            >
+              Explore IRL Resources
+            </a>
+          </div>
+        </div>
+        
+        <!-- IRL Advisors Card -->
+        <div class="bg-secondary/5 p-8 rounded-lg border border-secondary/20 shadow-sm">
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL Advisors</h3>
+          <p class="text-foreground/80 mb-6">
+            IRL Advisors is for families, organizations, and institutions looking for tailored strategy, consulting, or facilitation.
+          </p>
+          <ul class="space-y-2 text-foreground/80 mb-6">
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Customized strategic planning</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Facilitation services</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Program design & implementation</span>
+            </li>
+          </ul>
+          <div class="text-center mt-8">
+            <a
+              href="https://IRLAdvisors.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class={buttonVariants({
+                class: "font-medium"
+              })}
+            >
+              Learn About Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>

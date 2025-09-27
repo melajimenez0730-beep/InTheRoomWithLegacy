@@ -98,6 +98,8 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           <MobileNavLink href="/blog" onClick={handleClose}>Blog</MobileNavLink>
           <MobileNavGroupLink href="/blog/submit-story" onClick={handleClose}>Submit Your Family Story</MobileNavGroupLink>
 
+          <MobileNavLink href="/advisors" onClick={handleClose}>IRL Advisors</MobileNavLink>
+
           <MobileNavLink href="/contact" onClick={handleClose}>Contact</MobileNavLink>
         </div>
 
