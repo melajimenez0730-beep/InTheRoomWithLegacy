@@ -96,43 +96,41 @@
 @layer base {
   :root {
     /* Deep blue as primary color (#052D3F) */
-    --primary: 196 78% 14%;
-    --primary-foreground: 51 71% 92%;
+    --primary: 197 85% 13%;
+    --primary-foreground: 0 0% 98%;
     
-    /* Warm Brown as secondary color (#9A4A0B) */
-    --secondary: 28 85% 33%;
-    --secondary-foreground: 51 71% 92%;
+    /* Brown copper as secondary color (#9A4A0B) */
+    --secondary: 30 85% 32%;
+    --secondary-foreground: 0 0% 98%;
     
-    /* Light Cream as accent color (#F7F6DC) */
-    --accent: 58 67% 92%;
-    --accent-foreground: 196 78% 14%;
-    
-    /* Soft Gray/Taupe as muted color (#D8D0C0) */
-    --muted: 39 22% 80%;
-    --muted-foreground: 196 78% 14%;
+    /* Complementary accent color */
+    --accent: 35 80% 60%;
+    --accent-foreground: 197 85% 13%;
     
     /* Neutral colors */
-    --background: 51 71% 92%;
-    --foreground: 196 78% 14%;
+    --background: 197 15% 97%;
+    --foreground: 197 70% 15%;
     
     /* Supporting colors */
     --card: 0 0% 100%;
-    --card-foreground: 196 78% 14%;
+    --card-foreground: 197 70% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 196 78% 14%;
+    --popover-foreground: 197 70% 15%;
+    --muted: 197 10% 90%;
+    --muted-foreground: 197 30% 40%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 51 71% 92%;
-    --border: 39 22% 80%;
-    --input: 39 22% 80%;
-    --ring: 196 78% 14%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 197 20% 85%;
+    --input: 197 20% 90%;
+    --ring: 197 85% 13%;
     --radius: 0.5rem;
     
     /* Chart colors */
-    --chart-1: 196 78% 14%;
-    --chart-2: 28 85% 33%;
-    --chart-3: 58 67% 92%;
-    --chart-4: 39 22% 80%;
-    --chart-5: 196 50% 50%;
+    --chart-1: 197 85% 30%;
+    --chart-2: 30 85% 50%;
+    --chart-3: 35 80% 60%;
+    --chart-4: 197 50% 50%;
+    --chart-5: 30 60% 70%;
   }
 }
 
