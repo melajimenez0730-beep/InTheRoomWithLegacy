@@ -1,99 +1,252 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Target, Building, Briefcase, ExternalLink, ArrowRight } from "lucide-react";
+import { Target, Building, Briefcase, ExternalLink, ArrowRight, CheckCircle, Users, University, Sparkles, TestTube, Wrench, Computer, BriefcaseBusiness } from "lucide-react";
 ---
 
-<BaseLayout title="IRL Advisors - In the Room With Legacy" description="IRL Advisors is the consulting and advisory arm of In the Room with Legacy™, serving families, institutions, and ecosystems.">
+<BaseLayout title="IRL Advisors - In the Room With Legacy" description="IRL Advisors is the for-profit advisory and innovation arm of In the Room with Legacy™, equipping families, businesses, and institutions with tools, strategies, and technologies.">
+  <!-- Hero Section -->
   <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
     <div class="container relative z-10">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
-          Legacy takes more than vision. It&nbsp;takes&nbsp;strategy.
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-8">
+          Advisory. Strategy. Technology.<br />For Families & Institutions Building Legacy.
         </h1>
-        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
-          IRL Advisors is the consulting and advisory arm of In the Room with Legacy™, serving families, institutions, and ecosystems that are building toward generational continuity and wealth.
+        <p class="text-lg md:text-xl text-foreground/80 mb-10 max-w-3xl mx-auto">
+          IRL Advisors is the for-profit advisory and innovation arm of In the Room with Legacy™. We equip families, businesses, and institutions with the tools, strategies, and technologies they need to sustain legacy across generations.
         </p>
-        <p class="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto">
-          Whether you're formalizing family governance, navigating succession, or designing legacy-centered programs for your organization — we bring culturally rooted, future-focused guidance to the table.
-        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://IRLAdvisors.com/contact" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium text-base px-8"
+            })}
+          >
+            Work With Us
+          </a>
+          <a 
+            href="https://IRLAdvisors.com/tools" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              class: "font-medium text-base px-8 border-primary text-primary hover:bg-primary/10"
+            })}
+          >
+            Explore Our Tools
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Who We Are Section -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <!-- Column 1: We help families operate with structure -->
-        <div class="bg-muted/10 p-8 rounded-lg border border-border/10 text-center flex flex-col items-center">
-          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-            <Building class="text-primary h-7 w-7" />
-          </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">We help families operate with structure.</h3>
-          <p class="text-foreground/80">
-            From family meeting facilitation to governance design, we help legacy-builders create systems that work.
-          </p>
-        </div>
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-8">
+          Who We Are
+        </h2>
+        <p class="text-lg text-foreground/80 mb-12">
+          IRL Advisors exists at the intersection of family governance, wealth stewardship, and next-gen innovation. While In the Room with Legacy™ sparks cultural conversation and community, IRL Advisors delivers the advisory services, strategic counsel, and technology solutions that turn vision into action.
+        </p>
         
-        <!-- Column 2: We help institutions engage with depth -->
-        <div class="bg-muted/10 p-8 rounded-lg border border-border/10 text-center flex flex-col items-center">
-          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-            <Briefcase class="text-primary h-7 w-7" />
-          </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">We help institutions engage with depth.</h3>
-          <p class="text-foreground/80">
-            Our work with organizations centers authentic community building and culturally relevant programming.
-          </p>
-        </div>
+        <h3 class="text-xl font-display font-semibold mb-8 text-primary">We Work With</h3>
         
-        <!-- Column 3: We help legacy live — with intention -->
-        <div class="bg-muted/10 p-8 rounded-lg border border-border/10 text-center flex flex-col items-center">
-          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-            <Target class="text-primary h-7 w-7" />
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Client Type 1 -->
+          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
+            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+              <Users class="text-primary h-7 w-7" />
+            </div>
+            <h4 class="font-display font-semibold text-primary">Enterprising families</h4>
           </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">We help legacy live — with intention.</h3>
-          <p class="text-foreground/80">
-            Every engagement is designed to move beyond theory into actionable, measurable impact across generations.
-          </p>
+          
+          <!-- Client Type 2 -->
+          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
+            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+              <Building class="text-primary h-7 w-7" />
+            </div>
+            <h4 class="font-display font-semibold text-primary">Family businesses & offices</h4>
+          </div>
+          
+          <!-- Client Type 3 -->
+          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
+            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+              <University class="text-primary h-7 w-7" />
+            </div>
+            <h4 class="font-display font-semibold text-primary">Institutions & nonprofits</h4>
+          </div>
+          
+          <!-- Client Type 4 -->
+          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
+            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+              <BriefcaseBusiness class="text-primary h-7 w-7" />
+            </div>
+            <h4 class="font-display font-semibold text-primary">Advisors & professionals</h4>
+          </div>
         </div>
-      </div>
-      
-      <!-- CTA Section -->
-      <div class="bg-secondary/10 p-8 md:p-12 rounded-lg text-center max-w-3xl mx-auto">
-        <h3 class="text-2xl md:text-3xl font-display font-semibold mb-6 text-primary">Ready to build legacy with intention?</h3>
-        <a 
-          href="https://IRLAdvisors.com" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class={buttonVariants({
-            size: "lg",
-            class: "font-medium text-base px-8 group"
-          })}
-        >
-          👇🏾 Visit IRLAdvisors.com <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-        </a>
       </div>
     </div>
   </section>
   
-  <!-- Clarification Section -->
+  <!-- What We Do Section -->
   <section class="py-16 md:py-24 bg-muted/5">
     <div class="container">
-      <h2 class="text-2xl md:text-3xl font-display font-semibold text-primary text-center mb-10">
-        Not sure whether you need IRL or IRL Advisors?
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-8">
+          What We Do (The Core Services)
+        </h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+        <!-- Service 1: Advisory Services -->
+        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm hover:shadow-md transition-all">
+          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+            <Target class="text-primary h-7 w-7" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">Advisory Services</h3>
+          <ul class="space-y-3 text-foreground/80">
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Family business strategy & governance</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Legacy planning & succession design</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Wealth stewardship frameworks</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Multi-generational engagement strategies</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Service 2: Signature Tools & Products -->
+        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm hover:shadow-md transition-all">
+          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+            <TestTube class="text-primary h-7 w-7" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">Signature Tools & Products</h3>
+          <ul class="space-y-3 text-foreground/80">
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>IRL Legacy Assessment Tool (AI-powered, culturally-rooted assessment)</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Data dashboards & insights for family wealth and impact</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Custom retreats, labs, and workshops</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Service 3: Innovation & Technology -->
+        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm hover:shadow-md transition-all">
+          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
+            <Computer class="text-primary h-7 w-7" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">Innovation & Technology</h3>
+          <ul class="space-y-3 text-foreground/80">
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>AI-powered assessments & storytelling tools</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Digital platforms for legacy preservation</span>
+            </li>
+            <li class="flex items-start">
+              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <span>Licensing solutions for advisors and institutions</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Why IRL Advisors Section -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-6 text-center">
+          Why IRL Advisors
+        </h2>
+        <p class="text-lg text-foreground/80 mb-12 text-center">
+          Legacy is more than inheritance — it's structure, stewardship, and strategy.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Differentiator 1 -->
+          <div class="flex items-start">
+            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+            <div>
+              <h3 class="font-display font-semibold text-primary text-lg mb-2">Proven expertise in both public and private sectors</h3>
+              <p class="text-foreground/80">Our team brings experience from family offices, foundations, Fortune 500 companies, and public service.</p>
+            </div>
+          </div>
+          
+          <!-- Differentiator 2 -->
+          <div class="flex items-start">
+            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+            <div>
+              <h3 class="font-display font-semibold text-primary text-lg mb-2">Deep cultural insight rooted in lived legacy stewardship</h3>
+              <p class="text-foreground/80">We understand legacy from both professional expertise and personal experience.</p>
+            </div>
+          </div>
+          
+          <!-- Differentiator 3 -->
+          <div class="flex items-start">
+            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+            <div>
+              <h3 class="font-display font-semibold text-primary text-lg mb-2">A dual lens: human-centered storytelling + data-driven strategy</h3>
+              <p class="text-foreground/80">Our approach balances the qualitative and quantitative aspects of legacy building.</p>
+            </div>
+          </div>
+          
+          <!-- Differentiator 4 -->
+          <div class="flex items-start">
+            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+            <div>
+              <h3 class="font-display font-semibold text-primary text-lg mb-2">Tools built to last generations, not trends</h3>
+              <p class="text-foreground/80">We design for longevity and durability, not just immediate needs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Our Ecosystem Section -->
+  <section class="py-16 md:py-24 bg-muted/5">
+    <div class="container">
+      <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary text-center mb-12">
+        Our Ecosystem
       </h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <!-- IRL Card -->
         <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm">
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL</h3>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL <span class="text-sm text-foreground/60 font-normal">(nonprofit)</span></h3>
           <p class="text-foreground/80 mb-6">
-            IRL is for families and individuals seeking resources, connection, and tools for their personal legacy journeys.
+            Inspiring culture, conversation, and community.
           </p>
           <ul class="space-y-2 text-foreground/80 mb-6">
             <li class="flex items-start">
               <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
-              <span>Self-guided resources</span>
+              <span>Public resources & tools</span>
             </li>
             <li class="flex items-start">
               <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
@@ -101,7 +254,7 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight } from "lucide-re
             </li>
             <li class="flex items-start">
               <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
-              <span>Community connection</span>
+              <span>Community programming</span>
             </li>
           </ul>
           <div class="text-center mt-8">
@@ -119,22 +272,22 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight } from "lucide-re
         
         <!-- IRL Advisors Card -->
         <div class="bg-secondary/5 p-8 rounded-lg border border-secondary/20 shadow-sm">
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL Advisors</h3>
+          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL Advisors <span class="text-sm text-foreground/60 font-normal">(for-profit)</span></h3>
           <p class="text-foreground/80 mb-6">
-            IRL Advisors is for families, organizations, and institutions looking for tailored strategy, consulting, or facilitation.
+            Delivering strategy, advisory, and innovation.
           </p>
           <ul class="space-y-2 text-foreground/80 mb-6">
             <li class="flex items-start">
               <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Customized strategic planning</span>
+              <span>Custom advisory services</span>
             </li>
             <li class="flex items-start">
               <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Facilitation services</span>
+              <span>Proprietary technology</span>
             </li>
             <li class="flex items-start">
               <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Program design & implementation</span>
+              <span>Tailored family strategy</span>
             </li>
           </ul>
           <div class="text-center mt-8">
@@ -149,6 +302,46 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight } from "lucide-re
               Learn About Services
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Final CTA Section -->
+  <section class="py-16 md:py-24 bg-primary/5">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-6">
+          Ready to take your legacy further?
+        </h2>
+        <p class="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto">
+          Whether you're a family preparing for succession, an institution designing programs for legacy stewardship, or an advisor seeking tools — IRL Advisors is your partner.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="https://IRLAdvisors.com/contact" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class={buttonVariants({
+              size: "lg",
+              variant: "default",
+              class: "font-medium text-base px-8 bg-secondary hover:bg-secondary/90"
+            })}
+          >
+            Schedule a Consultation
+          </a>
+          <a 
+            href="https://IRLAdvisors.com/tools/legacy-assessment" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class={buttonVariants({
+              size: "lg",
+              variant: "outline",
+              class: "font-medium text-base px-8 border-secondary text-secondary hover:bg-secondary/10"
+            })}
+          >
+            Explore Our Legacy Tool
+          </a>
         </div>
       </div>
     </div>
