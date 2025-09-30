@@ -3,6 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Mail, Bookmark, Users } from "lucide-react";
 import BlogNewsletterForm from "@/components/BlogNewsletterForm";
+import { Image } from 'astro:assets';
+import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_633616474964641373_n_nw_7c1699e8.jpg";
 ---
 
 <BaseLayout
@@ -10,25 +12,39 @@ import BlogNewsletterForm from "@/components/BlogNewsletterForm";
   description="Explore powerful stories, reflections, and insights on what it means to build, carry, and live legacy—in all its forms."
 >
   <!-- Hero Section -->
-  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
+  <section class="py-24 md:py-32 relative overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 z-0">
+      <Image 
+        src={familyBackground} 
+        alt="Group of young girls smiling together, representing legacy in action" 
+        class="w-full h-full object-cover brightness-[0.8] sepia-[0.15]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/60 mix-blend-multiply"></div>
     </div>
 
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
-          Where Legacy Lives in Real Life
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6">
+          This didn't start with strategy.<br/>It started with a story.
         </h1>
-        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
-          Explore powerful stories, reflections, and insights on what it means to build, carry, and live legacy—in all its forms.
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          In the Room with Legacy™ was born in a sacred transition.
         </p>
+        <a 
+          href="#stories-reflections" 
+          class={buttonVariants({
+            size: "lg",
+            class: "font-medium bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#052d3f] transition-colors duration-300 px-8 py-3 text-lg shadow-lg"
+          })}
+        >
+          Explore Our Stories
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Stories & Reflections Section -->
-  <section class="py-24 bg-white">
+  <section id="stories-reflections" class="py-24 bg-white">
     <div class="container">
       <div class="max-w-5xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
