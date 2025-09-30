@@ -109,6 +109,14 @@ export default function Navigation() {
       
       <NavItem href="/advisors">IRL Advisors</NavItem>
       
+      <NavDropdown 
+        trigger="Support IRL" 
+        items={[
+          { href: "/support/donation", label: "Donation" },
+          { href: "/support/merch", label: "Merch" }
+        ]} 
+      />
+      
       <NavItem href="/contact">Contact</NavItem>
     </nav>
   );
