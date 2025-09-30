@@ -2,23 +2,33 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { CalendarDays, Users, Building } from "lucide-react";
+import { Image } from 'astro:assets';
+import familyGathering from '../../assets/family_gathering_nw_664eb12a.jpg';
 ---
 
 <BaseLayout
   title="Programs | In the Room With Legacy"
   description="Explore our programs designed to help families preserve their legacy, build stronger bonds, and prepare for the future."
 >
-  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
+  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 w-full h-full z-0">
+      <div class="relative w-full h-full">
+        <Image 
+          src={familyGathering} 
+          alt="Vintage family gathering in backyard" 
+          class="w-full h-full object-cover brightness-90" 
+        />
+        <div class="absolute inset-0 bg-primary/70 mix-blend-multiply"></div>
+      </div>
     </div>
 
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 px-4">
           Our Legacy Programs
         </h1>
-        <p class="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto px-4">
           Practical tools and experiences designed to help families preserve what matters most across generations.
         </p>
       </div>
