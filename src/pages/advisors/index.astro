@@ -1,43 +1,49 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Target, Building, Briefcase, ExternalLink, ArrowRight, CheckCircle, Users, University, Sparkles, TestTube, Wrench, Computer, BriefcaseBusiness } from "lucide-react";
+import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Users, University, Network, TestTube, Wrench, Computer, BriefcaseBusiness, CheckCheck, BadgeCheck, Handshake, ListChecks } from "lucide-react";
+import { Image } from 'astro:assets';
+import legacyCollage from "@/assets/legacy_collage_nw_ddd335e4.png";
 ---
 
-<BaseLayout title="IRL Advisors - In the Room With Legacy" description="IRL Advisors is the for-profit advisory and innovation arm of In the Room with Legacy™, equipping families, businesses, and institutions with tools, strategies, and technologies.">
+<BaseLayout title="IRL Advisors - In the Room With Legacy" description="IRL Advisors is the for-profit advisory and innovation arm of In the Room with Legacy™. We provide the strategies, tools, and networks that families, businesses, and institutions need to sustain legacy across generations.">
   <!-- Hero Section -->
-  <section class="py-24 md:py-32 bg-primary/5 relative overflow-hidden">
+  <section class="py-24 md:py-32 bg-[#f7f6dc] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20 z-0">
+      <Image 
+        src={legacyCollage} 
+        alt="Legacy collage background" 
+        class="w-full h-full object-cover object-center"
+      />
+      <div class="absolute inset-0 bg-[#f7f6dc]/40 mix-blend-overlay"></div>
+    </div>
     <div class="container relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-8">
-          Advisory. Strategy. Technology.<br />For Families & Institutions Building Legacy.
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-[#052d3f] leading-tight mb-8">
+          Advisory. Innovation. Connection.<br />For Families & Institutions Building Legacy.
         </h1>
-        <p class="text-lg md:text-xl text-foreground/80 mb-10 max-w-3xl mx-auto">
-          IRL Advisors is the for-profit advisory and innovation arm of In the Room with Legacy™. We equip families, businesses, and institutions with the tools, strategies, and technologies they need to sustain legacy across generations.
+        <p class="text-lg md:text-xl text-[#052d3f]/80 mb-10 max-w-3xl mx-auto">
+          IRL Advisors is the for-profit advisory and innovation arm of In the Room with Legacy™. We provide the strategies, tools, and networks that families, businesses, and institutions need to sustain legacy across generations.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="https://IRLAdvisors.com/contact" 
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact" 
             class={buttonVariants({
               size: "lg",
-              class: "font-medium text-base px-8"
+              class: "font-medium text-base px-8 bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
             })}
           >
             Work With Us
           </a>
           <a 
-            href="https://IRLAdvisors.com/tools" 
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#tools" 
             class={buttonVariants({
               variant: "outline",
               size: "lg",
-              class: "font-medium text-base px-8 border-primary text-primary hover:bg-primary/10"
+              class: "font-medium text-base px-8 border-[#052d3f] text-[#052d3f] hover:bg-[#052d3f]/10 shadow-sm"
             })}
           >
-            Explore Our Tools
+            Explore Our Tools & Network
           </a>
         </div>
       </div>
@@ -48,46 +54,46 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight, CheckCircle, Use
   <section class="py-16 md:py-24 bg-white">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-8">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f] mb-8">
           Who We Are
         </h2>
-        <p class="text-lg text-foreground/80 mb-12">
-          IRL Advisors exists at the intersection of family governance, wealth stewardship, and next-gen innovation. While In the Room with Legacy™ sparks cultural conversation and community, IRL Advisors delivers the advisory services, strategic counsel, and technology solutions that turn vision into action.
+        <p class="text-lg text-[#052d3f]/80 mb-12">
+          IRL Advisors is where family enterprise expertise meets innovation. While In the Room with Legacy™ centers cultural storytelling and community, IRL Advisors delivers the advisory services, strategic counsel, and professional networks that transform vision into action.
         </p>
         
-        <h3 class="text-xl font-display font-semibold mb-8 text-primary">We Work With</h3>
+        <h3 class="text-xl font-display font-semibold mb-8 text-[#052d3f]">We Exist to Help</h3>
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Client Type 1 -->
-          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
-            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-              <Users class="text-primary h-7 w-7" />
+          <div class="bg-[#f7f6dc] p-6 rounded-lg border border-[#052d3f]/10 text-center flex flex-col items-center hover:shadow-md transition-all group">
+            <div class="w-16 h-16 mb-4 rounded-full bg-[#052d3f]/10 flex items-center justify-center group-hover:bg-[#052d3f]/20 transition-colors">
+              <Users class="text-[#052d3f] h-8 w-8" />
             </div>
-            <h4 class="font-display font-semibold text-primary">Enterprising families</h4>
+            <h4 class="font-display font-semibold text-[#052d3f] text-lg">Enterprising families</h4>
           </div>
           
           <!-- Client Type 2 -->
-          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
-            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-              <Building class="text-primary h-7 w-7" />
+          <div class="bg-[#f7f6dc] p-6 rounded-lg border border-[#052d3f]/10 text-center flex flex-col items-center hover:shadow-md transition-all group">
+            <div class="w-16 h-16 mb-4 rounded-full bg-[#052d3f]/10 flex items-center justify-center group-hover:bg-[#052d3f]/20 transition-colors">
+              <Building class="text-[#052d3f] h-8 w-8" />
             </div>
-            <h4 class="font-display font-semibold text-primary">Family businesses & offices</h4>
+            <h4 class="font-display font-semibold text-[#052d3f] text-lg">Family businesses & offices</h4>
           </div>
           
           <!-- Client Type 3 -->
-          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
-            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-              <University class="text-primary h-7 w-7" />
+          <div class="bg-[#f7f6dc] p-6 rounded-lg border border-[#052d3f]/10 text-center flex flex-col items-center hover:shadow-md transition-all group">
+            <div class="w-16 h-16 mb-4 rounded-full bg-[#052d3f]/10 flex items-center justify-center group-hover:bg-[#052d3f]/20 transition-colors">
+              <University class="text-[#052d3f] h-8 w-8" />
             </div>
-            <h4 class="font-display font-semibold text-primary">Institutions & nonprofits</h4>
+            <h4 class="font-display font-semibold text-[#052d3f] text-lg">Institutions & nonprofits</h4>
           </div>
           
           <!-- Client Type 4 -->
-          <div class="bg-muted/10 p-6 rounded-lg border border-border/10 text-center flex flex-col items-center hover:shadow-md transition-all">
-            <div class="w-14 h-14 mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-              <BriefcaseBusiness class="text-primary h-7 w-7" />
+          <div class="bg-[#f7f6dc] p-6 rounded-lg border border-[#052d3f]/10 text-center flex flex-col items-center hover:shadow-md transition-all group">
+            <div class="w-16 h-16 mb-4 rounded-full bg-[#052d3f]/10 flex items-center justify-center group-hover:bg-[#052d3f]/20 transition-colors">
+              <BriefcaseBusiness class="text-[#052d3f] h-8 w-8" />
             </div>
-            <h4 class="font-display font-semibold text-primary">Advisors & professionals</h4>
+            <h4 class="font-display font-semibold text-[#052d3f] text-lg">Advisors & professionals</h4>
           </div>
         </div>
       </div>
@@ -95,83 +101,87 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight, CheckCircle, Use
   </section>
   
   <!-- What We Do Section -->
-  <section class="py-16 md:py-24 bg-muted/5">
+  <section id="tools" class="py-16 md:py-24 bg-[#d8d0c0]/30">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-8">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f] mb-8">
           What We Do (The Core Services)
         </h2>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
         <!-- Service 1: Advisory Services -->
-        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm hover:shadow-md transition-all">
-          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-            <Target class="text-primary h-7 w-7" />
+        <div class="bg-[#f7f6dc] p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
+          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
+            <Target class="text-[#052d3f] h-8 w-8" />
           </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">Advisory Services</h3>
-          <ul class="space-y-3 text-foreground/80">
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Advisory Services</h3>
+          <ul class="space-y-4 text-[#052d3f]/80 flex-grow">
             <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
               <span>Family business strategy & governance</span>
             </li>
             <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Legacy planning & succession design</span>
+              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
+              <span>Succession and transition design</span>
             </li>
             <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
               <span>Wealth stewardship frameworks</span>
             </li>
             <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Multi-generational engagement strategies</span>
+              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
+              <span>Multi-generational engagement</span>
             </li>
           </ul>
         </div>
         
         <!-- Service 2: Signature Tools & Products -->
-        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm hover:shadow-md transition-all">
-          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-            <TestTube class="text-primary h-7 w-7" />
+        <div class="bg-[#f7f6dc] p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
+          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
+            <TestTube class="text-[#052d3f] h-8 w-8" />
           </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">Signature Tools & Products</h3>
-          <ul class="space-y-3 text-foreground/80">
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Signature Tools & Products</h3>
+          <ul class="space-y-4 text-[#052d3f]/80 flex-grow">
             <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>IRL Legacy Assessment Tool (AI-powered, culturally-rooted assessment)</span>
+              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
+              <span>IRL Legacy Assessment Tool – AI-powered, culturally rooted legacy assessment for families & advisors</span>
             </li>
             <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
               <span>Data dashboards & insights for family wealth and impact</span>
             </li>
             <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
+              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
               <span>Custom retreats, labs, and workshops</span>
             </li>
           </ul>
         </div>
         
-        <!-- Service 3: Innovation & Technology -->
-        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm hover:shadow-md transition-all">
-          <div class="w-14 h-14 mb-6 rounded-full bg-primary/10 flex items-center justify-center">
-            <Computer class="text-primary h-7 w-7" />
+        <!-- Service 3: Professional Network -->
+        <div class="bg-[#f7f6dc] p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
+          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
+            <Network class="text-[#052d3f] h-8 w-8" />
           </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">Innovation & Technology</h3>
-          <ul class="space-y-3 text-foreground/80">
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>AI-powered assessments & storytelling tools</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Digital platforms for legacy preservation</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Licensing solutions for advisors and institutions</span>
-            </li>
-          </ul>
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Professional Network</h3>
+          <div class="text-[#052d3f]/80 flex-grow">
+            <div class="mb-4 text-center font-medium text-[#052d3f]">
+              Black Family Business Network (BFBN)
+            </div>
+            <p class="mb-4 text-[#052d3f]/80">
+              A first-of-its-kind hub connecting Black family business leaders, heirs, and professionals. Through curated convenings, resources, and peer-to-peer exchange, BFBN builds community while advancing the role of Black families in global enterprise and wealth creation.
+            </p>
+          </div>
+          <a 
+            href="#bfbn" 
+            class={buttonVariants({
+              variant: "outline",
+              size: "default",
+              class: "mt-4 w-full justify-center border-[#052d3f] text-[#052d3f] hover:bg-[#052d3f]/10"
+            })}
+          >
+            Learn More
+          </a>
         </div>
       </div>
     </div>
@@ -181,47 +191,47 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight, CheckCircle, Use
   <section class="py-16 md:py-24 bg-white">
     <div class="container">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f] mb-6 text-center">
           Why IRL Advisors
         </h2>
-        <p class="text-lg text-foreground/80 mb-12 text-center">
-          Legacy is more than inheritance — it's structure, stewardship, and strategy.
+        <p class="text-lg text-[#052d3f]/80 mb-12 text-center font-medium">
+          Legacy thrives when families have structure, strategy, and support.
         </p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Differentiator 1 -->
-          <div class="flex items-start">
-            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+          <div class="flex items-start bg-[#f7f6dc]/70 p-6 rounded-lg hover:shadow-md transition-all">
+            <BadgeCheck className="h-7 w-7 text-[#9a4a0b] mr-4 mt-1 flex-shrink-0" />
             <div>
-              <h3 class="font-display font-semibold text-primary text-lg mb-2">Proven expertise in both public and private sectors</h3>
-              <p class="text-foreground/80">Our team brings experience from family offices, foundations, Fortune 500 companies, and public service.</p>
+              <h3 class="font-display font-semibold text-[#052d3f] text-lg mb-2">Decades of expertise in both public and private sectors</h3>
+              <p class="text-[#052d3f]/80">Bringing diverse perspectives from family offices, foundations, global corporations, and beyond.</p>
             </div>
           </div>
           
           <!-- Differentiator 2 -->
-          <div class="flex items-start">
-            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+          <div class="flex items-start bg-[#f7f6dc]/70 p-6 rounded-lg hover:shadow-md transition-all">
+            <BadgeCheck className="h-7 w-7 text-[#9a4a0b] mr-4 mt-1 flex-shrink-0" />
             <div>
-              <h3 class="font-display font-semibold text-primary text-lg mb-2">Deep cultural insight rooted in lived legacy stewardship</h3>
-              <p class="text-foreground/80">We understand legacy from both professional expertise and personal experience.</p>
+              <h3 class="font-display font-semibold text-[#052d3f] text-lg mb-2">Deep cultural insight rooted in lived legacy stewardship</h3>
+              <p class="text-[#052d3f]/80">Understanding the nuances of legacy from professional expertise and personal experience.</p>
             </div>
           </div>
           
           <!-- Differentiator 3 -->
-          <div class="flex items-start">
-            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+          <div class="flex items-start bg-[#f7f6dc]/70 p-6 rounded-lg hover:shadow-md transition-all">
+            <BadgeCheck className="h-7 w-7 text-[#9a4a0b] mr-4 mt-1 flex-shrink-0" />
             <div>
-              <h3 class="font-display font-semibold text-primary text-lg mb-2">A dual lens: human-centered storytelling + data-driven strategy</h3>
-              <p class="text-foreground/80">Our approach balances the qualitative and quantitative aspects of legacy building.</p>
+              <h3 class="font-display font-semibold text-[#052d3f] text-lg mb-2">A dual lens: people-centered storytelling + data-driven strategy</h3>
+              <p class="text-[#052d3f]/80">Balancing the human elements of legacy with rigorous strategic frameworks.</p>
             </div>
           </div>
           
           <!-- Differentiator 4 -->
-          <div class="flex items-start">
-            <CheckCircle className="h-6 w-6 text-secondary mr-3 mt-1 flex-shrink-0" />
+          <div class="flex items-start bg-[#f7f6dc]/70 p-6 rounded-lg hover:shadow-md transition-all">
+            <BadgeCheck className="h-7 w-7 text-[#9a4a0b] mr-4 mt-1 flex-shrink-0" />
             <div>
-              <h3 class="font-display font-semibold text-primary text-lg mb-2">Tools built to last generations, not trends</h3>
-              <p class="text-foreground/80">We design for longevity and durability, not just immediate needs.</p>
+              <h3 class="font-display font-semibold text-[#052d3f] text-lg mb-2">An ecosystem that unites advisory, technology, and networks</h3>
+              <p class="text-[#052d3f]/80">Creating a comprehensive approach to legacy building across multiple dimensions.</p>
             </div>
           </div>
         </div>
@@ -230,118 +240,155 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight, CheckCircle, Use
   </section>
   
   <!-- Our Ecosystem Section -->
-  <section class="py-16 md:py-24 bg-muted/5">
+  <section class="py-16 md:py-24 bg-[#d8d0c0]/30">
     <div class="container">
-      <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f] text-center mb-12">
         Our Ecosystem
       </h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <!-- IRL Card -->
-        <div class="bg-white p-8 rounded-lg border border-border/10 shadow-sm">
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL <span class="text-sm text-foreground/60 font-normal">(nonprofit)</span></h3>
-          <p class="text-foreground/80 mb-6">
-            Inspiring culture, conversation, and community.
+        <div class="bg-[#f7f6dc] p-8 rounded-lg border border-[#052d3f]/10 shadow-md h-full flex flex-col">
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f]">IRL <span class="text-sm text-[#052d3f]/60 font-normal ml-2">(nonprofit)</span></h3>
+          <p class="text-[#052d3f]/80 mb-6 font-medium">
+            Inspiring culture, storytelling, and public programming.
           </p>
-          <ul class="space-y-2 text-foreground/80 mb-6">
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
-              <span>Public resources & tools</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
-              <span>Educational content</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-primary mr-2 mt-1 flex-shrink-0" />
-              <span>Community programming</span>
-            </li>
-          </ul>
-          <div class="text-center mt-8">
-            <a
-              href="/"
-              class={buttonVariants({
-                variant: "outline",
-                class: "border-primary text-primary hover:bg-primary/10 font-medium"
-              })}
-            >
-              Explore IRL Resources
-            </a>
+          <div class="bg-white/50 p-6 rounded-lg mb-6 flex-grow">
+            <ul class="space-y-3 text-[#052d3f]/80 mb-0">
+              <li class="flex items-start">
+                <CheckCheck className="h-5 w-5 text-[#052d3f] mr-3 mt-0.5 flex-shrink-0" />
+                <span>Public resources & educational content</span>
+              </li>
+              <li class="flex items-start">
+                <CheckCheck className="h-5 w-5 text-[#052d3f] mr-3 mt-0.5 flex-shrink-0" />
+                <span>Community programming & events</span>
+              </li>
+              <li class="flex items-start">
+                <CheckCheck className="h-5 w-5 text-[#052d3f] mr-3 mt-0.5 flex-shrink-0" />
+                <span>Free legacy-building resources</span>
+              </li>
+            </ul>
           </div>
         </div>
         
         <!-- IRL Advisors Card -->
-        <div class="bg-secondary/5 p-8 rounded-lg border border-secondary/20 shadow-sm">
-          <h3 class="text-xl font-display font-semibold mb-4 text-primary">IRL Advisors <span class="text-sm text-foreground/60 font-normal">(for-profit)</span></h3>
-          <p class="text-foreground/80 mb-6">
-            Delivering strategy, advisory, and innovation.
+        <div class="bg-[#052d3f] p-8 rounded-lg border border-[#052d3f] shadow-md h-full flex flex-col">
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#f7f6dc]">IRL Advisors <span class="text-sm text-[#f7f6dc]/60 font-normal ml-2">(for-profit)</span></h3>
+          <p class="text-[#f7f6dc]/80 mb-6 font-medium">
+            Delivering advisory services, technology tools, and professional networks (including BFBN).
           </p>
-          <ul class="space-y-2 text-foreground/80 mb-6">
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Custom advisory services</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Proprietary technology</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-secondary mr-2 mt-1 flex-shrink-0" />
-              <span>Tailored family strategy</span>
-            </li>
-          </ul>
-          <div class="text-center mt-8">
-            <a
-              href="https://IRLAdvisors.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class={buttonVariants({
-                class: "font-medium"
-              })}
-            >
-              Learn About Services
-            </a>
+          <div class="bg-[#f7f6dc]/10 p-6 rounded-lg mb-6 flex-grow">
+            <ul class="space-y-3 text-[#f7f6dc]/90 mb-0">
+              <li class="flex items-start">
+                <CheckCheck className="h-5 w-5 text-[#9a4a0b] mr-3 mt-0.5 flex-shrink-0" />
+                <span>Professional advisory services</span>
+              </li>
+              <li class="flex items-start">
+                <CheckCheck className="h-5 w-5 text-[#9a4a0b] mr-3 mt-0.5 flex-shrink-0" />
+                <span>Proprietary legacy assessment tools</span>
+              </li>
+              <li class="flex items-start">
+                <CheckCheck className="h-5 w-5 text-[#9a4a0b] mr-3 mt-0.5 flex-shrink-0" />
+                <span>Black Family Business Network</span>
+              </li>
+            </ul>
           </div>
         </div>
+      </div>
+      
+      <div class="max-w-3xl mx-auto text-center mt-12 bg-[#f7f6dc] p-6 rounded-lg shadow-md">
+        <p class="text-[#052d3f] text-lg font-medium">
+          Together, they form a $100M+ legacy ecosystem designed to amplify families and institutions across generations.
+        </p>
       </div>
     </div>
   </section>
   
   <!-- Final CTA Section -->
-  <section class="py-16 md:py-24 bg-primary/5">
+  <section id="contact" class="py-16 md:py-24 bg-[#f7f6dc]">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-primary mb-6">
-          Ready to take your legacy further?
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f] mb-6">
+          Build with strategy. Connect with peers. Lead with legacy.
         </h2>
-        <p class="text-lg md:text-xl text-foreground/80 mb-10 max-w-2xl mx-auto">
-          Whether you're a family preparing for succession, an institution designing programs for legacy stewardship, or an advisor seeking tools — IRL Advisors is your partner.
+        <p class="text-lg md:text-xl text-[#052d3f]/80 mb-10 max-w-2xl mx-auto">
+          Whether you're a family preparing for succession, a Black family business leader seeking community, or an institution designing legacy programs — IRL Advisors is your partner.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="https://IRLAdvisors.com/contact" 
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact-form" 
             class={buttonVariants({
               size: "lg",
               variant: "default",
-              class: "font-medium text-base px-8 bg-secondary hover:bg-secondary/90"
+              class: "font-medium text-base px-8 py-6 bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
             })}
           >
             Schedule a Consultation
           </a>
           <a 
-            href="https://IRLAdvisors.com/tools/legacy-assessment" 
-            target="_blank"
-            rel="noopener noreferrer"
+            id="bfbn"
+            href="#bfbn-form" 
             class={buttonVariants({
               size: "lg",
               variant: "outline",
-              class: "font-medium text-base px-8 border-secondary text-secondary hover:bg-secondary/10"
+              class: "font-medium text-base px-8 py-6 border-[#052d3f] bg-transparent text-[#052d3f] hover:bg-[#052d3f]/10 shadow-sm"
             })}
           >
-            Explore Our Legacy Tool
+            Join the Black Family Business Network
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Form Section -->
+  <section id="contact-form" class="py-16 md:py-24 bg-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-display font-bold tracking-tight text-[#052d3f] mb-10 text-center">
+          Get Started
+        </h2>
+        <div class="bg-[#f7f6dc] p-8 rounded-lg shadow-md">
+          <form class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="block text-sm font-medium text-[#052d3f]">Full Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-md border border-[#052d3f]/20 focus:outline-none focus:ring-2 focus:ring-[#052d3f]/40 focus:border-[#052d3f]" />
+              </div>
+              <div class="space-y-2">
+                <label for="email" class="block text-sm font-medium text-[#052d3f]">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-md border border-[#052d3f]/20 focus:outline-none focus:ring-2 focus:ring-[#052d3f]/40 focus:border-[#052d3f]" />
+              </div>
+              <div class="space-y-2">
+                <label for="organization" class="block text-sm font-medium text-[#052d3f]">Organization/Company</label>
+                <input type="text" id="organization" name="organization" class="w-full px-4 py-3 rounded-md border border-[#052d3f]/20 focus:outline-none focus:ring-2 focus:ring-[#052d3f]/40 focus:border-[#052d3f]" />
+              </div>
+              <div class="space-y-2">
+                <label for="interest" class="block text-sm font-medium text-[#052d3f]">Primary Interest</label>
+                <select id="interest" name="interest" class="w-full px-4 py-3 rounded-md border border-[#052d3f]/20 focus:outline-none focus:ring-2 focus:ring-[#052d3f]/40 focus:border-[#052d3f]">
+                  <option value="">Please select...</option>
+                  <option value="advisory">Advisory Services</option>
+                  <option value="tools">Legacy Assessment Tools</option>
+                  <option value="bfbn">Black Family Business Network</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <label for="message" class="block text-sm font-medium text-[#052d3f]">How can we help?</label>
+              <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-md border border-[#052d3f]/20 focus:outline-none focus:ring-2 focus:ring-[#052d3f]/40 focus:border-[#052d3f]"></textarea>
+            </div>
+            <input type="hidden" name="form_name" value="IRL Advisors Contact" />
+            <button 
+              type="submit" 
+              class={buttonVariants({
+                size: "lg",
+                class: "w-full justify-center font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              })}
+            >
+              Submit Request
+            </button>
+          </form>
         </div>
       </div>
     </div>
