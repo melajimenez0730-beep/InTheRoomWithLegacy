@@ -2,6 +2,8 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown } from "lucide-react";
+import { Image } from 'astro:assets';
+import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681_7611223003304458758_n_nw_a861f184.jpg";
 ---
 
 <BaseLayout
@@ -19,6 +21,13 @@ import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, 
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-4 sm:mb-6">
           Because love and legacy can't wait until it's too late.
         </h1>
+        
+        <div class="max-w-2xl mx-auto mb-6 sm:mb-8">
+          <div class="relative rounded-lg overflow-hidden mb-6 sm:mb-8 shadow-lg">
+            <Image src={familyVintagePhoto} alt="Vintage family gathering" class="w-full object-cover brightness-[0.9] sepia-[0.15] aspect-[16/9] sm:aspect-[21/9]"/>
+          </div>
+        </div>
+        
         <p class="text-base sm:text-lg md:text-xl text-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
           Bring your family together across generations for an unforgettable day of truth-telling, storytelling, and preparation — while you still can.
         </p>
@@ -27,7 +36,8 @@ import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, 
             href="#apply" 
             class={buttonVariants({
               size: "lg",
-              class: "font-medium w-full justify-center"
+              variant: "default",
+              class: "font-medium w-full justify-center bg-primary text-primary-foreground hover:bg-primary/90"
             })}
           >
             Apply for a Family Session
