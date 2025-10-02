@@ -102,9 +102,9 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       type: "article",
       topic: "nepotism",
       icon: "FileText",
-      url: "/pdfs/the_case_for_ethical_nepotism_nw_08789f72.pdf",
-      buttonText: "Download",
-      isDownloadable: true
+      url: "/articles/ethical-nepotism",
+      buttonText: "Read Article",
+      isDownloadable: false
     },
     {
       title: "Legacy Lessons from the Land",
@@ -112,9 +112,9 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       type: "article",
       topic: "stewardship",
       icon: "FileText", 
-      url: "/pdfs/legacy_lessons_from_the_land_nw_a977d8d2.pdf",
-      buttonText: "Download",
-      isDownloadable: true
+      url: "/articles/legacy-lessons-land",
+      buttonText: "Read Article",
+      isDownloadable: false
     },
     {
       title: "Raising the Steward: Preparing the Next Generation for Responsibility",
@@ -122,9 +122,9 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       type: "article",
       topic: "stewardship",
       icon: "FileText",
-      url: "/pdfs/raising_the_steward_blog_post_nw_2a8581a4.pdf",
-      buttonText: "Download",
-      isDownloadable: true
+      url: "/articles/raising-the-steward",
+      buttonText: "Read Article",
+      isDownloadable: false
     },
     {
       title: "Parenting a Parent: A Guide for Adult Children",
@@ -133,7 +133,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       topic: "caregiving",
       icon: "Book",
       url: "/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf",
-      buttonText: "Download",
+      buttonText: "Download Guide",
       isDownloadable: true
     },
     {
@@ -143,7 +143,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       topic: "legacy",
       icon: "Mail",
       url: "/about/founder-letter",
-      buttonText: "Read Now",
+      buttonText: "Read Letter",
       isDownloadable: false
     },
     {
@@ -153,7 +153,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       topic: "legacy",
       icon: "FileText",
       url: "/blog/legacy-lifestyle",
-      buttonText: "Read Now",
+      buttonText: "Read Article",
       isDownloadable: false
     },
     {
@@ -163,7 +163,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       topic: "strategy",
       icon: "Bookmark",
       url: "/blog/heir-readiness",
-      buttonText: "Read Now",
+      buttonText: "Read Worksheet",
       isDownloadable: false
     }
   ];
@@ -234,10 +234,19 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
           iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>';
       }
       
-      // Download icon for button
-      let buttonIcon = resource.isDownloadable ? 
-        '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>' :
-        '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"></path><path d="m9 16 3 3 3-3"></path><path d="M12 3v16"></path></svg>';
+      // Icon for button - different icon based on content type
+      let buttonIcon = '';
+      if (resource.isDownloadable) {
+        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>';
+      } else if (resource.type === 'article') {
+        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Z"></path><path d="M9.5 15V9"></path><path d="m14.5 9-5 6"></path><path d="M14.5 15V9"></path></svg>';
+      } else if (resource.type === 'letter') {
+        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9 6 9-6"></path><path d="m3 9 9 6 9-6"></path><path d="M3 4h18v16H3V4Z"></path></svg>';
+      } else if (resource.type === 'worksheet') {
+        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m10 13-2 2 2 2"></path><path d="m14 17 2-2-2-2"></path></svg>';
+      } else {
+        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path><path d="M19.071 4.929A10 10 0 1 0 4.93 19.072 10 10 0 0 0 19.07 4.929Z"></path><path d="M9.5 9.5 12 12l2.5 2.5"></path></svg>';
+      }
       
       // Resource type label
       let typeLabel = resource.type.charAt(0).toUpperCase() + resource.type.slice(1);
