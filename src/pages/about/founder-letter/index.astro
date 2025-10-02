@@ -1,67 +1,199 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+
+// Import images for storytelling mood board
+import legacyCollage from "@/assets/legacy_collage_nw_ddd335e4.png";
+import legacyMoments from "@/assets/legacy_moments_nw_f6fe48da.png";
+import familyPorch from "@/assets/family_on_porch_nw_6bf9f9ad.jpg";
+import familyGathering from "@/assets/family_gathering_nw_664eb12a.jpg";
+import presentation3 from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-3_nw_390fd864.png";
+import presentation4 from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-4_nw_2c87fa2a.png";
 ---
 
 <BaseLayout
   title="Letter from Our Founder | In the Room With Legacy"
   description="A personal letter from our founder, Lauren R. Miller, sharing her journey and the inspiration behind In the Room with Legacy™."
 >
-  <section class="py-24 bg-white">
-    <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <!-- Letter Header -->
-        <div class="text-center mb-10">
-          <h1 class="text-4xl font-display font-bold text-primary mb-4">
-            Letter from Our Founder
-          </h1>
-          <div class="w-24 h-0.5 bg-primary/20 mx-auto"></div>
+  <div class="relative z-10 overflow-hidden">
+  <!-- Hero Section -->
+  <section class="py-16 md:py-20 bg-white overflow-hidden relative">
+    <div class="container relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <!-- Letter Header with Large Image -->
+        <div class="relative mb-16">
+          <div class="absolute inset-0 bg-primary/10 rounded-2xl"></div>
+          <div class="relative p-8 md:p-10">
+            <div class="text-center mb-8">
+              <h1 class="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
+                Letter from Our Founder
+              </h1>
+              <div class="w-32 h-0.5 bg-primary/40 mx-auto"></div>
+            </div>
+            <div class="rounded-xl overflow-hidden max-w-2xl mx-auto shadow-xl">
+              <Image 
+                src={legacyCollage} 
+                alt="A collection of family legacy photos across generations" 
+                class="w-full h-auto" 
+                width={900}
+                height={400}
+              />
+            </div>
+          </div>
         </div>
         
-        <!-- Letter Content -->
-        <div class="prose prose-lg max-w-none">
-          <p class="font-medium text-primary text-xl">
-            Dear Legacy Builders,
-          </p>
+        <!-- Letter Content with Storytelling Mood Board Layout -->
+        <div class="max-w-none">
+          <!-- Section 1: Personal Journey -->
+          <div class="mb-20 scroll-reveal">
+            <div class="p-8 rounded-xl bg-[#f7f6dc]/30">
+              <p class="font-medium text-primary text-2xl mb-6">
+                Dear Legacy Builders,
+              </p>
+              
+              <div class="md:flex items-center gap-8">
+                <div class="md:w-1/2 prose prose-lg">
+                  <p class="text-lg">
+                    When I was 25 years old, my father was diagnosed with an illness that would change both of our lives. As his caregiver, I had a front-row seat to a profound transition — not just of health, but of wisdom, responsibility, and legacy. What began as a deeply personal journey of caregiving transformed into a clarity of purpose that would ultimately birth In the Room with Legacy™.
+                  </p>
+                </div>
+                <div class="md:w-1/2 mt-6 md:mt-0">
+                  <div class="rounded-lg overflow-hidden shadow-lg">
+                    <Image 
+                      src={familyGathering} 
+                      alt="Family gathering outdoors showing multi-generational connection" 
+                      class="w-full h-auto" 
+                      width={600}
+                      height={400}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
-          <p>
-            When I was 25 years old, my father was diagnosed with an illness that would change both of our lives. As his caregiver, I had a front-row seat to a profound transition — not just of health, but of wisdom, responsibility, and legacy. What began as a deeply personal journey of caregiving transformed into a clarity of purpose that would ultimately birth In the Room with Legacy™.
-          </p>
+          <!-- Section 2: Family Legacy -->
+          <div class="mb-20 scroll-reveal">
+            <h2 class="text-2xl font-display font-bold text-primary mb-6 border-l-4 border-[#9a4a0b] pl-4">
+              Conversations That Come Too Late
+            </h2>
+            
+            <div class="mb-8">
+              <div class="rounded-lg overflow-hidden shadow-lg mb-8">
+                <Image 
+                  src={familyPorch} 
+                  alt="Family on porch having important conversations" 
+                  class="w-full h-auto" 
+                  width={900}
+                  height={500}
+                />
+              </div>
+              
+              <div class="prose prose-lg max-w-none">
+                <p>
+                  In those final years together, my father and I had conversations we'd never had before. We talked about land that had been in our family for generations. About business principles that had guided his success. About family stories that were in danger of being lost. Most importantly, we talked about the future — not just his legacy, but what I would do with what was being passed to me.
+                </p>
+                
+                <p class="font-medium text-primary/90">
+                  What struck me most during this time wasn't just what we discussed, but the realization that these conversations happened far too late. There was so much I wished I had known sooner, so many questions left partially answered, so many threads I would now have to follow without his guidance.
+                </p>
+              </div>
+            </div>
+          </div>
           
-          <p>
-            In those final years together, my father and I had conversations we'd never had before. We talked about land that had been in our family for generations. About business principles that had guided his success. About family stories that were in danger of being lost. Most importantly, we talked about the future — not just his legacy, but what I would do with what was being passed to me.
-          </p>
+          <!-- Section 3: The Important Room -->
+          <div class="mb-20 scroll-reveal">
+            <div class="md:flex flex-row-reverse items-center gap-8 bg-primary/5 p-8 rounded-xl">
+              <div class="md:w-2/5">
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                  <Image 
+                    src={presentation4} 
+                    alt="Multi-generation family photos showing the passing of legacy" 
+                    class="w-full h-auto" 
+                    width={500}
+                    height={300}
+                  />
+                </div>
+              </div>
+              <div class="md:w-3/5 prose prose-lg">
+                <h2 class="text-2xl font-display font-bold text-primary mb-4">
+                  The Most Important Room
+                </h2>
+                <p>
+                  I realized something profound: the most important room in any family's legacy journey is the room where honest conversations happen. The room where questions are asked. The room where the torch is intentionally passed, not accidentally dropped.
+                </p>
+                
+                <p>
+                  That's the room I've created with IRL — a space where families can gather with intention to preserve what matters, prepare the next generation, and protect the legacy that's been built. Whether that legacy is financial, cultural, or values-based, it deserves to be sustained.
+                </p>
+              </div>
+            </div>
+          </div>
           
-          <p>
-            What struck me most during this time wasn't just what we discussed, but the realization that these conversations happened far too late. There was so much I wished I had known sooner, so many questions left partially answered, so many threads I would now have to follow without his guidance.
-          </p>
+          <!-- Section 4: Heart and Strategy -->
+          <div class="mb-20 scroll-reveal">
+            <div class="text-center mb-6">
+              <h2 class="text-3xl font-display font-bold text-primary mb-3 inline-block border-b-2 border-[#9a4a0b] pb-2">
+                Heart and Strategy
+              </h2>
+            </div>
+            
+            <div class="rounded-lg overflow-hidden shadow-xl mb-8 max-w-2xl mx-auto">
+              <Image 
+                src={legacyMoments} 
+                alt="Legacy moments showing celebration and important life events" 
+                class="w-full h-auto" 
+                width={800}
+                height={400}
+              />
+            </div>
+            
+            <div class="prose prose-lg max-w-2xl mx-auto">
+              <p class="text-center font-medium text-lg">
+                My own journey taught me that legacy work requires both heart and strategy. That's why IRL combines the cultural and emotional elements of legacy with the practical tools of governance, succession, and wealth management. We've built a comprehensive ecosystem to support families at every stage of their legacy journey.
+              </p>
+            </div>
+          </div>
           
-          <p>
-            I realized something profound: the most important room in any family's legacy journey is the room where honest conversations happen. The room where questions are asked. The room where the torch is intentionally passed, not accidentally dropped.
-          </p>
+          <!-- Section 5: Living Legacy -->
+          <div class="mb-16 scroll-reveal">
+            <div class="p-8 bg-[#f7f6dc]/30 rounded-xl">
+              <h2 class="text-2xl font-display font-bold text-primary mb-6 text-center">
+                Legacy Is Something You Live
+              </h2>
+              
+              <div class="md:flex items-center gap-8">
+                <div class="md:w-1/2">
+                  <div class="rounded-lg overflow-hidden shadow-lg">
+                    <Image 
+                      src={presentation3} 
+                      alt="Collection of family photos arranged as a mood board" 
+                      class="w-full h-auto" 
+                      width={600}
+                      height={400}
+                    />
+                  </div>
+                </div>
+                <div class="md:w-1/2 mt-6 md:mt-0 prose prose-lg">
+                  <p>
+                    If there's one thing I've learned, it's this: legacy isn't something you leave behind — it's something you live, on purpose, every day. It's both what you build and how you build it. It's what you preserve and how you preserve it. It's not just the wealth you generate, but the way you steward it across generations.
+                  </p>
+                  
+                  <p>
+                    I invite you to join us in the room. To ask the questions that need asking. To have the conversations that shouldn't wait. To build something that lasts beyond your lifetime.
+                  </p>
+                </div>
+              </div>
+              
+              <p class="font-medium text-xl text-primary mt-8 text-center">
+                Because your legacy isn't just about you — it's about those who will carry it forward.
+              </p>
+            </div>
+          </div>
           
-          <p>
-            That's the room I've created with IRL — a space where families can gather with intention to preserve what matters, prepare the next generation, and protect the legacy that's been built. Whether that legacy is financial, cultural, or values-based, it deserves to be sustained.
-          </p>
-          
-          <p>
-            My own journey taught me that legacy work requires both heart and strategy. That's why IRL combines the cultural and emotional elements of legacy with the practical tools of governance, succession, and wealth management. We've built a comprehensive ecosystem to support families at every stage of their legacy journey.
-          </p>
-          
-          <p>
-            If there's one thing I've learned, it's this: legacy isn't something you leave behind — it's something you live, on purpose, every day. It's both what you build and how you build it. It's what you preserve and how you preserve it. It's not just the wealth you generate, but the way you steward it across generations.
-          </p>
-          
-          <p>
-            I invite you to join us in the room. To ask the questions that need asking. To have the conversations that shouldn't wait. To build something that lasts beyond your lifetime.
-          </p>
-          
-          <p class="font-medium">
-            Because your legacy isn't just about you — it's about those who will carry it forward.
-          </p>
-          
-          <div class="text-right mt-12">
+          <div class="text-right mt-12 p-6 bg-primary/5 rounded-lg">
             <p class="mb-0">With purpose,</p>
-            <p class="font-medium text-primary mb-0">Lauren R. Miller</p>
+            <p class="font-medium text-primary text-xl mb-0">Lauren R. Miller</p>
             <p class="text-sm text-foreground/70">Founder, In the Room with Legacy™</p>
           </div>
         </div>
@@ -88,4 +220,39 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
       </div>
     </div>
   </section>
+</div>
+
+<!-- Add subtle animations -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+    
+    // Create an observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    // Observe each element
+    scrollRevealElements.forEach(element => {
+      element.classList.add('opacity-0');
+      observer.observe(element);
+    });
+  });
+</script>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </BaseLayout>
