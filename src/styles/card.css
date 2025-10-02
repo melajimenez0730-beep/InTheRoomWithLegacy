@@ -1,0 +1,104 @@
+/* Uniform Card Styling */
+
+/* Base card styling */
+.content-card {
+  background-color: white;
+  border: 1px solid rgba(5, 45, 63, 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-color: rgba(5, 45, 63, 0.3);
+}
+
+/* Card with light cream background */
+.content-card-cream {
+  background-color: #f7f6dc;
+}
+
+/* Card header/image area */
+.content-card-header {
+  position: relative;
+}
+
+/* Card media placeholder */
+.content-card-media {
+  aspect-ratio: 16/9;
+  background-color: rgba(5, 45, 63, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card content area */
+.content-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* This makes the content area expand to fill available space */
+}
+
+/* Card title */
+.content-card-title {
+  color: #052d3f;
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+/* Card description */
+.content-card-description {
+  color: rgba(5, 45, 63, 0.8);
+  margin-bottom: 1.25rem;
+  flex-grow: 1; /* This pushes the button to the bottom */
+}
+
+/* Card actions area */
+.content-card-actions {
+  margin-top: auto; /* Ensures actions stay at the bottom */
+}
+
+/* Card icon */
+.content-card-icon {
+  color: #052d3f;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.content-card:hover .content-card-icon {
+  opacity: 1;
+}
+
+/* Card badge */
+.content-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #9a4a0b;
+  color: #f7f6dc;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  z-index: 10;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-card-title {
+    font-size: 1.125rem;
+  }
+  
+  .content-card-content {
+    padding: 1.25rem;
+  }
+}
