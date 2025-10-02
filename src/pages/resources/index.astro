@@ -1,0 +1,317 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { buttonVariants } from "@/components/ui/button";
+import { Search, Download, FileText, Mail, Book, Bookmark, Filter } from "lucide-react";
+import { Image } from 'astro:assets';
+import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
+---
+
+<BaseLayout
+  title="Legacy Insights & Resources | In the Room With Legacy"
+  description="Explore our complete archive of articles, guides, worksheets, and letters about building and sustaining meaningful family legacies."
+>
+  <!-- Hero Section -->
+  <section class="py-20 md:py-28 relative overflow-hidden min-h-[40vh] flex items-center">
+    <div class="absolute inset-0 z-0">
+      <Image 
+        src={familyBackground} 
+        alt="A collage of vintage family photographs representing legacy" 
+        class="w-full h-full object-cover brightness-[0.8] sepia-[0.15]"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/60 mix-blend-multiply"></div>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6">
+          Legacy Insights & Resources
+        </h1>
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Explore our complete collection of articles, guides, and tools to help you build, preserve, and pass on what matters most.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters & Search Section -->
+  <section class="py-12 bg-white border-b border-primary/10">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-6 justify-between">
+          <div class="w-full md:w-auto flex flex-wrap gap-4">
+            <button id="all-filter" class="inline-flex items-center rounded-full bg-primary text-white px-5 py-2 text-sm font-medium">
+              All Resources
+            </button>
+            <button id="articles-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
+              Articles
+            </button>
+            <button id="guides-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
+              Guides
+            </button>
+            <button id="worksheets-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
+              Worksheets
+            </button>
+            <button id="letters-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
+              Letters
+            </button>
+          </div>
+          
+          <div class="w-full md:w-64 relative">
+            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <Search className="h-4 w-4 text-muted-foreground" />
+            </div>
+            <input 
+              type="search" 
+              id="resource-search" 
+              class="block w-full pl-10 pr-3 py-2 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40"
+              placeholder="Search resources..."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource Cards -->
+  <section class="py-16 bg-muted/10">
+    <div class="container" id="resource-container">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="resources-grid">
+          <!-- Resource cards will be dynamically populated here -->
+        </div>
+
+        <!-- No Results Message (hidden by default) -->
+        <div id="no-results" class="hidden text-center py-16">
+          <div class="max-w-md mx-auto">
+            <Search className="w-16 h-16 mx-auto text-primary/30 mb-4" />
+            <h3 class="text-xl font-medium text-primary mb-2">No matching resources</h3>
+            <p class="text-muted-foreground">Try adjusting your search or filters to find what you're looking for.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Resource data
+  const resources = [
+    {
+      title: "The Case for Ethical Nepotism: Reclaiming Family Advantage",
+      description: "How families can create opportunity for their own while maintaining integrity and excellence.",
+      type: "article",
+      topic: "nepotism",
+      icon: "FileText",
+      url: "/pdfs/the_case_for_ethical_nepotism_nw_08789f72.pdf",
+      buttonText: "Download",
+      isDownloadable: true
+    },
+    {
+      title: "Legacy Lessons from the Land",
+      description: "Lessons from the land on stewardship, patience, and the rhythm of generational thinking.",
+      type: "article",
+      topic: "stewardship",
+      icon: "FileText", 
+      url: "/pdfs/legacy_lessons_from_the_land_nw_a977d8d2.pdf",
+      buttonText: "Download",
+      isDownloadable: true
+    },
+    {
+      title: "Raising the Steward: Preparing the Next Generation for Responsibility",
+      description: "How to nurture a stewardship mindset in the next generation and prepare them for the responsibility of carrying forward a legacy.",
+      type: "article",
+      topic: "stewardship",
+      icon: "FileText",
+      url: "/pdfs/raising_the_steward_blog_post_nw_2a8581a4.pdf",
+      buttonText: "Download",
+      isDownloadable: true
+    },
+    {
+      title: "Parenting a Parent: A Guide for Adult Children",
+      description: "Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools.",
+      type: "guide",
+      topic: "caregiving",
+      icon: "Book",
+      url: "/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf",
+      buttonText: "Download",
+      isDownloadable: true
+    },
+    {
+      title: "Letter from Our Founder",
+      description: "The journey that led to creating In the Room with Legacy and the mission that drives our work.",
+      type: "letter",
+      topic: "legacy",
+      icon: "Mail",
+      url: "/about/founder-letter",
+      buttonText: "Read Now",
+      isDownloadable: false
+    },
+    {
+      title: "Why Legacy is a Lifestyle, Not Just Inheritance",
+      description: "Moving beyond the narrow definition of legacy as what you leave behind to embrace it as how you live today.",
+      type: "article",
+      topic: "legacy",
+      icon: "FileText",
+      url: "/blog/legacy-lifestyle",
+      buttonText: "Read Now",
+      isDownloadable: false
+    },
+    {
+      title: "Heir Readiness: 5 Questions to Ask Yourself",
+      description: "Are you prepared to receive and steward what's being passed to you? Practical reflections for next-generation leaders.",
+      type: "worksheet",
+      topic: "strategy",
+      icon: "Bookmark",
+      url: "/blog/heir-readiness",
+      buttonText: "Read Now",
+      isDownloadable: false
+    }
+  ];
+
+  // DOM Elements
+  const resourcesGrid = document.getElementById('resources-grid');
+  const noResults = document.getElementById('no-results');
+  const searchInput = document.getElementById('resource-search');
+  const filterButtons = [
+    document.getElementById('all-filter'),
+    document.getElementById('articles-filter'),
+    document.getElementById('guides-filter'),
+    document.getElementById('worksheets-filter'),
+    document.getElementById('letters-filter')
+  ];
+
+  // Filter state
+  let activeFilter = 'all';
+  let searchQuery = '';
+
+  // Render resource cards
+  function renderResources() {
+    // Filter resources based on active filter and search query
+    const filteredResources = resources.filter(resource => {
+      const matchesFilter = activeFilter === 'all' || resource.type === activeFilter.replace('-filter', '');
+      const matchesSearch = resource.title.toLowerCase().includes(searchQuery) || 
+                          resource.description.toLowerCase().includes(searchQuery) ||
+                          resource.topic.toLowerCase().includes(searchQuery);
+      
+      return matchesFilter && matchesSearch;
+    });
+
+    // Clear existing resources
+    if (resourcesGrid) {
+      resourcesGrid.innerHTML = '';
+    }
+
+    // Show or hide "no results" message
+    if (noResults) {
+      if (filteredResources.length === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    // Render filtered resources
+    filteredResources.forEach(resource => {
+      const card = document.createElement('div');
+      card.className = 'content-card';
+      
+      // Set icon based on resource type
+      let iconSvg = '';
+      switch(resource.icon) {
+        case 'FileText':
+          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>';
+          break;
+        case 'Book':
+          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';
+          break;
+        case 'Mail':
+          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>';
+          break;
+        case 'Bookmark':
+          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>';
+          break;
+        default:
+          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>';
+      }
+      
+      // Download icon for button
+      let buttonIcon = resource.isDownloadable ? 
+        '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>' :
+        '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"></path><path d="m9 16 3 3 3-3"></path><path d="M12 3v16"></path></svg>';
+      
+      // Resource type label
+      let typeLabel = resource.type.charAt(0).toUpperCase() + resource.type.slice(1);
+      
+      card.innerHTML = `
+        <div class="content-card-content">
+          <div class="mb-4 text-primary">
+            ${iconSvg}
+          </div>
+          <div class="mb-2">
+            <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
+              ${typeLabel}
+            </span>
+          </div>
+          <h3 class="content-card-title">
+            ${resource.title}
+          </h3>
+          <p class="content-card-description line-clamp-3">
+            ${resource.description}
+          </p>
+          <a 
+            href="${resource.url}" 
+            class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-9 px-4 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full"
+            ${resource.isDownloadable ? 'download' : ''}
+          >
+            ${buttonIcon}${resource.buttonText}
+          </a>
+        </div>
+      `;
+      
+      resourcesGrid?.appendChild(card);
+    });
+  }
+
+  // Initialize page
+  function initPage() {
+    // Render initial resources
+    renderResources();
+    
+    // Add event listeners
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase();
+        renderResources();
+      });
+    }
+    
+    // Add filter button listeners
+    filterButtons.forEach(button => {
+      if (button) {
+        button.addEventListener('click', () => {
+          // Update active filter
+          activeFilter = button.id;
+          
+          // Update button styles
+          filterButtons.forEach(btn => {
+            if (btn) {
+              if (btn.id === activeFilter) {
+                btn.classList.remove('bg-primary/10');
+                btn.classList.add('bg-primary', 'text-white');
+              } else {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('bg-primary/10', 'hover:bg-primary/20', 'text-primary');
+              }
+            }
+          });
+          
+          // Re-render resources
+          renderResources();
+        });
+      }
+    });
+  }
+
+  // Run when DOM is ready
+  document.addEventListener('DOMContentLoaded', initPage);
+</script>

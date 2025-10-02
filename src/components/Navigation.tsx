@@ -95,7 +95,8 @@ export default function Navigation() {
         trigger="Tools & Resources" 
         items={[
           { href: "/tools", label: "View All Tools & Resources" },
-          { href: "/tools/legacy-assessment", label: "Legacy Assessment" }
+          { href: "/tools/legacy-assessment", label: "Legacy Assessment" },
+          { href: "/resources", label: "Legacy Insights & Resources" }
         ]} 
       />
       
@@ -103,6 +104,7 @@ export default function Navigation() {
         trigger="Blog" 
         items={[
           { href: "/blog", label: "Read the Blog" },
+          { href: "/resources", label: "Legacy Insights & Resources" },
           { href: "/blog/submit-story", label: "Submit Your Family Story" }
         ]} 
       />
