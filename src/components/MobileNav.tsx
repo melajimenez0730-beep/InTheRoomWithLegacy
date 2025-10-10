@@ -19,7 +19,7 @@ const MobileNavLink = ({ href, children, onClick }: MobileNavLinkProps) => {
     <a
       href={href}
       onClick={onClick}
-      className="block w-full py-3 px-4 text-foreground hover:bg-primary/5 active:bg-primary/10 transition-colors text-lg font-medium border-b border-border/20"
+      className="block w-full py-3 px-4 text-[#f7f6dc] hover:bg-[#f7f6dc]/10 active:bg-[#f7f6dc]/20 transition-colors text-lg font-medium border-b border-[#f7f6dc]/10"
     >
       {children}
     </a>
@@ -31,7 +31,7 @@ const MobileNavGroupLink = ({ href, children, onClick }: MobileNavLinkProps) => 
     <a
       href={href}
       onClick={onClick}
-      className="block w-full py-2 px-8 text-foreground/80 hover:bg-primary/5 active:bg-primary/10 transition-colors text-base"
+      className="block w-full py-2 px-8 text-[#f7f6dc]/70 hover:bg-[#f7f6dc]/10 active:bg-[#f7f6dc]/20 transition-colors text-base"
     >
       {children}
     </a>
@@ -68,11 +68,11 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-background/95 supports-[backdrop-filter]:bg-background/80 backdrop-blur-sm overflow-y-auto">
+    <div className="fixed inset-0 z-50 bg-[#052d3f] overflow-y-auto">
       <div className="flex justify-end p-4">
         <button
           onClick={handleClose}
-          className="p-2 text-foreground/70 hover:text-foreground transition-colors"
+          className="p-2 text-[#f7f6dc]/70 hover:text-[#f7f6dc] transition-colors"
           aria-label="Close menu"
         >
           <X className="h-6 w-6" />
@@ -109,7 +109,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
             href="/tools/legacy-assessment"
             className={cn(
               buttonVariants({ variant: "default", size: "lg" }),
-              "w-full text-center"
+              "w-full text-center bg-[#f7f6dc] text-[#052d3f] hover:bg-[#f7f6dc]/90"
             )}
             onClick={handleClose}
           >
@@ -119,7 +119,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
             href="#join-the-room"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "w-full text-center border-primary text-primary hover:bg-primary/10"
+              "w-full text-center border-[#f7f6dc] text-[#f7f6dc] hover:bg-[#f7f6dc]/10"
             )}
             onClick={handleClose}
           >

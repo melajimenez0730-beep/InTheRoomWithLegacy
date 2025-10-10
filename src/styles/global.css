@@ -150,4 +150,33 @@
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
   }
+
+  /* Header styling */
+  header {
+    background-color: #052d3f; /* Primary Deep Blue */
+    color: #f7f6dc; /* Light Cream */
+  }
+
+  /* Footer styling */
+  footer {
+    background-color: #052d3f; /* Primary Deep Blue */
+    color: #f7f6dc; /* Light Cream */
+  }
+
+  /* Alternating section backgrounds with subtle gradients */
+  section.section-odd {
+    background: linear-gradient(135deg, #f7f6dc 0%, #e6f0f5 100%); /* Light Cream to very light blue */
+    color: #052d3f; /* Primary Deep Blue */
+  }
+
+  section.section-even {
+    background: linear-gradient(135deg, #e6f0f5 0%, #f7f6dc 100%); /* Very light blue to Light Cream (reversed) */
+    color: #052d3f; /* Primary Deep Blue */
+  }
+
+  /* Content cards styling */
+  .content-card {
+    background-color: #f7f6dc; /* Light Cream */
+    color: #052d3f; /* Primary Deep Blue */
+  }
 }

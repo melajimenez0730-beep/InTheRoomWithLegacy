@@ -2,7 +2,7 @@
 
 /* Base card styling */
 .content-card {
-  background-color: white;
+  background-color: #f7f6dc; /* Light Cream */
   border: 1px solid rgba(5, 45, 63, 0.1);
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);

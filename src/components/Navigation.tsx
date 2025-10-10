@@ -17,6 +17,7 @@ interface NavItemProps {
 }
 
 const NavItem = ({ href, children, className, variant = "ghost" }: NavItemProps) => {
+  // For use in the primary deep blue header, use a ghost variant with custom light text color
   return (
     <a
       href={href}
@@ -25,7 +26,7 @@ const NavItem = ({ href, children, className, variant = "ghost" }: NavItemProps)
           variant,
           size: "sm",
         }),
-        "font-medium transition-colors",
+        "font-medium transition-colors text-[#f7f6dc] hover:text-[#f7f6dc]/80",
         className
       )}
     >
@@ -51,7 +52,7 @@ const NavDropdown = ({ trigger, items, className }: NavDropdownProps) => {
           variant: "ghost",
           size: "sm",
         }),
-        "inline-flex items-center gap-1 font-medium transition-colors",
+        "inline-flex items-center gap-1 font-medium transition-colors text-[#f7f6dc] hover:text-[#f7f6dc]/80",
         className
       )}>
         {trigger} <ChevronDown className="h-4 w-4" />
