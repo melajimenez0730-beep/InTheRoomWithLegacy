@@ -26,7 +26,7 @@ const NavItem = ({ href, children, className, variant = "ghost" }: NavItemProps)
           variant,
           size: "sm",
         }),
-        "font-medium transition-colors text-[#f7f6dc] hover:text-[#f7f6dc]/80",
+        "font-medium transition-colors text-[#f7f6dc] hover:text-[#f7f6dc]/80 border-none",
         className
       )}
     >
@@ -52,7 +52,7 @@ const NavDropdown = ({ trigger, items, className }: NavDropdownProps) => {
           variant: "ghost",
           size: "sm",
         }),
-        "inline-flex items-center gap-1 font-medium transition-colors text-[#f7f6dc] hover:text-[#f7f6dc]/80",
+        "inline-flex items-center gap-1 font-medium transition-colors text-[#f7f6dc] hover:text-[#f7f6dc]/80 border-none",
         className
       )}>
         {trigger} <ChevronDown className="h-4 w-4" />

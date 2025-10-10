@@ -119,7 +119,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
             href="#join-the-room"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "w-full text-center border-[#f7f6dc] text-[#f7f6dc] hover:bg-[#f7f6dc]/10"
+              "w-full text-center bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#9a4a0b]/80 border-none"
             )}
             onClick={handleClose}
           >
