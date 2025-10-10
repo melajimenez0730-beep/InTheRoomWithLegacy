@@ -87,8 +87,7 @@ export default function Navigation() {
         trigger="Programs" 
         items={[
           { href: "/programs", label: "Programs" },
-          { href: "/programs/while-were-still-here", label: "While We're Still Here" },
-          { href: "/programs/black-family-business-network", label: "Black Family Business Network" }
+          { href: "/programs/while-were-still-here", label: "While We're Still Here" }
         ]} 
       />
       
@@ -110,7 +109,13 @@ export default function Navigation() {
         ]} 
       />
       
-      <NavItem href="/advisors">IRL Advisors</NavItem>
+      <NavDropdown 
+        trigger="IRL Advisors" 
+        items={[
+          { href: "/advisors", label: "IRL Advisors" },
+          { href: "/programs/black-family-business-network", label: "Black Family Business Network" }
+        ]} 
+      />
       
       <NavDropdown 
         trigger="Support IRL" 

@@ -90,8 +90,6 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           <MobileNavLink href="/programs" onClick={handleClose}>Programs</MobileNavLink>
           <MobileNavGroupLink href="/programs" onClick={handleClose}>Programs</MobileNavGroupLink>
           <MobileNavGroupLink href="/programs/while-were-still-here" onClick={handleClose}>While We're Still Here</MobileNavGroupLink>
-          <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
-
           <MobileNavLink href="/tools" onClick={handleClose}>Tools & Resources</MobileNavLink>
           <MobileNavGroupLink href="/tools/legacy-assessment" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
 
@@ -99,6 +97,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           <MobileNavGroupLink href="/blog/submit-story" onClick={handleClose}>Submit Your Family Story</MobileNavGroupLink>
 
           <MobileNavLink href="/advisors" onClick={handleClose}>IRL Advisors</MobileNavLink>
+          <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
 
           <MobileNavLink href="/contact" onClick={handleClose}>Contact</MobileNavLink>
         </div>
