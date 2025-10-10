@@ -96,31 +96,38 @@
 
 @layer base {
   :root {
-    /* Deep blue as primary color (#052D3F) */
+    /* Brand Colors - using exact hex values */
+    /* Primary Deep Blue #052d3f */
     --primary: 197 85% 13%;
-    --primary-foreground: 0 0% 98%;
+    --primary-foreground: 60 56% 96%;
     
-    /* Brown copper as secondary color (#9A4A0B) */
+    /* Accent Warm Brown #9a4a0b */
     --secondary: 30 85% 32%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 60 56% 96%;
     
-    /* Complementary accent color */
-    --accent: 35 80% 60%;
-    --accent-foreground: 197 85% 13%;
+    /* Light Cream/Near White #f7f6dc */
+    --cream: 60 56% 96%;
+    --cream-foreground: 197 85% 13%;
     
-    /* Neutral colors */
-    --background: 197 15% 97%;
-    --foreground: 197 70% 15%;
+    /* Soft Gray/Taupe #d8d0c0 */
+    --taupe: 36 22% 80%;
+    --taupe-foreground: 197 85% 13%;
+    
+    /* Base background and foreground */
+    --background: 60 56% 96%;
+    --foreground: 197 85% 13%;
     
     /* Supporting colors */
     --card: 0 0% 100%;
-    --card-foreground: 197 70% 15%;
+    --card-foreground: 197 85% 13%;
     --popover: 0 0% 100%;
-    --popover-foreground: 197 70% 15%;
-    --muted: 197 10% 90%;
-    --muted-foreground: 197 30% 40%;
+    --popover-foreground: 197 85% 13%;
+    --muted: 36 22% 80%;
+    --muted-foreground: 197 50% 25%;
+    --accent: 30 85% 32%;
+    --accent-foreground: 60 56% 96%;
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 60 56% 96%;
     --border: 197 20% 85%;
     --input: 197 20% 90%;
     --ring: 197 85% 13%;
@@ -129,9 +136,14 @@
     /* Chart colors */
     --chart-1: 197 85% 30%;
     --chart-2: 30 85% 50%;
-    --chart-3: 35 80% 60%;
+    --chart-3: 60 56% 96%;
     --chart-4: 197 50% 50%;
-    --chart-5: 30 60% 70%;
+    --chart-5: 36 22% 80%;
+    
+    /* Section backgrounds */
+    --section-light: 60 56% 96%; /* Light Cream #f7f6dc */
+    --section-dark: 36 22% 80%; /* Soft Gray/Taupe #d8d0c0 */
+    --section-footer: 197 85% 13%; /* Primary Deep Blue #052d3f */
   }
 }
 
@@ -149,5 +161,36 @@
     /* font-feature-settings: "rlig" 1, "calt" 1; */
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
+  }
+  
+  /* Alternating section backgrounds */
+  section.section-odd {
+    background-color: #f7f6dc; /* Light Cream */
+    color: #052d3f; /* Primary Deep Blue */
+  }
+  
+  section.section-even {
+    background-color: #d8d0c0; /* Soft Gray/Taupe */
+    color: #052d3f; /* Primary Deep Blue */
+  }
+  
+  /* Footer styling */
+  footer.site-footer {
+    background-color: #052d3f; /* Primary Deep Blue */
+    color: #f7f6dc; /* Light Cream */
+  }
+  
+  footer.site-footer a {
+    color: rgba(247, 246, 220, 0.8); /* Light Cream with opacity */
+  }
+  
+  footer.site-footer a:hover {
+    color: #f7f6dc; /* Light Cream */
+  }
+  
+  /* Card styling overrides */
+  .content-card {
+    background-color: #f7f6dc; /* Light Cream */
+    color: #052d3f; /* Primary Deep Blue */
   }
 }

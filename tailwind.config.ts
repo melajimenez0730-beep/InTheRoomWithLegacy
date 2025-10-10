@@ -12,31 +12,44 @@ export default {
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: '#052d3f',
-          foreground: '#ffffff',
+          foreground: '#f7f6dc',
         },
         secondary: {
           DEFAULT: '#9a4a0b',
-          foreground: '#ffffff',
+          foreground: '#f7f6dc',
+        },
+        cream: {
+          DEFAULT: '#f7f6dc',
+          foreground: '#052d3f',
+        },
+        taupe: {
+          DEFAULT: '#d8d0c0',
+          foreground: '#052d3f',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
-          DEFAULT: '#f5f5f5',
+          DEFAULT: '#d8d0c0',
           foreground: '#052d3f',
         },
         accent: {
-          DEFAULT: '#f8f7f2',
-          foreground: '#052d3f',
+          DEFAULT: '#9a4a0b',
+          foreground: '#f7f6dc',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: '#f7f6dc',
+          foreground: '#052d3f',
+        },
+        section: {
+          light: '#f7f6dc',  // Light Cream
+          dark: '#d8d0c0',   // Soft Gray/Taupe
+          footer: '#052d3f', // Primary Deep Blue
         },
       },
       fontFamily: {

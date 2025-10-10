@@ -3,7 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Brain, Users, ShoppingBag } from "lucide-react";
 ---
 
-<section class="py-16 sm:py-20 md:py-24 bg-muted/30">
+<section class="py-16 sm:py-20 md:py-24 section-even">
   <div class="container">
     <div class="text-center max-w-3xl mx-auto mb-10 md:mb-16 px-4">
       <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold mb-4 text-primary">
@@ -16,7 +16,7 @@ import { Brain, Users, ShoppingBag } from "lucide-react";
 
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12">
       <!-- The Tool -->
-      <div class="bg-white rounded-lg shadow-md p-6 md:p-8 flex flex-col h-full border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
+      <div class="rounded-lg shadow-md p-6 md:p-8 flex flex-col h-full border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
         <div class="p-3 bg-primary/10 rounded-full w-fit mb-5">
           <Brain size={24} className="text-primary" />
         </div>
@@ -37,7 +37,7 @@ import { Brain, Users, ShoppingBag } from "lucide-react";
       </div>
 
       <!-- The Program -->
-      <div class="bg-white rounded-lg shadow-md p-6 md:p-8 flex flex-col h-full border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
+      <div class="rounded-lg shadow-md p-6 md:p-8 flex flex-col h-full border border-border/30 hover:border-primary/30 transition-all hover:shadow-lg">
         <div class="p-3 bg-secondary/20 rounded-full w-fit mb-5">
           <Users size={24} className="text-primary" />
         </div>
