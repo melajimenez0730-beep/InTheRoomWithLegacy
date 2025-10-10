@@ -12,44 +12,31 @@ export default {
         foreground: 'hsl(var(--foreground))',
         primary: {
           DEFAULT: '#052d3f',
-          foreground: '#f7f6dc',
+          foreground: '#ffffff',
         },
         secondary: {
           DEFAULT: '#9a4a0b',
-          foreground: '#f7f6dc',
-        },
-        cream: {
-          DEFAULT: '#f7f6dc',
-          foreground: '#052d3f',
-        },
-        taupe: {
-          DEFAULT: '#d8d0c0',
-          foreground: '#052d3f',
+          foreground: '#ffffff',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
         muted: {
-          DEFAULT: '#d8d0c0',
+          DEFAULT: '#f5f5f5',
           foreground: '#052d3f',
         },
         accent: {
-          DEFAULT: '#9a4a0b',
-          foreground: '#f7f6dc',
+          DEFAULT: '#f8f7f2',
+          foreground: '#052d3f',
         },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
-          DEFAULT: '#f7f6dc',
-          foreground: '#052d3f',
-        },
-        section: {
-          light: '#f7f6dc',  // Light Cream
-          dark: '#d8d0c0',   // Soft Gray/Taupe
-          footer: '#052d3f', // Primary Deep Blue
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
         },
       },
       fontFamily: {
