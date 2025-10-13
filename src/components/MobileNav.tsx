@@ -90,7 +90,8 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           <MobileNavLink href="/programs" onClick={handleClose}>Programs</MobileNavLink>
           <MobileNavGroupLink href="/programs" onClick={handleClose}>Programs</MobileNavGroupLink>
           <MobileNavGroupLink href="/programs/while-were-still-here" onClick={handleClose}>While We're Still Here</MobileNavGroupLink>
-          <MobileNavLink href="/tools" onClick={handleClose}>Tools & Resources</MobileNavLink>
+          <MobileNavLink href="/resources" onClick={handleClose}>Tools & Resources</MobileNavLink>
+          <MobileNavGroupLink href="/resources" onClick={handleClose}>Legacy Insights, Tools, and Resources</MobileNavGroupLink>
           <MobileNavGroupLink href="/tools/legacy-assessment" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
 
           <MobileNavLink href="/blog" onClick={handleClose}>Blog</MobileNavLink>
