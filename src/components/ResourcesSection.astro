@@ -1,7 +1,6 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
 import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-react";
-import JoinRoomButton from "@/components/JoinRoomButton";
 ---
 
 <section class="py-16 sm:py-20 md:py-24 bg-white">
@@ -403,13 +402,15 @@ import JoinRoomButton from "@/components/JoinRoomButton";
     </div>
 
     <div class="text-center">
-      <JoinRoomButton 
-        size="lg"
-        className="font-medium w-full sm:w-auto justify-center"
-        client:load
+      <a 
+        href="#join-the-room" 
+        class={buttonVariants({
+          size: "lg",
+          class: "font-medium w-full sm:w-auto justify-center"
+        })}
       >
         Join the Room
-      </JoinRoomButton>
+      </a>
     </div>
   </div>
 </section>

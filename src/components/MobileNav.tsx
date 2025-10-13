@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { useJoinRoomModal } from "./JoinRoomModalProvider";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -41,7 +40,6 @@ const MobileNavGroupLink = ({ href, children, onClick }: MobileNavLinkProps) => 
 
 export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(initialIsOpen);
-  const { openJoinRoomModal } = useJoinRoomModal();
   
   useEffect(() => {
     // Event listener to toggle the mobile navigation
@@ -116,20 +114,16 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           >
             Take the Legacy Assessment
           </a>
-          <button
+          <a
+            href="#join-the-room"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "w-full text-center bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#9a4a0b]/80 border-none"
             )}
-            onClick={(e) => {
-              e.preventDefault();
-              handleClose();
-              // Slight delay to ensure the mobile menu is closed first
-              setTimeout(openJoinRoomModal, 100);
-            }}
+            onClick={handleClose}
           >
             Join the Room
-          </button>
+          </a>
         </div>
       </nav>
     </div>

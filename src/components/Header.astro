@@ -4,7 +4,6 @@ import Navigation from "@/components/Navigation";
 import MobileNav from "@/components/MobileNav";
 import { Image } from 'astro:assets';
 import logoImage from '../assets/parchment-irl-main-badge-rgb-1_nw_936bfa90.png';
-import JoinRoomButton from "@/components/JoinRoomButton";
 ---
 
 <header
@@ -47,14 +46,16 @@ import JoinRoomButton from "@/components/JoinRoomButton";
         </a>
       </div>
       <div class="hidden md:block">
-        <JoinRoomButton
-          variant="secondary"
-          size="sm"
-          className="bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#9a4a0b]/80 border-none"
-          client:load
+        <a
+          href="#join-the-room"
+          class={buttonVariants({
+            variant: "secondary",
+            size: "sm",
+            class: "bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#9a4a0b]/80 border-none"
+          })}
         >
           Join the Room
-        </JoinRoomButton>
+        </a>
       </div>
       <button 
         class="md:hidden flex items-center p-2 text-[#f7f6dc]"
