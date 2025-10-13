@@ -1,0 +1,384 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowLeft, ThumbsUp, Heart, MessagesSquare, Share2, Copy, Facebook, Linkedin, Twitter, MessageCircle } from "lucide-react";
+
+// Import images
+import legacyMoments from "@/assets/legacy_moments_nw_f6fe48da.png";
+---
+
+<BaseLayout
+  title="The Case for Ethical Nepotism: Reclaiming Family Advantage | In the Room With Legacy"
+  description="Redefining nepotism as a tool for equity, stewardship, and shared prosperity. Learn how Ethical Nepotism™ creates responsibility, not entitlement."
+>
+  <section class="py-10 md:py-16 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <!-- Article Header -->
+        <div class="mb-12">
+          <a href="/blog" class="inline-flex items-center text-primary hover:underline mb-8">
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+          </a>
+          
+          <!-- Hero Section with Featured Image -->
+          <div class="w-full h-96 md:h-[500px] relative rounded-xl overflow-hidden mb-8">
+            <Image 
+              src={legacyMoments} 
+              alt="Legacy moments collage showing family connections and generational wealth" 
+              class="w-full h-full object-cover"
+              width={1200}
+              height={600}
+            />
+            <!-- Text overlay for hook -->
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-primary/20 p-6 md:p-8">
+              <h2 class="text-white font-display text-xl md:text-2xl lg:text-3xl font-bold">
+                Opening Hook: Reframing the Dirty Word
+              </h2>
+            </div>
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-6">
+            The Case for Ethical Nepotism: Reclaiming Family Advantage
+          </h1>
+          
+          <!-- Metadata -->
+          <div class="flex flex-wrap items-center justify-between border-y border-primary/10 py-4 mb-8">
+            <div class="flex items-center gap-4">
+              <span class="text-sm text-primary/80">By Lauren Miller</span>
+              <span class="text-sm text-primary/80">•</span>
+              <span class="text-sm text-primary/80">{new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}</span>
+              <span class="text-sm text-primary/80">•</span>
+              <span class="text-sm text-primary/80">8 min read</span>
+            </div>
+            <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium mt-2 sm:mt-0">
+              Article
+            </span>
+          </div>
+        </div>
+        
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none text-primary">
+          <p>
+            "Nepotism." It's a word often whispered, coated with suspicion, shorthand for unfair
+            advantage. In the American imagination especially, nepotism carries an ugly weight —
+            because access has not always been equally available. For centuries, opportunity was
+            hoarded by a few, while whole communities were excluded from building the same pipelines
+            of wealth, power, and possibility.
+          </p>
+          <p>
+            So yes, nepotism has been weaponized. It has been used to entrench privilege, to keep
+            others out. And yet — at its root — nepotism simply describes something as old as humanity:
+            families helping families, one generation creating a path for the next.
+          </p>
+
+          <h2>Family as the First Institution</h2>
+          <p>
+            Before companies, governments, or nations, family was the first institution. Someone cooked,
+            someone hunted, someone cared for children. Survival meant cooperation, shared
+            responsibility, and collective advantage. That principle has never changed.
+          </p>
+          <p>
+            Today, in the 21st century, we are still living out that truth. Every family — whether biological,
+            chosen, or built — has the ability to create value and share it. To pass on knowledge,
+            opportunities, exposure, and access. Family advantage is not only about money; it's about
+            skills, stories, networks, and resilience.
+          </p>
+          <p>
+            So the question becomes: What if we redefined nepotism — not as exclusion — but as a tool
+            for equity, stewardship, and shared prosperity?
+          </p>
+
+          <h2>Defining Ethical Nepotism™</h2>
+          <p>
+            At IRL, we call this Ethical Nepotism™: the practice of intentionally building advantage within
+            your family in a way that creates responsibility, develops character, and multiplies opportunity.
+          </p>
+          <p>
+            This is not the "old boys' club" version of nepotism. This is not unearned favoritism or handing
+            down titles without preparation. That kind of nepotism weakens organizations and societies
+            alike. Ethical Nepotism™ is different — it is principled, intentional, and accountable.
+          </p>
+          <p>
+            At its core, Ethical Nepotism™ requires standards. Families who simply hand down
+            opportunities without expectations create entitlement, not stewardship. Families who set
+            standards — requiring effort, responsibility, and growth — create the kind of leaders who can
+            carry legacy forward.
+          </p>
+          <p>
+            It looks like:
+          </p>
+          <ul>
+            <li>Parents introducing their children to responsibility by helping them earn and manage their
+            own money — from a first paycheck in the family business, to a savings account at the bank,
+            to investing $10 and learning how it grows.</li>
+            <li>A grandmother passing down both recipes and financial wisdom to the next generation.</li>
+            <li>A family member working at a university so their cousins can go to school tuition-free.</li>
+            <li>Immigrant families pooling money so one child can open a business, with the expectation
+            they will pull others up next.</li>
+          </ul>
+          <p>
+            Ethical Nepotism™ is not just inheritance; it is initiation. It's about training up stewards, not
+            simply heirs.
+          </p>
+          
+          <!-- Sidebar: Carry the Message -->
+          <div class="bg-blue-50 p-6 rounded-lg my-8">
+            <h3 class="text-primary font-display font-bold mb-3">Carry the Message</h3>
+            <p>
+              Want to carry this message with you?
+            </p>
+            <p>
+              We've launched the Ethical Nepotism™ merch line — tees, dad hats, mugs, and totes —
+              because reclaiming family advantage isn't just something you practice, it's something you
+              wear proudly. A reminder to yourself and a statement to the world: family first, but done right.
+            </p>
+          </div>
+
+          <!-- Storytelling Moment -->
+          <div class="bg-primary/5 p-6 rounded-lg my-8 border-l-4 border-primary">
+            <h3 class="text-primary font-display font-bold mb-3">Storytelling Moment</h3>
+            <p class="italic">
+              In many families, stepping into leadership isn't automatic — it's cultivated. Consider the child
+              who grows up watching their parents run a business, gradually taking on responsibilities:
+              answering phones, learning bookkeeping, shadowing at client meetings. By the time they are
+              offered leadership, they've been tested, trained, and seasoned.
+            </p>
+            <p class="italic">
+              The same principle applies far beyond business. Caregiving for an elder, managing
+              household duties, learning to advocate with professionals — all of these experiences raise up
+              the next generation to shoulder responsibility. Inheritance without preparation creates
+              entitlement. Inheritance with training creates stewardship.
+            </p>
+            <p class="italic">
+              This isn't unique to one family or one culture. Across the world, families that normalize shared
+              responsibility — whether through chores on a farm, apprenticeships in a trade, or
+              expectations in education — consistently pass down more than wealth. They pass down
+              resilience.
+            </p>
+          </div>
+
+          <h2>Context: The Power and Responsibility of Family Advantage</h2>
+          <p>
+            Family businesses today employ more than 60% of the U.S. workforce, yet only 30% survive
+            into the second generation. Why? Because advantage without stewardship dies quickly.
+          </p>
+          <p>
+            Across cultures, the families who normalize "family advantage" — whether through land, small
+            businesses, education, or networks — consistently produce stronger outcomes in wealth,
+            resilience, and social mobility. What looks like "luck" from the outside is often the result of
+            intentional systems inside.
+          </p>
+          <p>
+            Family advantage isn't just financial — it's social, cultural, and relational. A cousin working at
+            a university who secures tuition waivers for relatives. An uncle who introduces a niece to a
+            professional network. An older sibling who models discipline and drive. These are all forms of
+            Ethical Nepotism™, and they are as essential as financial inheritance.
+          </p>
+
+          <!-- Takeaways -->
+          <div class="bg-primary/5 p-6 rounded-lg my-8 border-l-4 border-primary">
+            <h3 class="text-primary font-display font-bold mb-3">Takeaways: What Ethical Nepotism Really Means</h3>
+            <p>
+              Ethical Nepotism™ means:
+            </p>
+            <ol>
+              <li>Advantage is intentional. Families don't wait for opportunity to knock — they build pipelines.</li>
+              <li>Advantage is stewarded. Skills, values, and discipline are passed along with access.</li>
+              <li>Advantage is multiplied. What one generation builds, the next expands.</li>
+            </ol>
+            <p>
+              It is not favoritism without merit. It is structured opportunity with accountability.
+            </p>
+          </div>
+
+          <h2>Call to Action</h2>
+          <p>
+            Nepotism doesn't have to be a dirty word. When done ethically, it is a duty — the sacred work
+            of ensuring your family thrives, not just for one generation, but for many.
+          </p>
+          <p>
+            Legacy is easier when families move in unison. Advantage is sustainable when it is
+            stewarded.
+          </p>
+          <p>
+            At In the Room with Legacy, we're reclaiming family advantage — not for selfishness, but for
+            stewardship. Not for exclusion, but for equity. Because the greatest inheritance we can pass
+            on isn't just wealth; it's wisdom, responsibility, and the systems that help every seed in our
+            family line grow.
+          </p>
+          <p>
+            And if you're ready to show you're part of this movement? Wear it. Carry it. Share it. Our
+            Ethical Nepotism™ collection is more than merch — it's a cultural statement.
+          </p>
+        </div>
+        
+        <!-- Interactive Elements -->
+        <div class="mt-16 border-t border-primary/10 pt-8">
+          <!-- Reactions -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-primary mb-4">How did this article make you feel?</h3>
+            <div class="flex flex-wrap gap-3">
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <ThumbsUp className="h-6 w-6 text-[#9a4a0b] mb-1" />
+                <span class="text-xs font-medium">Like</span>
+              </button>
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <Heart className="h-6 w-6 text-[#9a4a0b] mb-1" />
+                <span class="text-xs font-medium">Heart</span>
+              </button>
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-[#9a4a0b] mb-1">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="10" r="3"></circle>
+                  <path d="M7 16.3c.4-1 1.8-1.7 3.5-2.2.8-.3 1.7-.4 3-.5 1.3-.1 2.3-.2 3.1-.5 1.7-.5 2.9-1.2 3.4-2.1"></path>
+                </svg>
+                <span class="text-xs font-medium">Wow</span>
+              </button>
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-[#9a4a0b] mb-1">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span class="text-xs font-medium">Celebrate</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Comments -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-primary mb-4">Join the conversation</h3>
+            <div class="bg-white border border-primary/20 rounded-lg p-6">
+              <form class="mb-6">
+                <div class="mb-4">
+                  <label for="username" class="block text-sm font-medium text-foreground/80 mb-1">Name</label>
+                  <input 
+                    type="text" 
+                    id="username" 
+                    class="w-full px-3 py-2 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="comment" class="block text-sm font-medium text-foreground/80 mb-1">Comment</label>
+                  <textarea 
+                    id="comment"
+                    rows="4"
+                    class="w-full px-3 py-2 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    placeholder="Share your thoughts..."
+                  ></textarea>
+                </div>
+                <button 
+                  type="submit"
+                  class={buttonVariants({
+                    size: "default",
+                    class: "text-white"
+                  })}
+                >
+                  <MessageCircle className="mr-2 h-4 w-4" /> Post Comment
+                </button>
+              </form>
+              
+              <div class="border-t border-primary/10 pt-6">
+                <p class="text-center text-foreground/60 text-sm">
+                  Be the first to comment on this article
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Share -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-primary mb-4">Share this article</h3>
+            <div class="flex flex-wrap gap-3">
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Copy className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">Copy Link</span>
+              </button>
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Facebook className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">Facebook</span>
+              </button>
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Linkedin className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">LinkedIn</span>
+              </button>
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Twitter className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">Twitter</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Return Link -->
+        <div class="text-center mt-12">
+          <a href="/blog" class="text-primary hover:underline inline-flex items-center">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Return to Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Custom styles for article content */
+  .prose h2 {
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    margin-top: 2rem;
+    font-size: 1.75rem;
+  }
+  
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  
+  .prose ul, .prose ol {
+    margin-bottom: 1.5rem;
+  }
+  
+  .prose .lead {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+  }
+
+  /* Ensure all backgrounds use appropriate colors */
+  .bg-blue-50 {
+    background-color: #f0f7ff;
+  }
+</style>
+
+<script>
+  // Simple event handlers for the interactive elements
+  document.addEventListener('DOMContentLoaded', () => {
+    // Reaction buttons
+    const reactionButtons = document.querySelectorAll('.flex-col.items-center.justify-center');
+    reactionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        reactionButtons.forEach(btn => btn.classList.remove('bg-primary/10', 'border-primary'));
+        
+        // Add active class to clicked button
+        button.classList.add('bg-primary/10', 'border-primary');
+      });
+    });
+    
+    // Copy link button
+    const copyLinkButton = document.querySelector('button:has(.h-4.w-4.text-\\[\\#9a4a0b\\].mr-2)');
+    if (copyLinkButton) {
+      copyLinkButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href);
+        
+        // Show a brief tooltip or feedback
+        const originalText = copyLinkButton.innerHTML;
+        copyLinkButton.innerHTML = '<span class="text-sm">Link Copied!</span>';
+        
+        setTimeout(() => {
+          copyLinkButton.innerHTML = originalText;
+        }, 2000);
+      });
+    }
+  });
+</script>
