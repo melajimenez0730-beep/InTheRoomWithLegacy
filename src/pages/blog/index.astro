@@ -5,6 +5,10 @@ import { ArrowRight, Mail, ThumbsUp, Heart, BookOpen } from "lucide-react";
 import BlogNewsletterForm from "@/components/BlogNewsletterForm";
 import { Image } from 'astro:assets';
 import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_633616474964641373_n_nw_7c1699e8.jpg";
+import familyPortrait from "@/assets/family_on_porch_nw_6bf9f9ad.jpg";
+import legacyFamily from "@/assets/legacy_family_photo_nw_633bbeb1.jpg";
+import familyGathering from "@/assets/family_gathering_nw_664eb12a.jpg";
+import legacyMoments from "@/assets/legacy_moments_nw_f6fe48da.png";
 ---
 
 <BaseLayout
@@ -34,7 +38,7 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
           href="#featured-blogs" 
           class={buttonVariants({
             size: "lg",
-            class: "font-medium bg-[#f7f6dc] text-[#052d3f] hover:bg-[#f7f6dc]/90 transition-colors duration-300 px-8 py-3 text-lg shadow-lg"
+            class: "font-medium bg-white text-[#052d3f] hover:bg-white/90 transition-colors duration-300 px-8 py-3 text-lg shadow-lg"
           })}
         >
           Explore Our Stories
@@ -60,12 +64,14 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <!-- Blog 1: Ethical Nepotism -->
-          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
             <div class="w-full h-64 relative overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1556746223-5aa9f4ce76df?w=600&h=400&auto=format&fit=crop&q=80" 
-                alt="Two hands reaching toward each other, symbolizing family connections" 
+              <Image 
+                src={legacyMoments} 
+                alt="Legacy moments collage showing family traditions" 
                 class="w-full h-full object-cover"
+                width="600"
+                height="400"
               />
             </div>
             <div class="p-6 flex flex-col flex-grow">
@@ -93,12 +99,14 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
           </div>
 
           <!-- Blog 2: Parenting a Parent -->
-          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
             <div class="w-full h-64 relative overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1758612897848-858352fd363f?w=600&h=400&auto=format&fit=crop&q=80" 
-                alt="Elderly man with younger family member, showing multigenerational connection" 
+              <Image 
+                src={familyPortrait} 
+                alt="Family portrait on a porch, representing multigenerational connections" 
                 class="w-full h-full object-cover"
+                width="600"
+                height="400"
               />
             </div>
             <div class="p-6 flex flex-col flex-grow">
@@ -126,12 +134,14 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
           </div>
 
           <!-- Blog 3: Raising the Steward -->
-          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
             <div class="w-full h-64 relative overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1536825919521-ab78da56193b?w=600&h=400&auto=format&fit=crop&q=80" 
-                alt="Children holding hands, representing the next generation of stewards" 
+              <Image 
+                src={legacyFamily} 
+                alt="Family beach gathering, representing legacy and generational connections" 
                 class="w-full h-full object-cover"
+                width="600"
+                height="400"
               />
             </div>
             <div class="p-6 flex flex-col flex-grow">
@@ -159,12 +169,14 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
           </div>
 
           <!-- Blog 4: Legacy Lessons from the Land -->
-          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
             <div class="w-full h-64 relative overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1545377142-41e5221d99ce?w=600&h=400&auto=format&fit=crop&q=80" 
-                alt="Family standing in field representing farming and land stewardship" 
+              <Image 
+                src={familyGathering} 
+                alt="Family gathering outdoors, representing land stewardship and connection" 
                 class="w-full h-full object-cover"
+                width="600"
+                height="400"
               />
             </div>
             <div class="p-6 flex flex-col flex-grow">
