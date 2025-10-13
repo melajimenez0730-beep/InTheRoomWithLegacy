@@ -1,5 +1,6 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
+import JoinRoomButton from "@/components/JoinRoomButton";
 ---
 
 <section class="relative overflow-hidden py-16 sm:py-20 md:py-32 bg-background">
@@ -30,16 +31,14 @@ import { buttonVariants } from "@/components/ui/button";
           >
             Take the Legacy Assessment
           </a>
-          <a 
-            href="#join-the-room" 
-            class={buttonVariants({
-              variant: "outline",
-              size: "lg",
-              class: "border-primary text-primary hover:bg-primary/10 font-medium w-full sm:w-auto justify-center"
-            })}
+          <JoinRoomButton
+            variant="outline"
+            size="lg"
+            className="border-primary text-primary hover:bg-primary/10 font-medium w-full sm:w-auto justify-center"
+            client:load
           >
             Join the Room
-          </a>
+          </JoinRoomButton>
         </div>
       </div>
       
