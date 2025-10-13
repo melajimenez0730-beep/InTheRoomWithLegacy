@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight, Mail, Bookmark, Users } from "lucide-react";
+import { ArrowRight, Mail, ThumbsUp, Heart, BookOpen } from "lucide-react";
 import BlogNewsletterForm from "@/components/BlogNewsletterForm";
 import { Image } from 'astro:assets';
 import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_633616474964641373_n_nw_7c1699e8.jpg";
@@ -31,10 +31,10 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
           In the Room with Legacy™ was born in a sacred transition.
         </p>
         <a 
-          href="#stories-reflections" 
+          href="#featured-blogs" 
           class={buttonVariants({
             size: "lg",
-            class: "font-medium bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#052d3f] transition-colors duration-300 px-8 py-3 text-lg shadow-lg"
+            class: "font-medium bg-[#f7f6dc] text-[#052d3f] hover:bg-[#f7f6dc]/90 transition-colors duration-300 px-8 py-3 text-lg shadow-lg"
           })}
         >
           Explore Our Stories
@@ -43,73 +43,48 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
     </div>
   </section>
 
-  <!-- Stories & Reflections Section -->
-  <section id="stories-reflections" class="py-24 bg-white">
+  <!-- Featured Blogs Section -->
+  <section id="featured-blogs" class="py-24 bg-gradient-to-b from-primary/5 to-primary/10">
     <div class="container">
-      <div class="max-w-5xl mx-auto">
+      <div class="max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
           <div>
             <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-3">
-              Stories & Reflections
+              Featured Articles
             </h2>
             <p class="text-foreground/80 text-lg">
-              Founder's voice & timely insights.
+              Insights on building and preserving what matters most.
             </p>
           </div>
-          <a 
-            href="/resources" 
-            class="inline-flex items-center text-primary font-medium mt-4 md:mt-0 hover:underline"
-          >
-            Read More Stories <ArrowRight className="ml-1 h-4 w-4" />
-          </a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Article 1 -->
-          <div class="content-card">
-            <div class="content-card-header content-card-media">
-              <div class="absolute inset-0 flex items-center justify-center text-muted-foreground/50">
-                <Mail className="w-12 h-12 content-card-icon" />
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <!-- Blog 1: Ethical Nepotism -->
+          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+            <div class="w-full h-64 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1556746223-5aa9f4ce76df?w=600&h=400&auto=format&fit=crop&q=80" 
+                alt="Two hands reaching toward each other, symbolizing family connections" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-2">
+                <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                  Article
+                </span>
               </div>
-            </div>
-            <div class="content-card-content">
-              <h3 class="content-card-title">
-                Letter from Our Founder
+              <h3 class="text-xl font-display font-bold text-primary mb-3">
+                The Case for Ethical Nepotism: Reclaiming Family Advantage
               </h3>
-              <p class="content-card-description line-clamp-3">
-                The journey that led to creating In the Room with Legacy and the mission that drives our work.
-              </p>
-              <a 
-                href="/about/founder-letter" 
-                class={buttonVariants({
-                  variant: "outline",
-                  class: "content-card-actions w-full justify-center border-primary text-primary hover:bg-primary/10"
-                })}
-              >
-                Read Letter
-              </a>
-            </div>
-          </div>
-
-          <!-- Article 2 -->
-          <div class="content-card">
-            <div class="content-card-header content-card-media">
-              <div class="absolute inset-0 flex items-center justify-center text-muted-foreground/50">
-                <Users className="w-12 h-12 content-card-icon" />
-              </div>
-            </div>
-            <div class="content-card-content">
-              <h3 class="content-card-title">
-                Ethical Nepotism™: Reclaiming Family Advantage
-              </h3>
-              <p class="content-card-description line-clamp-3">
+              <p class="text-foreground/80 mb-6 flex-grow">
                 How families can create opportunity for their own while maintaining integrity and excellence.
               </p>
               <a 
-                href="/blog/ethical-nepotism" 
+                href="/articles/ethical-nepotism" 
                 class={buttonVariants({
-                  variant: "outline",
-                  class: "content-card-actions w-full justify-center border-primary text-primary hover:bg-primary/10"
+                  variant: "default",
+                  class: "w-full justify-center bg-primary text-white hover:bg-primary/90 mt-auto"
                 })}
               >
                 Read Article
@@ -117,30 +92,98 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
             </div>
           </div>
 
-          <!-- Article 3 -->
-          <div class="content-card">
-            <div class="content-card-header content-card-media">
-              <div class="absolute inset-0 flex items-center justify-center text-muted-foreground/50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="content-card-icon">
-                  <path d="M3 6l9 4.5L21 6"></path>
-                  <path d="M3 10l9 4.5L21 10"></path>
-                  <path d="M3 14l9 4.5L21 14"></path>
-                  <path d="M3 18l9 4.5L21 18"></path>
-                </svg>
-              </div>
+          <!-- Blog 2: Parenting a Parent -->
+          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+            <div class="w-full h-64 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1758612897848-858352fd363f?w=600&h=400&auto=format&fit=crop&q=80" 
+                alt="Elderly man with younger family member, showing multigenerational connection" 
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="content-card-content">
-              <h3 class="content-card-title">
-                Why Farming  is such a great example to understand of
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-2">
+                <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                  Guide
+                </span>
+              </div>
+              <h3 class="text-xl font-display font-bold text-primary mb-3">
+                Parenting a Parent: A Guide for Adult Children
               </h3>
-              <p class="content-card-description line-clamp-3">
+              <p class="text-foreground/80 mb-6 flex-grow">
+                Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools.
+              </p>
+              <a 
+                href="/blog/parenting-a-parent" 
+                class={buttonVariants({
+                  variant: "default",
+                  class: "w-full justify-center bg-primary text-white hover:bg-primary/90 mt-auto"
+                })}
+              >
+                Read Guide
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog 3: Raising the Steward -->
+          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+            <div class="w-full h-64 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1536825919521-ab78da56193b?w=600&h=400&auto=format&fit=crop&q=80" 
+                alt="Children holding hands, representing the next generation of stewards" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-2">
+                <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                  Article
+                </span>
+              </div>
+              <h3 class="text-xl font-display font-bold text-primary mb-3">
+                Raising the Steward: Preparing the Next Generation for Responsibility
+              </h3>
+              <p class="text-foreground/80 mb-6 flex-grow">
+                How to nurture a stewardship mindset in the next generation and prepare them for the responsibility of carrying forward a legacy.
+              </p>
+              <a 
+                href="/articles/raising-the-steward" 
+                class={buttonVariants({
+                  variant: "default",
+                  class: "w-full justify-center bg-primary text-white hover:bg-primary/90 mt-auto"
+                })}
+              >
+                Read Article
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog 4: Legacy Lessons from the Land -->
+          <div class="bg-[#f7f6dc] rounded-lg overflow-hidden shadow-md h-full flex flex-col transform hover:translate-y-[-5px] transition-all duration-300">
+            <div class="w-full h-64 relative overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1545377142-41e5221d99ce?w=600&h=400&auto=format&fit=crop&q=80" 
+                alt="Family standing in field representing farming and land stewardship" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-6 flex flex-col flex-grow">
+              <div class="mb-2">
+                <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                  Article
+                </span>
+              </div>
+              <h3 class="text-xl font-display font-bold text-primary mb-3">
+                Legacy Lessons from the Land
+              </h3>
+              <p class="text-foreground/80 mb-6 flex-grow">
                 Lessons from the land on stewardship, patience, and the rhythm of generational thinking.
               </p>
               <a 
-                href="/blog/farm-legacy-lessons" 
+                href="/articles/legacy-lessons-land" 
                 class={buttonVariants({
-                  variant: "outline",
-                  class: "content-card-actions w-full justify-center border-primary text-primary hover:bg-primary/10"
+                  variant: "default",
+                  class: "w-full justify-center bg-primary text-white hover:bg-primary/90 mt-auto"
                 })}
               >
                 Read Article
@@ -152,120 +195,31 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
     </div>
   </section>
 
-  <!-- Family Spotlights Section -->
-  <section class="py-24 bg-muted/30">
-    <div class="container">
-      <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-3">
-              Family Spotlights
-            </h2>
-            <p class="text-foreground/80 text-lg">
-              Celebrating real stories of legacy in action.
-            </p>
-          </div>
-        </div>
-
-        <div class="content-card mb-8">
-          <div class="flex flex-col md:flex-row">
-            <div class="md:w-1/3 content-card-header content-card-media min-h-[200px] md:min-h-0">
-              <div class="absolute inset-0 flex items-center justify-center text-muted-foreground/50">
-                <Users className="w-16 h-16 content-card-icon" />
-              </div>
-            </div>
-            <div class="md:w-2/3 content-card-content">
-              <h3 class="content-card-title text-2xl">
-                While We're Still Here: A Family Pilot Story
-              </h3>
-              <p class="content-card-description mb-2">
-                <span class="inline-block bg-secondary/20 text-secondary py-1 px-3 rounded-full text-sm font-medium">Coming Soon</span>
-              </p>
-              <p class="content-card-description mb-2">
-                An intimate look at how one family used our While We're Still Here program to bridge generations, honor their elders, and create a plan for their collective future.
-              </p>
-              <a 
-                href="#join-the-room" 
-                class={buttonVariants({
-                  class: "content-card-actions"
-                })}
-              >
-                Join the Room
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Legacy Insights Section -->
+  <!-- Submit Your Story Section -->
   <section class="py-24 bg-white">
     <div class="container">
       <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
-          <div>
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-3">
-              Legacy Insights
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+              Have a Legacy Story to Share?
             </h2>
-            <p class="text-foreground/80 text-lg">
-              Practical reflections to help you start building.
+            <p class="text-foreground/80 text-lg mb-6">
+              Your family's legacy journey could inspire others. We're collecting stories of how families are preserving what matters most across generations.
             </p>
+            <a 
+              href="/blog/submit-story" 
+              class={buttonVariants({
+                size: "lg",
+                class: "font-medium"
+              })}
+            >
+              Submit Your Story
+            </a>
           </div>
-          <a 
-            href="/tools" 
-            class="inline-flex items-center text-primary font-medium mt-4 md:mt-0 hover:underline"
-          >
-            Explore Tools & Resources <ArrowRight className="ml-1 h-4 w-4" />
-          </a>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Insight 1 -->
-          <div class="content-card">
-            <div class="content-card-content">
-              <div class="mb-4">
-                <Bookmark className="h-10 w-10 content-card-icon" />
-              </div>
-              <h3 class="content-card-title">
-                Heir Readiness: 5 Questions to Ask Yourself
-              </h3>
-              <p class="content-card-description">
-                Are you prepared to receive and steward what's being passed to you? Practical reflections for next-generation leaders.
-              </p>
-              <a 
-                href="/blog/heir-readiness" 
-                class={buttonVariants({
-                  variant: "outline",
-                  class: "content-card-actions w-full justify-center border-primary text-primary hover:bg-primary/10"
-                })}
-              >
-                Read Article
-              </a>
-            </div>
-          </div>
-
-          <!-- Insight 2 -->
-          <div class="content-card">
-            <div class="content-card-content">
-              <div class="mb-4">
-                <Bookmark className="h-10 w-10 content-card-icon" />
-              </div>
-              <h3 class="content-card-title">
-                Why Legacy is a Lifestyle, Not Just Inheritance
-              </h3>
-              <p class="content-card-description">
-                Moving beyond the narrow definition of legacy as what you leave behind to embrace it as how you live today.
-              </p>
-              <a 
-                href="/blog/legacy-lifestyle" 
-                class={buttonVariants({
-                  variant: "outline",
-                  class: "content-card-actions w-full justify-center border-primary text-primary hover:bg-primary/10"
-                })}
-              >
-                Read Article
-              </a>
+          <div class="md:w-1/2">
+            <div class="bg-primary/5 rounded-lg p-8 flex items-center justify-center">
+              <BookOpen className="w-24 h-24 text-primary/30" />
             </div>
           </div>
         </div>
@@ -304,3 +258,13 @@ import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_6
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Custom styles for blog cards */
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-rows: 1fr 1fr;
+      grid-auto-rows: 1fr;
+    }
+  }
+</style>

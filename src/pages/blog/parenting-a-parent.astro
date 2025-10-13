@@ -1,0 +1,365 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from 'astro:assets';
+import { buttonVariants } from "@/components/ui/button";
+import { ArrowLeft, Download, ThumbsUp, Heart, MessagesSquare, Share2, Copy, Facebook, Linkedin, Twitter } from "lucide-react";
+---
+
+<BaseLayout
+  title="Parenting a Parent: A Guide for Adult Children | In the Room With Legacy"
+  description="Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools."
+>
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <!-- Article Header -->
+        <div class="mb-12">
+          <a href="/blog" class="inline-flex items-center text-primary hover:underline mb-8">
+            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Blog
+          </a>
+          
+          <!-- Featured Image Banner -->
+          <div class="w-full h-80 md:h-96 relative rounded-xl overflow-hidden mb-8">
+            <img 
+              src="https://images.unsplash.com/photo-1758612897848-858352fd363f?w=1200&h=600&auto=format&fit=crop&q=80" 
+              alt="Elderly man with younger person showing care and connection" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+          
+          <h1 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+            Parenting a Parent: A Guide for Adult Children
+          </h1>
+          
+          <div class="flex items-center justify-between border-y border-primary/10 py-4 mb-8">
+            <div class="flex items-center">
+              <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                Guide
+              </span>
+            </div>
+            
+            <a 
+              href="/media/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf" 
+              download
+              class={buttonVariants({
+                size: "sm",
+                class: "inline-flex items-center text-white"
+              })}
+            >
+              <Download className="mr-2 h-4 w-4" /> Download PDF
+            </a>
+          </div>
+        </div>
+        
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none">
+          <h2>Introduction</h2>
+          <p>
+            There comes a time in many families when the roles begin to shift. The parent who once cared for you now requires care themselves. This season can be tender, overwhelming, and deeply meaningful.
+          </p>
+          <p>
+            But it's not always simple. Depending on your history, this shift can stir up old wounds, strained dynamics, or complicated feelings. You may find yourself navigating not only the practical realities of caregiving but also the emotional weight of stepping closer into intimacy with someone whose role in your life has not always been easy.
+          </p>
+          <p>
+            Parenting a parent is not about reversing roles entirely — your parent will always be your parent. Instead, it is about honoring their dignity while stepping in to provide support where it's needed most. It's about creating balance: protecting their independence, respecting their wishes, and still ensuring they are safe, cared for, and loved.
+          </p>
+          <p>
+            This guide is here to remind you that you are not alone in this. Many adult children find themselves in this exact season. While no two family journeys are the same, there are common truths, mindful steps, and legacy-centered practices that can help you walk through this chapter with clarity, compassion, and confidence.
+          </p>
+
+          <h2>The Shift: Signs You're Parenting a Parent</h2>
+          <p>
+            The moment you realize you're parenting a parent rarely happens all at once. It's often a series of small signs that add up over time. You may notice:
+          </p>
+          <ul>
+            <li>We're just getting older. Nothing dramatic is happening — no memory loss, no major health concerns — but there's a natural desire for more support, clarity, and peace of mind.</li>
+            <li>Subtle shifts in memory — they repeat the same story more often, misplace items, or forget simple details.</li>
+            <li>Difficulty with everyday responsibilities — missed bill payments, unopened mail, or confusion about appointments.</li>
+            <li>Health and mobility concerns — new struggles with balance, getting dressed, or managing medications.</li>
+            <li>Emotional resistance — they insist, "I don't need help," even when the signs are clear that they do.</li>
+          </ul>
+          <p>
+            But parenting a parent isn't always about stepping in because of decline. Sometimes, it's about stepping in early to build peace and understanding. Think of it like a relay race: runners don't collapse before they pass the baton. They're still strong, still capable, but the handoff matters. In the same way, many families begin these conversations and shifts while parents are still healthy — precisely because it ensures dignity, clarity, and harmony later.
+          </p>
+
+          <div class="bg-primary/5 p-6 rounded-lg my-8 border-l-4 border-primary">
+            <h3 class="text-primary font-display font-bold mb-3">Storytelling Moment</h3>
+            <p class="italic">
+              In many families, stepping into leadership isn't automatic — it's cultivated. Consider the child who grows up watching their parents run a business, gradually taking on responsibilities: answering phones, learning bookkeeping, shadowing at client meetings. By the time they are offered leadership, they've been tested, trained, and seasoned.
+            </p>
+            <p class="italic">
+              The same principle applies far beyond business. Caregiving for an elder, managing household duties, learning to advocate with professionals — all of these experiences raise up the next generation to shoulder responsibility. Inheritance without preparation creates entitlement. Inheritance with training creates stewardship.
+            </p>
+          </div>
+
+          <h2>Seeing Your Parent Anew</h2>
+          <p>
+            One of the unexpected realities of parenting a parent is discovering who they are beyond the role you've always known. As an adult, you carry new perspective — shaped by your own responsibilities, struggles, and growth. That perspective can make it both jarring and amazing to get to know your parent on a deeper level.
+          </p>
+          <p>
+            You may find yourself asking questions you never thought to ask before, or noticing details in their story that once went unnoticed. You might recognize their sacrifices more clearly, or finally understand why they made certain choices. At times, this new lens can bring tension. Other times, it can bring moments of profound connection.
+          </p>
+          <p>
+            Parenting a parent is not just about care; it is also about curiosity. It's a chance to honor your parent as a whole person, not only as "Mom" or "Dad," but as an individual with their own history, hopes, and humanity.
+          </p>
+
+          <h2>Things to Be Mindful Of</h2>
+          <p>
+            Parenting a parent isn't just about stepping in when something goes wrong — it's about being attentive to the areas of life that matter most. Here are some things to hold in mind as you navigate this role:
+          </p>
+          <ul>
+            <li><strong>Health & Wellness:</strong> Be aware of your parent's medical needs, appointments, and prescriptions. Prevention and consistency often matter as much as treatment. Sometimes your presence at a doctor's visit can make all the difference.</li>
+            <li><strong>Finances & Security:</strong> Finances can be sensitive, but they're essential. Begin gentle conversations about organizing bills, insurance, and long-term planning. Even small steps — like setting up auto-pay or reviewing accounts together — can bring peace of mind.</li>
+            <li><strong>Emotional Needs:</strong> Aging can stir feelings of loss, vulnerability, or fear. Sometimes your parent may need reassurance more than solutions. Presence, listening, and patience are powerful forms of care.</li>
+            <li><strong>Independence vs. Safety:</strong> One of the hardest balances is preserving dignity while ensuring safety. Look for ways to support independence — like providing tools or systems that help them manage daily life — while still being ready to step in when necessary.</li>
+            <li><strong>Legacy & Story:</strong> Beyond logistics, be mindful of the stories, wisdom, and traditions your parent carries. Ask questions, record conversations, and preserve what matters. Parenting a parent is also an opportunity to safeguard family history for generations to come.</li>
+          </ul>
+
+          <div class="bg-primary/5 p-6 rounded-lg my-8 border-l-4 border-primary">
+            <h3 class="text-primary font-display font-bold mb-3">Sidebar: How to Start Small</h3>
+            <p>
+              You don't have to do it all at once. Start where you are:
+            </p>
+            <ul>
+              <li>Pick one category from the checklist (health, finances, home, family).</li>
+              <li>Choose one step within that category (like making a list of providers or reviewing one bill).</li>
+              <li>Set a reminder to revisit in 6–12 months — treat it as a living practice.</li>
+              <li>Celebrate progress, even if it feels small.</li>
+            </ul>
+            <p>
+              The goal isn't to control your parent's life — it's to walk alongside them, with love and clarity, as you both grow into this new chapter together.
+            </p>
+          </div>
+
+          <h2>Conversation Guide: A Map for Meaningful Dialogue</h2>
+          <p>
+            Conversations with your parent in this season don't have to feel heavy. The best ones often come from curiosity, love, and a genuine desire to understand how they want to live now and in the years ahead. Think of these prompts as a map — you don't have to cover everything at once. You can move through them gradually, as the timing feels right.
+          </p>
+
+          <div class="bg-blue-50 p-6 rounded-lg my-6">
+            <h3 class="text-primary font-display font-bold mb-2">Stage 1: Light & Everyday</h3>
+            <p>Start with curiosity and day-to-day life. These questions feel natural and approachable:</p>
+            <ul>
+              <li>What routines or activities give you the most peace right now?</li>
+              <li>As you start to slow your roll, what does living well look like for you?</li>
+              <li>What's something about your younger years that you've never shared with me?</li>
+            </ul>
+          </div>
+
+          <div class="bg-blue-50 p-6 rounded-lg my-6">
+            <h3 class="text-primary font-display font-bold mb-2">Stage 2: Shared Support & Security</h3>
+            <p>Move gently into how they want to be cared for and supported, always from a place of agency:</p>
+            <ul>
+              <li>How do you feel about us making your health a collective effort, so you're supported but not alone?</li>
+              <li>What would make you feel most secure about your future?</li>
+              <li>How do you want us, as a family, to think about sharing resources or supporting one another?</li>
+            </ul>
+          </div>
+
+          <h2>Practical Checklist</h2>
+          <p>
+            This checklist is about creating clarity and ease — so life flows more smoothly now, not just later. Think of it as a living practice that you revisit over time. Even Warren Buffett recommends reviewing and updating these basics once a year. The goal is not control, but peace of mind.
+          </p>
+
+          <div class="bg-primary/5 p-6 rounded-lg my-8 border-l-4 border-primary">
+            <h3 class="text-primary font-display font-bold mb-3">Takeaways</h3>
+            <p>Remember these key points as you navigate parenting a parent:</p>
+            <ul>
+              <li>This is a gradual transition, not a sudden role reversal</li>
+              <li>Balance respect for independence with necessary support</li>
+              <li>Start small and focus on one area at a time</li>
+              <li>Create systems that preserve dignity while ensuring safety</li>
+              <li>View this as an opportunity for deeper connection, not just caregiving</li>
+            </ul>
+          </div>
+
+          <h2>Affirmation / Closing</h2>
+          <p>
+            Parenting a parent is one of the most profound acts of love, legacy, and respect. It calls us to honor the generation that came before while preparing the way for the generations yet to come.
+          </p>
+          <p>
+            This role is not about doing everything perfectly. It's about showing up with presence, compassion, and consistency. Whether you're scheduling appointments, capturing family recipes, or simply sitting together in silence, you are shaping a legacy of care that will ripple far beyond this moment.
+          </p>
+          <p>
+            Remember: you are not alone in this. Families across cultures and communities are navigating the same shift. Each step you take — no matter how small — is part of a bigger story of stewardship and love.
+          </p>
+        </div>
+
+        <!-- Download Button -->
+        <div class="mt-12 text-center">
+          <a 
+            href="/media/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf" 
+            download
+            class={buttonVariants({
+              size: "lg",
+              class: "inline-flex items-center text-white"
+            })}
+          >
+            <Download className="mr-2 h-5 w-5" /> Download Full Guide (PDF)
+          </a>
+        </div>
+        
+        <!-- Interactive Elements -->
+        <div class="mt-16 border-t border-primary/10 pt-8">
+          <!-- Reactions -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-primary mb-4">How did this article make you feel?</h3>
+            <div class="flex flex-wrap gap-3">
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <ThumbsUp className="h-6 w-6 text-[#9a4a0b] mb-1" />
+                <span class="text-xs font-medium">Helpful</span>
+              </button>
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <Heart className="h-6 w-6 text-[#9a4a0b] mb-1" />
+                <span class="text-xs font-medium">Moving</span>
+              </button>
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-[#9a4a0b] mb-1">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 15h8"></path>
+                  <path d="M9 9h.01"></path>
+                  <path d="M15 9h.01"></path>
+                </svg>
+                <span class="text-xs font-medium">Wow</span>
+              </button>
+              <button class="flex flex-col items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg p-3 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6 text-[#9a4a0b] mb-1">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span class="text-xs font-medium">Inspiring</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Comments -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-primary mb-4">Join the conversation</h3>
+            <div class="bg-white border border-primary/20 rounded-lg p-6">
+              <form class="mb-6">
+                <div class="mb-4">
+                  <label for="username" class="block text-sm font-medium text-foreground/80 mb-1">Name</label>
+                  <input 
+                    type="text" 
+                    id="username" 
+                    class="w-full px-3 py-2 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="comment" class="block text-sm font-medium text-foreground/80 mb-1">Comment</label>
+                  <textarea 
+                    id="comment"
+                    rows="4"
+                    class="w-full px-3 py-2 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30"
+                    placeholder="Share your thoughts..."
+                  ></textarea>
+                </div>
+                <button 
+                  type="submit"
+                  class={buttonVariants({
+                    size: "default",
+                    class: "text-white"
+                  })}
+                >
+                  <MessagesSquare className="mr-2 h-4 w-4" /> Post Comment
+                </button>
+              </form>
+              
+              <div class="border-t border-primary/10 pt-6">
+                <p class="text-center text-foreground/60 text-sm">
+                  Be the first to comment on this article
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Share -->
+          <div class="mb-8">
+            <h3 class="text-lg font-semibold text-primary mb-4">Share this article</h3>
+            <div class="flex flex-wrap gap-3">
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Copy className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">Copy Link</span>
+              </button>
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Facebook className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">Facebook</span>
+              </button>
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Linkedin className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">LinkedIn</span>
+              </button>
+              <button class="inline-flex items-center justify-center bg-white hover:bg-primary/5 border border-primary/20 rounded-lg px-4 py-2 transition-colors">
+                <Twitter className="h-4 w-4 text-[#9a4a0b] mr-2" />
+                <span class="text-sm">Twitter</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Return Link -->
+        <div class="text-center mt-12">
+          <a href="/blog" class="text-primary hover:underline inline-flex items-center">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Return to Blog
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Custom styles for article content */
+  .prose h2 {
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    margin-top: 2rem;
+  }
+  
+  .prose p {
+    margin-bottom: 1rem;
+  }
+  
+  .prose ul {
+    margin-bottom: 1.5rem;
+  }
+  
+  .prose .lead {
+    font-size: 1.125rem;
+    color: var(--color-primary);
+  }
+</style>
+
+<script>
+  // Simple event handlers for the interactive elements
+  document.addEventListener('DOMContentLoaded', () => {
+    // Reaction buttons
+    const reactionButtons = document.querySelectorAll('.flex-col.items-center.justify-center');
+    reactionButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        reactionButtons.forEach(btn => btn.classList.remove('bg-primary/10', 'border-primary'));
+        
+        // Add active class to clicked button
+        button.classList.add('bg-primary/10', 'border-primary');
+      });
+    });
+    
+    // Copy link button
+    const copyLinkButton = document.querySelector('button:has(.h-4.w-4.text-\\[\\#9a4a0b\\].mr-2:first-child)');
+    if (copyLinkButton) {
+      copyLinkButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(window.location.href);
+        
+        // Show a brief tooltip or feedback
+        const originalText = copyLinkButton.innerHTML;
+        copyLinkButton.innerHTML = '<span class="text-sm">Link Copied!</span>';
+        
+        setTimeout(() => {
+          copyLinkButton.innerHTML = originalText;
+        }, 2000);
+      });
+    }
+  });
+</script>
