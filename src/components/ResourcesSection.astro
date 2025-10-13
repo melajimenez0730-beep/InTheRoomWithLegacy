@@ -16,131 +16,146 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
 
     <!-- Single row layout with horizontal scrolling on smaller screens -->
     <div class="relative -mx-4 px-4 md:mx-0 md:px-0 mb-10">
-      <!-- Mobile: horizontal scrolling cards -->
-      <div class="flex md:hidden flex-nowrap overflow-x-auto gap-4 pb-6 snap-x px-2">
-        <!-- Card 1: Founders -->
-        <div class="snap-center min-w-[250px] w-[250px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
-          <div class="p-5 flex justify-center">
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-              <Building className="text-secondary/80" size={20} />
+      <!-- Mobile: swipe-friendly carousel (no scrollbar) -->
+      <div class="md:hidden carousel-container overflow-hidden relative px-2">
+        <!-- Improved mobile card carousel with swipe functionality -->
+        <div id="resourceCarousel" class="flex transition-transform duration-300 ease-in-out pb-6 w-full">
+          <!-- Card 1: Founders -->
+          <div class="flex-none w-full px-2 sm:px-10 resource-slide">
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
+              <div class="p-5 flex justify-center">
+                <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <Building className="text-secondary/80" size={20} />
+                </div>
+              </div>
+              <div class="px-5 pb-5 flex-1 flex flex-col">
+                <h3 class="font-display font-semibold text-primary text-center mb-3">Founders</h3>
+                <p class="text-foreground/70 text-sm text-center mb-4 flex-grow">
+                  First-generation wealth and legacy builders creating a foundation.
+                </p>
+                <a 
+                  href="/tools" 
+                  class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
+                >
+                  Learn More <span class="ml-1">→</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Founders</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
-              First-generation wealth and legacy builders creating a foundation.
-            </p>
-            <a 
-              href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
-            >
-              Learn More <span class="ml-1">→</span>
-            </a>
-          </div>
-        </div>
 
-        <!-- Card 2: Inheritors & Heirs -->
-        <div class="snap-center min-w-[250px] w-[250px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
-          <div class="p-5 flex justify-center">
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-              <Sparkles className="text-secondary/80" size={20} />
+          <!-- Card 2: Inheritors & Heirs -->
+          <div class="flex-none w-full px-2 sm:px-10 resource-slide">
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
+              <div class="p-5 flex justify-center">
+                <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <Sparkles className="text-secondary/80" size={20} />
+                </div>
+              </div>
+              <div class="px-5 pb-5 flex-1 flex flex-col">
+                <h3 class="font-display font-semibold text-primary text-center mb-3">Inheritors & Heirs</h3>
+                <p class="text-foreground/70 text-sm text-center mb-4 flex-grow">
+                  Those preparing to receive or steward family assets and traditions.
+                </p>
+                <a 
+                  href="/tools" 
+                  class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
+                >
+                  Learn More <span class="ml-1">→</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Inheritors & Heirs</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
-              Those preparing to receive or steward family assets and traditions.
-            </p>
-            <a 
-              href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
-            >
-              Learn More <span class="ml-1">→</span>
-            </a>
-          </div>
-        </div>
 
-        <!-- Card 3: Families Building Together -->
-        <div class="snap-center min-w-[250px] w-[250px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
-          <div class="p-5 flex justify-center">
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-              <Users className="text-secondary/80" size={20} />
+          <!-- Card 3: Families Building Together -->
+          <div class="flex-none w-full px-2 sm:px-10 resource-slide">
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
+              <div class="p-5 flex justify-center">
+                <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <Users className="text-secondary/80" size={20} />
+                </div>
+              </div>
+              <div class="px-5 pb-5 flex-1 flex flex-col">
+                <h3 class="font-display font-semibold text-primary text-center mb-3">Families Building Together</h3>
+                <p class="text-foreground/70 text-sm text-center mb-4 flex-grow">
+                  Multi-generational families creating shared legacy.
+                </p>
+                <a 
+                  href="/tools" 
+                  class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
+                >
+                  Learn More <span class="ml-1">→</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Families Building Together</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
-              Multi-generational families creating shared legacy.
-            </p>
-            <a 
-              href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
-            >
-              Learn More <span class="ml-1">→</span>
-            </a>
-          </div>
-        </div>
 
-        <!-- Card 4: Collective Builders -->
-        <div class="snap-center min-w-[250px] w-[250px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
-          <div class="p-5 flex justify-center">
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-              <Heart className="text-secondary/80" size={20} />
+          <!-- Card 4: Collective Builders -->
+          <div class="flex-none w-full px-2 sm:px-10 resource-slide">
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
+              <div class="p-5 flex justify-center">
+                <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <Heart className="text-secondary/80" size={20} />
+                </div>
+              </div>
+              <div class="px-5 pb-5 flex-1 flex flex-col">
+                <h3 class="font-display font-semibold text-primary text-center mb-3">Collective Builders</h3>
+                <p class="text-foreground/70 text-sm text-center mb-4 flex-grow">
+                  Chosen family and kin creating community-based legacy.
+                </p>
+                <a 
+                  href="/tools" 
+                  class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
+                >
+                  Learn More <span class="ml-1">→</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Collective Builders</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
-              Chosen family and kin creating community-based legacy.
-            </p>
-            <a 
-              href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
-            >
-              Learn More <span class="ml-1">→</span>
-            </a>
-          </div>
-        </div>
 
-        <!-- Card 5: Curious Seekers -->
-        <div class="snap-center min-w-[250px] w-[250px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
-          <div class="p-5 flex justify-center">
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-              <BookOpen className="text-secondary/80" size={20} />
+          <!-- Card 5: Curious Seekers -->
+          <div class="flex-none w-full px-2 sm:px-10 resource-slide">
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
+              <div class="p-5 flex justify-center">
+                <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <BookOpen className="text-secondary/80" size={20} />
+                </div>
+              </div>
+              <div class="px-5 pb-5 flex-1 flex flex-col">
+                <h3 class="font-display font-semibold text-primary text-center mb-3">Curious Seekers</h3>
+                <p class="text-foreground/70 text-sm text-center mb-4 flex-grow">
+                  Individuals exploring family history and legacy concepts.
+                </p>
+                <a 
+                  href="/blog/why-legacy-matters" 
+                  class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
+                >
+                  Learn More <span class="ml-1">→</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Curious Seekers</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
-              Individuals exploring family history and legacy concepts.
-            </p>
-            <a 
-              href="/blog/why-legacy-matters" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
-            >
-              Learn More <span class="ml-1">→</span>
-            </a>
-          </div>
-        </div>
 
-        <!-- Card 6: Partners & Institutions -->
-        <div class="snap-center min-w-[250px] w-[250px] bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
-          <div class="p-5 flex justify-center">
-            <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
-              <Briefcase className="text-secondary/80" size={20} />
+          <!-- Card 6: Partners & Institutions -->
+          <div class="flex-none w-full px-2 sm:px-10 resource-slide">
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
+              <div class="p-5 flex justify-center">
+                <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+                  <Briefcase className="text-secondary/80" size={20} />
+                </div>
+              </div>
+              <div class="px-5 pb-5 flex-1 flex flex-col">
+                <h3 class="font-display font-semibold text-primary text-center mb-3">Partners & Institutions</h3>
+                <p class="text-foreground/70 text-sm text-center mb-4 flex-grow">
+                  Funders, advisors, and aligned organizations.
+                </p>
+                <a 
+                  href="/tools" 
+                  class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
+                >
+                  Learn More <span class="ml-1">→</span>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Partners & Institutions</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
-              Funders, advisors, and aligned organizations.
-            </p>
-            <a 
-              href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
-            >
-              Learn More <span class="ml-1">→</span>
-            </a>
           </div>
         </div>
       </div>
@@ -148,20 +163,20 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
       <!-- Desktop: grid layout -->
       <div class="hidden md:grid grid-cols-3 lg:grid-cols-6 gap-4">
         <!-- Card 1: Founders -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
           <div class="p-5 flex justify-center">
             <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
               <Building className="text-secondary/80" size={20} />
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Founders</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+          <div class="px-5 pb-5 flex-1 flex flex-col">
+            <h3 class="font-display font-semibold text-primary text-center mb-3 h-14 flex items-center justify-center">Founders</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 flex-1">
               First-generation wealth and legacy builders creating a foundation.
             </p>
             <a 
               href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
             >
               Learn More <span class="ml-1">→</span>
             </a>
@@ -169,20 +184,20 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
         </div>
 
         <!-- Card 2: Inheritors & Heirs -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
           <div class="p-5 flex justify-center">
             <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
               <Sparkles className="text-secondary/80" size={20} />
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Inheritors & Heirs</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+          <div class="px-5 pb-5 flex-1 flex flex-col">
+            <h3 class="font-display font-semibold text-primary text-center mb-3 h-14 flex items-center justify-center">Inheritors & Heirs</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 flex-1">
               Those preparing to receive or steward family assets and traditions.
             </p>
             <a 
               href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
             >
               Learn More <span class="ml-1">→</span>
             </a>
@@ -190,20 +205,20 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
         </div>
 
         <!-- Card 3: Families Building Together -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
           <div class="p-5 flex justify-center">
             <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
               <Users className="text-secondary/80" size={20} />
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Families Building Together</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+          <div class="px-5 pb-5 flex-1 flex flex-col">
+            <h3 class="font-display font-semibold text-primary text-center mb-3 h-14 flex items-center justify-center">Families Building Together</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 flex-1">
               Multi-generational families creating shared legacy.
             </p>
             <a 
               href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
             >
               Learn More <span class="ml-1">→</span>
             </a>
@@ -211,20 +226,20 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
         </div>
 
         <!-- Card 4: Collective Builders -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
           <div class="p-5 flex justify-center">
             <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
               <Heart className="text-secondary/80" size={20} />
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Collective Builders</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+          <div class="px-5 pb-5 flex-1 flex flex-col">
+            <h3 class="font-display font-semibold text-primary text-center mb-3 h-14 flex items-center justify-center">Collective Builders</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 flex-1">
               Chosen family and kin creating community-based legacy.
             </p>
             <a 
               href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
             >
               Learn More <span class="ml-1">→</span>
             </a>
@@ -232,20 +247,20 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
         </div>
 
         <!-- Card 5: Curious Seekers -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
           <div class="p-5 flex justify-center">
             <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
               <BookOpen className="text-secondary/80" size={20} />
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Curious Seekers</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+          <div class="px-5 pb-5 flex-1 flex flex-col">
+            <h3 class="font-display font-semibold text-primary text-center mb-3 h-14 flex items-center justify-center">Curious Seekers</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 flex-1">
               Individuals exploring family history and legacy concepts.
             </p>
             <a 
               href="/blog/why-legacy-matters" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
             >
               Learn More <span class="ml-1">→</span>
             </a>
@@ -253,20 +268,20 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
         </div>
 
         <!-- Card 6: Partners & Institutions -->
-        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group">
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/20 hover:border-primary/20 transition-all hover:shadow-md group flex flex-col h-full">
           <div class="p-5 flex justify-center">
             <div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
               <Briefcase className="text-secondary/80" size={20} />
             </div>
           </div>
-          <div class="px-5 pb-5">
-            <h3 class="font-display font-semibold text-primary text-center mb-3">Partners & Institutions</h3>
-            <p class="text-foreground/70 text-sm text-center mb-4 h-12">
+          <div class="px-5 pb-5 flex-1 flex flex-col">
+            <h3 class="font-display font-semibold text-primary text-center mb-3 h-14 flex items-center justify-center">Partners & Institutions</h3>
+            <p class="text-foreground/70 text-sm text-center mb-4 flex-1">
               Funders, advisors, and aligned organizations.
             </p>
             <a 
               href="/tools" 
-              class="flex justify-center items-center text-primary font-medium text-sm hover:underline"
+              class="flex justify-center items-center text-primary font-medium text-sm hover:underline mt-auto"
             >
               Learn More <span class="ml-1">→</span>
             </a>
@@ -274,15 +289,116 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
         </div>
       </div>
       
-      <!-- Scroll indicators for mobile -->
-      <div class="flex gap-1 justify-center mt-4 md:hidden">
-        <span class="w-2 h-2 rounded-full bg-primary/60"></span>
-        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
-        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
-        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
-        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
-        <span class="w-2 h-2 rounded-full bg-primary/30"></span>
+      <!-- Interactive pagination indicators for mobile -->
+      <div class="flex gap-2 justify-center mt-6 md:hidden" id="carouselIndicators">
+        <button aria-label="Go to slide 1" class="w-2.5 h-2.5 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
+        <button aria-label="Go to slide 2" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
+        <button aria-label="Go to slide 3" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
+        <button aria-label="Go to slide 4" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
+        <button aria-label="Go to slide 5" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="4"></button>
+        <button aria-label="Go to slide 6" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="5"></button>
       </div>
+      
+      <script>
+        // Wait for DOM to load
+        document.addEventListener('DOMContentLoaded', function() {
+          // Get necessary elements
+          const carousel = document.getElementById('resourceCarousel');
+          const indicators = document.getElementById('carouselIndicators');
+          const slides = document.querySelectorAll('.resource-slide');
+          const indicatorButtons = document.querySelectorAll('#carouselIndicators button');
+          
+          // Variables to track carousel state
+          let currentIndex = 0;
+          let startX, moveX;
+          let isPointerDown = false;
+          const slideWidth = 100; // percentage based on container width
+          
+          // Function to update carousel position
+          function updateCarousel(index) {
+            // Ensure index is within bounds
+            if (index < 0) index = 0;
+            if (index >= slides.length) index = slides.length - 1;
+            
+            // Update current index
+            currentIndex = index;
+            
+            // Move carousel to show current slide
+            carousel.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+            
+            // Update indicators
+            indicatorButtons.forEach((button, i) => {
+              if (i === currentIndex) {
+                button.classList.remove('bg-primary/30');
+                button.classList.add('bg-primary');
+              } else {
+                button.classList.remove('bg-primary');
+                button.classList.add('bg-primary/30');
+              }
+            });
+          }
+          
+          // Add click handlers to indicator buttons
+          indicatorButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+              updateCarousel(index);
+            });
+          });
+          
+          // Add touch/pointer event handlers
+          carousel.addEventListener('pointerdown', (e) => {
+            isPointerDown = true;
+            startX = e.clientX;
+            // Prevent default to avoid scroll during swipe
+            e.preventDefault();
+          });
+          
+          carousel.addEventListener('pointermove', (e) => {
+            if (!isPointerDown) return;
+            moveX = e.clientX;
+            const diff = moveX - startX;
+            // Prevent overscroll at edges
+            const minTranslate = 0;
+            const maxTranslate = -(slides.length - 1) * slideWidth;
+            const translate = Math.max(
+              maxTranslate, 
+              Math.min(
+                minTranslate, 
+                -(currentIndex * slideWidth) + (diff / carousel.offsetWidth * 100)
+              )
+            );
+            
+            carousel.style.transform = `translateX(${translate}%)`;
+          });
+          
+          // Handle pointer up and decide if to snap to next/prev slide
+          function handlePointerUp(e) {
+            if (!isPointerDown) return;
+            isPointerDown = false;
+            
+            const diff = (e.clientX || moveX) - startX;
+            const threshold = carousel.offsetWidth * 0.2; // 20% of width threshold for swipe
+            
+            if (diff > threshold) {
+              // Swiped right - go to previous
+              updateCarousel(currentIndex - 1);
+            } else if (diff < -threshold) {
+              // Swiped left - go to next
+              updateCarousel(currentIndex + 1);
+            } else {
+              // Not enough movement, snap back
+              updateCarousel(currentIndex);
+            }
+          }
+          
+          carousel.addEventListener('pointerup', handlePointerUp);
+          carousel.addEventListener('pointercancel', handlePointerUp);
+          carousel.addEventListener('pointerleave', handlePointerUp);
+          
+          // Set initial state
+          updateCarousel(0);
+        });
+      </script>
     </div>
 
     <div class="text-center">
