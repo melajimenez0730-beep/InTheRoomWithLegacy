@@ -20,26 +20,31 @@ import MobileNav from "@/components/MobileNav";
       <div class="hidden md:flex">
         <Navigation client:load />
       </div>
-      <a
-        href="/tools/legacy-assessment"
-        class={buttonVariants({
-          variant: "default",
-          size: "sm",
-          class: "hidden md:inline-flex bg-[#f7f6dc] text-[#052d3f] hover:bg-[#f7f6dc]/90"
-        })}
-      >
-        Take the Legacy Assessment
-      </a>
-      <a
-        href="#join-the-room"
-        class={buttonVariants({
-          variant: "secondary",
-          size: "sm",
-          class: "hidden md:inline-flex bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#9a4a0b]/80 border-none"
-        })}
-      >
-        Join the Room
-      </a>
+      <!-- Desktop-only CTA buttons - explicitly hidden on all mobile screen sizes -->
+      <div class="hidden md:block">
+        <a
+          href="/tools/legacy-assessment"
+          class={buttonVariants({
+            variant: "default",
+            size: "sm",
+            class: "bg-[#f7f6dc] text-[#052d3f] hover:bg-[#f7f6dc]/90"
+          })}
+        >
+          Take the Legacy Assessment
+        </a>
+      </div>
+      <div class="hidden md:block">
+        <a
+          href="#join-the-room"
+          class={buttonVariants({
+            variant: "secondary",
+            size: "sm",
+            class: "bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#9a4a0b]/80 border-none"
+          })}
+        >
+          Join the Room
+        </a>
+      </div>
       <button 
         class="md:hidden flex items-center p-2 text-[#f7f6dc]"
         aria-label="Toggle menu"
