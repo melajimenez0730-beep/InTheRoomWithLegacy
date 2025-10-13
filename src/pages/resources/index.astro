@@ -1,14 +1,14 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Search, Download, FileText, Mail, Book, Bookmark, Filter } from "lucide-react";
+import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool } from "lucide-react";
 import { Image } from 'astro:assets';
 import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
 ---
 
 <BaseLayout
-  title="Legacy Insights & Resources | In the Room With Legacy"
-  description="Explore our complete archive of articles, guides, worksheets, and letters about building and sustaining meaningful family legacies."
+  title="Legacy Insights, Tools, and Resources | In the Room With Legacy"
+  description="Explore our complete collection of articles, guides, worksheets, and tools to help you build, preserve, and pass on what matters most."
 >
   <!-- Hero Section -->
   <section class="py-20 md:py-28 relative overflow-hidden min-h-[40vh] flex items-center">
@@ -24,10 +24,10 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6">
-          Legacy Insights & Resources
+          Legacy Insights, Tools, and Resources
         </h1>
         <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Explore our complete collection of articles, guides, and tools to help you build, preserve, and pass on what matters most.
+          Explore our complete collection of articles, guides, worksheets, and tools to help you build, preserve, and pass on what matters most.
         </p>
       </div>
     </div>
@@ -51,8 +51,8 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
             <button id="worksheets-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
               Worksheets
             </button>
-            <button id="letters-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
-              Letters
+            <button id="tools-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
+              Tools
             </button>
           </div>
           
@@ -91,11 +91,52 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       </div>
     </div>
   </section>
+
+  <!-- Updates Signup Section -->
+  <section class="py-16 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto bg-muted/20 rounded-lg overflow-hidden shadow-sm">
+        <div class="flex flex-col md:flex-row">
+          <div class="p-8 md:p-10 flex-1">
+            <h2 class="text-2xl font-display font-bold text-primary mb-3">Want to be the first to know when new tools drop?</h2>
+            <p class="text-foreground/80 mb-6">Join our community to receive updates, early access opportunities, and exclusive content.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a 
+                href="/contact" 
+                class={buttonVariants({
+                  size: "lg",
+                  class: "font-medium"
+                })}
+              >
+                Join Our Community
+              </a>
+            </div>
+          </div>
+          
+          <div class="bg-primary/5 p-6 flex items-center justify-center md:w-1/4">
+            <Settings className="w-16 h-16 text-primary/40" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <script>
   // Resource data
   const resources = [
+    {
+      title: "Legacy Assessment Tool",
+      description: "The first AI-powered tool that helps families measure where they are, map what matters most, and take real steps to protect their legacy across generations.",
+      type: "tool",
+      topic: "assessment",
+      icon: "Tool",
+      url: "/tools/legacy-assessment",
+      buttonText: "Access Tool",
+      isDownloadable: false,
+      featured: true
+    },
     {
       title: "The Case for Ethical Nepotism: Reclaiming Family Advantage",
       description: "How families can create opportunity for their own while maintaining integrity and excellence.",
@@ -135,16 +176,6 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       url: "/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf",
       buttonText: "Download Guide",
       isDownloadable: true
-    },
-    {
-      title: "Letter from Our Founder",
-      description: "The journey that led to creating In the Room with Legacy and the mission that drives our work.",
-      type: "letter",
-      topic: "legacy",
-      icon: "Mail",
-      url: "/about/founder-letter",
-      buttonText: "Read Letter",
-      isDownloadable: false
     },
     {
       title: "Why Legacy is a Lifestyle, Not Just Inheritance",
@@ -313,6 +344,51 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       resourcesGrid?.appendChild(card);
     });
   }
+
+  // Define CSS for content cards
+  document.head.insertAdjacentHTML('beforeend', `
+    <style>
+      .content-card {
+        transition: all 0.2s ease-in-out;
+        height: 100%;
+      }
+      .content-card-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(var(--color-primary), 0.1);
+      }
+      .content-card:hover {
+        transform: translateY(-4px);
+      }
+      .content-card-content:hover {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .content-card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
+        color: var(--color-primary);
+        font-family: var(--font-display);
+      }
+      .content-card-description {
+        color: rgba(var(--color-foreground), 0.8);
+        margin-bottom: 1.25rem;
+        flex-grow: 1;
+      }
+      .content-card-actions {
+        margin-top: auto;
+      }
+      .featured-card .content-card-content {
+        position: relative;
+        border-width: 2px;
+      }
+    </style>
+  `);
 
   // Initialize page
   function initPage() {
