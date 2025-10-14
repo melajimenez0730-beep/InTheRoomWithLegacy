@@ -108,8 +108,8 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           <a
             href="/tools/legacy-assessment"
             className={cn(
-              buttonVariants({ variant: "default", size: "lg" }),
-              "w-full text-center bg-[#f7f6dc] text-[#052d3f] hover:bg-[#f7f6dc]/90"
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "w-full text-center bg-[#f7f6dc] text-[#052d3f] font-medium border-2 border-[#052d3f] hover:bg-[#052d3f] hover:text-white transition-colors duration-300"
             )}
             onClick={handleClose}
           >
