@@ -1,0 +1,56 @@
+---
+interface Props {
+  text: string;
+  speed?: number; // in seconds for one complete animation cycle
+}
+
+const { 
+  text = "Ethical Nepotism (n.): Legacy with accountability. The practice of preparing heirs with intention, discipline, and education—not entitlement. Privilege made purposeful, inheritance made responsible.",
+  speed = 30 
+} = Astro.props;
+---
+
+<div class="marquee-container bg-[#052d3f] py-5 overflow-hidden relative">
+  <div class="marquee-content">
+    <div class="marquee-text">{text}</div>
+    <div class="marquee-text">{text}</div>
+  </div>
+</div>
+
+<style define:vars={{ animationDuration: `${speed}s` }}>
+  .marquee-container {
+    width: 100%;
+    position: relative;
+  }
+  
+  .marquee-content {
+    display: flex;
+    width: max-content;
+    animation: marquee var(--animationDuration) linear infinite;
+  }
+  
+  .marquee-text {
+    color: white;
+    font-size: 1.25rem;
+    padding: 0 2rem;
+    white-space: nowrap;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(100, 200, 255, 0.3);
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .marquee-text {
+      font-size: 1rem;
+    }
+  }
+</style>
