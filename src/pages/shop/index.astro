@@ -1,141 +1,295 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Button } from "@/components/ui/button";
-import { ShoppingBag } from "lucide-react";
-import NewWebsiteBanner from "@/components/NewWebsiteBanner.astro";
+import { ExternalLink, ChevronDown } from "lucide-react";
 
-// Define product data
+// Define product data with taglines
 const products = [
   {
     id: 1,
-    name: "Ethical Nepotism T-shirt",
+    name: "Ethical Nepotism™ T-shirt",
     description: "Black Version",
+    tagline: "A reminder that legacy isn't what you receive—it's how you rise to it.",
     price: "$32",
     image: "https://images.unsplash.com/photo-1578346021958-c58829af708b?w=600&h=400&auto=format&fit=crop&q=80",
-    alt: "Black t-shirt with Ethical Nepotism print"
+    alt: "Black t-shirt with Ethical Nepotism print",
+    checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test_123"
   },
   {
     id: 2,
-    name: "Ethical Nepotism T-shirt",
+    name: "Ethical Nepotism™ T-shirt",
     description: "White Version",
+    tagline: "Turn a loaded term into a cultural badge of responsibility.",
     price: "$32",
     image: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=600&h=400&auto=format&fit=crop&q=80",
-    alt: "White t-shirt with Ethical Nepotism print"
+    alt: "White t-shirt with Ethical Nepotism print",
+    checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test_456"
   },
   {
     id: 3,
-    name: "Ethical Nepotism Sweatshirt",
+    name: "Ethical Nepotism™ Sweatshirt",
     description: "Premium comfort",
+    tagline: "Wear your values. Make formation visible.",
     price: "$58",
     image: "https://images.unsplash.com/photo-1625536658395-2bd89a631e37?w=600&h=400&auto=format&fit=crop&q=80",
-    alt: "Sweatshirt with Ethical Nepotism print"
+    alt: "Sweatshirt with Ethical Nepotism print",
+    checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test_789"
   },
   {
     id: 4,
-    name: "Ethical Nepotism Mug",
+    name: "Ethical Nepotism™ Mug",
     description: "11oz ceramic",
+    tagline: "Sip with purpose. Start conversations.",
     price: "$18",
     image: "https://images.unsplash.com/photo-1528113205084-1f6d08db49e7?w=600&h=400&auto=format&fit=crop&q=80",
-    alt: "Mug with Ethical Nepotism print"
+    alt: "Mug with Ethical Nepotism print",
+    checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test_101"
   },
   {
     id: 5,
-    name: "Ethical Nepotism Tote Bag",
+    name: "Ethical Nepotism™ Tote Bag",
     description: "Black Version",
+    tagline: "Carry purpose. Make a statement.",
     price: "$24",
     image: "https://images.unsplash.com/photo-1758274252868-a693898c08a8?w=600&h=400&auto=format&fit=crop&q=80",
-    alt: "Black tote bag with Ethical Nepotism print"
+    alt: "Black tote bag with Ethical Nepotism print",
+    checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test_112"
   },
   {
     id: 6,
-    name: "Ethical Nepotism Tote Bag",
+    name: "Ethical Nepotism™ Tote Bag",
     description: "White Version",
+    tagline: "Legacy with accountability—everywhere you go.",
     price: "$24",
     image: "https://images.unsplash.com/photo-1622445272054-ef281b3b8639?w=600&h=400&auto=format&fit=crop&q=80",
-    alt: "White tote bag with Ethical Nepotism print"
+    alt: "White tote bag with Ethical Nepotism print",
+    checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test_131"
   },
   {
     id: 7,
-    name: "Ethical Nepotism Cap",
+    name: "Ethical Nepotism™ Cap",
     description: "Adjustable fit",
+    tagline: "Top off your legacy mindset.",
     price: "$28",
     image: "https://images.unsplash.com/photo-1567101409853-f9469e008823?w=600&h=400&auto=format&fit=crop&q=80",
-    alt: "Cap with Ethical Nepotism print"
+    alt: "Cap with Ethical Nepotism print",
+    checkoutUrl: "https://checkout.stripe.com/c/pay/cs_test_415"
   }
 ];
+
+// Helper function to scroll to a section
+const scrollToProducts = () => {
+  document.getElementById('product-section').scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+};
 ---
 
 <BaseLayout 
-  title="Shop | Ethical Nepotism Collection" 
-  description="Legacy with accountability. Privilege made purposeful. Our Ethical Nepotism collection makes the message wearable."
+  title="Shop | Ethical Nepotism™ Collection" 
+  description="Legacy with accountability. Privilege made purposeful. Our Ethical Nepotism™ collection makes the message wearable."
 >
-    <div class="py-8 md:py-16">
-      <!-- Hero Section -->
-      <div class="text-center mb-12">
-        <h1 class="font-display text-3xl md:text-5xl font-bold text-primary mb-4">Ethical Nepotism™</h1>
-        <h2 class="text-xl md:text-2xl text-primary/80 font-medium mb-8">Legacy with accountability. Privilege made purposeful.</h2>
+  <!-- Hero Section - Full Width Banner -->
+  <div class="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#f5f5f5]/30 via-[#e0e0e0]/50 to-[#d8d8d8]/80">
+      <img 
+        src="https://images.unsplash.com/photo-1666358085605-b3b717d5a210?w=1200&h=600&auto=format&fit=crop&q=80" 
+        alt="Model wearing Ethical Nepotism apparel" 
+        class="w-full h-full object-cover object-center opacity-85 mix-blend-overlay"
+      />
+    </div>
+    
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-4 md:px-8 text-center">
+      <div class="max-w-4xl animate-fade-in">
+        <h1 class="font-serif text-4xl md:text-6xl font-bold text-primary mb-6">
+          Legacy with accountability.<br/>Privilege made purposeful.
+        </h1>
         
-        <div class="max-w-3xl mx-auto">
-          <p class="text-lg mb-4">
-            Ethical Nepotism™ isn't about favoritism—it's about formation. It's the reclamation of inheritance as something earned through intention, discipline, and stewardship.
-          </p>
-          <p class="text-lg mb-4">
-            Each drop is a statement—a reminder that legacy isn't just what you receive; it's how you rise to it.
-          </p>
-          <p class="text-lg mb-4">
-            Our first collection makes the message wearable: t-shirts, sweatshirts, totes, and mugs that turn a loaded term into a cultural badge—redefining inheritance as responsibility, not entitlement.
-          </p>
-          <p class="text-lg font-semibold mb-8">
-            This is legacy you can live in. This is Ethical Nepotism™.
-          </p>
-        </div>
+        <p class="text-lg md:text-xl text-primary/90 max-w-2xl mx-auto mb-8">
+          Ethical Nepotism™ isn't about favoritism—it's about formation. It's the reclamation of inheritance as something earned through intention, discipline, and stewardship.
+        </p>
+        
+        <Button 
+          id="shop-cta"
+          size="lg"
+          class="text-white bg-primary hover:bg-primary/90 text-lg font-medium px-8 py-6"
+          onclick="document.getElementById('product-section').scrollIntoView({behavior: 'smooth'})"
+        >
+          Shop the Collection <ChevronDown className="ml-2 h-5 w-5" />
+        </Button>
       </div>
-      
-      <!-- Product Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    </div>
+  </div>
+
+  <!-- Product Feature Section -->
+  <div id="product-section" class="py-24 bg-[#f7f7f7]">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {products.map(product => (
-          <div class="bg-[#052d3f] rounded-lg overflow-hidden shadow-md flex flex-col">
-            <div class="h-64 overflow-hidden">
+          <div class="product-card group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="relative overflow-hidden h-72">
               <img 
                 src={product.image} 
                 alt={product.alt}
-                class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+                class="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
               />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#052d3f]/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <div class="p-6 text-white">
+                  <p class="font-serif text-lg italic mb-4">{product.tagline}</p>
+                  <a 
+                    href={product.checkoutUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center bg-[#9a4a0b] hover:bg-[#9a4a0b]/90 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                  >
+                    Buy Now <ExternalLink className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </div>
             </div>
             
-            <div class="p-5 flex flex-col justify-between flex-grow">
-              <div>
-                <h3 class="text-white font-bold text-xl mb-1">{product.name}</h3>
-                <p class="text-white/70 mb-2">{product.description}</p>
-              </div>
-              
-              <div class="flex justify-between items-center mt-4">
-                <span class="text-white font-bold text-xl">{product.price}</span>
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  class="text-white border-[#9a4a0b] hover:bg-[#9a4a0b]/20 hover:text-white"
-                >
-                  <ShoppingBag className="h-4 w-4 mr-2" /> Add to Cart
-                </Button>
+            <div class="p-6">
+              <h3 class="font-serif text-xl font-bold text-primary mb-1">
+                {product.name}
+                <span class="text-[#9a4a0b] ml-1">{product.description}</span>
+              </h3>
+              <div class="flex justify-between items-center mt-2">
+                <p class="font-sans text-primary/80 text-sm">{product.tagline}</p>
+                <span class="font-serif text-xl font-bold text-primary">{product.price}</span>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
+  </div>
+
+  <!-- Message & Visual Story Section -->
+  <div class="py-20 bg-white">
+    <div class="container mx-auto px-4 md:px-8">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="w-full md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary mb-6">
+            This is legacy you can live in.
+          </h2>
+          
+          <p class="text-lg text-primary/80 mb-6">
+            Our collection redefines inheritance as responsibility, not entitlement. Every piece carries a message—wearable reminders of purpose, growth, and intentional living.
+          </p>
+          
+          <p class="text-lg text-primary/80 mb-6">
+            When you wear Ethical Nepotism™, you're not just making a fashion statement—you're making a declaration about how you view privilege, opportunity, and the transfer of knowledge and resources across generations.
+          </p>
+        </div>
+        
+        <div class="w-full md:w-1/2 rounded-xl overflow-hidden shadow-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1564518160120-94178fcdf5d4?w=600&h=400&auto=format&fit=crop&q=80" 
+            alt="Ethical Nepotism lifestyle" 
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Final CTA Section -->
+  <div class="py-20 bg-[#f2f0eb]">
+    <div class="container mx-auto px-4 md:px-8 text-center">
+      <h2 class="font-serif text-3xl md:text-5xl font-bold text-primary mb-4">
+        Each drop is a statement.
+      </h2>
+      <p class="text-2xl md:text-3xl font-serif text-[#9a4a0b] mb-10">
+        This is Ethical Nepotism™.
+      </p>
+      
+      <Button 
+        id="final-cta"
+        size="lg"
+        class="text-white bg-primary hover:bg-primary/90 text-lg font-medium px-8 py-6 mt-4"
+        onclick="document.getElementById('product-section').scrollIntoView({behavior: 'smooth'})"
+      >
+        Shop Now <ChevronDown className="ml-2 h-5 w-5" />
+      </Button>
+    </div>
+  </div>
 </BaseLayout>
 
 <style>
-  /* Add custom hover effects */
-  .hover\:scale-105:hover {
-    transform: scale(1.05);
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Apply floating animation on hover */
+  .product-card:hover {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Make font adjustments */
+  .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .font-sans {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  /* Responsive adjustments */
   @media (max-width: 768px) {
-    /* Adjust grid for mobile */
-    .grid-cols-1 {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
+    .product-card .absolute {
+      opacity: 1 !important;
+      background: linear-gradient(to top, rgba(5, 45, 63, 0.8), transparent 70%) !important;
     }
   }
 </style>
+
+<script>
+  // Add scroll-based animations
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    });
+    
+    // Observe product cards
+    document.querySelectorAll('.product-card').forEach(card => {
+      observer.observe(card);
+      // Initially hide the cards
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+    });
+    
+    // Add click events to CTA buttons
+    document.querySelectorAll('#shop-cta, #final-cta').forEach(button => {
+      button.addEventListener('click', () => {
+        document.getElementById('product-section').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
+</script>
