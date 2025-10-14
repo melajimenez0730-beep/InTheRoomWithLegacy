@@ -116,12 +116,7 @@ export default function Navigation() {
         ]} 
       />
       
-      <NavDropdown 
-        trigger="Support IRL" 
-        items={[
-          { href: "/support/donation", label: "Donation" }
-        ]} 
-      />
+      <NavItem href="/join-the-room">Join the Room</NavItem>
       
       <NavItem href="/shop">Shop</NavItem>
       
