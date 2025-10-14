@@ -116,14 +116,14 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
             Take the Legacy Assessment
           </a>
           <a
-            href="#join-the-room"
+            href="/join-the-room"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "w-full text-center bg-[#9a4a0b] text-[#f7f6dc] hover:bg-[#9a4a0b]/80 border-none"
             )}
             onClick={handleClose}
           >
-            Join the Room
+            Donate Now
           </a>
         </div>
       </nav>

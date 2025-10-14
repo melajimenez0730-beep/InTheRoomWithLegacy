@@ -116,8 +116,6 @@ export default function Navigation() {
         ]} 
       />
       
-      <NavItem href="/join-the-room">Join the Room</NavItem>
-      
       <NavItem href="/shop">Shop</NavItem>
       
       <NavItem href="/contact">Contact</NavItem>
