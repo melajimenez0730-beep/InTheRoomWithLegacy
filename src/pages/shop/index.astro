@@ -1,0 +1,141 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Button } from "@/components/ui/button";
+import { ShoppingBag } from "lucide-react";
+import NewWebsiteBanner from "@/components/NewWebsiteBanner.astro";
+
+// Define product data
+const products = [
+  {
+    id: 1,
+    name: "Ethical Nepotism T-shirt",
+    description: "Black Version",
+    price: "$32",
+    image: "https://images.unsplash.com/photo-1578346021958-c58829af708b?w=600&h=400&auto=format&fit=crop&q=80",
+    alt: "Black t-shirt with Ethical Nepotism print"
+  },
+  {
+    id: 2,
+    name: "Ethical Nepotism T-shirt",
+    description: "White Version",
+    price: "$32",
+    image: "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=600&h=400&auto=format&fit=crop&q=80",
+    alt: "White t-shirt with Ethical Nepotism print"
+  },
+  {
+    id: 3,
+    name: "Ethical Nepotism Sweatshirt",
+    description: "Premium comfort",
+    price: "$58",
+    image: "https://images.unsplash.com/photo-1625536658395-2bd89a631e37?w=600&h=400&auto=format&fit=crop&q=80",
+    alt: "Sweatshirt with Ethical Nepotism print"
+  },
+  {
+    id: 4,
+    name: "Ethical Nepotism Mug",
+    description: "11oz ceramic",
+    price: "$18",
+    image: "https://images.unsplash.com/photo-1528113205084-1f6d08db49e7?w=600&h=400&auto=format&fit=crop&q=80",
+    alt: "Mug with Ethical Nepotism print"
+  },
+  {
+    id: 5,
+    name: "Ethical Nepotism Tote Bag",
+    description: "Black Version",
+    price: "$24",
+    image: "https://images.unsplash.com/photo-1758274252868-a693898c08a8?w=600&h=400&auto=format&fit=crop&q=80",
+    alt: "Black tote bag with Ethical Nepotism print"
+  },
+  {
+    id: 6,
+    name: "Ethical Nepotism Tote Bag",
+    description: "White Version",
+    price: "$24",
+    image: "https://images.unsplash.com/photo-1622445272054-ef281b3b8639?w=600&h=400&auto=format&fit=crop&q=80",
+    alt: "White tote bag with Ethical Nepotism print"
+  },
+  {
+    id: 7,
+    name: "Ethical Nepotism Cap",
+    description: "Adjustable fit",
+    price: "$28",
+    image: "https://images.unsplash.com/photo-1567101409853-f9469e008823?w=600&h=400&auto=format&fit=crop&q=80",
+    alt: "Cap with Ethical Nepotism print"
+  }
+];
+---
+
+<BaseLayout 
+  title="Shop | Ethical Nepotism Collection" 
+  description="Legacy with accountability. Privilege made purposeful. Our Ethical Nepotism collection makes the message wearable."
+>
+    <div class="py-8 md:py-16">
+      <!-- Hero Section -->
+      <div class="text-center mb-12">
+        <h1 class="font-display text-3xl md:text-5xl font-bold text-primary mb-4">Ethical Nepotism™</h1>
+        <h2 class="text-xl md:text-2xl text-primary/80 font-medium mb-8">Legacy with accountability. Privilege made purposeful.</h2>
+        
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg mb-4">
+            Ethical Nepotism™ isn't about favoritism—it's about formation. It's the reclamation of inheritance as something earned through intention, discipline, and stewardship.
+          </p>
+          <p class="text-lg mb-4">
+            Each drop is a statement—a reminder that legacy isn't just what you receive; it's how you rise to it.
+          </p>
+          <p class="text-lg mb-4">
+            Our first collection makes the message wearable: t-shirts, sweatshirts, totes, and mugs that turn a loaded term into a cultural badge—redefining inheritance as responsibility, not entitlement.
+          </p>
+          <p class="text-lg font-semibold mb-8">
+            This is legacy you can live in. This is Ethical Nepotism™.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {products.map(product => (
+          <div class="bg-[#052d3f] rounded-lg overflow-hidden shadow-md flex flex-col">
+            <div class="h-64 overflow-hidden">
+              <img 
+                src={product.image} 
+                alt={product.alt}
+                class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            
+            <div class="p-5 flex flex-col justify-between flex-grow">
+              <div>
+                <h3 class="text-white font-bold text-xl mb-1">{product.name}</h3>
+                <p class="text-white/70 mb-2">{product.description}</p>
+              </div>
+              
+              <div class="flex justify-between items-center mt-4">
+                <span class="text-white font-bold text-xl">{product.price}</span>
+                <Button 
+                  variant="outline" 
+                  size="sm"
+                  class="text-white border-[#9a4a0b] hover:bg-[#9a4a0b]/20 hover:text-white"
+                >
+                  <ShoppingBag className="h-4 w-4 mr-2" /> Add to Cart
+                </Button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+</BaseLayout>
+
+<style>
+  /* Add custom hover effects */
+  .hover\:scale-105:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    /* Adjust grid for mobile */
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+</style>
