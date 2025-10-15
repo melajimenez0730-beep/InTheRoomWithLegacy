@@ -1,10 +1,12 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown } from "lucide-react";
+import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown, MessageCircleMore, Archive, HandHeart } from "lucide-react";
 import { Image } from 'astro:assets';
 import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681_7611223003304458758_n_nw_a861f184.jpg";
 import familyGatheringPhoto from "@/assets/family_gathering_nw_664eb12a.jpg";
+import familyPorchPhoto from "@/assets/family_on_porch_nw_6bf9f9ad.jpg";
+import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
 ---
 
 <BaseLayout
@@ -100,17 +102,105 @@ import familyGatheringPhoto from "@/assets/family_gathering_nw_664eb12a.jpg";
   </section>
 
   <!-- Why It Matters Section -->
-  <section class="py-24 bg-muted/30">
+  <section class="py-24 bg-white">
     <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="text-lg text-foreground/80 mb-6">
-          We've seen too many families torn apart, not by lack of love, but by silence and unspoken wishes. While We're Still Here™ ensures those conversations happen in time — while your loved ones are still here to speak for themselves.
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-8 text-center">
+        Why It Matters
+      </h2>
+      
+      <div class="max-w-3xl mx-auto mb-12 text-center">
+        <p class="text-lg text-primary/80 mb-6">
+          Every family carries stories, wisdom, and lessons — but too often, those truths
+          only surface after someone is gone.
         </p>
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
-          Don't wait until it's too late.
-        </h2>
         
-        <div class="relative bg-white p-8 md:p-10 rounded-lg shadow-md border border-primary/10 my-12">
+        <p class="text-lg text-primary/80 font-medium">
+          This experience helps you:
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Benefit 1: Hard Conversations -->
+        <div class="bg-[#f3f4f6] rounded-lg overflow-hidden shadow-md transition-transform hover:translate-y-[-4px]">
+          <div class="aspect-w-16 aspect-h-9 relative overflow-hidden">
+            <img 
+              src={familyPorchPhoto.src} 
+              alt="Family having conversation on porch steps" 
+              width={familyPorchPhoto.width} 
+              height={familyPorchPhoto.height} 
+              class="object-cover w-full h-64 brightness-[0.9]" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent"></div>
+          </div>
+          
+          <div class="p-6">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <MessageCircleMore className="text-primary w-6 h-6" />
+            </div>
+            
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">Have the hard conversations</h3>
+            
+            <p class="text-primary/80">
+              About health, legacy, and end-of-life care with grace and intention.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Benefit 2: Preserve Stories -->
+        <div class="bg-[#f3f4f6] rounded-lg overflow-hidden shadow-md transition-transform hover:translate-y-[-4px]">
+          <div class="aspect-w-16 aspect-h-9 relative overflow-hidden">
+            <img 
+              src={legacyCollagePhoto.src} 
+              alt="Collage of family photos preserving memories" 
+              width={legacyCollagePhoto.width} 
+              height={legacyCollagePhoto.height} 
+              class="object-cover w-full h-64 brightness-[0.9]" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent"></div>
+          </div>
+          
+          <div class="p-6">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Archive className="text-primary w-6 h-6" />
+            </div>
+            
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">Preserve your family's stories</h3>
+            
+            <p class="text-primary/80">
+              And values for generations to come.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Benefit 3: Find Peace -->
+        <div class="bg-[#f3f4f6] rounded-lg overflow-hidden shadow-md transition-transform hover:translate-y-[-4px]">
+          <div class="aspect-w-16 aspect-h-9 relative overflow-hidden">
+            <img 
+              src={familyGatheringPhoto.src} 
+              alt="Peaceful family gathering in backyard" 
+              width={familyGatheringPhoto.width} 
+              height={familyGatheringPhoto.height} 
+              class="object-cover w-full h-64 brightness-[0.9]" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent"></div>
+          </div>
+          
+          <div class="p-6">
+            <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <HandHeart className="text-primary w-6 h-6" />
+            </div>
+            
+            <h3 class="text-xl font-display font-semibold text-primary mb-3">Find peace now, not later</h3>
+            
+            <p class="text-primary/80">
+              These conversations aren't just about loss. They're about love, living legacy, and leaving nothing unsaid.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="max-w-3xl mx-auto mt-12 text-center">
+        <div class="relative bg-primary/5 p-8 md:p-10 rounded-lg shadow-md border border-primary/10">
           <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-primary/10 p-2 rounded-full">
             <Quote className="text-primary w-6 h-6" />
           </div>
