@@ -109,9 +109,9 @@ export default function Navigation() {
       />
       
       <NavDropdown 
-        trigger="IRL Advisors" 
+        trigger="In the Room with Legacy Advisors" 
         items={[
-          { href: "/advisors", label: "IRL Advisors" },
+          { href: "/advisors", label: "In the Room with Legacy Advisors" },
           { href: "/programs/black-family-business-network", label: "Black Family Business Network" }
         ]} 
       />
