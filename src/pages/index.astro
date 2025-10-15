@@ -19,8 +19,10 @@ import ResourcesSection from '@/components/ResourcesSection.astro';
   <ResourcesSection />
   <FounderSection />
   
-  <section class="py-24 container max-w-3xl">
-    <!-- KEEP ALL FORMS client:load !! DO NOT USE client:visible AS THIS CAUSES HYDRATION ISSUES!!-->
-    <ContactForm client:load />
+  <section class="py-24 bg-[#f3f4f6]">
+    <div class="container max-w-3xl">
+      <!-- KEEP ALL FORMS client:load !! DO NOT USE client:visible AS THIS CAUSES HYDRATION ISSUES!!-->
+      <ContactForm client:load />
+    </div>
   </section>
 </BaseLayout>
