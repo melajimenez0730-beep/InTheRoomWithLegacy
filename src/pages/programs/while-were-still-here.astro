@@ -11,25 +11,27 @@ import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681
   description="Bring your family together across generations for an unforgettable day of truth-telling, storytelling, and preparation — while you still can."
 >
   <!-- Hero Section -->
-  <section class="py-16 sm:py-20 md:py-32 bg-primary/5 relative overflow-hidden">
-    <div class="absolute inset-0 z-0 opacity-5">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMyMjIiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
+  <section class="py-16 sm:py-20 md:py-32 bg-primary relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-30">
+      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
     </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/90"></div>
 
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center px-4">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-4 sm:mb-6">
-          Because love and legacy can't wait until it's too late.
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-4 sm:mb-6">
+          Because love, legacy, and truth can't wait until it's too late.
         </h1>
         
         <div class="max-w-2xl mx-auto mb-6 sm:mb-8">
           <div class="relative rounded-lg overflow-hidden mb-6 sm:mb-8 shadow-lg">
-            <Image src={familyVintagePhoto} alt="Vintage family gathering" class="w-full object-cover brightness-[0.9] sepia-[0.15] aspect-[16/9] sm:aspect-[21/9]"/>
+            <Image src={familyVintagePhoto} alt="Multi-generational family gathering" class="w-full object-cover brightness-[0.9] sepia-[0.15] aspect-[16/9] sm:aspect-[21/9]"/>
           </div>
         </div>
         
-        <p class="text-base sm:text-lg md:text-xl text-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Bring your family together across generations for an unforgettable day of truth-telling, storytelling, and preparation — while you still can.
+        <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
+          Guided family conversations that bring peace to life's transitions, preserve your stories, and prepare the next generation — while we're still here
         </p>
         <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
           <a 
@@ -37,20 +39,10 @@ import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681
             class={buttonVariants({
               size: "lg",
               variant: "default",
-              class: "font-medium w-full justify-center bg-primary text-primary-foreground hover:bg-primary/90"
+              class: "font-medium w-full justify-center bg-white text-primary hover:bg-white/90"
             })}
           >
-            Apply for a Family Session
-          </a>
-          <a 
-            href="#partner" 
-            class={buttonVariants({
-              variant: "outline",
-              size: "lg",
-              class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center"
-            })}
-          >
-            Partner With Us
+            Request a Family Session
           </a>
         </div>
       </div>
