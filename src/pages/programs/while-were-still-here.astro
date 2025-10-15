@@ -217,13 +217,13 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
           Each pillar meets families where they are, from deep-dive retreats to our 90-minute Guided Gatherings.
         </p>
 
-        <!-- Carousel Container -->
-        <div class="relative carousel-container">
-          <!-- Slides Container -->
-          <div class="carousel-slides overflow-hidden relative rounded-lg">
-            <div class="carousel-track flex transition-transform duration-500 ease-in-out">
+        <!-- Carousel Container with inline styles for reliable behavior -->
+        <div id="pillarsCarousel" class="relative rounded-lg mb-8">
+          <div class="overflow-hidden">
+            <!-- Slides wrapper -->
+            <div class="js-carousel-slides flex transition-all duration-500 ease-in-out">
               <!-- Slide 1: Gather -->
-              <div class="carousel-slide bg-[#f3f4f6] p-8 rounded-lg shadow-md min-w-full">
+              <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
                   <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Users className="text-primary w-8 h-8" />
@@ -236,7 +236,7 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               </div>
 
               <!-- Slide 2: Share -->
-              <div class="carousel-slide bg-[#f3f4f6] p-8 rounded-lg shadow-md min-w-full">
+              <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
                   <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Heart className="text-primary w-8 h-8" />
@@ -249,7 +249,7 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               </div>
 
               <!-- Slide 3: Align -->
-              <div class="carousel-slide bg-[#f3f4f6] p-8 rounded-lg shadow-md min-w-full">
+              <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
                   <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Sparkles className="text-primary w-8 h-8" />
@@ -262,7 +262,7 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               </div>
 
               <!-- Slide 4: Preserve -->
-              <div class="carousel-slide bg-[#f3f4f6] p-8 rounded-lg shadow-md min-w-full">
+              <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
                   <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <Book className="text-primary w-8 h-8" />
@@ -275,7 +275,7 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               </div>
 
               <!-- Slide 5: Integrate -->
-              <div class="carousel-slide bg-[#f3f4f6] p-8 rounded-lg shadow-md min-w-full">
+              <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
                   <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                     <RefreshCw className="text-primary w-8 h-8" />
@@ -287,23 +287,24 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
                 </p>
               </div>
             </div>
-
-            <!-- Navigation Arrows -->
-            <button class="carousel-arrow carousel-prev absolute top-1/2 left-4 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md z-10 focus:outline-none" aria-label="Previous slide">
-              <ChevronLeft className="w-6 h-6 text-primary" />
-            </button>
-            <button class="carousel-arrow carousel-next absolute top-1/2 right-4 transform -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md z-10 focus:outline-none" aria-label="Next slide">
-              <ChevronRight className="w-6 h-6 text-primary" />
-            </button>
           </div>
 
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators flex justify-center mt-6 space-x-2">
-            <button class="carousel-indicator w-3 h-3 rounded-full bg-primary opacity-100 focus:outline-none" data-slide="0" aria-label="Go to slide 1"></button>
-            <button class="carousel-indicator w-3 h-3 rounded-full bg-primary/30 focus:outline-none" data-slide="1" aria-label="Go to slide 2"></button>
-            <button class="carousel-indicator w-3 h-3 rounded-full bg-primary/30 focus:outline-none" data-slide="2" aria-label="Go to slide 3"></button>
-            <button class="carousel-indicator w-3 h-3 rounded-full bg-primary/30 focus:outline-none" data-slide="3" aria-label="Go to slide 4"></button>
-            <button class="carousel-indicator w-3 h-3 rounded-full bg-primary/30 focus:outline-none" data-slide="4" aria-label="Go to slide 5"></button>
+          <!-- Navigation Arrows (positioned absolutely) -->
+          <button class="js-carousel-prev absolute top-1/2 left-2 md:left-4 -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 focus:outline-none hover:bg-gray-100" aria-label="Previous slide">
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+          </button>
+          
+          <button class="js-carousel-next absolute top-1/2 right-2 md:right-4 -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 focus:outline-none hover:bg-gray-100" aria-label="Next slide">
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+          </button>
+
+          <!-- Indicator Dots -->
+          <div class="flex justify-center mt-6 space-x-3">
+            <button class="js-carousel-dot w-3 h-3 rounded-full bg-primary" data-index="0" aria-label="Go to slide 1"></button>
+            <button class="js-carousel-dot w-3 h-3 rounded-full bg-primary/30" data-index="1" aria-label="Go to slide 2"></button>
+            <button class="js-carousel-dot w-3 h-3 rounded-full bg-primary/30" data-index="2" aria-label="Go to slide 3"></button>
+            <button class="js-carousel-dot w-3 h-3 rounded-full bg-primary/30" data-index="3" aria-label="Go to slide 4"></button>
+            <button class="js-carousel-dot w-3 h-3 rounded-full bg-primary/30" data-index="4" aria-label="Go to slide 5"></button>
           </div>
         </div>
 
@@ -644,121 +645,131 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
         });
       });
 
-      // Carousel functionality
-      const carouselTrack = document.querySelector('.carousel-track');
-      const carouselSlides = document.querySelectorAll('.carousel-slide');
-      const indicators = document.querySelectorAll('.carousel-indicator');
-      const prevButton = document.querySelector('.carousel-prev');
-      const nextButton = document.querySelector('.carousel-next');
-      let currentSlide = 0;
-      let slideInterval;
-      const slideCount = carouselSlides.length;
-      let isTransitioning = false;
-      let isPaused = false;
-
-      // Initialize carousel dimensions
-      function initializeCarousel() {
-        if (carouselTrack && carouselSlides.length > 0) {
-          carouselTrack.style.width = `${slideCount * 100}%`;
-          carouselSlides.forEach(slide => {
-            slide.style.width = `${100 / slideCount}%`;
+      // Pillars Carousel functionality
+      const carousel = document.getElementById('pillarsCarousel');
+      
+      if (carousel) {
+        const slidesContainer = carousel.querySelector('.js-carousel-slides');
+        const slides = carousel.querySelectorAll('.js-carousel-slide');
+        const dotsContainer = carousel.querySelector('.flex.justify-center');
+        const dots = carousel.querySelectorAll('.js-carousel-dot');
+        const prevButton = carousel.querySelector('.js-carousel-prev');
+        const nextButton = carousel.querySelector('.js-carousel-next');
+        const totalSlides = slides.length;
+        
+        let currentIndex = 0;
+        let intervalId;
+        let isTransitioning = false;
+        let isPaused = false;
+        
+        // Initialize slide widths and container width
+        function initializeCarousel() {
+          // Set the width of the slides container to accommodate all slides
+          slidesContainer.style.width = `${totalSlides * 100}%`;
+          
+          // Set the width of each individual slide
+          slides.forEach(slide => {
+            slide.style.width = `${100 / totalSlides}%`;
           });
         }
-      }
-
-      // Go to specific slide
-      function goToSlide(slideIndex) {
-        if (isTransitioning || !carouselTrack) return;
         
-        // Ensure slideIndex is within bounds
-        if (slideIndex < 0) {
-          slideIndex = slideCount - 1;
-        } else if (slideIndex >= slideCount) {
-          slideIndex = 0;
+        // Go to a specific slide
+        function goToSlide(index) {
+          if (isTransitioning) return;
+          
+          // Handle bounds
+          if (index < 0) {
+            index = totalSlides - 1;
+          } else if (index >= totalSlides) {
+            index = 0;
+          }
+          
+          // Set transitioning flag
+          isTransitioning = true;
+          
+          // Update current index
+          currentIndex = index;
+          
+          // Move the slides
+          slidesContainer.style.transform = `translateX(-${currentIndex * (100 / totalSlides)}%)`;
+          
+          // Update the dots
+          dots.forEach((dot, i) => {
+            if (i === currentIndex) {
+              dot.classList.remove('bg-primary/30');
+              dot.classList.add('bg-primary');
+            } else {
+              dot.classList.remove('bg-primary');
+              dot.classList.add('bg-primary/30');
+            }
+          });
+          
+          // Reset transitioning flag after animation completes
+          setTimeout(() => {
+            isTransitioning = false;
+          }, 500); // Match CSS transition duration
         }
-
-        currentSlide = slideIndex;
-        isTransitioning = true;
-
-        // Update track position
-        carouselTrack.style.transform = `translateX(-${currentSlide * (100 / slideCount)}%)`;
-
-        // Update indicators
-        indicators.forEach((indicator, index) => {
-          if (index === currentSlide) {
-            indicator.classList.remove('bg-primary/30');
-            indicator.classList.add('bg-primary');
-            indicator.classList.add('opacity-100');
-          } else {
-            indicator.classList.remove('bg-primary');
-            indicator.classList.remove('opacity-100');
-            indicator.classList.add('bg-primary/30');
+        
+        // Start auto-sliding
+        function startAutoSlide() {
+          // Clear any existing interval
+          clearInterval(intervalId);
+          
+          // Set up a new interval
+          intervalId = setInterval(() => {
+            if (!isPaused) {
+              goToSlide(currentIndex + 1);
+            }
+          }, 5000); // 5 seconds between slides
+        }
+        
+        // Event listeners
+        function setupEventListeners() {
+          // Previous button
+          if (prevButton) {
+            prevButton.addEventListener('click', () => {
+              goToSlide(currentIndex - 1);
+              startAutoSlide(); // Reset the interval
+            });
           }
-        });
-
-        // Reset transitioning state after animation completes
-        setTimeout(() => {
-          isTransitioning = false;
-        }, 500); // Match transition duration
-      }
-
-      // Start automatic sliding
-      function startSlideInterval() {
-        if (slideInterval) clearInterval(slideInterval);
-        slideInterval = setInterval(() => {
-          if (!isPaused) {
-            goToSlide(currentSlide + 1);
+          
+          // Next button
+          if (nextButton) {
+            nextButton.addEventListener('click', () => {
+              goToSlide(currentIndex + 1);
+              startAutoSlide(); // Reset the interval
+            });
           }
-        }, 5000); // Change slides every 5 seconds
-      }
-
-      // Initialize
-      initializeCarousel();
-      startSlideInterval();
-
-      // Event listeners for navigation
-      if (prevButton) {
-        prevButton.addEventListener('click', () => {
-          goToSlide(currentSlide - 1);
-          // Reset timer when manually navigated
-          startSlideInterval();
-        });
-      }
-
-      if (nextButton) {
-        nextButton.addEventListener('click', () => {
-          goToSlide(currentSlide + 1);
-          // Reset timer when manually navigated
-          startSlideInterval();
-        });
-      }
-
-      // Add event listeners to indicators
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-          goToSlide(index);
-          // Reset timer when manually navigated
-          startSlideInterval();
-        });
-      });
-
-      // Pause on hover
-      const carouselContainer = document.querySelector('.carousel-container');
-      if (carouselContainer) {
-        carouselContainer.addEventListener('mouseenter', () => {
-          isPaused = true;
-        });
-
-        carouselContainer.addEventListener('mouseleave', () => {
-          isPaused = false;
-        });
-      }
-
-      // Handle resize events
-      window.addEventListener('resize', () => {
+          
+          // Dots
+          dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+              goToSlide(index);
+              startAutoSlide(); // Reset the interval
+            });
+          });
+          
+          // Pause on hover
+          carousel.addEventListener('mouseenter', () => {
+            isPaused = true;
+          });
+          
+          carousel.addEventListener('mouseleave', () => {
+            isPaused = false;
+          });
+          
+          // Handle window resize
+          window.addEventListener('resize', () => {
+            initializeCarousel();
+            goToSlide(currentIndex); // Realign current slide
+          });
+        }
+        
+        // Initialize everything
         initializeCarousel();
-        goToSlide(currentSlide); // Realign current slide
-      });
+        setupEventListeners();
+        startAutoSlide();
+      }
     });
   </script>
 
