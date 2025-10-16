@@ -1,5 +1,7 @@
 ---
 import { buttonVariants } from "@/components/ui/button";
+import { Image } from 'astro:assets';
+import founderImage from '../assets/kat_6336_nw_f0e98a15.jpg';
 ---
 
 <section class="py-24 bg-[#052d3f] text-white">
@@ -40,12 +42,12 @@ import { buttonVariants } from "@/components/ui/button";
       
       <div class="order-1 md:order-2 relative">
         <div class="rounded-lg overflow-hidden shadow-xl relative">
-          <img 
-            src="https://images.unsplash.com/photo-1707995673778-f7ded37a4c17?w=400&h=600&auto=format&fit=crop&q=80" 
+          <Image 
+            src={founderImage} 
             alt="Lauren Rosa Miller, Founder of In the Room with Legacy" 
             class="w-full h-auto object-cover aspect-[3/4]"
           />
-          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+          <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
         </div>
         
         <!-- Decorative element -->
