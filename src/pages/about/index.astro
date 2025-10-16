@@ -48,12 +48,12 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
         
         <!-- Ticker content -->
         <div class="ticker-wrapper whitespace-nowrap py-4">
-          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
-          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
-          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
-          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
-          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
-          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
         </div>
         
         <!-- Fade right -->
@@ -84,15 +84,27 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
       
       /* Enhanced Ticker Styling */
       .ticker-scroll-container {
-        background-color: rgba(5, 45, 63, 0.2);
-        backdrop-filter: blur(4px);
+        /* Removed background for transparency */
       }
       
       .ticker-item {
         display: inline-block;
         padding: 0 60px;
-        color: rgba(255, 255, 255, 0.85);
+        color: rgba(255, 255, 255, 0.95);
         font-size: 1.125rem;
+        letter-spacing: 0.02em;
+        position: relative;
+      }
+      
+      /* Glowing text effect */
+      .ticker-item.glow {
+        text-shadow: 
+          0 0 5px rgba(255, 255, 255, 0.8),
+          0 0 10px rgba(255, 255, 255, 0.6),
+          0 0 15px rgba(255, 255, 255, 0.4),
+          0 0 20px rgba(255, 255, 255, 0.2);
+        font-weight: 400;
+        color: white;
       }
       
       @media (min-width: 768px) {
@@ -116,11 +128,11 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
       
       /* Fade Edge Effects */
       .fade-left {
-        background: linear-gradient(90deg, rgba(5, 45, 63, 0.9) 0%, rgba(5, 45, 63, 0) 100%);
+        background: linear-gradient(90deg, rgba(5, 45, 63, 0.8) 0%, rgba(5, 45, 63, 0) 100%);
       }
       
       .fade-right {
-        background: linear-gradient(270deg, rgba(5, 45, 63, 0.9) 0%, rgba(5, 45, 63, 0) 100%);
+        background: linear-gradient(270deg, rgba(5, 45, 63, 0.8) 0%, rgba(5, 45, 63, 0) 100%);
       }
       
       /* Fade-in Animation for Hero Content */
