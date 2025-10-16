@@ -1239,35 +1239,63 @@ import familyLegacyPhoto from "@/assets/ash-grey-and-black-modern-professional-b
     </div>
   </section>
 
-  <!-- Closing CTA Section -->
-  <section class="py-16 sm:py-20 md:py-24 bg-primary/5">
+  <!-- Call to Action Section (Section 9) -->
+  <section class="py-16 sm:py-24 md:py-28 bg-[#f3f4f6]">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center px-4">
         <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary mb-4 sm:mb-6">
-          Don't wait until the funeral to hear the stories that matter most.
+          Begin the conversation before it's too late.
         </h2>
-        <p class="text-base sm:text-xl text-foreground/80 mb-6 sm:mb-10">
-          Let's talk — while we're still here.
+        <p class="text-base sm:text-xl text-foreground/80 mb-6 sm:mb-10 max-w-2xl mx-auto">
+          Whether you're ready to request a private session or want to be notified when the
+          next Guided Gathering opens, your legacy starts with one conversation.
         </p>
-        <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
+        <div class="flex flex-col sm:flex-row gap-4 w-full max-w-lg mx-auto justify-center">
           <a 
             href="#contact" 
             class={buttonVariants({
               size: "lg",
-              class: "font-medium w-full justify-center"
+              class: "font-medium justify-center bg-[#9a4a0b] hover:bg-[#9a4a0b]/90 text-white"
             })}
           >
-            Apply for a Family Session
+            Request a Family Session
           </a>
           <a 
             href="#contact" 
             class={buttonVariants({
               variant: "outline",
               size: "lg",
-              class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center"
+              class: "border-primary text-primary hover:bg-primary/10 font-medium justify-center"
             })}
           >
-            Partner With Us
+            Be Notified When Dates Open
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership & Sponsorship Section (Section 10) -->
+  <section class="py-16 sm:py-20 md:py-24 bg-white border-t border-primary/10">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary mb-4 sm:mb-6">
+          Interested in partnering with While We're Still Here™?
+        </h2>
+        <p class="text-base sm:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
+          We welcome collaborations with brands, nonprofits, and institutions aligned with
+          our mission to help families preserve their stories, honor their elders, and prepare
+          the next generation.
+        </p>
+        <div class="flex justify-center">
+          <a 
+            href="#contact" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium bg-primary hover:bg-primary/90 text-white"
+            })}
+          >
+            Inquire About Partnership Opportunities
           </a>
         </div>
       </div>
@@ -1584,4 +1612,14 @@ import familyLegacyPhoto from "@/assets/ash-grey-and-black-modern-professional-b
       </div>
     </div>
   </section>
+  <!-- Subtle Footer Line -->
+  <div class="py-8 bg-white border-t border-primary/10">
+    <div class="container">
+      <p class="text-center text-sm text-primary/60">
+        In the Room with Legacy™ is a registered nonprofit organization. All program
+        investments help sustain our mission to make legacy-building tools accessible to
+        every family.
+      </p>
+    </div>
+  </div>
 </BaseLayout>
