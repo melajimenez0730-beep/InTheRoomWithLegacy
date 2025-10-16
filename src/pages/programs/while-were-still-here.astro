@@ -25,42 +25,170 @@ import laurenPortraitPhoto from "@/assets/kat_6104_nw_d8b9de0d.jpg";
 >
   <!-- Hero Section -->
   <section class="py-16 sm:py-20 md:py-32 bg-primary relative overflow-hidden">
+    <!-- Pattern Background (Original) -->
     <div class="absolute inset-0 z-0 opacity-30">
       <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
     </div>
 
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/90"></div>
-
-    <div class="container relative z-10">
-      <div class="max-w-3xl mx-auto text-center px-4">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-4 sm:mb-6">
-          Because love, legacy, and truth can't wait until it's too late.
-        </h1>
-        
-        <div class="max-w-2xl mx-auto mb-6 sm:mb-8">
-          <div class="relative rounded-lg overflow-hidden mb-6 sm:mb-8 shadow-lg">
-            <Image src={familyVintagePhoto} alt="Multi-generational family gathering" class="w-full object-cover brightness-[0.9] sepia-[0.15] aspect-[16/9] sm:aspect-[21/9]"/>
+    <!-- Rotating Background Images -->
+    <div class="absolute inset-0 z-[1]">
+      <div id="heroBackgroundSlider" class="w-full h-full relative">
+        <!-- Image 1 -->
+        <div class="heroSlide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+          <div class="absolute inset-0 bg-black">
+            <img 
+              src={familyGatheringPhoto.src}
+              alt=""
+              class="w-full h-full object-cover opacity-15 grayscale mix-blend-overlay"
+            />
           </div>
         </div>
         
-        <p class="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Guided family conversations that bring peace to life's transitions, preserve your stories, and prepare the next generation — while we're still here
-        </p>
-        <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
-          <a 
-            href="#apply" 
-            class={buttonVariants({
-              size: "lg",
-              variant: "default",
-              class: "font-medium w-full justify-center bg-white text-primary hover:bg-white/90"
-            })}
-          >
-            Request a Family Session
-          </a>
+        <!-- Image 2 -->
+        <div class="heroSlide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+          <div class="absolute inset-0 bg-black">
+            <img 
+              src={familyPorchPhoto.src}
+              alt=""
+              class="w-full h-full object-cover opacity-15 grayscale mix-blend-overlay"
+            />
+          </div>
+        </div>
+        
+        <!-- Image 3 -->
+        <div class="heroSlide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
+          <div class="absolute inset-0 bg-black">
+            <img 
+              src={gatherPhoto.src}
+              alt=""
+              class="w-full h-full object-cover opacity-15 grayscale mix-blend-overlay"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/90 z-[2]"></div>
+
+    <div class="container relative z-10">
+      <div class="flex flex-col md:flex-row items-center">
+        <!-- Text Content (Left on desktop, centered on mobile) -->
+        <div class="md:w-1/2 text-center md:text-left px-4 mb-8 md:mb-0">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 drop-shadow-sm">
+            Because love, legacy, and truth can't wait until it's too late.
+          </h1>
+          
+          <p class="text-base sm:text-lg md:text-xl text-white mb-8 max-w-xl mx-auto md:mx-0 drop-shadow-sm">
+            Guided family conversations that bring peace to life's transitions, preserve your stories, and prepare the next generation — while we're still here
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 w-full max-w-md mx-auto md:mx-0">
+            <a 
+              href="#apply" 
+              class={buttonVariants({
+                size: "lg",
+                class: "font-medium justify-center bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-300"
+              })}
+            >
+              Request a Family Session
+            </a>
+          </div>
+        </div>
+        
+        <!-- Right side for desktop - just spacing -->
+        <div class="hidden md:block md:w-1/2"></div>
+      </div>
+    </div>
+    
+    <!-- Ticker Bar at Bottom -->
+    <div class="absolute bottom-0 left-0 right-0 h-12 bg-primary/40 backdrop-blur-sm border-t border-white/10 overflow-hidden z-[5]">
+      <div class="ticker-wrap">
+        <div class="ticker">
+          <div class="ticker__item text-white/90">Preserve Family Stories</div>
+          <div class="ticker__item text-white/90">Honor Shared Values</div>
+          <div class="ticker__item text-white/90">Create a Living Legacy</div>
+          <div class="ticker__item text-white/90">Build Intergenerational Connection</div>
+          <div class="ticker__item text-white/90">Say What Needs to Be Said</div>
+          <div class="ticker__item text-white/90">Strengthen Family Bonds</div>
+          <div class="ticker__item text-white/90">Pass Down Family Wisdom</div>
+          <div class="ticker__item text-white/90">Document Your Journey</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- CSS for Hero Section Animations -->
+  <style>
+    /* Ticker Bar Styles */
+    .ticker-wrap {
+      width: 100%;
+      overflow: hidden;
+      height: 3rem;
+      padding-left: 100%;
+      box-sizing: content-box;
+    }
+
+    .ticker {
+      display: inline-block;
+      height: 3rem;
+      line-height: 3rem;
+      white-space: nowrap;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-name: ticker;
+      animation-duration: 30s;
+    }
+
+    .ticker__item {
+      display: inline-block;
+      padding: 0 2rem;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    @keyframes ticker {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+
+    /* Custom opacity class for images */
+    .opacity-15 {
+      opacity: 0.15;
+    }
+  </style>
+
+  <!-- Script for Hero Background Rotation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Background image rotation
+      const slides = document.querySelectorAll('.heroSlide');
+      let currentSlide = 0;
+      
+      // Function to show current slide
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => {
+          slide.style.opacity = '0';
+        });
+        
+        // Show current slide
+        slides[index].style.opacity = '1';
+      }
+      
+      // Start with the first slide
+      showSlide(0);
+      
+      // Rotate every 7 seconds
+      setInterval(function() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 7000);
+    });
+  </script>
 
   <!-- What It Is Section -->
   <section class="py-24 bg-[#f3f4f6]">
