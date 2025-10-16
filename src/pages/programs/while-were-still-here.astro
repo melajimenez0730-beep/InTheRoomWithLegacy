@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown, MessageCircleMore, Archive, HandHeart, House, RefreshCw, ChevronLeft, ChevronRight, BookOpenText, BookOpenCheck, TableProperties, BookAudio, BookMarked, Speech } from "lucide-react";
+import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown, MessageCircleMore, Archive, HandHeart, House, RefreshCw, ChevronLeft, ChevronRight, BookOpenText, BookOpenCheck, TableProperties, BookAudio, BookMarked, Speech, Video, UsersRound } from "lucide-react";
 import { Image } from 'astro:assets';
 import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681_7611223003304458758_n_nw_a861f184.jpg";
 import familyGatheringPhoto from "@/assets/family_gathering_nw_664eb12a.jpg";
@@ -679,91 +679,191 @@ import familyLegacyPhoto from "@/assets/ash-grey-and-black-modern-professional-b
     </div>
   </section>
 
-  <!-- Investment & Options Section -->
+  <!-- Three Ways to Experience the Program Section -->
   <section class="py-24 bg-white" id="apply">
     <div class="container">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
-          An Investment in Love & Legacy
+          Three Ways to Experience the Program
         </h2>
         <p class="text-lg text-foreground/80 mb-12 text-center">
-          This is not just a program — it's a gift to your family, and to generations not yet born.
+          Choose the format that best suits your family's needs, location, and budget.
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-muted/20 rounded-lg p-6 border border-primary/10 hover:border-primary/30 transition-all hover:shadow-md">
-            <div class="flex items-center gap-4 mb-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <Clock className="text-primary w-6 h-6" />
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- In-Person Family Retreat -->
+          <div class="bg-white rounded-lg p-6 border border-primary/10 hover:border-primary/20 transition-all hover:shadow-xl">
+            <div class="flex justify-center">
+              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <House className="text-primary w-8 h-8" />
               </div>
-              <h3 class="text-xl font-display font-semibold text-primary">Flagship Experience</h3>
             </div>
-            <p class="text-foreground/80 mb-6">In-person, full-day retreat tailored to your family's unique needs.</p>
-            <div class="bg-white rounded p-3 text-center mb-6">
-              <span class="text-primary font-medium">$5,000–$10,000</span>
+            
+            <h3 class="text-xl md:text-2xl font-display font-semibold text-primary text-center mb-3">In-Person Family Retreat</h3>
+            <p class="text-primary/70 text-sm text-center italic mb-6">Our Flagship Experience</p>
+            
+            <p class="text-foreground/80 mb-4">A full-day immersive experience held in your home or chosen location.</p>
+            
+            <p class="text-foreground/80 mb-6">Facilitated by founder Lauren Rosa Miller, this retreat brings generations together for storytelling, values alignment, and intentional dialogue that helps families name what matters most and strengthen what will last.</p>
+            
+            <div class="bg-primary/5 rounded-lg p-4 mb-6">
+              <h4 class="font-medium text-primary mb-2">You'll walk away with:</h4>
+              <p class="text-foreground/80">A shared sense of peace, clarity around your family's values and wishes, and a recorded keepsake to treasure for generations.</p>
             </div>
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Full-day facilitated experience</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Personal facilitator</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Professional recording</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Custom Legacy Guidebook</span>
-              </li>
-            </ul>
+            
+            <div class="mb-6">
+              <h4 class="font-medium text-primary mb-2">Perfect for:</h4>
+              <ul class="text-foreground/80 space-y-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Families navigating transitions</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Estate & succession planning</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Those seeking a deeply healing experience</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-muted/30 rounded p-3 text-center mb-6">
+              <p class="text-primary/80 font-medium">Investment:</p>
+              <p class="text-primary font-semibold">Starting at $5,000</p>
+              <p class="text-primary/70 text-sm">inquire for custom experience</p>
+            </div>
+            
+            <div class="text-center">
+              <a 
+                href="#contact" 
+                class={buttonVariants({
+                  size: "default",
+                  class: "font-medium w-full justify-center"
+                })}
+              >
+                Request a Family Session
+              </a>
+            </div>
           </div>
 
-          <div class="bg-muted/20 rounded-lg p-6 border border-primary/10 hover:border-primary/30 transition-all hover:shadow-md">
-            <div class="flex items-center gap-4 mb-4">
-              <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <MessageCircle className="text-primary w-6 h-6" />
+          <!-- Virtual Family Experience -->
+          <div class="bg-white rounded-lg p-6 border border-primary/10 hover:border-primary/20 transition-all hover:shadow-xl">
+            <div class="flex justify-center">
+              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <Video className="text-primary w-8 h-8" />
               </div>
-              <h3 class="text-xl font-display font-semibold text-primary">Virtual Experience</h3>
             </div>
-            <p class="text-foreground/80 mb-6">3-part guided series designed for families across different locations.</p>
-            <div class="bg-white rounded p-3 text-center mb-6">
-              <span class="text-primary font-medium">$1,500–$3,000</span>
+            
+            <h3 class="text-xl md:text-2xl font-display font-semibold text-primary text-center mb-3">Virtual Family Experience</h3>
+            <p class="text-primary/70 text-sm text-center italic mb-6">One Family, One Facilitator</p>
+            
+            <p class="text-foreground/80 mb-4">A private, three-part virtual series tailored to your family's needs.</p>
+            
+            <p class="text-foreground/80 mb-6">Each session is personally guided by Lauren Rosa Miller, helping families preserve their stories, align values, and discuss transitions that bring both peace and clarity.</p>
+            
+            <div class="bg-primary/5 rounded-lg p-4 mb-6">
+              <h4 class="font-medium text-primary mb-2">You'll walk away with:</h4>
+              <p class="text-foreground/80">Recorded stories, practical frameworks, and renewed understanding across generations — all from the comfort of home.</p>
             </div>
-            <ul class="space-y-2 mb-6">
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Three 90-minute sessions</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Personal facilitator</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Session recordings</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-primary mt-1">✓</span>
-                <span class="text-foreground/80 text-sm">Digital Legacy Guidebook</span>
-              </li>
-            </ul>
+            
+            <div class="mb-6">
+              <h4 class="font-medium text-primary mb-2">Perfect for:</h4>
+              <ul class="text-foreground/80 space-y-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Families separated by distance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Adult children caring for elders</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Those preparing for milestones</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-muted/30 rounded p-3 text-center mb-6">
+              <p class="text-primary/80 font-medium">Investment:</p>
+              <p class="text-primary font-semibold">$1,500 – $3,000</p>
+            </div>
+            
+            <div class="text-center">
+              <a 
+                href="#contact" 
+                class={buttonVariants({
+                  size: "default",
+                  class: "font-medium w-full justify-center"
+                })}
+              >
+                Request a Family Session
+              </a>
+            </div>
+          </div>
+
+          <!-- The Guided Gathering -->
+          <div class="bg-white rounded-lg p-6 border border-primary/10 hover:border-primary/20 transition-all hover:shadow-xl">
+            <div class="flex justify-center">
+              <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                <UsersRound className="text-primary w-8 h-8" />
+              </div>
+            </div>
+            
+            <h3 class="text-xl md:text-2xl font-display font-semibold text-primary text-center mb-3">The Guided Gathering</h3>
+            <p class="text-primary/70 text-sm text-center italic mb-6">Mini-Legacy Session (One-to-Many)</p>
+            
+            <p class="text-foreground/80 mb-4">A 90-minute virtual or in-person collective experience that brings multiple families together for reflection and guided conversation.</p>
+            
+            <p class="text-foreground/80 mb-6">Led by Lauren Rosa Miller, the Guided Gathering introduces families to the core philosophy of While We're Still Here™ — replacing silence with shared understanding. Families reflect, listen, and talk through prompts that spark the conversations they've been meaning to have.</p>
+            
+            <div class="bg-primary/5 rounded-lg p-4 mb-6">
+              <h4 class="font-medium text-primary mb-2">You'll walk away with:</h4>
+              <p class="text-foreground/80">A guided framework, shared reflection moments, and clarity to continue meaningful conversations within your family.</p>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="font-medium text-primary mb-2">Perfect for:</h4>
+              <ul class="text-foreground/80 space-y-1">
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Holiday seasons</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Reunions</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-primary mt-1">•</span>
+                  <span>Families new to legacy work</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-muted/30 rounded p-3 text-center mb-6">
+              <p class="text-primary/80 font-medium">Investment:</p>
+              <p class="text-primary font-semibold">$150 per family</p>
+              <p class="text-primary/70 text-sm">limited to 12 families per session</p>
+            </div>
+            
+            <div class="text-center">
+              <a 
+                href="#contact" 
+                class={buttonVariants({
+                  size: "default",
+                  class: "font-medium w-full justify-center"
+                })}
+              >
+                Be Notified When Dates Open
+              </a>
+            </div>
           </div>
         </div>
 
-        <div class="text-center mt-10">
-          <a 
-            href="#contact" 
-            class={buttonVariants({
-              size: "lg",
-              class: "font-medium"
-            })}
-          >
-            Apply for a Session
-          </a>
+        <div class="text-center mt-12 max-w-2xl mx-auto">
+          <p class="text-lg text-primary/80 italic">This is not just a program — it's a gift to your family, and to generations not yet born.</p>
         </div>
       </div>
     </div>
