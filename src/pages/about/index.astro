@@ -8,6 +8,7 @@ import familyGathering from '../../assets/family_gathering_nw_664eb12a.jpg';
 import familyPorch from '../../assets/family_on_porch_nw_6bf9f9ad.jpg';
 import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
 import logoImage from '../../assets/1-1_nw_565f5565.png';
+import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
 ---
 
 <BaseLayout
@@ -495,22 +496,35 @@ import logoImage from '../../assets/1-1_nw_565f5565.png';
 
 
   <!-- Support This Mission Section -->
-  <section class="py-24 bg-[#52664b]">
-    <div class="container">
+  <section class="relative py-24 overflow-hidden">
+    <!-- Patterned Background Image with Overlay -->
+    <div class="absolute inset-0 z-0">
+      <div class="w-full h-full">
+        <Image 
+          src={legacyCollage} 
+          alt="" 
+          class="w-full h-full object-cover opacity-30 filter grayscale"
+          quality="mid"
+        />
+        <div class="absolute inset-0 bg-[#052d3f]/90 mix-blend-multiply"></div>
+      </div>
+    </div>
+
+    <div class="container relative z-10">
       <div class="max-w-4xl mx-auto text-center px-4">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8 drop-shadow-sm">
           Support This Mission
         </h2>
         
-        <p class="text-xl text-white/90 mb-4 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-white font-medium mb-6 max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
           Our flagship program, While We're Still Here™, is live today.
         </p>
         
-        <p class="text-lg text-white/90 mb-6 max-w-3xl mx-auto">
+        <p class="text-lg text-white/95 mb-6 max-w-3xl mx-auto leading-relaxed">
           Your investment helps families access meaningful conversations, guided frameworks, and tools for preserving their legacies.
         </p>
         
-        <p class="text-lg text-white/90 mb-10 max-w-3xl mx-auto">
+        <p class="text-lg text-white/95 mb-10 max-w-3xl mx-auto leading-relaxed">
           Partner with us to make legacy-building accessible to every generation.
         </p>
         
@@ -519,7 +533,7 @@ import logoImage from '../../assets/1-1_nw_565f5565.png';
             href="/about/partnership-pathways" 
             class={buttonVariants({
               size: "lg",
-              class: "font-medium bg-white text-[#52664b] hover:bg-white/90 border-0"
+              class: "font-medium bg-white text-[#052d3f] hover:bg-white/90 border-0 text-lg py-6 px-8"
             })}
           >
             Partner With Us
@@ -528,13 +542,13 @@ import logoImage from '../../assets/1-1_nw_565f5565.png';
       </div>
     </div>
     
-    <!-- Subtle Pattern Overlay -->
-    <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
+    <!-- Subtle Texture Overlay -->
+    <div class="absolute inset-0 bg-texture opacity-10 pointer-events-none z-[1]"></div>
     
     <style>
-      .bg-pattern {
-        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.15' fill-rule='evenodd'%3E%3Cpath d='M36 34c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4m0-17c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4m-17 0c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4m0 17c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4'/%3E%3C/g%3E%3C/svg%3E");
-        background-size: 60px 60px;
+      .bg-texture {
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.25' fill-rule='evenodd'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: 100px 100px;
       }
     </style>
   </section>
