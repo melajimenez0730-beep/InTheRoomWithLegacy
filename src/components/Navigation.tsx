@@ -72,7 +72,7 @@ const NavDropdown = ({ trigger, items, className }: NavDropdownProps) => {
 
 export default function Navigation() {
   return (
-    <nav className="flex items-center gap-1 md:gap-2">
+    <nav className="flex items-center gap-1 md:gap-3 pl-4">
       <NavDropdown 
         trigger="About" 
         items={[
