@@ -10,22 +10,22 @@ import logoImage from '../assets/parchment-irl-main-badge-rgb-1_nw_936bfa90.png'
   class="bg-[#052d3f] sticky top-0 z-50 w-full border-b border-[#052d3f]/20"
 >
   <div
-    class="container flex h-20 items-center space-x-4 sm:justify-between sm:space-x-0"
+    class="container flex h-16 items-center justify-between"
   >
-    <div class="flex gap-6 md:gap-10">
-      <a href="/" class="flex items-center gap-2">
+    <div class="flex gap-4 md:gap-8">
+      <a href="/" class="flex items-center gap-1 md:gap-3">
         <!-- Logo for both desktop and mobile -->
         <Image 
           src={logoImage} 
           alt="In the Room With Legacy" 
           width={48} 
           height={48} 
-          class="w-8 h-8 md:w-12 md:h-12"
+          class="w-8 h-8 md:w-10 md:h-10"
         />
         <!-- Desktop view: Show brand name next to logo -->
-        <span class="hidden md:inline-block font-display text-xl font-bold tracking-tight text-[#f7f6dc]">In the Room with Legacy</span>
-        <!-- Mobile view: show full text next to logo -->
-        <span class="md:hidden inline-block font-display text-base font-bold tracking-tight text-[#f7f6dc]">In the Room With Legacy</span>
+        <span class="hidden md:inline-block font-display text-sm font-medium tracking-tight whitespace-nowrap text-[#f7f6dc] ml-1">In the Room with Legacy</span>
+        <!-- Mobile view: only show on very small screens -->
+        <span class="md:hidden inline-block font-display text-xs font-medium tracking-tight whitespace-nowrap text-[#f7f6dc]">In the Room with Legacy</span>
       </a>
     </div>
     <div class="flex flex-1 items-center justify-end space-x-4">
