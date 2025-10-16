@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown, MessageCircleMore, Archive, HandHeart, House, RefreshCw, ChevronLeft, ChevronRight } from "lucide-react";
+import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown, MessageCircleMore, Archive, HandHeart, House, RefreshCw, ChevronLeft, ChevronRight, BookOpenText, BookOpenCheck, TableProperties, BookAudio, BookMarked, Speech } from "lucide-react";
 import { Image } from 'astro:assets';
 import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681_7611223003304458758_n_nw_a861f184.jpg";
 import familyGatheringPhoto from "@/assets/family_gathering_nw_664eb12a.jpg";
@@ -12,6 +12,7 @@ import sharePhoto from "@/assets/snapinstato_529766155_18496969693069681_9043892
 import alignPhoto from "@/assets/snapinstato_530365975_18496969774069681_3642407730921360497_n_nw_645f791c.jpg";
 import preservePhoto from "@/assets/legacy_moments_nw_f6fe48da.png";
 import integratePhoto from "@/assets/snapinstato_527636150_18496969756069681_5178750769135698917_n_nw_42ff2157.jpg";
+import familyLegacyPhoto from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-4_nw_2c87fa2a.png";
 ---
 
 <BaseLayout
@@ -209,17 +210,19 @@ import integratePhoto from "@/assets/snapinstato_527636150_18496969756069681_517
   </section>
 
   <!-- The Experience Section -->
-  <section class="py-24 bg-[#f3f4f6] relative animate-fade-in overflow-hidden">
+  <section class="py-24 bg-[#f3f4f6] relative overflow-hidden" data-aos="fade-up">
     <div class="absolute inset-0 bg-pattern opacity-[0.05]"></div>
     
     <style>
-      .animate-fade-in {
-        animation: fadeIn 0.8s ease-out;
+      [data-aos="fade-up"] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
       }
       
-      @keyframes fadeIn {
-        from { opacity: 0.4; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+      [data-aos="fade-up"].aos-animate {
+        opacity: 1;
+        transform: translateY(0);
       }
       
       .bg-pattern {
@@ -397,6 +400,171 @@ import integratePhoto from "@/assets/snapinstato_527636150_18496969756069681_517
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- The Gifts You Leave With Section -->
+  <section class="py-24 bg-white overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
+          The Gifts You Leave With
+        </h2>
+        
+        <div class="max-w-3xl mx-auto mb-12 text-center">
+          <p class="text-lg text-primary/80 mb-4">
+            Every While We're Still Here™ experience leaves families with more than memories.
+          </p>
+          
+          <p class="text-lg text-primary/80">
+            You'll walk away with tangible keepsakes, new understanding, and practical tools that preserve your legacy and strengthen your bonds long after the conversation ends.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <!-- Left Column: Image -->
+          <div class="relative rounded-xl overflow-hidden shadow-xl" data-aos="fade-right" data-aos-delay="200">
+            <img 
+              src={familyLegacyPhoto.src}
+              alt="Family legacy moments - multi-generational family gathering"
+              width={familyLegacyPhoto.width}
+              height={familyLegacyPhoto.height}
+              class="w-full h-auto object-cover aspect-[4/3]"
+            />
+            <div class="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-transparent"></div>
+          </div>
+          
+          <!-- Right Column: Interactive Gift Items -->
+          <div class="space-y-6">
+            <!-- Gift Item 1 -->
+            <div class="gift-item group bg-[#f3f4f6] p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]" data-aos="fade-left" data-aos-delay="250">
+              <div class="flex items-start gap-4">
+                <div class="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <BookOpenText className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">Preserved stories and memories</h3>
+                  <p class="text-primary/70 group-hover:text-primary/80 transition-colors">Captured from elders and loved ones to carry forward.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Gift Item 2 -->
+            <div class="gift-item group bg-[#f3f4f6] p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]" data-aos="fade-left" data-aos-delay="300">
+              <div class="flex items-start gap-4">
+                <div class="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <HandHeart className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">Stronger bonds across generations</h3>
+                  <p class="text-primary/70 group-hover:text-primary/80 transition-colors">Through honest dialogue and renewed empathy.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Gift Item 3 -->
+            <div class="gift-item group bg-[#f3f4f6] p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]" data-aos="fade-left" data-aos-delay="350">
+              <div class="flex items-start gap-4">
+                <div class="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <BookOpenCheck className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">Clarity around wishes and values</h3>
+                  <p class="text-primary/70 group-hover:text-primary/80 transition-colors">So your family moves forward in alignment and peace.</p>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Gift Item 4 -->
+            <div class="gift-item group bg-[#f3f4f6] p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]" data-aos="fade-left" data-aos-delay="400">
+              <div class="flex items-start gap-4">
+                <div class="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                  <TableProperties className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">Tools for critical conversations</h3>
+                  <p class="text-primary/70 group-hover:text-primary/80 transition-colors">Frameworks to help navigate health, wealth, and succession.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Additional Gifts Row -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12" data-aos="fade-up" data-aos-delay="450">
+          <!-- Gift Item 5 -->
+          <div class="gift-item group bg-[#f3f4f6] p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <BookAudio className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="text-xl font-display font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">A recorded keepsake</h3>
+                <p class="text-primary/70 group-hover:text-primary/80 transition-colors">Professionally captured audio or video to preserve your family's voice and legacy.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gift Item 6 -->
+          <div class="gift-item group bg-[#f3f4f6] p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <BookMarked className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="text-xl font-display font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">A personalized Legacy Guidebook</h3>
+                <p class="text-primary/70 group-hover:text-primary/80 transition-colors">With highlights, insights, and reflection prompts to continue the work at home.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gift Item 7 -->
+          <div class="gift-item group bg-[#f3f4f6] p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px]">
+            <div class="flex items-start gap-4">
+              <div class="p-3 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                <Speech className="w-6 h-6 text-primary" />
+              </div>
+              <div>
+                <h3 class="text-xl font-display font-semibold text-primary mb-2 group-hover:text-primary/90 transition-colors">Ongoing reflection tools</h3>
+                <p class="text-primary/70 group-hover:text-primary/80 transition-colors">Designed to help families continue building connection and intention after the experience.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Add AOS init script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Initialize AOS
+        const elements = document.querySelectorAll('[data-aos]');
+        
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('aos-animate');
+              // Stop observing after animation is triggered
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+        
+        elements.forEach(element => {
+          // Apply initial styles
+          const delay = element.getAttribute('data-aos-delay') || 0;
+          element.style.transitionDelay = `${delay}ms`;
+          
+          // Start observing
+          observer.observe(element);
+        });
+      });
+    </script>
   </section>
 
   <!-- Who It's For Section -->
