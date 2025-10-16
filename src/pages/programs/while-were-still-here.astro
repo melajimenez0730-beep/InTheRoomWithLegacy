@@ -7,6 +7,11 @@ import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681
 import familyGatheringPhoto from "@/assets/family_gathering_nw_664eb12a.jpg";
 import familyPorchPhoto from "@/assets/family_on_porch_nw_6bf9f9ad.jpg";
 import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
+import gatherPhoto from "@/assets/legacy_family_photo_nw_633bbeb1.jpg";
+import sharePhoto from "@/assets/snapinstato_529766155_18496969693069681_9043892236276025072_n_nw_0ec9db1c.jpg";
+import alignPhoto from "@/assets/snapinstato_530365975_18496969774069681_3642407730921360497_n_nw_645f791c.jpg";
+import preservePhoto from "@/assets/legacy_moments_nw_f6fe48da.png";
+import integratePhoto from "@/assets/snapinstato_527636150_18496969756069681_5178750769135698917_n_nw_42ff2157.jpg";
 ---
 
 <BaseLayout
@@ -225,8 +230,14 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               <!-- Slide 1: Gather -->
               <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
-                  <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Users className="text-primary w-8 h-8" />
+                  <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-md border-2 border-white">
+                    <img 
+                      src={gatherPhoto.src} 
+                      alt="Group of family members gathered together" 
+                      width={gatherPhoto.width} 
+                      height={gatherPhoto.height}
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-2xl font-display font-semibold text-primary mb-3">1. Gather</h3>
                 </div>
@@ -238,8 +249,14 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               <!-- Slide 2: Share -->
               <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
-                  <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Heart className="text-primary w-8 h-8" />
+                  <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-md border-2 border-white">
+                    <img 
+                      src={sharePhoto.src} 
+                      alt="Family sharing stories together" 
+                      width={sharePhoto.width} 
+                      height={sharePhoto.height}
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-2xl font-display font-semibold text-primary mb-3">2. Share</h3>
                 </div>
@@ -251,8 +268,14 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               <!-- Slide 3: Align -->
               <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
-                  <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Sparkles className="text-primary w-8 h-8" />
+                  <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-md border-2 border-white">
+                    <img 
+                      src={alignPhoto.src} 
+                      alt="Couple aligned in purpose standing together" 
+                      width={alignPhoto.width} 
+                      height={alignPhoto.height}
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-2xl font-display font-semibold text-primary mb-3">3. Align</h3>
                 </div>
@@ -264,8 +287,14 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               <!-- Slide 4: Preserve -->
               <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
-                  <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <Book className="text-primary w-8 h-8" />
+                  <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-md border-2 border-white">
+                    <img 
+                      src={preservePhoto.src} 
+                      alt="Collection of precious family memories" 
+                      width={preservePhoto.width} 
+                      height={preservePhoto.height}
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-2xl font-display font-semibold text-primary mb-3">4. Preserve</h3>
                 </div>
@@ -277,8 +306,14 @@ import legacyCollagePhoto from "@/assets/legacy_collage_nw_ddd335e4.png";
               <!-- Slide 5: Integrate -->
               <div class="js-carousel-slide flex-shrink-0 w-full p-6 md:p-8 bg-[#f3f4f6] rounded-lg shadow-md">
                 <div class="flex flex-col items-center text-center mb-4">
-                  <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <RefreshCw className="text-primary w-8 h-8" />
+                  <div class="w-24 h-24 rounded-full overflow-hidden mb-4 shadow-md border-2 border-white">
+                    <img 
+                      src={integratePhoto.src} 
+                      alt="Continuing the legacy across generations" 
+                      width={integratePhoto.width} 
+                      height={integratePhoto.height}
+                      class="w-full h-full object-cover"
+                    />
                   </div>
                   <h3 class="text-2xl font-display font-semibold text-primary mb-3">5. Integrate</h3>
                 </div>
