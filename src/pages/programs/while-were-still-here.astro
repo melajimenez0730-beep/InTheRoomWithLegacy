@@ -16,7 +16,7 @@ import familyLegacyPhoto from "@/assets/ash-grey-and-black-modern-professional-b
 import laurenPhoto from "@/assets/kat_6276_nw_fcaf81f0.jpg";
 import laurenVirtualPhoto from "@/assets/kat_6186_nw_05b4c467.jpg";
 import laurenGroupPhoto from "@/assets/kat_6336_nw_f0e98a15.jpg";
-import laurenPortraitPhoto from "@/assets/kat_6104-removebg-preview_nw_501c9e6d.png";
+import laurenPortraitPhoto from "@/assets/kat_6104_nw_d8b9de0d.jpg";
 ---
 
 <BaseLayout
@@ -1169,15 +1169,14 @@ import laurenPortraitPhoto from "@/assets/kat_6104-removebg-preview_nw_501c9e6d.
             </div>
           </div>
           
-          <!-- Cut-out Portrait Image positioned to overlap -->
+          <!-- Portrait Image positioned to overlap -->
           <div class="absolute z-20 top-1/2 right-0 md:right-0 transform -translate-y-1/2 translate-x-1/4 md:translate-x-1/3 w-44 md:w-[450px] lg:w-[500px] h-auto">
             <img 
               src={laurenPortraitPhoto.src}
               alt="Lauren Rosa Miller" 
               width={laurenPortraitPhoto.width} 
               height={laurenPortraitPhoto.height}
-              class="w-full h-auto object-contain drop-shadow-2xl"
-              style="filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));"
+              class="w-full h-auto object-cover rounded-xl overflow-hidden shadow-xl"
             />
           </div>
         </div>
