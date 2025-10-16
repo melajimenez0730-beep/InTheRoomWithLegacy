@@ -432,63 +432,60 @@ import logoImage from '../../assets/1-1_nw_565f5565.png';
 
 
   <!-- About the Founder Section -->
-  <section class="py-24 bg-white">
+  <section class="py-24 bg-[#F7F7F7]">
     <div class="container">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-10 text-center">
           About the Founder
         </h2>
         
-        <!-- Card Container with Shadow and Rounded Corners -->
-        <div class="bg-[#F7F7F7] p-8 md:p-10 rounded-xl shadow-md">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <!-- Image - Left -->
-            <div class="relative rounded-xl overflow-hidden shadow-lg">
-              <Image 
-                src={laurenMiller} 
-                alt="Lauren Rosa Miller, Founder & Chief Legacy Officer" 
-                class="w-full h-auto object-cover" 
-              />
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <!-- Image - Left -->
+          <div class="relative rounded-xl overflow-hidden shadow-xl">
+            <Image 
+              src={laurenMiller} 
+              alt="Lauren Rosa Miller, Founder & Chief Legacy Officer" 
+              class="w-full h-auto object-cover" 
+            />
+          </div>
 
-            <!-- Content - Right -->
-            <div>
-              <div class="mb-3">
-                <p class="text-primary/70 text-sm font-semibold uppercase tracking-wider">Founder & Chief Legacy Officer</p>
-              </div>
-              
-              <h3 class="text-2xl font-display font-bold text-primary mb-6">
-                Lauren Rosa Miller
-              </h3>
-              
-              <p class="text-foreground/80 mb-6 text-lg leading-relaxed">
-                Lauren Rosa Miller is a second-generation business owner, speaker, and legacy strategist who serves as keeper of her family's 150-year heritage.
-              </p>
-              
-              <p class="text-foreground/80 mb-6 text-lg leading-relaxed">
-                The daughter of pioneers in government and economic inclusion, she bridges business, heritage, and heart to help families move with clarity and purpose.
-              </p>
-              
-              <p class="text-foreground/80 mb-6 text-lg leading-relaxed">
-                A global citizen and storyteller at heart, Lauren has dedicated her career to preserving what matters most — not just wealth, but wisdom and identity.
-              </p>
-              
-              <p class="text-foreground/80 mb-8 text-lg leading-relaxed">
-                She founded In the Room with Legacy™ to bring structure and soul to the way families build and sustain their legacies.
-              </p>
-              
-              <div class="flex">
-                <a 
-                  href="/about/founder-letter" 
-                  class={buttonVariants({
-                    variant: "outline",
-                    size: "lg",
-                    class: "border-primary text-primary hover:bg-primary/5"
-                  })}
-                >
-                  Read Lauren's Letter
-                </a>
-              </div>
+          <!-- Content - Right -->
+          <div>
+            <div class="mb-3">
+              <p class="text-primary/70 text-sm font-semibold uppercase tracking-wider">Founder & Chief Legacy Officer</p>
+            </div>
+            
+            <h3 class="text-2xl font-display font-bold text-primary mb-6">
+              Lauren Rosa Miller
+            </h3>
+            
+            <p class="text-foreground/80 mb-6 text-lg leading-relaxed">
+              Lauren Rosa Miller is a second-generation business owner, speaker, and legacy strategist who serves as keeper of her family's 150-year heritage.
+            </p>
+            
+            <p class="text-foreground/80 mb-6 text-lg leading-relaxed">
+              The daughter of pioneers in government and economic inclusion, she bridges business, heritage, and heart to help families move with clarity and purpose.
+            </p>
+            
+            <p class="text-foreground/80 mb-6 text-lg leading-relaxed">
+              A global citizen and storyteller at heart, Lauren has dedicated her career to preserving what matters most — not just wealth, but wisdom and identity.
+            </p>
+            
+            <p class="text-foreground/80 mb-8 text-lg leading-relaxed">
+              She founded In the Room with Legacy™ to bring structure and soul to the way families build and sustain their legacies.
+            </p>
+            
+            <div class="flex">
+              <a 
+                href="/about/founder-letter" 
+                class={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  class: "border-primary text-primary hover:bg-primary/5"
+                })}
+              >
+                Read Lauren's Letter
+              </a>
             </div>
           </div>
         </div>
@@ -501,6 +498,10 @@ import logoImage from '../../assets/1-1_nw_565f5565.png';
   <section class="py-24 bg-white">
     <div class="container">
       <div class="max-w-4xl mx-auto text-center px-4">
+        <!-- Section Divider -->
+        <div class="h-px bg-gray-200 w-full max-w-md mx-auto mb-12 relative">
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-1 bg-[#a57c59]/20 rounded-full"></div>
+        </div>
         
         <h2 class="text-3xl md:text-4xl font-display font-bold text-[#052d3f] mb-6">
           Support This Mission
