@@ -14,7 +14,7 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
   description="In the Room with Legacy™ was born in a sacred transition, helping families build and preserve legacy across generations."
 >
   <!-- Hero Section -->
-  <section class="relative min-h-[550px] md:min-h-[650px] flex items-center overflow-hidden">
+  <section class="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
     <!-- Background image with parallax effect -->
     <div class="absolute inset-0 w-full h-full z-0">
       <div class="relative w-full h-full parallax-container">
@@ -25,29 +25,39 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
             class="w-full h-full object-cover brightness-[0.9] sepia-[0.1]" 
           />
         </div>
-        <div class="absolute inset-0 bg-gradient-to-b from-primary/40 to-primary/70 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-primary/30 to-primary/75 mix-blend-multiply"></div>
       </div>
     </div>
 
-    <div class="container relative z-10 py-16 md:py-20">
-      <div class="max-w-3xl mx-auto text-center">
+    <div class="container relative z-10 py-16 md:py-24 flex flex-col items-center justify-center h-full">
+      <div class="max-w-4xl mx-auto text-center my-auto">
         <div class="hero-content-fade-in">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 px-4 drop-shadow-sm">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white leading-tight mb-8 px-4 drop-shadow-sm">
             The Business of Family
           </h1>
-          <h2 class="text-xl md:text-2xl text-white/95 font-medium mb-10 px-4 max-w-2xl mx-auto drop-shadow-sm">
+          <h2 class="text-xl md:text-2xl lg:text-3xl text-white/95 font-medium mb-16 px-4 max-w-3xl mx-auto drop-shadow-sm leading-relaxed">
             Beyond Wealth. Beyond Money. Beyond One Generation.
           </h2>
-          
-          <!-- Enhanced Ticker Line Animation -->
-          <div class="ticker-container overflow-hidden mb-10 max-w-2xl mx-auto px-4 border-t border-b border-white/20 py-4">
-            <div class="ticker-wrapper whitespace-nowrap">
-              <span class="inline-block text-lg md:text-xl text-white/95 px-12">Reimagining what it means to build, sustain, and pass down legacy.</span>
-              <span class="inline-block text-lg md:text-xl text-white/95 px-12">Reimagining what it means to build, sustain, and pass down legacy.</span>
-              <span class="inline-block text-lg md:text-xl text-white/95 px-12">Reimagining what it means to build, sustain, and pass down legacy.</span>
-            </div>
-          </div>
         </div>
+      </div>
+      
+      <!-- Full-width Ticker Container -->
+      <div class="ticker-scroll-container absolute bottom-16 left-0 right-0 overflow-hidden w-full">
+        <!-- Fade left -->
+        <div class="fade-left absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"></div>
+        
+        <!-- Ticker content -->
+        <div class="ticker-wrapper whitespace-nowrap py-4">
+          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+          <span class="ticker-item font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
+        </div>
+        
+        <!-- Fade right -->
+        <div class="fade-right absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none"></div>
       </div>
     </div>
     
@@ -72,14 +82,45 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
         100% { transform: translateY(-5%); }
       }
       
+      /* Enhanced Ticker Styling */
+      .ticker-scroll-container {
+        background-color: rgba(5, 45, 63, 0.2);
+        backdrop-filter: blur(4px);
+      }
+      
+      .ticker-item {
+        display: inline-block;
+        padding: 0 60px;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1.125rem;
+      }
+      
+      @media (min-width: 768px) {
+        .ticker-item {
+          font-size: 1.25rem;
+        }
+      }
+      
       /* Ticker Animation */
       .ticker-wrapper {
-        animation: ticker 25s linear infinite;
+        display: inline-block;
+        white-space: nowrap;
+        animation: ticker 40s linear infinite;
+        will-change: transform;
       }
       
       @keyframes ticker {
         0% { transform: translateX(0); }
-        100% { transform: translateX(-33.33%); }
+        100% { transform: translateX(-50%); }
+      }
+      
+      /* Fade Edge Effects */
+      .fade-left {
+        background: linear-gradient(90deg, rgba(5, 45, 63, 0.9) 0%, rgba(5, 45, 63, 0) 100%);
+      }
+      
+      .fade-right {
+        background: linear-gradient(270deg, rgba(5, 45, 63, 0.9) 0%, rgba(5, 45, 63, 0) 100%);
       }
       
       /* Fade-in Animation for Hero Content */
