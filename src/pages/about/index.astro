@@ -43,9 +43,6 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
       
       <!-- Full-width Ticker Container -->
       <div class="ticker-scroll-container absolute bottom-16 left-0 right-0 overflow-hidden w-full">
-        <!-- Fade left -->
-        <div class="fade-left absolute left-0 top-0 bottom-0 w-16 z-10 pointer-events-none"></div>
-        
         <!-- Ticker content -->
         <div class="ticker-wrapper whitespace-nowrap py-4">
           <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
@@ -55,9 +52,6 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
           <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
           <span class="ticker-item glow font-light">Reimagining what it means to build, sustain, and pass down legacy.</span>
         </div>
-        
-        <!-- Fade right -->
-        <div class="fade-right absolute right-0 top-0 bottom-0 w-16 z-10 pointer-events-none"></div>
       </div>
     </div>
     
@@ -126,14 +120,7 @@ import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
         100% { transform: translateX(-50%); }
       }
       
-      /* Fade Edge Effects */
-      .fade-left {
-        background: linear-gradient(90deg, rgba(5, 45, 63, 0.8) 0%, rgba(5, 45, 63, 0) 100%);
-      }
-      
-      .fade-right {
-        background: linear-gradient(270deg, rgba(5, 45, 63, 0.8) 0%, rgba(5, 45, 63, 0) 100%);
-      }
+      /* Fade Edge Effects removed for clean ticker animation */
       
       /* Fade-in Animation for Hero Content */
       .hero-content-fade-in {
