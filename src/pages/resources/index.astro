@@ -140,7 +140,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
       <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="resources-grid">
           <!-- Featured Resources rendered server-side for better SEO -->
-          <div class="content-card featured-card">
+          <div class="content-card featured-card" data-type="tool" data-audience="" data-dimensions="">
             <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
               <div class="w-full h-48 overflow-hidden">
                 <Image 
@@ -157,7 +157,6 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
                   <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
                     Tool
                   </span>
-                  <span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">Families</span>
                 </div>
                 <h3 class="content-card-title text-xl font-semibold">
                   AI-Powered Legacy Assessment Tool
@@ -165,10 +164,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
                 <p class="content-card-description line-clamp-3 mt-2">
                   The first AI-powered tool that helps families measure where they are, map what matters most, and take real steps to protect their legacy across generations.
                 </p>
-                <div class="mt-3 mb-4 flex flex-wrap">
-                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Family Legacy</span>
-                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Next-Gen Stewardship</span>
-                </div>
+                <div class="mt-3 mb-4 flex flex-wrap"></div>
                 <a 
                   href="/tools/legacy-assessment" 
                   class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-2"
@@ -180,7 +176,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
             </div>
           </div>
           
-          <div class="content-card featured-card">
+          <div class="content-card featured-card" data-type="worksheet" data-audience="families" data-dimensions="transitions-healing">
             <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
               <div class="w-full h-48 overflow-hidden">
                 <Image 
@@ -206,8 +202,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
                   A comprehensive guide with prompts, questions, and frameworks to facilitate meaningful conversations about legacy within your family.
                 </p>
                 <div class="mt-3 mb-4 flex flex-wrap">
-                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Transitions Healing</span>
-                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Storytelling Culture</span>
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Transitions & Healing</span>
                 </div>
                 <a 
                   href="/pdfs/legacy_conversation_starter_kit.pdf" 
@@ -221,7 +216,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
             </div>
           </div>
           
-          <div class="content-card featured-card">
+          <div class="content-card featured-card" data-type="guide" data-audience="families" data-dimensions="transitions-healing">
             <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
               <div class="w-full h-48 overflow-hidden">
                 <Image 
@@ -247,7 +242,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
                   Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools.
                 </p>
                 <div class="mt-3 mb-4 flex flex-wrap">
-                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Transitions Healing</span>
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Transitions & Healing</span>
                 </div>
                 <a 
                   href="/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf" 
@@ -261,7 +256,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
             </div>
           </div>
           
-          <div class="content-card featured-card">
+          <div class="content-card featured-card" data-type="article" data-audience="heirs" data-dimensions="family-legacy next-gen-stewardship">
             <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
               <div class="w-full h-48 overflow-hidden">
                 <Image 
@@ -472,8 +467,8 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
       description: "The first AI-powered tool that helps families measure where they are, map what matters most, and take real steps to protect their legacy across generations.",
       type: "tool",
       topic: "assessment",
-      audience: "families",
-      tags: ["family-legacy", "nextgen-stewardship"],
+      audience: "", // No audience tag
+      tags: [], // No dimension tags
       icon: "Tool",
       url: "/tools/legacy-assessment",
       buttonText: "Access Tool",
@@ -486,7 +481,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
       type: "worksheet",
       topic: "conversations",
       audience: "families",
-      tags: ["transitions-healing", "storytelling-culture"],
+      tags: ["transitions-healing"],
       icon: "ScrollText",
       url: "/pdfs/legacy_conversation_starter_kit.pdf",
       buttonText: "Download Kit",
@@ -522,6 +517,30 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
     ...resources
   ];
 
+  // Map filter button IDs to their corresponding data values
+  const contentTypeMap = {
+    'articles-filter': 'article',
+    'guides-filter': 'guide',
+    'worksheets-filter': 'worksheet',
+    'tools-filter': 'tool',
+    'videos-filter': 'video'
+  };
+  
+  const audienceMap = {
+    'founders-filter': 'founders',
+    'heirs-filter': 'heirs',
+    'families-filter': 'families',
+    'cousins-filter': 'cousins'
+  };
+  
+  const topicMap = {
+    'legacy-filter': 'family-legacy',
+    'nextgen-filter': 'nextgen-stewardship',
+    'storytelling-filter': 'storytelling-culture',
+    'economic-filter': 'economic-empowerment',
+    'transitions-filter': 'transitions-healing'
+  };
+  
   // DOM Elements
   const resourcesGrid = document.getElementById('resources-grid');
   const noResults = document.getElementById('no-results');
@@ -536,211 +555,62 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
   ];
 
   // Filter state
-  let activeContentFilter = 'all';
-  let activeAudienceFilter = null;
-  let activeTopicFilter = null;
+  let activeContentFilter = 'all-filter';
+  let activeAudienceFilters = [];
+  let activeTopicFilters = [];
   let searchQuery = '';
 
-  // Render resource cards
-  function renderResources() {
-    // Filter resources based on active filters and search query
-    const filteredResources = allResources.filter(resource => {
+  // Function to update visibility of resource cards based on filters
+  function updateCardVisibility() {
+    // Get all resource cards
+    const resourceCards = document.querySelectorAll('.featured-card');
+    let visibleCards = 0;
+    
+    resourceCards.forEach(card => {
+      // Get card data attributes
+      const cardType = card.getAttribute('data-type');
+      const cardAudience = card.getAttribute('data-audience');
+      const cardDimensions = card.getAttribute('data-dimensions')?.split(' ') || [];
+      
       // Check content type filter
-      const matchesContentType = activeContentFilter === 'all' || 
-                              resource.type === activeContentFilter.replace('-filter', '');
+      const matchesContentType = activeContentFilter === 'all-filter' || 
+                             contentTypeMap[activeContentFilter] === cardType;
       
-      // Check audience filter
-      const matchesAudience = !activeAudienceFilter || 
-                           resource.audience === activeAudienceFilter.replace('-filter', '');
+      // Check audience filter - AND logic between tiers, OR within tier
+      const matchesAudience = activeAudienceFilters.length === 0 || 
+                          activeAudienceFilters.includes(cardAudience);
       
-      // Check topic filter
-      const matchesTopic = !activeTopicFilter || 
-                        (resource.tags && resource.tags.some(tag => 
-                          tag === activeTopicFilter.replace('-filter', '')));
+      // Check topic filter - AND logic between tiers, OR within tier
+      const matchesTopic = activeTopicFilters.length === 0 || 
+                       cardDimensions.some(dim => activeTopicFilters.includes(dim));
       
-      // Check search query
-      const matchesSearch = !searchQuery ||
-                          resource.title.toLowerCase().includes(searchQuery) || 
-                          resource.description.toLowerCase().includes(searchQuery) ||
-                          (resource.topic && resource.topic.toLowerCase().includes(searchQuery));
+      // Apply AND logic between different filter tiers
+      const shouldShow = matchesContentType && matchesAudience && matchesTopic;
       
-      return matchesContentType && matchesAudience && matchesTopic && matchesSearch;
-    });
-
-    // Clear existing resources
-    if (resourcesGrid) {
-      resourcesGrid.innerHTML = '';
-    }
-
-    // Show or hide "no results" message
-    if (noResults) {
-      if (filteredResources.length === 0) {
-        noResults.classList.remove('hidden');
+      // Show or hide the card
+      if (shouldShow) {
+        card.style.display = '';
+        visibleCards++;
       } else {
-        noResults.classList.add('hidden');
-      }
-    }
-
-    // Render filtered resources
-    filteredResources.forEach(resource => {
-      // Skip the resources that are already rendered server-side when no filters are applied
-      if (resource.featured && activeContentFilter === 'all' && !activeAudienceFilter && !activeTopicFilter && !searchQuery) {
-        return;
-      }
-
-      const card = document.createElement('div');
-      card.className = 'content-card';
-      
-      // Set icon based on resource type
-      let iconSvg = '';
-      switch(resource.icon) {
-        case 'FileText':
-          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>';
-          break;
-        case 'Book':
-          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>';
-          break;
-        case 'Bookmark':
-          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>';
-          break;
-        case 'Tool':
-          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>';
-          break;
-        case 'FileQuestion':
-          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"/><path d="M12 17h.01"/></svg>';
-          break;
-        default:
-          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>';
-      }
-      
-      // Icon for button - different icon based on content type
-      let buttonIcon = '';
-      if (resource.isDownloadable) {
-        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>';
-      } else if (resource.type === 'article') {
-        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5Z"></path><path d="M9.5 15V9"></path><path d="m14.5 9-5 6"></path><path d="M14.5 15V9"></path></svg>';
-      } else if (resource.type === 'tool') {
-        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>';
-      } else if (resource.type === 'worksheet') {
-        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m10 13-2 2 2 2"></path><path d="m14 17 2-2-2-2"></path></svg>';
-      } else {
-        buttonIcon = '<svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"></path><path d="M19.071 4.929A10 10 0 1 0 4.93 19.072 10 10 0 0 0 19.07 4.929Z"></path><path d="M9.5 9.5 12 12l2.5 2.5"></path></svg>';
-      }
-      
-      // Resource type label
-      let typeLabel = resource.type.charAt(0).toUpperCase() + resource.type.slice(1);
-
-      // Get tags display for resources
-      let tagsDisplay = '';
-      if (resource.tags && resource.tags.length > 0) {
-        tagsDisplay = resource.tags.map(tag => {
-          const formattedTag = tag.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-          return `<span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">${formattedTag}</span>`;
-        }).join('');
-      }
-      
-      // Get audience label if available
-      let audienceLabel = '';
-      if (resource.audience) {
-        const formattedAudience = resource.audience.charAt(0).toUpperCase() + resource.audience.slice(1);
-        audienceLabel = `<span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">${formattedAudience}</span>`;
-      }
-      
-      // Only render non-featured resources or all resources when filtering
-      if (!resource.featured || activeContentFilter !== 'all' || activeAudienceFilter || activeTopicFilter || searchQuery) {
-        card.innerHTML = `
-          <div class="content-card-content bg-white border border-muted rounded-lg overflow-hidden">
-            <div class="p-5">
-              <div class="flex gap-2 items-center mb-3">
-                <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
-                  ${typeLabel}
-                </span>
-                ${audienceLabel}
-              </div>
-              <div class="mb-3 text-primary">
-                ${iconSvg}
-              </div>
-              <h3 class="content-card-title text-lg font-semibold">
-                ${resource.title}
-              </h3>
-              <p class="content-card-description line-clamp-3 mt-2">
-                ${resource.description}
-              </p>
-              <a 
-                href="${resource.url}" 
-                class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-9 px-4 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-4"
-                ${resource.isDownloadable ? 'download' : ''}
-              >
-                ${buttonIcon}${resource.buttonText}
-              </a>
-            </div>
-          </div>
-        `;
-        resourcesGrid?.appendChild(card);
+        card.style.display = 'none';
       }
     });
+    
+    // Show no results message if needed
+    if (visibleCards === 0) {
+      noResults.classList.remove('hidden');
+    } else {
+      noResults.classList.add('hidden');
+    }
   }
-
-  // Define CSS for content cards
-  document.head.insertAdjacentHTML('beforeend', `
-    <style>
-      .content-card {
-        transition: all 0.2s ease-in-out;
-        height: 100%;
-      }
-      .content-card-content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        position: relative;
-      }
-      .content-card:hover {
-        transform: translateY(-4px);
-      }
-      .content-card-content:hover {
-        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      }
-      .content-card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        line-height: 1.4;
-        margin-bottom: 0.5rem;
-        color: var(--color-primary);
-        font-family: var(--font-display);
-      }
-      .content-card-description {
-        color: rgba(var(--color-foreground), 0.8);
-        line-height: 1.5;
-        flex-grow: 1;
-      }
-      .content-card-actions {
-        margin-top: auto;
-      }
-      .featured-card .content-card-content {
-        position: relative;
-      }
-      .line-clamp-3 {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-      }
-    </style>
-  `);
 
   // Initialize page
   function initPage() {
-    // Render non-featured resources
-    renderResources();
-    
-    // Add event listeners
+    // Add event listeners for search
     if (searchInput) {
       searchInput.addEventListener('input', (e) => {
         searchQuery = e.target.value.toLowerCase();
-        renderResources();
+        updateCardVisibility();
       });
     }
     
@@ -767,6 +637,29 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
           // Update active filter
           activeContentFilter = button.id;
           
+          // If this is the 'all' filter, reset other filters too
+          if (button.id === 'all-filter') {
+            // Reset audience and topic filters
+            activeAudienceFilters = [];
+            activeTopicFilters = [];
+            
+            // Reset audience filter UI
+            audienceFilters.forEach(btn => {
+              if (btn) {
+                btn.classList.remove('bg-secondary', 'text-white');
+                btn.classList.add('bg-secondary/10', 'text-secondary');
+              }
+            });
+            
+            // Reset topic filter UI
+            topicFilters.forEach(btn => {
+              if (btn) {
+                btn.classList.remove('bg-primary/20', 'text-primary');
+                btn.classList.add('bg-muted', 'text-foreground/70');
+              }
+            });
+          }
+          
           // Update button styles
           filterButtons.forEach(btn => {
             if (btn) {
@@ -780,68 +673,60 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
             }
           });
           
-          // Re-render resources
-          renderResources();
+          // Update card visibility
+          updateCardVisibility();
         });
       }
     });
     
-    // Add audience filter button listeners
+    // Add audience filter button listeners - use OR logic within tier
     audienceFilters.forEach(button => {
       if (button) {
         button.addEventListener('click', () => {
-          // Toggle active state
-          if (activeAudienceFilter === button.id) {
-            activeAudienceFilter = null;
+          // Get the audience value from the button id
+          const audienceValue = audienceMap[button.id];
+          
+          // Toggle active state - OR logic within this tier
+          if (activeAudienceFilters.includes(audienceValue)) {
+            // Remove from active filters
+            activeAudienceFilters = activeAudienceFilters.filter(a => a !== audienceValue);
             button.classList.remove('bg-secondary', 'text-white');
             button.classList.add('bg-secondary/10', 'text-secondary');
           } else {
-            // Clear previous selection
-            audienceFilters.forEach(btn => {
-              if (btn) {
-                btn.classList.remove('bg-secondary', 'text-white');
-                btn.classList.add('bg-secondary/10', 'text-secondary');
-              }
-            });
-            
-            // Set new selection
-            activeAudienceFilter = button.id;
+            // Add to active filters
+            activeAudienceFilters.push(audienceValue);
             button.classList.remove('bg-secondary/10', 'text-secondary');
             button.classList.add('bg-secondary', 'text-white');
           }
           
-          // Re-render resources
-          renderResources();
+          // Update card visibility
+          updateCardVisibility();
         });
       }
     });
     
-    // Add topic filter button listeners
+    // Add topic filter button listeners - use OR logic within tier
     topicFilters.forEach(button => {
       if (button) {
         button.addEventListener('click', () => {
-          // Toggle active state
-          if (activeTopicFilter === button.id) {
-            activeTopicFilter = null;
+          // Get the topic value from button id
+          const topicValue = topicMap[button.id];
+          
+          // Toggle active state - OR logic within this tier
+          if (activeTopicFilters.includes(topicValue)) {
+            // Remove from active filters
+            activeTopicFilters = activeTopicFilters.filter(t => t !== topicValue);
             button.classList.remove('bg-primary/20', 'text-primary');
             button.classList.add('bg-muted', 'text-foreground/70');
           } else {
-            // Clear previous selection
-            topicFilters.forEach(btn => {
-              if (btn) {
-                btn.classList.remove('bg-primary/20', 'text-primary');
-                btn.classList.add('bg-muted', 'text-foreground/70');
-              }
-            });
-            
-            // Set new selection
-            activeTopicFilter = button.id;
+            // Add to active filters
+            activeTopicFilters.push(topicValue);
             button.classList.remove('bg-muted', 'text-foreground/70');
             button.classList.add('bg-primary/20', 'text-primary');
           }
           
-          // Re-render resources
-          renderResources();
+          // Update card visibility
+          updateCardVisibility();
         });
       }
     });
