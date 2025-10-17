@@ -103,7 +103,6 @@ export default function Navigation() {
         trigger="Blog" 
         items={[
           { href: "/blog", label: "Read the Blog" },
-          { href: "/resources", label: "Legacy Insights, Tools, and Resources" },
           { href: "/blog/submit-story", label: "Submit Your Family Story" }
         ]} 
       />
