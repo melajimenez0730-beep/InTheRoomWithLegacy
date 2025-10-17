@@ -1,9 +1,10 @@
 ---
-import ${resource.imagepath}Img from "../assets/${resource.imagePath}";
 import { Image } from 'astro:assets';
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText } from "lucide-react";
+
+// Import all thumbnail images individually
 import assessmentToolThumbnail from "@/assets/thumbnails/assessment-tool-thumbnail_nw_2c87fa2a.png";
 import conversationKitThumbnail from "@/assets/thumbnails/conversation-kit-thumbnail_nw_f6fe48da.png";
 import parentingParentThumbnail from "@/assets/thumbnails/parenting-parent-thumbnail_nw_390fd864.png";
@@ -138,7 +139,170 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
     <div class="container" id="resource-container">
       <div class="max-w-5xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="resources-grid">
-          <!-- Resource cards will be dynamically populated here -->
+          <!-- Featured Resources rendered server-side for better SEO -->
+          <div class="content-card featured-card">
+            <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
+              <div class="w-full h-48 overflow-hidden">
+                <Image 
+                  src={assessmentToolThumbnail} 
+                  alt="AI-Powered Legacy Assessment Tool" 
+                  class="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                />
+              </div>
+              <div class="p-5">
+                <div class="absolute top-2 right-2 bg-secondary/20 text-secondary px-2 py-1 rounded-full text-xs font-semibold">
+                  Featured
+                </div>
+                <div class="flex gap-2 items-center mb-3">
+                  <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                    Tool
+                  </span>
+                  <span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">Families</span>
+                </div>
+                <h3 class="content-card-title text-xl font-semibold">
+                  AI-Powered Legacy Assessment Tool
+                </h3>
+                <p class="content-card-description line-clamp-3 mt-2">
+                  The first AI-powered tool that helps families measure where they are, map what matters most, and take real steps to protect their legacy across generations.
+                </p>
+                <div class="mt-3 mb-4 flex flex-wrap">
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Family Legacy</span>
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Next-Gen Stewardship</span>
+                </div>
+                <a 
+                  href="/tools/legacy-assessment" 
+                  class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-2"
+                >
+                  <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                  Access Tool
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="content-card featured-card">
+            <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
+              <div class="w-full h-48 overflow-hidden">
+                <Image 
+                  src={conversationKitThumbnail} 
+                  alt="The Legacy Conversation Starter Kit" 
+                  class="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                />
+              </div>
+              <div class="p-5">
+                <div class="absolute top-2 right-2 bg-secondary/20 text-secondary px-2 py-1 rounded-full text-xs font-semibold">
+                  Featured
+                </div>
+                <div class="flex gap-2 items-center mb-3">
+                  <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                    Worksheet
+                  </span>
+                  <span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">Families</span>
+                </div>
+                <h3 class="content-card-title text-xl font-semibold">
+                  The Legacy Conversation Starter Kit
+                </h3>
+                <p class="content-card-description line-clamp-3 mt-2">
+                  A comprehensive guide with prompts, questions, and frameworks to facilitate meaningful conversations about legacy within your family.
+                </p>
+                <div class="mt-3 mb-4 flex flex-wrap">
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Transitions Healing</span>
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Storytelling Culture</span>
+                </div>
+                <a 
+                  href="/pdfs/legacy_conversation_starter_kit.pdf" 
+                  class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-2"
+                  download
+                >
+                  <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Download Kit
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="content-card featured-card">
+            <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
+              <div class="w-full h-48 overflow-hidden">
+                <Image 
+                  src={parentingParentThumbnail} 
+                  alt="Parenting a Parent: A Guide for Adult Children" 
+                  class="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                />
+              </div>
+              <div class="p-5">
+                <div class="absolute top-2 right-2 bg-secondary/20 text-secondary px-2 py-1 rounded-full text-xs font-semibold">
+                  Featured
+                </div>
+                <div class="flex gap-2 items-center mb-3">
+                  <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                    Guide
+                  </span>
+                  <span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">Families</span>
+                </div>
+                <h3 class="content-card-title text-xl font-semibold">
+                  Parenting a Parent: A Guide for Adult Children
+                </h3>
+                <p class="content-card-description line-clamp-3 mt-2">
+                  Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools.
+                </p>
+                <div class="mt-3 mb-4 flex flex-wrap">
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Transitions Healing</span>
+                </div>
+                <a 
+                  href="/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf" 
+                  class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-2"
+                  download
+                >
+                  <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Download Guide
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="content-card featured-card">
+            <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
+              <div class="w-full h-48 overflow-hidden">
+                <Image 
+                  src={ethicalNepotismThumbnail} 
+                  alt="The Case for Ethical Nepotism" 
+                  class="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                />
+              </div>
+              <div class="p-5">
+                <div class="absolute top-2 right-2 bg-secondary/20 text-secondary px-2 py-1 rounded-full text-xs font-semibold">
+                  Featured
+                </div>
+                <div class="flex gap-2 items-center mb-3">
+                  <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                    Article
+                  </span>
+                  <span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">Heirs</span>
+                </div>
+                <h3 class="content-card-title text-xl font-semibold">
+                  The Case for Ethical Nepotism™
+                </h3>
+                <p class="content-card-description line-clamp-3 mt-2">
+                  How families can create opportunity for their own while maintaining integrity and excellence. Redefining inheritance as responsibility, not entitlement.
+                </p>
+                <div class="mt-3 mb-4 flex flex-wrap">
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Family Legacy</span>
+                  <span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">Next-Gen Stewardship</span>
+                </div>
+                <a 
+                  href="/pdfs/the_case_for_ethical_nepotism_nw_08789f72.pdf" 
+                  class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-2"
+                  download
+                >
+                  <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  Read Article
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Non-featured resources will be added dynamically by JavaScript -->
         </div>
 
         <!-- No Results Message (hidden by default) -->
@@ -249,64 +413,8 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
 </BaseLayout>
 
 <script>
-  // Resource data
+  // Resource data for non-featured resources
   const resources = [
-    {
-      title: "AI-Powered Legacy Assessment Tool",
-      description: "The first AI-powered tool that helps families measure where they are, map what matters most, and take real steps to protect their legacy across generations.",
-      type: "tool",
-      topic: "assessment",
-      audience: "families",
-      tags: ["family-legacy", "nextgen-stewardship"],
-      icon: "Tool",
-      url: "/tools/legacy-assessment",
-      buttonText: "Access Tool",
-      imagePath: "/src/assets/thumbnails/assessment-tool-thumbnail_nw_2c87fa2a.png",
-      isDownloadable: false,
-      featured: true
-    },
-    {
-      title: "The Legacy Conversation Starter Kit",
-      description: "A comprehensive guide with prompts, questions, and frameworks to facilitate meaningful conversations about legacy within your family.",
-      type: "worksheet",
-      topic: "conversations",
-      audience: "families",
-      tags: ["transitions-healing", "storytelling-culture"],
-      icon: "ScrollText",
-      url: "/pdfs/legacy_conversation_starter_kit.pdf",
-      buttonText: "Download Kit",
-      imagePath: "/src/assets/thumbnails/conversation-kit-thumbnail_nw_f6fe48da.png",
-      isDownloadable: true,
-      featured: true
-    },
-    {
-      title: "Parenting a Parent: A Guide for Adult Children",
-      description: "Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools.",
-      type: "guide",
-      topic: "caregiving",
-      audience: "families",
-      tags: ["transitions-healing"],
-      icon: "Book",
-      url: "/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf",
-      buttonText: "Download Guide",
-      imagePath: "/src/assets/thumbnails/parenting-parent-thumbnail_nw_390fd864.png",
-      isDownloadable: true,
-      featured: true
-    },
-    {
-      title: "The Case for Ethical Nepotism™",
-      description: "How families can create opportunity for their own while maintaining integrity and excellence. Redefining inheritance as responsibility, not entitlement.",
-      type: "article",
-      topic: "nepotism",
-      audience: "heirs",
-      tags: ["family-legacy", "nextgen-stewardship"],
-      icon: "FileText",
-      url: "/pdfs/the_case_for_ethical_nepotism_nw_08789f72.pdf",
-      buttonText: "Read Article",
-      imagePath: "/src/assets/thumbnails/ethical-nepotism-thumbnail_nw_a25135d4.png",
-      isDownloadable: true,
-      featured: true
-    },
     {
       title: "Legacy Lessons from the Land",
       description: "Lessons from the land on stewardship, patience, and the rhythm of generational thinking.",
@@ -357,6 +465,63 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
     }
   ];
 
+  // Full list of resources for filtering
+  const allResources = [
+    {
+      title: "AI-Powered Legacy Assessment Tool",
+      description: "The first AI-powered tool that helps families measure where they are, map what matters most, and take real steps to protect their legacy across generations.",
+      type: "tool",
+      topic: "assessment",
+      audience: "families",
+      tags: ["family-legacy", "nextgen-stewardship"],
+      icon: "Tool",
+      url: "/tools/legacy-assessment",
+      buttonText: "Access Tool",
+      isDownloadable: false,
+      featured: true
+    },
+    {
+      title: "The Legacy Conversation Starter Kit",
+      description: "A comprehensive guide with prompts, questions, and frameworks to facilitate meaningful conversations about legacy within your family.",
+      type: "worksheet",
+      topic: "conversations",
+      audience: "families",
+      tags: ["transitions-healing", "storytelling-culture"],
+      icon: "ScrollText",
+      url: "/pdfs/legacy_conversation_starter_kit.pdf",
+      buttonText: "Download Kit",
+      isDownloadable: true,
+      featured: true
+    },
+    {
+      title: "Parenting a Parent: A Guide for Adult Children",
+      description: "Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools.",
+      type: "guide",
+      topic: "caregiving",
+      audience: "families",
+      tags: ["transitions-healing"],
+      icon: "Book",
+      url: "/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf",
+      buttonText: "Download Guide",
+      isDownloadable: true,
+      featured: true
+    },
+    {
+      title: "The Case for Ethical Nepotism™",
+      description: "How families can create opportunity for their own while maintaining integrity and excellence. Redefining inheritance as responsibility, not entitlement.",
+      type: "article",
+      topic: "nepotism",
+      audience: "heirs",
+      tags: ["family-legacy", "nextgen-stewardship"],
+      icon: "FileText",
+      url: "/pdfs/the_case_for_ethical_nepotism_nw_08789f72.pdf",
+      buttonText: "Read Article",
+      isDownloadable: true,
+      featured: true
+    },
+    ...resources
+  ];
+
   // DOM Elements
   const resourcesGrid = document.getElementById('resources-grid');
   const noResults = document.getElementById('no-results');
@@ -379,7 +544,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
   // Render resource cards
   function renderResources() {
     // Filter resources based on active filters and search query
-    const filteredResources = resources.filter(resource => {
+    const filteredResources = allResources.filter(resource => {
       // Check content type filter
       const matchesContentType = activeContentFilter === 'all' || 
                               resource.type === activeContentFilter.replace('-filter', '');
@@ -418,6 +583,11 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
 
     // Render filtered resources
     filteredResources.forEach(resource => {
+      // Skip the resources that are already rendered server-side when no filters are applied
+      if (resource.featured && activeContentFilter === 'all' && !activeAudienceFilter && !activeTopicFilter && !searchQuery) {
+        return;
+      }
+
       const card = document.createElement('div');
       card.className = 'content-card';
       
@@ -435,6 +605,9 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
           break;
         case 'Tool':
           iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>';
+          break;
+        case 'FileQuestion':
+          iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M10 10.3c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2"/><path d="M12 17h.01"/></svg>';
           break;
         default:
           iconSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><line x1="10" y1="9" x2="8" y2="9"></line></svg>';
@@ -457,7 +630,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
       // Resource type label
       let typeLabel = resource.type.charAt(0).toUpperCase() + resource.type.slice(1);
 
-      // Get tags display for featured resources
+      // Get tags display for resources
       let tagsDisplay = '';
       if (resource.tags && resource.tags.length > 0) {
         tagsDisplay = resource.tags.map(tag => {
@@ -473,46 +646,8 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
         audienceLabel = `<span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">${formattedAudience}</span>`;
       }
       
-      // Apply different styling for featured resources
-      if (resource.featured) {
-        card.className = 'content-card featured-card';
-        card.innerHTML = `
-          <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
-            ${resource.imagePath ? `
-              <div class="w-full h-48 overflow-hidden">
-                <Image src={${resource.imagepath}Img} alt="${resource.title}" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
-              </div>
-            ` : ''}
-            <div class="p-5">
-              <div class="absolute top-2 right-2 bg-secondary/20 text-secondary px-2 py-1 rounded-full text-xs font-semibold">
-                Featured
-              </div>
-              <div class="flex gap-2 items-center mb-3">
-                <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
-                  ${typeLabel}
-                </span>
-                ${audienceLabel}
-              </div>
-              <h3 class="content-card-title text-xl font-semibold">
-                ${resource.title}
-              </h3>
-              <p class="content-card-description line-clamp-3 mt-2">
-                ${resource.description}
-              </p>
-              <div class="mt-3 mb-4 flex flex-wrap">
-                ${tagsDisplay}
-              </div>
-              <a 
-                href="${resource.url}" 
-                class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-2"
-                ${resource.isDownloadable ? 'download' : ''}
-              >
-                ${buttonIcon}${resource.buttonText}
-              </a>
-            </div>
-          </div>
-        `;
-      } else {
+      // Only render non-featured resources or all resources when filtering
+      if (!resource.featured || activeContentFilter !== 'all' || activeAudienceFilter || activeTopicFilter || searchQuery) {
         card.innerHTML = `
           <div class="content-card-content bg-white border border-muted rounded-lg overflow-hidden">
             <div class="p-5">
@@ -541,9 +676,8 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
             </div>
           </div>
         `;
+        resourcesGrid?.appendChild(card);
       }
-      
-      resourcesGrid?.appendChild(card);
     });
   }
 
@@ -599,14 +733,7 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
 
   // Initialize page
   function initPage() {
-    // Sort resources to show featured items first
-    resources.sort((a, b) => {
-      if (a.featured && !b.featured) return -1;
-      if (!a.featured && b.featured) return 1;
-      return 0;
-    });
-
-    // Render initial resources
+    // Render non-featured resources
     renderResources();
     
     // Add event listeners
