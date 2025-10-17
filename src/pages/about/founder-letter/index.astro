@@ -9,6 +9,13 @@ import familyPorch from "@/assets/family_on_porch_nw_6bf9f9ad.jpg";
 import familyGathering from "@/assets/family_gathering_nw_664eb12a.jpg";
 import presentation3 from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-3_nw_390fd864.png";
 import presentation4 from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-4_nw_2c87fa2a.png";
+
+// Import vintage letter hero assets
+import vintageTexture from "@/assets/founder-letter/vintage-paper-texture_nw_a1b2c3d4.svg";
+import vintageBackground from "@/assets/founder-letter/vintage-paper-background_nw_b3d4f5e6.jpg";
+import familyHistoryPhotos from "@/assets/founder-letter/family-history-photos_nw_c5d6e7f8.jpg";
+import waxSeal from "@/assets/founder-letter/wax-seal_nw_d7e8f9a1.svg";
+import paperclip from "@/assets/founder-letter/paperclip_nw_e8f9a1b2.svg";
 ---
 
 <BaseLayout
@@ -16,28 +23,69 @@ import presentation4 from "@/assets/ash-grey-and-black-modern-professional-brand
   description="A personal letter from our founder, Lauren R. Miller, sharing her journey and the inspiration behind In the Room with Legacy™."
 >
   <div class="relative z-10 overflow-hidden">
-  <!-- Hero Section -->
-  <section class="py-16 md:py-20 bg-white overflow-hidden relative">
+  <!-- Vintage Letter Hero Section -->
+  <section class="py-16 md:py-20 overflow-hidden relative">
+    <!-- Vintage paper background -->
+    <div class="absolute inset-0 bg-[#f5f1e4] z-0">
+      <Image 
+        src={vintageBackground} 
+        alt="Aged paper texture" 
+        class="w-full h-full object-cover opacity-70 mix-blend-multiply" 
+        width={1200}
+        height={800}
+      />
+      <div class="absolute inset-0" style="background-image: url('{vintageTexture.src}'); background-repeat: repeat; opacity: 0.6;"></div>
+    </div>
+
     <div class="container relative z-10">
       <div class="max-w-4xl mx-auto">
-        <!-- Letter Header with Large Image -->
-        <div class="relative mb-16">
-          <div class="absolute inset-0 bg-primary/10 rounded-2xl"></div>
-          <div class="relative p-8 md:p-10">
-            <div class="text-center mb-8">
-              <h1 class="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
+        <!-- Vintage Letter Design -->
+        <div class="relative vintage-letter" id="letter-container">
+          <!-- Paperclip decoration -->
+          <div class="absolute -top-10 right-10 md:right-28 w-16 h-24 z-20 transform -rotate-12 opacity-80">
+            <img src={paperclip.src} alt="" aria-hidden="true" class="w-full h-full" />
+          </div>
+
+          <!-- Main letter content -->
+          <div class="relative bg-[#f7f3e3] rounded-md shadow-xl p-8 md:p-12 border border-[#d8cdb3]">
+            <!-- Torn edge decoration at the top -->
+            <div class="absolute top-0 left-0 right-0 h-6 overflow-hidden">
+              <div class="torn-edge"></div>
+            </div>
+            
+            <div class="text-center mb-10 relative">
+              <!-- Wax seal decoration -->
+              <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 w-24 h-24 z-10">
+                <img src={waxSeal.src} alt="" aria-hidden="true" class="w-full h-full" />
+              </div>
+
+              <!-- Handwritten date styling -->
+              <p class="text-right text-gray-700 italic mb-10 font-serif">
+                August 15, 2023
+              </p>
+
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-[#052D3F] mb-6 mt-8 relative">
                 Letter from Our Founder
               </h1>
-              <div class="w-32 h-0.5 bg-primary/40 mx-auto"></div>
+              
+              <div class="w-40 h-0.5 bg-[#9A4A0B]/40 mx-auto mb-6"></div>
+              
+              <!-- Cursive subheader -->
+              <p class="font-serif italic text-xl md:text-2xl text-[#5a4a3a] mb-8">
+                A journey of purpose, reflection, and legacy
+              </p>
             </div>
-            <div class="rounded-xl overflow-hidden max-w-2xl mx-auto shadow-xl">
+
+            <!-- Vintage photos background effect -->
+            <div class="relative mb-8 md:mb-12 mx-auto max-w-2xl shadow-2xl rounded-lg overflow-hidden">
               <Image 
-                src={legacyCollage} 
-                alt="A collection of family legacy photos across generations" 
-                class="w-full h-auto" 
-                width={900}
+                src={familyHistoryPhotos} 
+                alt="Vintage family photographs representing legacy across generations" 
+                class="w-full h-auto sepia brightness-95 contrast-110" 
+                width={800}
                 height={400}
               />
+              <div class="absolute inset-0 bg-gradient-to-b from-[#052D3F]/10 to-[#052D3F]/30 mix-blend-multiply"></div>
             </div>
           </div>
         </div>
@@ -253,6 +301,75 @@ import presentation4 from "@/assets/ash-grey-and-black-modern-professional-brand
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Vintage letter effects */
+  .vintage-letter {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  #letter-container {
+    animation: letterReveal 1.2s ease-out forwards;
+  }
+
+  @keyframes letterReveal {
+    0% { 
+      opacity: 0; 
+      transform: translateY(30px) rotateX(8deg);
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0) rotateX(0deg);
+    }
+  }
+
+  /* Torn paper edge effect */
+  .torn-edge {
+    height: 12px;
+    width: 100%;
+    background-image: 
+      repeating-linear-gradient(
+        45deg, 
+        transparent, 
+        transparent 2px, 
+        #e6ded1 2px, 
+        #e6ded1 4px
+      ),
+      repeating-linear-gradient(
+        -45deg, 
+        transparent, 
+        transparent 2px, 
+        #e6ded1 2px, 
+        #e6ded1 4px
+      );
+    background-size: 6px 6px;
+    background-position: 0 0, 3px 3px;
+  }
+
+  /* Add subtle shadow to letter content */
+  .vintage-letter::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+  }
+
+  /* Light paper texture overlay */
+  .vintage-letter::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    pointer-events: none;
   }
 </style>
 </BaseLayout>
