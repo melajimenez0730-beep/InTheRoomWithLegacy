@@ -9,6 +9,8 @@ import familyPorch from '../../assets/family_on_porch_nw_6bf9f9ad.jpg';
 import laurenMiller from '../../assets/kat_6276_nw_fcaf81f0.jpg';
 import logoImage from '../../assets/1-1_nw_565f5565.png';
 import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
+import MethodologyTabs from "@/components/MethodologyTabs";
+import MethodologyAccordion from "@/components/MethodologyAccordion";
 ---
 
 <BaseLayout
@@ -182,49 +184,16 @@ import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
             In the Room with Legacy™ helps families thrive across generations through programs, tools, and resources designed to turn values into practice and legacy into action.
           </p>
           
-          <!-- Category List/Filter -->
-          <div class="bg-white rounded-xl p-4 my-10 shadow-sm">
-            <div class="flex flex-wrap justify-center items-center gap-2 md:gap-6 py-2">
-              <div id="category-conversation" class="category-item group px-4 py-2 cursor-pointer rounded-lg transition-all hover:bg-primary/5 flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <BookOpen class="text-primary h-4 w-4" />
-                </div>
-                <span class="font-medium text-primary/90">Conversation</span>
-              </div>
-              
-              <span class="hidden md:block text-primary/30">•</span>
-              
-              <div id="category-storytelling" class="category-item group px-4 py-2 cursor-pointer rounded-lg transition-all hover:bg-primary/5 flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Quote class="text-primary h-4 w-4" />
-                </div>
-                <span class="font-medium text-primary/90">Storytelling</span>
-              </div>
-              
-              <span class="hidden md:block text-primary/30">•</span>
-              
-              <div id="category-assessment" class="category-item group px-4 py-2 cursor-pointer rounded-lg transition-all hover:bg-primary/5 flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Star class="text-primary h-4 w-4" />
-                </div>
-                <span class="font-medium text-primary/90">Assessment</span>
-              </div>
-              
-              <span class="hidden md:block text-primary/30">•</span>
-              
-              <div id="category-advisory" class="category-item group px-4 py-2 cursor-pointer rounded-lg transition-all hover:bg-primary/5 flex items-center gap-2">
-                <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <BookMarked class="text-primary h-4 w-4" />
-                </div>
-                <span class="font-medium text-primary/90">Advisory</span>
-              </div>
-            </div>
-          </div>
+          <!-- Desktop Category Tabs -->
+          <MethodologyTabs client:load />
+          
+          <!-- Mobile Category Accordion -->
+          <MethodologyAccordion client:load />
           
           <!-- Five Dimensions of Legacy - Modern Card Grid -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" id="dimensions-grid">
             <!-- Family Legacy Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="conversation storytelling">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -246,7 +215,7 @@ import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
             </div>
             
             <!-- Next-Gen Stewardship Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="assessment advisory">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -268,7 +237,7 @@ import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
             </div>
             
             <!-- Storytelling & Culture Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="storytelling conversation">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -290,7 +259,7 @@ import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
             </div>
             
             <!-- Economic Empowerment Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="advisory assessment">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -312,7 +281,7 @@ import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
             </div>
             
             <!-- Transitions & Healing Card -->
-            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto" data-categories="conversation advisory assessment">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -338,20 +307,56 @@ import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
       </div>
     </div>
     
-    <!-- Category Filter Highlight Script -->
+    <!-- Interactive Logic for Categories and Dimensions -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        const categoryItems = document.querySelectorAll('.category-item');
+        const dimensionCards = document.querySelectorAll('.legacy-dimension-card');
         
-        categoryItems.forEach(item => {
-          item.addEventListener('click', function() {
-            // Toggle active state
-            categoryItems.forEach(cat => cat.classList.remove('bg-primary/10'));
-            this.classList.add('bg-primary/10');
+        // Function to handle filtering of dimensions based on selected category
+        function filterDimensions(categoryId) {
+          // If no category is selected (or null is passed), show all dimensions
+          if (!categoryId) {
+            dimensionCards.forEach(card => {
+              card.classList.remove('opacity-40');
+              card.classList.remove('scale-95');
+              card.classList.add('scale-100');
+            });
+            return;
+          }
+          
+          // Otherwise, filter dimensions based on selected category
+          dimensionCards.forEach(card => {
+            const categories = card.getAttribute('data-categories').split(' ');
+            
+            if (categories.includes(categoryId)) {
+              card.classList.remove('opacity-40');
+              card.classList.remove('scale-95');
+              card.classList.add('scale-100');
+              card.classList.add('ring-2');
+              card.classList.add('ring-primary/20');
+            } else {
+              card.classList.add('opacity-40');
+              card.classList.add('scale-95');
+              card.classList.remove('scale-100');
+              card.classList.remove('ring-2');
+              card.classList.remove('ring-primary/20');
+            }
           });
-        });
+        }
+        
+        // Expose filter function to window for component access
+        window.filterMethodologyDimensions = filterDimensions;
+        
+        // Initialize all dimensions visible
+        filterDimensions(null);
       });
     </script>
+    
+    <style>
+      .legacy-dimension-card {
+        transition: all 0.3s ease-in-out;
+      }
+    </style>
   </section>
   
   <!-- Mission & Vision Section -->
