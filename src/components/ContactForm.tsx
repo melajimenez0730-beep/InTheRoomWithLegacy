@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Button } from "./ui/button";
+import ThankYouModal from "./ThankYouModal";
 
 export default function ContactForm() {
   const defaultFormData = {name: "", email: "", message: "", form_name: "Join the Room Form"};
   const [formData, setFormData] = useState(defaultFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -33,6 +35,7 @@ export default function ContactForm() {
       if (response.ok) {
         setSubmitStatus("success");
         setFormData(defaultFormData);
+        setIsModalOpen(true);
       } else {
         setSubmitStatus("error");
       }
@@ -43,8 +46,14 @@ export default function ContactForm() {
     }
   };
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-lg border border-primary/10 overflow-hidden" id="join-the-room">
+      <ThankYouModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      
       <div className="bg-primary/5 p-6 border-b border-primary/10">
         <h3 className="font-display text-2xl font-bold text-primary mb-2">Join the Room</h3>
         <p className="text-foreground/80">
