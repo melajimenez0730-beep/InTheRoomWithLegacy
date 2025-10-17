@@ -294,8 +294,9 @@ export default function StorySubmissionForm() {
         </Button>
 
         {submitStatus === "success" && (
-          <div className="p-4 bg-green-50 border border-green-200 text-green-800 rounded-md">
-            Thank you for sharing your story! We'll review it shortly.
+          <div className="p-4 bg-green-50 border border-green-200 text-green-800 rounded-md flex items-start gap-3">
+            <Check className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
+            <p>Thank you for sharing your story. We'll review submissions and notify you if your story is selected to be featured on In the Room with Legacy™.</p>
           </div>
         )}
 
