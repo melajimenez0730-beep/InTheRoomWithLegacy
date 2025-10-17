@@ -12,8 +12,8 @@ import legacyMoments from "@/assets/legacy_moments_nw_f6fe48da.png";
 ---
 
 <BaseLayout
-  title="Blog | In the Room With Legacy"
-  description="Explore powerful stories, reflections, and insights on what it means to build, carry, and live legacy—in all its forms."
+  title="Family Stories | In the Room With Legacy"
+  description="Legacy lives through story. Explore real families' journeys of love, lineage, and learning, along with curated videos and features that celebrate inherited responsibility and belonging."
 >
   <!-- Hero Section -->
   <section class="py-24 md:py-32 relative overflow-hidden min-h-[60vh] flex items-center">
@@ -29,20 +29,41 @@ import legacyMoments from "@/assets/legacy_moments_nw_f6fe48da.png";
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6">
-          This didn't start with strategy.<br/>It started with a story.
+          Family Stories
         </h1>
-        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          In the Room with Legacy™ was born in a sacred transition.
+        <p class="text-xl md:text-2xl text-white/90 mb-6 max-w-2xl mx-auto font-medium">
+          Stories & Videos from Families Living Their Legacy
         </p>
-        <a 
-          href="#featured-blogs" 
-          class={buttonVariants({
-            size: "lg",
-            class: "font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 transition-colors duration-300 px-8 py-3 text-lg shadow-lg"
-          })}
-        >
-          Explore Our Stories
-        </a>
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Legacy lives through story. Explore real families' journeys of love, lineage, and learning, along with curated videos and features that celebrate inherited responsibility and belonging.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Founder Video Section -->
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg overflow-hidden shadow-md">
+          <div class="aspect-w-16 aspect-h-9 w-full">
+            <!-- Responsive Video Embed -->
+            <div class="w-full h-0 pb-[56.25%] relative">
+              <iframe 
+                class="absolute top-0 left-0 w-full h-full" 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="Founder Video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-display font-bold text-primary mb-2">A Message from Our Founder</h3>
+            <p class="text-foreground/80">Our founder shares the vision and purpose behind In the Room with Legacy™ and how family stories shape our shared journey.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -54,10 +75,10 @@ import legacyMoments from "@/assets/legacy_moments_nw_f6fe48da.png";
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
           <div>
             <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-3">
-              Featured Articles
+              Featured Stories
             </h2>
             <p class="text-foreground/80 text-lg">
-              Insights on building and preserving what matters most.
+              Real families sharing their legacy journeys and insights.
             </p>
           </div>
         </div>

@@ -95,6 +95,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           <MobileNavGroupLink href="/tools/legacy-assessment" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
 
           <MobileNavLink href="/blog" onClick={handleClose}>Blog</MobileNavLink>
+          <MobileNavGroupLink href="/blog" onClick={handleClose}>Family Stories</MobileNavGroupLink>
           <MobileNavGroupLink href="/blog/submit-story" onClick={handleClose}>Submit Your Family Story</MobileNavGroupLink>
 
           <MobileNavLink href="/advisors" onClick={handleClose}>IRL Advisors</MobileNavLink>
