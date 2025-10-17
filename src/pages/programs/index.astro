@@ -5,25 +5,26 @@ import { CalendarDays, Users, Building, BookOpen, Quote, Star, DollarSign, Light
 import { Image } from 'astro:assets';
 import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
 import familyTreeLogo from '../../assets/3_nw_b5691621.png';
-import heroBackground from '../../assets/images/programs-hero-bg_nw_6695a888.jpg';
 ---
 
 <BaseLayout
   title="Legacy Programs | In the Room With Legacy"
   description="Programs built around five core dimensions of legacy — designed to meet you where you are, and wherever you want to go."
 >
-  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-primary">
-    <!-- Background with photo image and overlay -->
+  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-[#2C5F7F]">
+    <!-- Background with enlarged family tree logo image -->
     <div class="absolute inset-0 w-full h-full z-0">
-      <Image 
-        src={heroBackground} 
-        alt="Legacy family gathering" 
-        class="w-full h-full object-cover object-center"
-        width={1920}
-        height={1080}
-        loading="eager"
-      />
-      <div class="absolute inset-0 bg-primary/70"></div> <!-- Dark overlay for readability -->
+      <div class="relative w-full h-full flex items-center justify-center">
+        <div class="absolute w-full mx-auto flex justify-center">
+          <Image
+            src={familyTreeLogo} 
+            alt="Family tree logo symbolizing generations and legacy"
+            class="w-[150%] md:w-[120%] max-w-none h-auto opacity-30"
+            width={1200}
+          />
+        </div>
+      </div>
+    </div>
 
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
