@@ -5,6 +5,10 @@ import { buttonVariants } from "@/components/ui/button";
 import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText } from "lucide-react";
 import { Image } from 'astro:assets';
 import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
+import assessmentToolThumbnail from "@/assets/thumbnails/assessment-tool-thumbnail_nw_2c87fa2a.png";
+import conversationKitThumbnail from "@/assets/thumbnails/conversation-kit-thumbnail_nw_f6fe48da.png";
+import parentingParentThumbnail from "@/assets/thumbnails/parenting-parent-thumbnail_nw_390fd864.png";
+import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumbnail_nw_a25135d4.png";
 ---
 
 <BaseLayout
@@ -269,7 +273,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       icon: "Tool",
       url: "/tools/legacy-assessment",
       buttonText: "Access Tool",
-      imagePath: "/images/assessment-tool-thumbnail.jpg",
+      imagePath: "/src/assets/thumbnails/assessment-tool-thumbnail_nw_2c87fa2a.png",
       isDownloadable: false,
       featured: true
     },
@@ -283,7 +287,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       icon: "ScrollText",
       url: "/pdfs/legacy_conversation_starter_kit.pdf",
       buttonText: "Download Kit",
-      imagePath: "/images/conversation-kit-thumbnail.jpg",
+      imagePath: "/src/assets/thumbnails/conversation-kit-thumbnail_nw_f6fe48da.png",
       isDownloadable: true,
       featured: true
     },
@@ -297,7 +301,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       icon: "Book",
       url: "/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf",
       buttonText: "Download Guide",
-      imagePath: "/images/parenting-parent-thumbnail.jpg",
+      imagePath: "/src/assets/thumbnails/parenting-parent-thumbnail_nw_390fd864.png",
       isDownloadable: true,
       featured: true
     },
@@ -311,7 +315,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       icon: "FileText",
       url: "/pdfs/the_case_for_ethical_nepotism_nw_08789f72.pdf",
       buttonText: "Read Article",
-      imagePath: "/images/ethical-nepotism-thumbnail.jpg",
+      imagePath: "/src/assets/thumbnails/ethical-nepotism-thumbnail_nw_a25135d4.png",
       isDownloadable: true,
       featured: true
     },
