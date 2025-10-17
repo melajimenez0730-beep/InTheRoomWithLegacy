@@ -4,7 +4,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText } from "lucide-react";
 import { Image } from 'astro:assets';
-import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
 import assessmentToolThumbnail from "@/assets/thumbnails/assessment-tool-thumbnail_nw_2c87fa2a.png";
 import conversationKitThumbnail from "@/assets/thumbnails/conversation-kit-thumbnail_nw_f6fe48da.png";
 import parentingParentThumbnail from "@/assets/thumbnails/parenting-parent-thumbnail_nw_390fd864.png";
@@ -15,14 +14,14 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
   title="Legacy Insights, Tools & Resources | In the Room With Legacy"
   description="A living library of guides, tools, and reflections to help families build and sustain legacy across every stage and generation."
 >
-  <!-- Hero Section -->
-  <section class="py-20 md:py-28 bg-white border-b border-primary/10">
+  <!-- Hero Section with Pure White Background -->
+  <section class="py-24 md:py-32 bg-white border-b border-primary/10">
     <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-primary leading-tight mb-8">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-primary leading-tight mb-10">
           Legacy Insights, Tools &amp; Resources
         </h1>
-        <p class="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
+        <p class="text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
           A living library of guides, tools, and reflections to help families build and sustain legacy, across every stage and generation.
         </p>
         
@@ -35,59 +34,59 @@ import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumb
     </div>
   </section>
 
-  <!-- Filters & Search Section -->
-  <section class="pt-6 pb-12 bg-white border-b border-primary/10">
+  <!-- Enhanced Filters & Search Section with Better Visual Hierarchy -->
+  <section class="pt-8 pb-16 bg-white border-b border-primary/10">
     <div class="container">
       <div class="max-w-5xl mx-auto">
-        <!-- Filter Panel -->
-        <div class="bg-white shadow-sm rounded-lg border border-primary/10 p-6 mb-8">
+        <!-- Filter Panel with Enhanced Visual Hierarchy -->
+        <div class="bg-white shadow rounded-xl border border-primary/15 p-8 mb-10">
           <!-- Primary Tabs - Main Content Type Filters -->
-          <div class="mb-8">
-            <h3 class="text-sm font-medium text-primary/80 mb-3 uppercase tracking-wider">Content Type</h3>
+          <div class="mb-10">
+            <h3 class="text-sm font-medium text-primary/90 mb-4 uppercase tracking-wider font-semibold">Content Type</h3>
             <div class="w-full flex flex-wrap gap-3">
-              <button id="all-filter" class="inline-flex items-center rounded-full bg-primary text-white px-6 py-2.5 text-sm font-medium transition-all shadow-sm">
+              <button id="all-filter" class="inline-flex items-center rounded-full bg-primary text-white px-6 py-3 text-sm font-medium transition-all shadow-sm hover:shadow">
                 All
               </button>
-              <button id="articles-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-2.5 text-sm font-medium transition-all">
+              <button id="articles-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-3 text-sm font-medium transition-all">
                 Articles &amp; Essays
               </button>
-              <button id="guides-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-2.5 text-sm font-medium transition-all">
+              <button id="guides-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-3 text-sm font-medium transition-all">
                 Guides &amp; Frameworks
               </button>
-              <button id="worksheets-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-2.5 text-sm font-medium transition-all">
+              <button id="worksheets-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-3 text-sm font-medium transition-all">
                 Worksheets &amp; Templates
               </button>
-              <button id="tools-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-2.5 text-sm font-medium transition-all">
+              <button id="tools-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-3 text-sm font-medium transition-all">
                 Tools &amp; Checklists
               </button>
-              <button id="videos-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-2.5 text-sm font-medium transition-all">
+              <button id="videos-filter" class="inline-flex items-center rounded-full bg-primary/5 hover:bg-primary/10 text-primary px-6 py-3 text-sm font-medium transition-all">
                 Videos &amp; Webinars
               </button>
             </div>
           </div>
 
           <!-- Secondary Filters - Audience -->
-          <div class="mb-6">
-            <h3 class="text-sm font-medium text-primary/70 mb-3 uppercase tracking-wider">Audience</h3>
+          <div class="mb-8">
+            <h3 class="text-sm font-medium text-primary/80 mb-3 uppercase tracking-wider">Audience</h3>
             <div class="w-full flex flex-wrap gap-2">
-              <button id="founders-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-1.5 text-sm font-medium transition-all">
+              <button id="founders-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-2 text-sm font-medium transition-all">
                 Founders
               </button>
-              <button id="heirs-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-1.5 text-sm font-medium transition-all">
+              <button id="heirs-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-2 text-sm font-medium transition-all">
                 Heirs
               </button>
-              <button id="families-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-1.5 text-sm font-medium transition-all">
+              <button id="families-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-2 text-sm font-medium transition-all">
                 Families
               </button>
-              <button id="cousins-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-1.5 text-sm font-medium transition-all">
+              <button id="cousins-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-5 py-2 text-sm font-medium transition-all">
                 Cousins &amp; Collectives
               </button>
             </div>
           </div>
 
           <!-- Tertiary Tags - Legacy Dimension -->
-          <div class="mb-6">
-            <h3 class="text-sm font-medium text-primary/60 mb-3 uppercase tracking-wider">Topics</h3>
+          <div class="mb-8">
+            <h3 class="text-sm font-medium text-primary/70 mb-3 uppercase tracking-wider">Topics</h3>
             <div class="w-full flex flex-wrap gap-2">
               <button id="legacy-filter" class="inline-flex items-center rounded-full bg-muted hover:bg-muted/80 text-foreground/70 px-4 py-1 text-xs font-medium transition-all">
                 Family Legacy
