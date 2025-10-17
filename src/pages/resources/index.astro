@@ -9,25 +9,41 @@ import assessmentToolThumbnail from "@/assets/thumbnails/assessment-tool-thumbna
 import conversationKitThumbnail from "@/assets/thumbnails/conversation-kit-thumbnail_nw_f6fe48da.png";
 import parentingParentThumbnail from "@/assets/thumbnails/parenting-parent-thumbnail_nw_390fd864.png";
 import ethicalNepotismThumbnail from "@/assets/thumbnails/ethical-nepotism-thumbnail_nw_a25135d4.png";
+
+// Import hero background image
+import heroBackgroundImage from "@/assets/images/legacy-hero-bg_nw_ff8d96a2.jpg";
 ---
 
 <BaseLayout
   title="Legacy Insights, Tools & Resources | In the Room With Legacy"
   description="A living library of guides, tools, and reflections to help families build and sustain legacy across every stage and generation."
 >
-  <!-- Hero Section with Pure White Background -->
-  <section class="py-24 md:py-32 bg-white border-b border-primary/10">
-    <div class="container">
+  <!-- Hero Section with Full-Width Background Image -->
+  <section class="relative py-24 md:py-32 border-b border-primary/10 bg-primary overflow-hidden">
+    <!-- Background Image with Overlay -->
+    <div class="absolute inset-0 w-full h-full">
+      <Image 
+        src={heroBackgroundImage} 
+        alt="Legacy resources background" 
+        class="w-full h-full object-cover object-center"
+        width={1920}
+        height={1080}
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-primary/70"></div> <!-- Dark overlay for readability -->
+    </div>
+    
+    <div class="container relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-primary leading-tight mb-10">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white leading-tight mb-10">
           Legacy Insights, Tools &amp; Resources
         </h1>
-        <p class="text-xl md:text-2xl text-foreground/80 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+        <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
           A living library of guides, tools, and reflections to help families build and sustain legacy, across every stage and generation.
         </p>
         
         <div class="max-w-5xl mx-auto mt-8">
-          <p class="text-lg text-foreground/90 mb-4">
+          <p class="text-lg text-white/90 mb-4">
             Explore frameworks, stories, and tools created by In the Room with Legacy™ — along with curated insights from thought leaders, family enterprises, and communities around the world. Whether you're the founder of your family, a successor, or a family steward, you'll find something here that helps make legacy real in your everyday life.
           </p>
         </div>
