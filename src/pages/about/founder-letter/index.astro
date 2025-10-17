@@ -9,6 +9,9 @@ import familyPorch from "@/assets/family_on_porch_nw_6bf9f9ad.jpg";
 import familyGathering from "@/assets/family_gathering_nw_664eb12a.jpg";
 import presentation3 from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-3_nw_390fd864.png";
 import presentation4 from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-4_nw_2c87fa2a.png";
+
+// Import founder image
+import laurenMiller from "@/assets/founder-letter/lauren-miller_nw_64c52089.jpg";
 ---
 
 <BaseLayout
@@ -20,7 +23,7 @@ import presentation4 from "@/assets/ash-grey-and-black-modern-professional-brand
   <section class="py-16 md:py-20 bg-white overflow-hidden relative">
     <div class="container relative z-10">
       <div class="max-w-4xl mx-auto">
-        <!-- Letter Header with Large Image -->
+        <!-- Letter Header with Image -->
         <div class="relative mb-16">
           <div class="absolute inset-0 bg-primary/10 rounded-2xl"></div>
           <div class="relative p-8 md:p-10">
@@ -28,12 +31,16 @@ import presentation4 from "@/assets/ash-grey-and-black-modern-professional-brand
               <h1 class="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
                 Letter from Our Founder
               </h1>
-              <div class="w-32 h-0.5 bg-primary/40 mx-auto"></div>
+              <div class="w-32 h-0.5 bg-primary/40 mx-auto mb-4"></div>
+              <p class="font-serif italic text-xl text-primary/80 mb-6">
+                A journey of purpose, reflection, and legacy
+              </p>
             </div>
+
             <div class="rounded-xl overflow-hidden max-w-2xl mx-auto shadow-xl">
               <Image 
-                src={legacyCollage} 
-                alt="A collection of family legacy photos across generations" 
+                src={laurenMiller} 
+                alt="Lauren Miller, Founder of In the Room with Legacy" 
                 class="w-full h-auto" 
                 width={900}
                 height={400}
