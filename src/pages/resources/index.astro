@@ -1,14 +1,15 @@
 ---
+import ${resource.imagepath}Img from "../assets/${resource.imagePath}";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool } from "lucide-react";
+import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText } from "lucide-react";
 import { Image } from 'astro:assets';
 import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
 ---
 
 <BaseLayout
-  title="Legacy Insights, Tools, and Resources | In the Room With Legacy"
-  description="Explore our complete collection of articles, guides, worksheets, and tools to help you build, preserve, and pass on what matters most."
+  title="Legacy Insights, Tools & Resources | In the Room With Legacy"
+  description="A living library of guides, tools, and reflections to help families build and sustain legacy across every stage and generation."
 >
   <!-- Hero Section -->
   <section class="py-20 md:py-28 relative overflow-hidden min-h-[40vh] flex items-center">
@@ -24,59 +25,127 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6">
-          Legacy Insights, Tools, and Resources
+          Legacy Insights, Tools &amp; Resources
         </h1>
         <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Explore our complete collection of articles, guides, worksheets, and tools to help you build, preserve, and pass on what matters most.
+          A living library of guides, tools, and reflections to help families build and sustain legacy, across every stage and generation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Body Copy -->
+  <section class="py-8 bg-white">
+    <div class="container">
+      <div class="max-w-5xl mx-auto text-center">
+        <p class="text-lg text-foreground/90 mb-4">
+          Explore frameworks, stories, and tools created by In the Room with Legacy™ — along with curated insights from thought leaders, family enterprises, and communities around the world. Whether you're the founder of your family, a successor, or a family steward, you'll find something here that helps make legacy real in your everyday life.
         </p>
       </div>
     </div>
   </section>
 
   <!-- Filters & Search Section -->
-  <section class="py-12 bg-white border-b border-primary/10">
+  <section class="py-10 bg-white border-b border-primary/10">
     <div class="container">
       <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-6 justify-between">
-          <div class="w-full md:w-auto flex flex-wrap gap-4">
+        <!-- Primary Tabs -->
+        <div class="mb-6">
+          <h3 class="text-sm font-medium text-muted-foreground mb-3">Content Type</h3>
+          <div class="w-full flex flex-wrap gap-3">
             <button id="all-filter" class="inline-flex items-center rounded-full bg-primary text-white px-5 py-2 text-sm font-medium">
-              All Resources
+              All
             </button>
             <button id="articles-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
-              Articles
+              Articles &amp; Essays
             </button>
             <button id="guides-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
-              Guides
+              Guides &amp; Frameworks
             </button>
             <button id="worksheets-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
-              Worksheets
+              Worksheets &amp; Templates
             </button>
             <button id="tools-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
-              Tools
+              Tools &amp; Checklists
+            </button>
+            <button id="videos-filter" class="inline-flex items-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary px-5 py-2 text-sm font-medium">
+              Videos &amp; Webinars
             </button>
           </div>
-          
-          <div class="w-full md:w-64 relative">
-            <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-4 w-4 text-muted-foreground" />
-            </div>
-            <input 
-              type="search" 
-              id="resource-search" 
-              class="block w-full pl-10 pr-3 py-2 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40"
-              placeholder="Search resources..."
-            />
+        </div>
+
+        <!-- Secondary Filters -->
+        <div class="mb-6">
+          <h3 class="text-sm font-medium text-muted-foreground mb-3">Audience</h3>
+          <div class="w-full flex flex-wrap gap-3">
+            <button id="founders-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-4 py-1.5 text-sm font-medium">
+              Founders
+            </button>
+            <button id="heirs-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-4 py-1.5 text-sm font-medium">
+              Heirs
+            </button>
+            <button id="families-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-4 py-1.5 text-sm font-medium">
+              Families
+            </button>
+            <button id="cousins-filter" class="inline-flex items-center rounded-full bg-secondary/10 hover:bg-secondary/20 text-secondary px-4 py-1.5 text-sm font-medium">
+              Cousins &amp; Collectives
+            </button>
           </div>
         </div>
+
+        <!-- Tertiary Tags -->
+        <div class="mb-6">
+          <h3 class="text-sm font-medium text-muted-foreground mb-3">Topics</h3>
+          <div class="w-full flex flex-wrap gap-3">
+            <button id="legacy-filter" class="inline-flex items-center rounded-full bg-muted hover:bg-muted/90 text-foreground/80 px-4 py-1.5 text-sm font-medium">
+              Family Legacy
+            </button>
+            <button id="nextgen-filter" class="inline-flex items-center rounded-full bg-muted hover:bg-muted/90 text-foreground/80 px-4 py-1.5 text-sm font-medium">
+              Next-Gen Stewardship
+            </button>
+            <button id="storytelling-filter" class="inline-flex items-center rounded-full bg-muted hover:bg-muted/90 text-foreground/80 px-4 py-1.5 text-sm font-medium">
+              Storytelling &amp; Culture
+            </button>
+            <button id="economic-filter" class="inline-flex items-center rounded-full bg-muted hover:bg-muted/90 text-foreground/80 px-4 py-1.5 text-sm font-medium">
+              Economic Empowerment
+            </button>
+            <button id="transitions-filter" class="inline-flex items-center rounded-full bg-muted hover:bg-muted/90 text-foreground/80 px-4 py-1.5 text-sm font-medium">
+              Transitions &amp; Healing
+            </button>
+          </div>
+        </div>
+        
+        <!-- Search -->
+        <div class="w-full mt-8 relative max-w-md mx-auto">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search className="h-4 w-4 text-muted-foreground" />
+          </div>
+          <input 
+            type="search" 
+            id="resource-search" 
+            class="block w-full pl-10 pr-3 py-2 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40"
+            placeholder="Search resources..."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Resources Heading -->
+  <section class="pt-12 pb-4 bg-muted/10">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-display font-bold text-primary mb-4">Featured Resources</h2>
+        <p class="text-lg text-foreground/80 mb-8">Start with a few of our most loved and most used resources — from conversation frameworks to practical guides.</p>
       </div>
     </div>
   </section>
 
   <!-- Resource Cards -->
-  <section class="py-16 bg-muted/10">
+  <section class="pt-0 pb-16 bg-muted/10">
     <div class="container" id="resource-container">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12" id="resources-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="resources-grid">
           <!-- Resource cards will be dynamically populated here -->
         </div>
 
@@ -91,30 +160,94 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       </div>
     </div>
   </section>
+  
+  <!-- Curated External Resources -->
+  <section class="py-16 bg-white border-t border-muted/30">
+    <div class="container">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-display font-bold text-primary mb-4">Curated External Resources</h2>
+        <p class="text-lg text-foreground/80 mb-8">Valuable insights from respected sources in family legacy planning, storytelling, and wealth management.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- External Resource 1 -->
+          <div class="border border-muted rounded-lg p-6 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-display font-semibold mb-3 text-primary">Family Business Governance: A Guide for Lasting Success</h3>
+            <p class="text-foreground/80 mb-4">A comprehensive framework for establishing governance structures that support family business continuity across generations.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-muted-foreground">via Egon Zehnder</span>
+              <a href="https://www.egonzehnder.com/industries/family-business-advisory/insights/family-business-governance" target="_blank" class="text-primary font-medium hover:underline inline-flex items-center">
+                Read Article
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- External Resource 2 -->
+          <div class="border border-muted rounded-lg p-6 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-display font-semibold mb-3 text-primary">The Power of Family Stories</h3>
+            <p class="text-foreground/80 mb-4">How storytelling can strengthen family bonds, preserve values, and create a sense of shared identity and purpose.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-muted-foreground">via Bessemer Trust</span>
+              <a href="https://www.bessemertrust.com/insights/the-power-of-family-stories" target="_blank" class="text-primary font-medium hover:underline inline-flex items-center">
+                Read Article
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- External Resource 3 -->
+          <div class="border border-muted rounded-lg p-6 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-display font-semibold mb-3 text-primary">Preserving Family Legacy: Heather K.'s Remento Review</h3>
+            <p class="text-foreground/80 mb-4">A personal account of using digital tools to capture and preserve family stories for future generations.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-muted-foreground">via Remento Journal</span>
+              <a href="https://www.remento.co/journal/preserving-family-legacy-heather-k-s-remento-review" target="_blank" class="text-primary font-medium hover:underline inline-flex items-center">
+                Read Article
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+              </a>
+            </div>
+          </div>
+          
+          <!-- External Resource 4 -->
+          <div class="border border-muted rounded-lg p-6 hover:shadow-md transition-shadow">
+            <h3 class="text-xl font-display font-semibold mb-3 text-primary">Why Telling Our Family Stories Is So Beneficial</h3>
+            <p class="text-foreground/80 mb-4">Research-backed insights on how family storytelling impacts emotional well-being, resilience, and intergenerational connections.</p>
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-muted-foreground">via Lifebook Memoirs</span>
+              <a href="https://www.lifebookmemoirs.com/why-telling-our-family-stories-is-so-beneficial/" target="_blank" class="text-primary font-medium hover:underline inline-flex items-center">
+                Read Article
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Updates Signup Section -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-muted/5 border-t border-muted/30">
     <div class="container">
-      <div class="max-w-4xl mx-auto bg-muted/20 rounded-lg overflow-hidden shadow-sm">
+      <div class="max-w-4xl mx-auto bg-primary/5 rounded-lg overflow-hidden shadow-sm">
         <div class="flex flex-col md:flex-row">
           <div class="p-8 md:p-10 flex-1">
-            <h2 class="text-2xl font-display font-bold text-primary mb-3">Want to be the first to know when new tools drop?</h2>
-            <p class="text-foreground/80 mb-6">Join our community to receive updates, early access opportunities, and exclusive content.</p>
+            <h2 class="text-2xl font-display font-bold text-primary mb-3">Stay Connected</h2>
+            <p class="text-foreground/80 mb-6">Get new tools, stories, and insights sent directly to your inbox.</p>
             
             <div class="flex flex-col sm:flex-row gap-3">
               <a 
-                href="/contact" 
+                href="/join-the-room" 
                 class={buttonVariants({
                   size: "lg",
                   class: "font-medium"
                 })}
               >
-                Join Our Community
+                Join the Room →
               </a>
             </div>
           </div>
           
-          <div class="bg-primary/5 p-6 flex items-center justify-center md:w-1/4">
+          <div class="bg-primary/10 p-6 flex items-center justify-center md:w-1/4">
             <Settings className="w-16 h-16 text-primary/40" />
           </div>
         </div>
@@ -127,54 +260,83 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
   // Resource data
   const resources = [
     {
-      title: "Legacy Assessment Tool",
+      title: "AI-Powered Legacy Assessment Tool",
       description: "The first AI-powered tool that helps families measure where they are, map what matters most, and take real steps to protect their legacy across generations.",
       type: "tool",
       topic: "assessment",
+      audience: "families",
+      tags: ["family-legacy", "nextgen-stewardship"],
       icon: "Tool",
       url: "/tools/legacy-assessment",
       buttonText: "Access Tool",
+      imagePath: "/images/assessment-tool-thumbnail.jpg",
       isDownloadable: false,
       featured: true
     },
     {
-      title: "The Case for Ethical Nepotism: Reclaiming Family Advantage",
-      description: "How families can create opportunity for their own while maintaining integrity and excellence.",
-      type: "article",
-      topic: "nepotism",
-      icon: "FileText",
-      url: "/articles/ethical-nepotism",
-      buttonText: "Read Article",
-      isDownloadable: false
-    },
-    {
-      title: "Legacy Lessons from the Land",
-      description: "Lessons from the land on stewardship, patience, and the rhythm of generational thinking.",
-      type: "article",
-      topic: "stewardship",
-      icon: "FileText", 
-      url: "/articles/legacy-lessons-land",
-      buttonText: "Read Article",
-      isDownloadable: false
-    },
-    {
-      title: "Raising the Steward: Preparing the Next Generation for Responsibility",
-      description: "How to nurture a stewardship mindset in the next generation and prepare them for the responsibility of carrying forward a legacy.",
-      type: "article",
-      topic: "stewardship",
-      icon: "FileText",
-      url: "/articles/raising-the-steward",
-      buttonText: "Read Article",
-      isDownloadable: false
+      title: "The Legacy Conversation Starter Kit",
+      description: "A comprehensive guide with prompts, questions, and frameworks to facilitate meaningful conversations about legacy within your family.",
+      type: "worksheet",
+      topic: "conversations",
+      audience: "families",
+      tags: ["transitions-healing", "storytelling-culture"],
+      icon: "ScrollText",
+      url: "/pdfs/legacy_conversation_starter_kit.pdf",
+      buttonText: "Download Kit",
+      imagePath: "/images/conversation-kit-thumbnail.jpg",
+      isDownloadable: true,
+      featured: true
     },
     {
       title: "Parenting a Parent: A Guide for Adult Children",
       description: "Navigate the complex transition from child to caregiver with practical strategies, emotional support, and planning tools.",
       type: "guide",
       topic: "caregiving",
+      audience: "families",
+      tags: ["transitions-healing"],
       icon: "Book",
       url: "/pdfs/parenting_a_parent_final_guide_updated_nw_d4b4a552.pdf",
       buttonText: "Download Guide",
+      imagePath: "/images/parenting-parent-thumbnail.jpg",
+      isDownloadable: true,
+      featured: true
+    },
+    {
+      title: "The Case for Ethical Nepotism™",
+      description: "How families can create opportunity for their own while maintaining integrity and excellence. Redefining inheritance as responsibility, not entitlement.",
+      type: "article",
+      topic: "nepotism",
+      audience: "heirs",
+      tags: ["family-legacy", "nextgen-stewardship"],
+      icon: "FileText",
+      url: "/pdfs/the_case_for_ethical_nepotism_nw_08789f72.pdf",
+      buttonText: "Read Article",
+      imagePath: "/images/ethical-nepotism-thumbnail.jpg",
+      isDownloadable: true,
+      featured: true
+    },
+    {
+      title: "Legacy Lessons from the Land",
+      description: "Lessons from the land on stewardship, patience, and the rhythm of generational thinking.",
+      type: "article",
+      topic: "stewardship",
+      audience: "founders",
+      tags: ["family-legacy"],
+      icon: "FileText", 
+      url: "/pdfs/legacy_lessons_from_the_land_nw_a977d8d2.pdf",
+      buttonText: "Read Article",
+      isDownloadable: true
+    },
+    {
+      title: "Raising the Steward: Preparing the Next Generation",
+      description: "How to nurture a stewardship mindset in the next generation and prepare them for the responsibility of carrying forward a legacy.",
+      type: "article",
+      topic: "stewardship",
+      audience: "founders",
+      tags: ["nextgen-stewardship"],
+      icon: "FileText",
+      url: "/pdfs/raising_the_steward_blog_post_nw_2a8581a4.pdf",
+      buttonText: "Read Article",
       isDownloadable: true
     },
     {
@@ -182,6 +344,8 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       description: "Moving beyond the narrow definition of legacy as what you leave behind to embrace it as how you live today.",
       type: "article",
       topic: "legacy",
+      audience: "families",
+      tags: ["family-legacy"],
       icon: "FileText",
       url: "/blog/legacy-lifestyle",
       buttonText: "Read Article",
@@ -192,7 +356,9 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       description: "Are you prepared to receive and steward what's being passed to you? Practical reflections for next-generation leaders.",
       type: "worksheet",
       topic: "strategy",
-      icon: "Bookmark",
+      audience: "heirs",
+      tags: ["nextgen-stewardship"],
+      icon: "FileQuestion",
       url: "/blog/heir-readiness",
       buttonText: "Read Worksheet",
       isDownloadable: false
@@ -281,62 +447,89 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       
       // Resource type label
       let typeLabel = resource.type.charAt(0).toUpperCase() + resource.type.slice(1);
+
+      // Get tags display for featured resources
+      let tagsDisplay = '';
+      if (resource.tags && resource.tags.length > 0) {
+        tagsDisplay = resource.tags.map(tag => {
+          const formattedTag = tag.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+          return `<span class="inline-block bg-muted text-foreground/70 py-0.5 px-2 rounded-full text-xs font-medium mr-1 mb-1">${formattedTag}</span>`;
+        }).join('');
+      }
       
-      // Apply different styling for featured resources (like Legacy Assessment Tool)
+      // Get audience label if available
+      let audienceLabel = '';
+      if (resource.audience) {
+        const formattedAudience = resource.audience.charAt(0).toUpperCase() + resource.audience.slice(1);
+        audienceLabel = `<span class="inline-block bg-secondary/10 text-secondary py-0.5 px-2 rounded-full text-xs font-medium ml-1">${formattedAudience}</span>`;
+      }
+      
+      // Apply different styling for featured resources
       if (resource.featured) {
         card.className = 'content-card featured-card';
         card.innerHTML = `
-          <div class="content-card-content bg-primary/5 border-2 border-primary/20 shadow-md">
-            <div class="absolute top-2 right-2 bg-secondary/20 text-secondary px-2 py-1 rounded-full text-xs font-semibold">
-              Featured Tool
+          <div class="content-card-content bg-white border border-primary/20 shadow-md rounded-lg overflow-hidden">
+            ${resource.imagePath ? `
+              <div class="w-full h-48 overflow-hidden">
+                <Image src={${resource.imagepath}Img} alt="${resource.title}" class="w-full h-full object-cover transition-transform hover:scale-105 duration-500" />
+              </div>
+            ` : ''}
+            <div class="p-5">
+              <div class="absolute top-2 right-2 bg-secondary/20 text-secondary px-2 py-1 rounded-full text-xs font-semibold">
+                Featured
+              </div>
+              <div class="flex gap-2 items-center mb-3">
+                <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                  ${typeLabel}
+                </span>
+                ${audienceLabel}
+              </div>
+              <h3 class="content-card-title text-xl font-semibold">
+                ${resource.title}
+              </h3>
+              <p class="content-card-description line-clamp-3 mt-2">
+                ${resource.description}
+              </p>
+              <div class="mt-3 mb-4 flex flex-wrap">
+                ${tagsDisplay}
+              </div>
+              <a 
+                href="${resource.url}" 
+                class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-2"
+                ${resource.isDownloadable ? 'download' : ''}
+              >
+                ${buttonIcon}${resource.buttonText}
+              </a>
             </div>
-            <div class="mb-4 text-primary">
-              ${iconSvg}
-            </div>
-            <div class="mb-2">
-              <span class="inline-block bg-primary/20 text-primary py-1 px-3 rounded-full text-xs font-medium">
-                ${typeLabel}
-              </span>
-            </div>
-            <h3 class="content-card-title text-xl font-semibold">
-              ${resource.title}
-            </h3>
-            <p class="content-card-description line-clamp-3">
-              ${resource.description}
-            </p>
-            <a 
-              href="${resource.url}" 
-              class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-10 px-5 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-4"
-              ${resource.isDownloadable ? 'download' : ''}
-            >
-              ${buttonIcon}${resource.buttonText}
-            </a>
           </div>
         `;
       } else {
         card.innerHTML = `
-          <div class="content-card-content">
-            <div class="mb-4 text-primary">
-              ${iconSvg}
+          <div class="content-card-content bg-white border border-muted rounded-lg overflow-hidden">
+            <div class="p-5">
+              <div class="flex gap-2 items-center mb-3">
+                <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
+                  ${typeLabel}
+                </span>
+                ${audienceLabel}
+              </div>
+              <div class="mb-3 text-primary">
+                ${iconSvg}
+              </div>
+              <h3 class="content-card-title text-lg font-semibold">
+                ${resource.title}
+              </h3>
+              <p class="content-card-description line-clamp-3 mt-2">
+                ${resource.description}
+              </p>
+              <a 
+                href="${resource.url}" 
+                class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-9 px-4 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full mt-4"
+                ${resource.isDownloadable ? 'download' : ''}
+              >
+                ${buttonIcon}${resource.buttonText}
+              </a>
             </div>
-            <div class="mb-2">
-              <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
-                ${typeLabel}
-              </span>
-            </div>
-            <h3 class="content-card-title">
-              ${resource.title}
-            </h3>
-            <p class="content-card-description line-clamp-3">
-              ${resource.description}
-            </p>
-            <a 
-              href="${resource.url}" 
-              class="content-card-actions inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium h-9 px-4 py-2 border border-primary bg-primary text-white shadow hover:bg-primary/90 w-full"
-              ${resource.isDownloadable ? 'download' : ''}
-            >
-              ${buttonIcon}${resource.buttonText}
-            </a>
           </div>
         `;
       }
@@ -357,9 +550,9 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
         display: flex;
         flex-direction: column;
         background-color: white;
-        padding: 1.5rem;
         border-radius: 0.5rem;
-        border: 1px solid rgba(var(--color-primary), 0.1);
+        overflow: hidden;
+        position: relative;
       }
       .content-card:hover {
         transform: translateY(-4px);
@@ -377,7 +570,7 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       }
       .content-card-description {
         color: rgba(var(--color-foreground), 0.8);
-        margin-bottom: 1.25rem;
+        line-height: 1.5;
         flex-grow: 1;
       }
       .content-card-actions {
@@ -385,7 +578,12 @@ import familyBackground from "@/assets/legacy_collage_nw_ddd335e4.png";
       }
       .featured-card .content-card-content {
         position: relative;
-        border-width: 2px;
+      }
+      .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     </style>
   `);
