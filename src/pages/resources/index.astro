@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText } from "lucide-react";
+import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText, ChevronDown, ChevronUp, ListFilter } from "lucide-react";
 
 // Import all thumbnail images individually
 import assessmentToolThumbnail from "@/assets/thumbnails/assessment-tool-thumbnail_nw_2c87fa2a.png";
@@ -55,8 +55,16 @@ import heroBackgroundImage from "@/assets/images/legacy-hero-bg_nw_ff8d96a2.jpg"
   <section class="pt-8 pb-16 bg-white border-b border-primary/10">
     <div class="container">
       <div class="max-w-5xl mx-auto">
-        <!-- Filter Panel with Enhanced Visual Hierarchy -->
-        <div class="bg-white shadow rounded-xl border border-primary/15 p-8 mb-10">
+        <!-- Mobile Filter Toggle Button (visible only on mobile) -->
+        <button id="filter-toggle-btn" class="flex md:hidden w-full mb-4 py-3 px-6 bg-primary text-white rounded-lg shadow items-center justify-center font-medium transition-all hover:bg-primary/90">
+          <ListFilter className="w-5 h-5 mr-2" />
+          <span>Filter Resources</span>
+          <ChevronDown id="filter-down-icon" className="w-5 h-5 ml-2" />
+          <ChevronUp id="filter-up-icon" className="w-5 h-5 ml-2 hidden" />
+        </button>
+        
+        <!-- Filter Panel with Enhanced Visual Hierarchy (hidden on mobile by default) -->
+        <div id="filter-panel" class="bg-white shadow rounded-xl border border-primary/15 p-8 mb-10 hidden md:block">
           <!-- Primary Tabs - Main Content Type Filters -->
           <div class="mb-10">
             <h3 class="text-sm font-medium text-primary/90 mb-4 uppercase tracking-wider font-semibold">Content Type</h3>
@@ -134,6 +142,14 @@ import heroBackgroundImage from "@/assets/images/legacy-hero-bg_nw_ff8d96a2.jpg"
               class="block w-full pl-10 pr-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/40 bg-white/80"
               placeholder="Search resources..."
             />
+          </div>
+          
+          <!-- Mobile Apply Filters Button (visible only when filters are expanded on mobile) -->
+          <div class="mt-6 md:hidden">
+            <button id="apply-filters-btn" class="w-full py-3 px-6 bg-primary text-white rounded-lg shadow flex items-center justify-center font-medium transition-all hover:bg-primary/90">
+              <span>Apply Filters</span>
+              <ChevronUp className="w-5 h-5 ml-2" />
+            </button>
           </div>
         </div>
       </div>
@@ -748,6 +764,61 @@ import heroBackgroundImage from "@/assets/images/legacy-hero-bg_nw_ff8d96a2.jpg"
     });
   }
 
+  // Mobile filter toggle functionality
+  function initMobileFilters() {
+    const filterToggleBtn = document.getElementById('filter-toggle-btn');
+    const filterPanel = document.getElementById('filter-panel');
+    const filterDownIcon = document.getElementById('filter-down-icon');
+    const filterUpIcon = document.getElementById('filter-up-icon');
+    const applyFiltersBtn = document.getElementById('apply-filters-btn');
+    
+    if (filterToggleBtn && filterPanel) {
+      // Toggle filter panel visibility
+      filterToggleBtn.addEventListener('click', () => {
+        // Toggle filter panel
+        filterPanel.classList.toggle('hidden');
+        filterPanel.classList.toggle('md:block');
+        filterPanel.classList.toggle('block');
+        
+        // Toggle icons
+        filterDownIcon.classList.toggle('hidden');
+        filterUpIcon.classList.toggle('hidden');
+      });
+      
+      // Apply filters button (closes the filter panel on mobile)
+      if (applyFiltersBtn) {
+        applyFiltersBtn.addEventListener('click', () => {
+          // Only take action if we're in mobile view
+          if (window.innerWidth < 768) { // md breakpoint
+            filterPanel.classList.add('hidden');
+            filterPanel.classList.remove('block');
+            filterDownIcon.classList.remove('hidden');
+            filterUpIcon.classList.add('hidden');
+          }
+        });
+      }
+      
+      // Handle resize events to ensure proper display state
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) { // md breakpoint
+          // On desktop/tablet, always show filter panel
+          filterPanel.classList.remove('hidden');
+          filterPanel.classList.add('md:block');
+        } else {
+          // On mobile, hide by default unless explicitly shown
+          if (!filterPanel.classList.contains('block')) {
+            filterPanel.classList.add('hidden');
+            filterDownIcon.classList.remove('hidden');
+            filterUpIcon.classList.add('hidden');
+          }
+        }
+      });
+    }
+  }
+
   // Run when DOM is ready
-  document.addEventListener('DOMContentLoaded', initPage);
+  document.addEventListener('DOMContentLoaded', () => {
+    initPage();
+    initMobileFilters();
+  });
 </script>
