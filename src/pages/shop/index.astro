@@ -126,37 +126,34 @@ const scrollToProducts = () => {
     <div class="container mx-auto px-4 md:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {products.map(product => (
-          <div class="product-card group relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl border border-transparent hover:border-primary/10 transition-all duration-300 hover:-translate-y-1">
-            <div class="relative overflow-hidden h-72">
+          <div class="product-card relative overflow-hidden rounded-xl bg-white shadow-md border border-primary/10 transition-all duration-300">
+            <div class="relative h-72">
               <img 
                 src={product.image} 
                 alt={product.alt}
-                class="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
+                class="w-full h-full object-cover object-center"
               />
-              <div class="absolute inset-0 flex items-end translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <div class="p-6 bg-white/90 w-full border-t border-primary/10 shadow-sm">
-                  <p class="font-serif text-lg italic text-primary mb-4">{product.tagline}</p>
-                  <a 
-                    href={product.checkoutUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center bg-[#9a4a0b] hover:bg-[#9a4a0b]/90 text-white font-medium py-2 px-4 rounded-md transition-colors"
-                  >
-                    Buy Now <ExternalLink className="ml-2 h-4 w-4" />
-                  </a>
-                </div>
-              </div>
             </div>
             
             <div class="p-6">
-              <h3 class="font-serif text-xl font-bold text-primary mb-1">
-                {product.name}
-                <span class="text-[#9a4a0b] ml-1">{product.description}</span>
-              </h3>
-              <div class="flex justify-between items-center mt-2">
-                <p class="font-sans text-primary/80 text-sm">{product.tagline}</p>
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-serif text-xl font-bold text-primary">
+                  {product.name}
+                  <span class="block text-[#9a4a0b] text-sm">{product.description}</span>
+                </h3>
                 <span class="font-serif text-xl font-bold text-primary">{product.price}</span>
               </div>
+              
+              <p class="font-serif text-primary/80 text-base mb-4">{product.tagline}</p>
+              
+              <a 
+                href={product.checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center w-full bg-[#9a4a0b] hover:bg-[#9a4a0b]/90 text-white font-medium py-2 px-4 rounded-md transition-colors"
+              >
+                Buy Now <ExternalLink className="ml-2 h-4 w-4" />
+              </a>
             </div>
           </div>
         ))}
@@ -236,10 +233,7 @@ const scrollToProducts = () => {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Apply floating animation on hover */
-  .product-card:hover {
-    animation: float 3s ease-in-out infinite;
-  }
+  /* No hover animations */
   
   /* Make font adjustments */
   .font-serif {
@@ -250,12 +244,7 @@ const scrollToProducts = () => {
     font-family: 'Inter', system-ui, sans-serif;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .product-card .absolute {
-      transform: translateY(0) !important;
-    }
-  }
+  /* No responsive hover adjustments needed */
 </style>
 
 <script>
@@ -274,12 +263,12 @@ const scrollToProducts = () => {
       threshold: 0.1
     });
     
-    // Observe product cards
+    // Make sure product cards are visible immediately
     document.querySelectorAll('.product-card').forEach(card => {
       observer.observe(card);
-      // Initially hide the cards
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
+      // Ensure cards are fully visible
+      card.style.opacity = '1';
+      card.style.transform = 'none';
     });
     
     // Add click events to CTA buttons
