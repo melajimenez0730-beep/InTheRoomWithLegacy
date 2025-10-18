@@ -19,6 +19,7 @@ import laurenGroupPhoto from "@/assets/kat_6336_nw_f0e98a15.jpg";
 import laurenPortraitPhoto from "@/assets/kat_6104_nw_d8b9de0d.jpg";
 import legacyKidsPhoto from "@/assets/programs/legacy-kids_nw_efc270a4.jpg";
 import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
+import heroBackgroundImage from "@/assets/hero/hero-family-legacy_nw_6cf7ce3c.jpg";
 ---
 
 <BaseLayout
@@ -27,47 +28,16 @@ import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
 >
   <!-- Hero Section -->
   <section class="py-16 sm:py-20 md:py-32 bg-primary relative overflow-hidden">
-    <!-- Pattern Background (Original) -->
-    <div class="absolute inset-0 z-0 opacity-30">
-      <div class="absolute inset-0" style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4zIj48cGF0aCBkPSJNMzYgMzRjMC0yLjIxIDEuNzktNCA0LTRzNCAxLjc5IDQgNC0xLjc5IDQtNCA0LTQtMS43OS00LTRtMC0xN2MwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0tMTcgMGMwLTIuMjEgMS43OS00IDQtNHM0IDEuNzkgNCA0LTEuNzkgNC00IDQtNC0xLjc5LTQtNG0wIDE3YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00Ii8+PC9nPjwvZz48L3N2Zz4='); background-size: 60px 60px;"></div>
-    </div>
-
-    <!-- Rotating Background Images -->
-    <div class="absolute inset-0 z-[1]">
-      <div id="heroBackgroundSlider" class="w-full h-full relative">
-        <!-- Image 1 -->
-        <div class="heroSlide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-          <div class="absolute inset-0 bg-black">
-            <img 
-              src={familyGatheringPhoto.src}
-              alt=""
-              class="w-full h-full object-cover opacity-15 grayscale mix-blend-overlay"
-            />
-          </div>
-        </div>
-        
-        <!-- Image 2 -->
-        <div class="heroSlide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-          <div class="absolute inset-0 bg-black">
-            <img 
-              src={familyPorchPhoto.src}
-              alt=""
-              class="w-full h-full object-cover opacity-15 grayscale mix-blend-overlay"
-            />
-          </div>
-        </div>
-        
-        <!-- Image 3 -->
-        <div class="heroSlide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out">
-          <div class="absolute inset-0 bg-black">
-            <img 
-              src={gatherPhoto.src}
-              alt=""
-              class="w-full h-full object-cover opacity-15 grayscale mix-blend-overlay"
-            />
-          </div>
-        </div>
-      </div>
+    <!-- Background Image with Blue Overlay -->
+    <div class="absolute inset-0 z-0">
+      <!-- Primary Background Image -->
+      <Image 
+        src={heroBackgroundImage} 
+        alt="Family legacy photograph"
+        class="w-full h-full object-cover"
+      />
+      <!-- Blue Tint Overlay -->
+      <div class="absolute inset-0 bg-[#052d3f] opacity-70"></div>
     </div>
 
     
@@ -75,11 +45,11 @@ import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
       <div class="flex flex-col md:flex-row items-center">
         <!-- Text Content (Left on desktop, centered on mobile) -->
         <div class="md:w-1/2 text-center md:text-left px-4 mb-8 md:mb-0">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 drop-shadow-sm">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 drop-shadow-md">
             Because love, legacy, and truth can't wait until it's too late.
           </h1>
           
-          <p class="text-base sm:text-lg md:text-xl text-white mb-8 max-w-xl mx-auto md:mx-0 drop-shadow-sm">
+          <p class="text-base sm:text-lg md:text-xl text-white mb-8 max-w-xl mx-auto md:mx-0 drop-shadow-md">
             Guided family conversations that bring peace to life's transitions, preserve your stories, and prepare the next generation — while we're still here
           </p>
           
@@ -88,7 +58,7 @@ import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
               href="#apply" 
               class={buttonVariants({
                 size: "lg",
-                class: "font-medium justify-center bg-[#9a4a0b] text-white hover:bg-[#9a4a0b]/80 transition-colors duration-300"
+                class: "font-medium justify-center bg-white text-[#052d3f] hover:bg-white/90 transition-colors duration-300"
               })}
             >
               Request a Family Session
@@ -155,41 +125,7 @@ import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
         transform: translate3d(-100%, 0, 0);
       }
     }
-
-    /* Custom opacity class for images */
-    .opacity-15 {
-      opacity: 0.15;
-    }
   </style>
-
-  <!-- Script for Hero Background Rotation -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Background image rotation
-      const slides = document.querySelectorAll('.heroSlide');
-      let currentSlide = 0;
-      
-      // Function to show current slide
-      function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => {
-          slide.style.opacity = '0';
-        });
-        
-        // Show current slide
-        slides[index].style.opacity = '1';
-      }
-      
-      // Start with the first slide
-      showSlide(0);
-      
-      // Rotate every 7 seconds
-      setInterval(function() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }, 7000);
-    });
-  </script>
 
   <!-- What It Is Section -->
   <section class="py-24 bg-[#f3f4f6]">
