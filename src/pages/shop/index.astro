@@ -126,16 +126,16 @@ const scrollToProducts = () => {
     <div class="container mx-auto px-4 md:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {products.map(product => (
-          <div class="product-card group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="product-card group relative overflow-hidden rounded-xl bg-white shadow-md hover:shadow-xl border border-transparent hover:border-primary/10 transition-all duration-300 hover:-translate-y-1">
             <div class="relative overflow-hidden h-72">
               <img 
                 src={product.image} 
                 alt={product.alt}
                 class="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-110"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#052d3f]/95 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div class="p-6 text-white">
-                  <p class="font-serif text-lg italic mb-4">{product.tagline}</p>
+              <div class="absolute inset-0 flex items-end translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <div class="p-6 bg-white/90 w-full border-t border-primary/10 shadow-sm">
+                  <p class="font-serif text-lg italic text-primary mb-4">{product.tagline}</p>
                   <a 
                     href={product.checkoutUrl}
                     target="_blank"
@@ -253,8 +253,7 @@ const scrollToProducts = () => {
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .product-card .absolute {
-      opacity: 1 !important;
-      background: linear-gradient(to top, rgba(5, 45, 63, 0.8), transparent 70%) !important;
+      transform: translateY(0) !important;
     }
   }
 </style>
