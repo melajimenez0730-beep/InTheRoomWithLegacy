@@ -540,7 +540,7 @@ import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
         </div>
         
         <!-- Main Two-Column Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
           <!-- Left Column: Static Image -->
           <div class="relative rounded-xl overflow-hidden shadow-xl h-[500px] md:h-[600px]">
             <img 
@@ -553,11 +553,11 @@ import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
                       </div>
           
           <!-- Right Column: Vertical Sliding Ticker -->
-          <div class="relative overflow-hidden h-[500px] rounded-xl shadow-lg bg-white p-8">
+          <div class="relative overflow-hidden h-[500px] md:h-[600px] rounded-xl shadow-lg bg-white p-8 flex flex-col">
             <h3 class="text-2xl font-display font-semibold text-primary mb-6">You'll leave with:</h3>
             
             <!-- Vertical Ticker Container -->
-            <div class="gifts-ticker-container relative overflow-hidden h-[380px] flex items-center">
+            <div class="gifts-ticker-container relative overflow-hidden flex-1 flex items-center">
               <div class="gifts-ticker w-full">
                 <!-- Gift Item 1 -->
                 <div class="ticker-item py-7 px-5 border-b border-primary/10">
@@ -733,6 +733,7 @@ import whatIsWwshPhoto from "@/assets/programs/what-is-wwsh_nw_cbf3414a.jpg";
         display: flex;
         align-items: center;
         justify-content: flex-start;
+        height: 100%;
       }
     </style>
     
