@@ -2,39 +2,114 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Image } from 'astro:assets';
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ChevronDown, ChevronUp, Bookmark, Share2, Quote } from "lucide-react";
+
+// Import family images
+import familyOnPorch from "@/assets/articles/family_on_porch_nw_6bf9f9ad.jpg";
+import legacyFamilyPhoto from "@/assets/articles/legacy_family_photo_nw_633bbeb1.jpg";
+import familyLegacy from "@/assets/articles/family-legacy_nw_7f4ee194.jpg";
 ---
 
 <BaseLayout
   title="The Case for Ethical Nepotism: Reclaiming Family Advantage | In the Room With Legacy"
   description="How families can create opportunity for their own while maintaining integrity and excellence."
 >
-  <section class="py-16 bg-white">
+  <!-- Hero Section with Article Title and Feature Image -->
+  <section class="relative py-20 md:py-24 lg:py-28 bg-primary/5 overflow-hidden">
     <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <!-- Article Header -->
-        <div class="mb-12">
-          <a href="/resources" class="inline-flex items-center text-primary hover:underline mb-8">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to Resources
-          </a>
+      <div class="text-center max-w-4xl mx-auto">
+        <a href="/resources" class="inline-flex items-center text-primary hover:underline mb-6">
+          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Resources
+        </a>
+        
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-primary mb-8 leading-tight">
+          The Case for Ethical Nepotism: Reclaiming Family Advantage
+        </h1>
+        
+        <div class="max-w-2xl mx-auto">
+          <div class="flex items-center justify-center space-x-4 mb-10">
+            <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-sm font-medium">
+              Article
+            </span>
+            <span class="text-muted-foreground">|</span>
+            <span class="text-muted-foreground text-sm">October 1, 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Content Section -->
+  <section class="py-12 bg-white">
+    <div class="container">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar for desktop (fixed on scroll) -->
+        <aside class="hidden lg:block lg:w-64 sticky top-24 self-start">
+          <div class="bg-primary/5 rounded-lg p-6 mb-6">
+            <h3 class="font-display text-lg font-semibold text-primary mb-4 border-b border-primary/10 pb-2">Table of Contents</h3>
+            <nav class="space-y-2" id="article-nav">
+              <a href="#opening-hook" class="block text-primary/80 hover:text-primary hover:underline transition-colors">Opening Hook</a>
+              <a href="#family-institution" class="block text-primary/80 hover:text-primary hover:underline transition-colors">Family as the First Institution</a>
+              <a href="#defining-nepotism" class="block text-primary/80 hover:text-primary hover:underline transition-colors">Defining Ethical Nepotism™</a>
+              <a href="#storytelling" class="block text-primary/80 hover:text-primary hover:underline transition-colors">Storytelling Moment</a>
+              <a href="#context" class="block text-primary/80 hover:text-primary hover:underline transition-colors">Power of Family Advantage</a>
+              <a href="#takeaways" class="block text-primary/80 hover:text-primary hover:underline transition-colors">Key Takeaways</a>
+              <a href="#call-to-action" class="block text-primary/80 hover:text-primary hover:underline transition-colors">Call to Action</a>
+            </nav>
+          </div>
           
-          <h1 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
-            The Case for Ethical Nepotism: Reclaiming Family Advantage
-          </h1>
-          
-          <div class="flex items-center justify-between border-y border-primary/10 py-4 mb-8">
-            <div class="flex items-center">
-              <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-xs font-medium">
-                Article
-              </span>
+          <div class="bg-primary/5 rounded-lg p-6 mb-6">
+            <h3 class="font-display text-lg font-semibold text-primary border-b border-primary/10 pb-2 mb-4 flex items-center">
+              <Bookmark className="w-4 h-4 mr-2" /> Key Definition
+            </h3>
+            <div class="prose prose-sm">
+              <p class="font-medium text-primary">
+                Ethical Nepotism™: The practice of intentionally building advantage within your family in a way that creates responsibility, develops character, and multiplies opportunity.
+              </p>
             </div>
-            
+          </div>
+          
+          <div class="bg-amber-50 rounded-lg p-6">
+            <h3 class="font-display text-lg font-semibold text-amber-800 border-b border-amber-200 pb-2 mb-4">
+              Why It Matters
+            </h3>
+            <div class="prose prose-sm">
+              <p>
+                Family businesses employ more than 60% of the U.S. workforce, yet only 30% survive into the second generation. Advantage without stewardship dies quickly.
+              </p>
+            </div>
+          </div>
+        </aside>
+        
+        <!-- Mobile TOC Dropdown -->
+        <div class="lg:hidden w-full mb-6">
+          <button 
+            id="toc-toggle" 
+            class="w-full flex items-center justify-between p-4 bg-primary/5 rounded-lg text-primary font-medium"
+          >
+            <span>Table of Contents</span>
+            <ChevronDown id="toc-down" className="h-5 w-5" />
+            <ChevronUp id="toc-up" className="h-5 w-5 hidden" />
+          </button>
+          <div id="toc-content" class="hidden bg-primary/5 rounded-b-lg p-4 -mt-1 border-t border-primary/10">
+            <nav class="space-y-2">
+              <a href="#opening-hook" class="block text-primary/80 hover:text-primary hover:underline transition-colors py-1">Opening Hook</a>
+              <a href="#family-institution" class="block text-primary/80 hover:text-primary hover:underline transition-colors py-1">Family as the First Institution</a>
+              <a href="#defining-nepotism" class="block text-primary/80 hover:text-primary hover:underline transition-colors py-1">Defining Ethical Nepotism™</a>
+              <a href="#storytelling" class="block text-primary/80 hover:text-primary hover:underline transition-colors py-1">Storytelling Moment</a>
+              <a href="#context" class="block text-primary/80 hover:text-primary hover:underline transition-colors py-1">Power of Family Advantage</a>
+              <a href="#takeaways" class="block text-primary/80 hover:text-primary hover:underline transition-colors py-1">Key Takeaways</a>
+              <a href="#call-to-action" class="block text-primary/80 hover:text-primary hover:underline transition-colors py-1">Call to Action</a>
+            </nav>
           </div>
         </div>
         
-        <!-- Article Content -->
-        <div class="prose prose-lg max-w-none">
-          <h2>Opening Hook: Reframing the Dirty Word</h2>
+        <!-- Main article content -->
+        <div class="max-w-3xl lg:flex-1">
+        
+          <!-- Article Content -->
+          <div class="prose prose-lg max-w-none">
+          <h2 id="opening-hook" class="scroll-mt-20">Opening Hook: Reframing the Dirty Word</h2>
 
           <p>
             "Nepotism." It's a word often whispered, coated with suspicion, shorthand for unfair advantage. In the American imagination especially, nepotism carries an ugly weight — because access has not always been equally available. For centuries, opportunity was hoarded by a few, while whole communities were excluded from building the same pipelines of wealth, power, and possibility.
@@ -44,7 +119,19 @@ import { ArrowLeft } from "lucide-react";
             So yes, nepotism has been weaponized. It has been used to entrench privilege, to keep others out. And yet — at its root — nepotism simply describes something as old as humanity: families helping families, one generation creating a path for the next.
           </p>
 
-          <h2>Family as the First Institution</h2>
+          <!-- Image 1: Family on Porch -->
+          <figure class="my-10 rounded-lg overflow-hidden">
+            <Image 
+              src={familyOnPorch} 
+              alt="Family gathered on porch" 
+              class="w-full h-auto rounded-lg" 
+              width={800}
+              height={500}
+            />
+            <figcaption class="text-center italic text-muted-foreground mt-2">Family networks have been the foundation of opportunity for generations</figcaption>
+          </figure>
+          
+          <h2 id="family-institution" class="scroll-mt-20">Family as the First Institution</h2>
 
           <p>
             Before companies, governments, or nations, family was the first institution. Someone cooked, someone hunted, someone cared for children. Survival meant cooperation, shared responsibility, and collective advantage. That principle has never changed.
@@ -57,8 +144,18 @@ import { ArrowLeft } from "lucide-react";
           <p>
             So the question becomes: What if we redefined nepotism — not as exclusion — but as a tool for equity, stewardship, and shared prosperity?
           </p>
+          
+          <!-- Pull Quote 1 -->
+          <blockquote class="border-none bg-amber-50 my-10 py-8 px-6 md:px-10 rounded-lg text-center">
+            <div class="flex justify-center mb-4">
+              <Quote className="text-amber-600 w-10 h-10" />
+            </div>
+            <p class="font-display text-xl md:text-2xl leading-relaxed text-amber-900 max-w-2xl mx-auto mb-0">
+              Family advantage is not only about money; it's about skills, stories, networks, and resilience.
+            </p>
+          </blockquote>
 
-          <h2>Defining Ethical Nepotism™</h2>
+          <h2 id="defining-nepotism" class="scroll-mt-20">Defining Ethical Nepotism™</h2>
 
           <p>
             At IRL, we call this Ethical Nepotism™: the practice of intentionally building advantage within your family in a way that creates responsibility, develops character, and multiplies opportunity.
@@ -83,8 +180,18 @@ import { ArrowLeft } from "lucide-react";
           <p>
             Ethical Nepotism™ is not just inheritance; it is initiation. It's about training up stewards, not simply heirs.
           </p>
+          
+          <!-- Mobile Key Definition Box -->
+          <div class="lg:hidden bg-primary/5 rounded-lg p-6 my-8">
+            <h3 class="font-display text-lg font-semibold text-primary border-b border-primary/10 pb-2 mb-4 flex items-center">
+              <Bookmark className="w-4 h-4 mr-2" /> Key Definition
+            </h3>
+            <p class="font-medium text-primary">
+              Ethical Nepotism™: The practice of intentionally building advantage within your family in a way that creates responsibility, develops character, and multiplies opportunity.
+            </p>
+          </div>
 
-          <h2>Storytelling Moment</h2>
+          <h2 id="storytelling" class="scroll-mt-20">Storytelling Moment</h2>
 
           <p>
             In many families, stepping into leadership isn't automatic — it's cultivated. Consider the child who grows up watching their parents run a business, gradually taking on responsibilities: answering phones, learning bookkeeping, shadowing at client meetings. By the time they are offered leadership, they've been tested, trained, and seasoned.
@@ -97,9 +204,31 @@ import { ArrowLeft } from "lucide-react";
           <p>
             This isn't unique to one family or one culture. Across the world, families that normalize shared responsibility — whether through chores on a farm, apprenticeships in a trade, or expectations in education — consistently pass down more than wealth. They pass down resilience.
           </p>
+          
+          <!-- Image 2: Legacy Family Photo -->
+          <figure class="my-10 rounded-lg overflow-hidden">
+            <Image 
+              src={legacyFamilyPhoto} 
+              alt="Legacy family photo showing multiple generations" 
+              class="w-full h-auto rounded-lg" 
+              width={800}
+              height={500}
+            />
+            <figcaption class="text-center italic text-muted-foreground mt-2">Intergenerational knowledge transfer creates lasting advantage</figcaption>
+          </figure>
 
-          <h2>Context: The Power and Responsibility of Family Advantage</h2>
+          <h2 id="context" class="scroll-mt-20">Context: The Power and Responsibility of Family Advantage</h2>
 
+          <!-- Mobile Why It Matters Box -->
+          <div class="lg:hidden bg-amber-50 rounded-lg p-6 mb-8">
+            <h3 class="font-display text-lg font-semibold text-amber-800 border-b border-amber-200 pb-2 mb-4">
+              Why It Matters
+            </h3>
+            <p>
+              Family businesses employ more than 60% of the U.S. workforce, yet only 30% survive into the second generation. Advantage without stewardship dies quickly.
+            </p>
+          </div>
+          
           <p>
             Family businesses today employ more than 60% of the U.S. workforce, yet only 30% survive into the second generation. Why? Because advantage without stewardship dies quickly.
           </p>
@@ -111,8 +240,18 @@ import { ArrowLeft } from "lucide-react";
           <p>
             Family advantage isn't just financial — it's social, cultural, and relational. A cousin working at a university who secures tuition waivers for relatives. An uncle who introduces a niece to a professional network. An older sibling who models discipline and drive. These are all forms of Ethical Nepotism™, and they are as essential as financial inheritance.
           </p>
+          
+          <!-- Pull Quote 2 -->
+          <blockquote class="border-none bg-primary/5 my-10 py-8 px-6 md:px-10 rounded-lg text-center">
+            <div class="flex justify-center mb-4">
+              <Quote className="text-primary/60 w-10 h-10" />
+            </div>
+            <p class="font-display text-xl md:text-2xl leading-relaxed text-primary max-w-2xl mx-auto mb-0">
+              What looks like "luck" from the outside is often the result of intentional systems inside.
+            </p>
+          </blockquote>
 
-          <h2>Takeaways: What Ethical Nepotism Really Means</h2>
+          <h2 id="takeaways" class="scroll-mt-20">Takeaways: What Ethical Nepotism Really Means</h2>
 
           <p>Ethical Nepotism™ means:</p>
           <ul>
@@ -124,8 +263,20 @@ import { ArrowLeft } from "lucide-react";
           <p>
             It is not favoritism without merit. It is structured opportunity with accountability.
           </p>
+          
+          <!-- Image 3: Family Legacy -->
+          <figure class="my-10 rounded-lg overflow-hidden">
+            <Image 
+              src={familyLegacy} 
+              alt="Family legacy building through generations" 
+              class="w-full h-auto rounded-lg" 
+              width={800}
+              height={500}
+            />
+            <figcaption class="text-center italic text-muted-foreground mt-2">Building sustainable family advantage across generations</figcaption>
+          </figure>
 
-          <h2>Call to Action</h2>
+          <h2 id="call-to-action" class="scroll-mt-20">Call to Action</h2>
 
           <p>
             Nepotism doesn't have to be a dirty word. When done ethically, it is a duty — the sacred work of ensuring your family thrives, not just for one generation, but for many.
@@ -138,17 +289,68 @@ import { ArrowLeft } from "lucide-react";
           <p>
             At In the Room with Legacy, we're reclaiming family advantage — not for selfishness, but for stewardship. Not for exclusion, but for equity. Because the greatest inheritance we can pass on isn't just wealth; it's wisdom, responsibility, and the systems that help every seed in our family line grow.
           </p>
-        </div>
-        
-        
-        <!-- Return Link -->
-        <div class="text-center mt-12">
-          <a href="/resources" class="text-primary hover:underline inline-flex items-center">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Return to Resources
-          </a>
+          </div>
+          
+          <!-- Article Footer: Share and Return Link -->
+          <div class="flex flex-col sm:flex-row items-center justify-between mt-12 pt-6 border-t border-muted">
+            <a href="/resources" class="text-primary hover:underline inline-flex items-center mb-4 sm:mb-0">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Return to Resources
+            </a>
+            
+            <div class="flex items-center space-x-3">
+              <span class="text-muted-foreground text-sm">Share this article:</span>
+              <button class="text-primary hover:bg-primary/5 p-2 rounded-full transition-colors">
+                <Share2 className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  
+  <!-- JavaScript for TOC toggle -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // TOC toggle functionality for mobile
+      const tocToggle = document.getElementById('toc-toggle');
+      const tocContent = document.getElementById('toc-content');
+      const tocDown = document.getElementById('toc-down');
+      const tocUp = document.getElementById('toc-up');
+      
+      if (tocToggle && tocContent && tocDown && tocUp) {
+        tocToggle.addEventListener('click', () => {
+          tocContent.classList.toggle('hidden');
+          tocDown.classList.toggle('hidden');
+          tocUp.classList.toggle('hidden');
+        });
+      }
+      
+      // Highlight active section in TOC based on scroll position
+      const sections = document.querySelectorAll('h2[id]');
+      const navLinks = document.querySelectorAll('#article-nav a');
+      
+      function highlightActiveSection() {
+        const scrollPosition = window.scrollY + 200; // Offset for better highlighting
+        
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionId = section.getAttribute('id');
+          
+          if (scrollPosition >= sectionTop) {
+            navLinks.forEach((link) => {
+              link.classList.remove('font-semibold', 'text-primary');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('font-semibold', 'text-primary');
+              }
+            });
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', highlightActiveSection);
+      highlightActiveSection(); // Initialize on load
+    });
+  </script>
 </BaseLayout>
