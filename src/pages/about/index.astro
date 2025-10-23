@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMarked, Quote, Star, HandHeart, BookOpenText } from "lucide-react";
+import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMarked, Quote, Star, HandHeart, BookOpenText, Info } from "lucide-react";
 import { Image } from 'astro:assets';
 import legacyFamilyPhoto from '../../assets/legacy_family_photo_nw_633bbeb1.jpg';
 import youngLaurenWithDad from '../../assets/young-lauren-with-dad_nw_5c036dd2.jpg';
@@ -411,7 +411,15 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Mission Side (Left on desktop) -->
             <div class="mission-side flex-1 relative min-h-[400px] transition-all duration-500 ease-in-out md:hover:flex-[1.3] p-8 md:p-10 bg-[#f9f8f6]/70 backdrop-blur-sm hover-zoom-panel animate-fade-up-mission">
               <div class="relative z-20">
-                <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-6 section-heading">Mission</h3>
+                <div class="flex items-center gap-2 mb-6">
+                  <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary section-heading">Mission</h3>
+                  <button class="info-tooltip-trigger ml-2 focus:outline-none" aria-label="Mission info" data-tooltip-id="mission-tooltip">
+                    <Info class="w-5 h-5 md:w-6 md:h-6 text-primary/60 hover:text-primary transition-colors" />
+                  </button>
+                  <div id="mission-tooltip" class="tooltip-content hidden absolute left-0 bottom-full mb-2 w-64 p-4 bg-white/95 backdrop-blur-sm shadow-lg rounded-lg border border-primary/10 z-50 text-sm text-foreground/80">
+                    <p>Our mission began as a personal journey of care and remembrance.</p>
+                  </div>
+                </div>
                 <p class="text-xl text-foreground/90 font-medium mb-6 leading-relaxed max-w-lg">
                   Our mission is to make <span class="key-word text-primary font-semibold">legacy building</span> and <span class="key-word text-primary font-semibold">preservation</span> accessible to all, transforming how individuals and <span class="key-word text-primary font-semibold">families</span> see themselves and their collective power to leverage their <span class="key-word text-primary font-semibold">heritage</span>, resources, and relationships to build <span class="key-word text-primary font-semibold">enduring legacy</span>.
                 </p>
@@ -442,7 +450,15 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Vision Side (Right on desktop) -->
             <div class="vision-side flex-1 relative min-h-[400px] transition-all duration-500 ease-in-out md:hover:flex-[1.3] p-8 md:p-10 bg-[#f7f5f0]/70 backdrop-blur-sm hover-zoom-panel animate-fade-up-vision">
               <div class="relative z-20">
-                <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-6 italic section-heading">Vision</h3>
+                <div class="flex items-center gap-2 mb-6">
+                  <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary italic section-heading">Vision</h3>
+                  <button class="info-tooltip-trigger ml-2 focus:outline-none" aria-label="Vision info" data-tooltip-id="vision-tooltip">
+                    <Info class="w-5 h-5 md:w-6 md:h-6 text-primary/60 hover:text-primary transition-colors" />
+                  </button>
+                  <div id="vision-tooltip" class="tooltip-content hidden absolute left-0 bottom-full mb-2 w-64 p-4 bg-white/95 backdrop-blur-sm shadow-lg rounded-lg border border-primary/10 z-50 text-sm text-foreground/80">
+                    <p>We envision a future where stories and values are passed down with the same care as financial assets.</p>
+                  </div>
+                </div>
                 <p class="text-xl text-foreground/90 font-medium mb-6 leading-relaxed italic max-w-lg">
                   A world where <span class="key-word text-primary font-semibold">legacy</span> is a <span class="key-word text-primary font-semibold">living practice</span>. Where <span class="key-word text-primary font-semibold">families</span> operate with <span class="key-word text-primary font-semibold">clarity</span>, <span class="key-word text-primary font-semibold">unity</span>, and <span class="key-word text-primary font-semibold">generational purpose</span>.
                 </p>
@@ -496,21 +512,22 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           transition: transform 0.5s ease;
         }
         
-        .hover-zoom-panel:hover .relative.z-20 {
+        /* Disable hover effects on mobile */
+        :not(.mobile-view) .hover-zoom-panel:hover .relative.z-20 {
           transform: scale(1.02);
         }
         
-        /* Background parallax effect on hover */
+        /* Background parallax effect on hover - desktop only */
         .mission-side .mission-bg-image img,
         .vision-side .vision-bg-image img {
           transition: transform 0.5s ease-out;
         }
         
-        .mission-side:hover .mission-bg-image img {
+        :not(.mobile-view) .mission-side:hover .mission-bg-image img {
           transform: scale(1.05) translateY(-5px);
         }
         
-        .vision-side:hover .vision-bg-image img {
+        :not(.mobile-view) .vision-side:hover .vision-bg-image img {
           transform: scale(1.05) translateY(-5px);
         }
       }
@@ -553,6 +570,28 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
       .section-heading {
         position: relative;
         display: inline-block;
+      }
+      
+      /* Info tooltip styling */
+      .info-tooltip-trigger {
+        opacity: 0.7;
+        transition: opacity 0.2s ease;
+        position: relative;
+      }
+      
+      .info-tooltip-trigger:hover {
+        opacity: 1;
+      }
+      
+      .tooltip-content {
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+      
+      .tooltip-content.animate-fade-in {
+        opacity: 1;
+        transform: translateY(0);
       }
       
       /* Scroll triggered animations */
@@ -627,6 +666,73 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         
         if (missionPanel) observer.observe(missionPanel);
         if (visionPanel) observer.observe(visionPanel);
+
+        // Tooltip functionality
+        const tooltipTriggers = document.querySelectorAll('.info-tooltip-trigger');
+        
+        tooltipTriggers.forEach(trigger => {
+          const tooltipId = trigger.getAttribute('data-tooltip-id');
+          const tooltip = document.getElementById(tooltipId);
+          
+          // Only set up if tooltip exists
+          if (!tooltip) return;
+          
+          // Show tooltip on mouse enter or touch
+          trigger.addEventListener('mouseenter', () => {
+            tooltip.classList.remove('hidden');
+            tooltip.classList.add('animate-fade-in');
+          });
+          
+          // Hide tooltip on mouse leave
+          trigger.addEventListener('mouseleave', () => {
+            tooltip.classList.add('hidden');
+            tooltip.classList.remove('animate-fade-in');
+          });
+
+          // For mobile - toggle tooltip on click
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            tooltip.classList.toggle('hidden');
+            
+            if (!tooltip.classList.contains('hidden')) {
+              tooltip.classList.add('animate-fade-in');
+              
+              // Close tooltip when clicking outside of it (for mobile)
+              const closeOnClickOutside = (e) => {
+                if (!tooltip.contains(e.target) && !trigger.contains(e.target)) {
+                  tooltip.classList.add('hidden');
+                  tooltip.classList.remove('animate-fade-in');
+                  document.removeEventListener('click', closeOnClickOutside);
+                }
+              };
+              
+              // Set timeout to allow the current click event to finish
+              setTimeout(() => {
+                document.addEventListener('click', closeOnClickOutside);
+              }, 0);
+            } else {
+              tooltip.classList.remove('animate-fade-in');
+            }
+          });
+        });
+        
+        // Disable animations on mobile
+        function handleViewportChange(mediaQuery) {
+          const isMobile = !mediaQuery.matches; // matches returns true for min-width: 768px
+          
+          // If mobile, add a class to the container to disable hover effects
+          document.querySelector('.mission-vision-container')?.classList.toggle('mobile-view', isMobile);
+        }
+        
+        // Set up media query for desktop/mobile detection
+        const mediaQuery = window.matchMedia('(min-width: 768px)');
+        
+        // Initial check
+        handleViewportChange(mediaQuery);
+        
+        // Set up listener for viewport changes
+        mediaQuery.addEventListener('change', handleViewportChange);
       });
     </script>
   </section>
