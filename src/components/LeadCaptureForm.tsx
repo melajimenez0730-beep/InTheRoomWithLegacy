@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
+import { Download } from "lucide-react";
 
 interface LeadCaptureFormProps {
   guideName: string;
   onSuccess?: () => void;
+  pdfPath?: string;
 }
 
-export function LeadCaptureForm({ guideName, onSuccess }: LeadCaptureFormProps) {
+export function LeadCaptureForm({ 
+  guideName, 
+  onSuccess,
+  pdfPath = "/pdfs/parenting-a-parent-a-guide-for-adult-children_nw_fa0eeee7.pdf" 
+}: LeadCaptureFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,6 +20,29 @@ export function LeadCaptureForm({ guideName, onSuccess }: LeadCaptureFormProps) 
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [downloadStarted, setDownloadStarted] = useState(false);
+
+  // Trigger download function
+  const initiateDownload = () => {
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.setAttribute('download', `${guideName.replace(/[^a-z0-9]/gi, '-').toLowerCase()}.pdf`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setDownloadStarted(true);
+  };
+
+  // Auto-download when status changes to success
+  useEffect(() => {
+    if (submitStatus === "success" && !downloadStarted) {
+      // Slight delay to ensure the success message is shown first
+      const timer = setTimeout(() => {
+        initiateDownload();
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus, downloadStarted]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -56,9 +85,21 @@ export function LeadCaptureForm({ guideName, onSuccess }: LeadCaptureFormProps) 
   if (submitStatus === "success") {
     return (
       <div className="text-center py-4">
-        <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
-        <p className="mb-4">Your guide is on its way to your inbox.</p>
-        <p className="text-sm text-muted-foreground">Check your email for a download link. If you don't see it, please check your spam folder.</p>
+        <h3 className="text-xl font-semibold mb-2 text-primary">Thank You!</h3>
+        <p className="mb-4">Your download is starting now.</p>
+        <div className="flex flex-col items-center">
+          <p className="text-sm text-muted-foreground mb-4">
+            If your download doesn't start automatically, click the button below.
+          </p>
+          <Button 
+            onClick={initiateDownload}
+            className="flex items-center gap-2"
+            variant="secondary"
+          >
+            <Download className="h-4 w-4" />
+            Download PDF
+          </Button>
+        </div>
       </div>
     );
   }
@@ -83,7 +124,8 @@ export function LeadCaptureForm({ guideName, onSuccess }: LeadCaptureFormProps) 
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
+          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white"
+          placeholder="Your name"
         />
       </div>
       
@@ -98,7 +140,8 @@ export function LeadCaptureForm({ guideName, onSuccess }: LeadCaptureFormProps) 
           value={formData.email}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
+          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white"
+          placeholder="Your email address"
         />
       </div>
 
@@ -111,7 +154,7 @@ export function LeadCaptureForm({ guideName, onSuccess }: LeadCaptureFormProps) 
       <Button 
         type="submit" 
         disabled={isSubmitting}
-        className="w-full py-2"
+        className="w-full py-2 bg-primary hover:bg-primary/90 text-white font-medium"
       >
         {isSubmitting ? "Processing..." : "Download Guide"}
       </Button>

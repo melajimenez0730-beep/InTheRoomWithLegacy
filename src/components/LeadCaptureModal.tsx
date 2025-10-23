@@ -7,12 +7,14 @@ interface LeadCaptureModalProps {
   guideName: string;
   buttonText?: string;
   buttonClassName?: string;
+  pdfPath?: string;
 }
 
 export function LeadCaptureModal({
   guideName,
   buttonText = "Download the Guide for free",
   buttonClassName = "",
+  pdfPath = "/pdfs/parenting-a-parent-a-guide-for-adult-children_nw_fa0eeee7.pdf"
 }: LeadCaptureModalProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -25,6 +27,7 @@ export function LeadCaptureModal({
       <Button 
         onClick={openModal}
         className={`flex items-center gap-2 ${buttonClassName}`}
+        variant="secondary"
       >
         <Download className="h-4 w-4" />
         {buttonText}
@@ -54,9 +57,10 @@ export function LeadCaptureModal({
               
               <LeadCaptureForm 
                 guideName={guideName}
+                pdfPath={pdfPath}
                 onSuccess={() => {
                   // We keep the modal open to show the success message
-                  // setTimeout(() => closeModal(), 5000); // Optional: auto-close after success
+                  setTimeout(() => closeModal(), 6000); // Auto-close after success and download
                 }}
               />
             </div>
