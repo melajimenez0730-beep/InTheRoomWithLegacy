@@ -17,28 +17,28 @@ export default function MethodologyAccordion() {
       id: 'conversation',
       name: 'Storytelling & Documentation',
       icon: <BookOpen className="text-primary h-4 w-4" />,
-      description: 'Guided dialogues and frameworks that help families connect, align, and navigate challenging topics with clarity and care.',
+      description: 'We help families and individuals preserve what matters most: the stories, values, and milestones that define who they are. Through guided prompts, digital tools, and curated archives, we make remembering a shared act of love.',
       relatedDimensions: ['Family Legacy', 'Storytelling & Culture', 'Transitions & Healing']
     },
     {
       id: 'storytelling',
       name: 'Learning & Tools',
       icon: <Quote className="text-primary h-4 w-4" />,
-      description: "Capturing, preserving, and sharing the narratives that shape your family's identity and culture across generations.",
+      description: "We build the practical frameworks that turn reflection into action, from our Legacy Assessment Tool to workshops and educational guides. These resources make planning, preparation, and conversation accessible for every generation.",
       relatedDimensions: ['Family Legacy', 'Storytelling & Culture']
     },
     {
       id: 'assessment',
       name: 'Advisory & Community',
       icon: <Star className="text-primary h-4 w-4" />,
-      description: "Tools to evaluate your family's current legacy state, uncover strengths, and identify areas for focused development.",
+      description: "Legacy isn't built alone. We connect families, professionals, and experts through advisory programs, partnerships, and networks that sustain impact and accountability over time.",
       relatedDimensions: ['Next-Gen Stewardship', 'Economic Empowerment', 'Transitions & Healing']
     },
     {
       id: 'advisory',
       name: 'Experiences & Programs',
       icon: <BookMarked className="text-primary h-4 w-4" />,
-      description: "Personalized guidance for families navigating succession, wealth transfer, and long-term legacy planning.",
+      description: "We create transformative spaces: gatherings, retreats, and intergenerational sessions that bring the spirit of legacy to life. These experiences nurture connection, clarity, and commitment across generations.",
       relatedDimensions: ['Next-Gen Stewardship', 'Economic Empowerment', 'Transitions & Healing']
     }
   ];
