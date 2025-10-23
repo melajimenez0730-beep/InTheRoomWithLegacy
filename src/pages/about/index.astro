@@ -202,51 +202,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
       </div>
     </div>
     
-    <!-- Interactive Logic for Categories and Dimensions -->
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const dimensionCards = document.querySelectorAll('.legacy-dimension-card');
-        
-        // Function to handle filtering of dimensions based on selected category
-        function filterDimensions(categoryId) {
-          // If no category is selected (or null is passed), show all dimensions
-          if (!categoryId) {
-            dimensionCards.forEach(card => {
-              card.classList.remove('opacity-40');
-              card.classList.remove('scale-95');
-              card.classList.add('scale-100');
-            });
-            return;
-          }
-          
-          // Otherwise, filter dimensions based on selected category
-          dimensionCards.forEach(card => {
-            const categories = card.getAttribute('data-categories').split(' ');
-            
-            if (categories.includes(categoryId)) {
-              card.classList.remove('opacity-40');
-              card.classList.remove('scale-95');
-              card.classList.add('scale-100');
-              card.classList.add('ring-2');
-              card.classList.add('ring-primary/20');
-            } else {
-              card.classList.add('opacity-40');
-              card.classList.add('scale-95');
-              card.classList.remove('scale-100');
-              card.classList.remove('ring-2');
-              card.classList.remove('ring-primary/20');
-            }
-          });
-        }
-        
-        // Expose filter function to window for component access
-        window.filterMethodologyDimensions = filterDimensions;
-        
-        // Initialize all dimensions visible
-        filterDimensions(null);
-      });
-    </script>
-    
+    <!-- All cards are now non-interactive, no filtering logic needed -->
     <style>
       .legacy-dimension-card {
         transition: all 0.3s ease-in-out;
@@ -270,7 +226,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           <!-- Five Dimensions of Legacy - Modern Card Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" id="dimensions-grid">
             <!-- Family Legacy Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="conversation storytelling">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -292,7 +248,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Next-Gen Stewardship Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="assessment advisory">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -314,7 +270,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Storytelling & Culture Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="storytelling conversation">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -336,7 +292,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Economic Empowerment Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" data-categories="advisory assessment">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -358,7 +314,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Transitions & Healing Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto" data-categories="conversation advisory assessment">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">

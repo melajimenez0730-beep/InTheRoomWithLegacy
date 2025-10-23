@@ -43,14 +43,10 @@ export default function MethodologyAccordion() {
     }
   ];
 
+  // Simply toggle accordion for mobile view - no filtering
   const toggleItem = (id: string) => {
     const newActive = activeItem === id ? null : id;
     setActiveItem(newActive);
-    
-    // Call the global filter function
-    if (typeof window !== 'undefined' && window.filterMethodologyDimensions) {
-      window.filterMethodologyDimensions(newActive);
-    }
   };
 
   return (
