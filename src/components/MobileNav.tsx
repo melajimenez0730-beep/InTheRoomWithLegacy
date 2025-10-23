@@ -82,7 +82,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
       <nav className="flex flex-col px-4 pb-8">
         {/* Main navigation links */}
         <div className="mb-6">
-          <MobileNavLink href="/about" onClick={handleClose}>About</MobileNavLink>
+          <MobileNavLink href="/about" onClick={handleClose}>About Us</MobileNavLink>
           <MobileNavGroupLink href="/about/founder-letter" onClick={handleClose}>Letter from Our Founder</MobileNavGroupLink>
           <MobileNavGroupLink href="/about/partnership-pathways" onClick={handleClose}>Partnership Pathways</MobileNavGroupLink>
           <MobileNavGroupLink href="/about/faq" onClick={handleClose}>Frequently Asked Questions</MobileNavGroupLink>
