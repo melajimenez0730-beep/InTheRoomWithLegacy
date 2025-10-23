@@ -30,16 +30,19 @@ const article = await getEntryBySlug('articles', 'parenting-a-parent_nw_ed8b473b
         </h1>
         
         <div class="max-w-2xl mx-auto">
-          <div class="flex items-center justify-center space-x-4 mb-10">
-            <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-sm font-medium">
-              Guide
-            </span>
-            <span class="text-muted-foreground">|</span>
+          <div class="flex flex-col md:flex-row md:items-center justify-center md:space-x-4 mb-10">
+            <div class="flex items-center justify-center mb-4 md:mb-0">
+              <span class="inline-block bg-primary/10 text-primary py-1 px-3 rounded-full text-sm font-medium">
+                Guide
+              </span>
+              <span class="text-muted-foreground mx-2 md:mx-0">|</span>
+            </div>
+            
             <LeadCaptureModal 
               client:load 
               guideName="Parenting a Parent: A Guide for Adult Children" 
               buttonText="Download the Guide for free"
-              buttonClassName="ml-2"
+              buttonClassName="w-full md:w-auto"
             />
           </div>
         </div>
