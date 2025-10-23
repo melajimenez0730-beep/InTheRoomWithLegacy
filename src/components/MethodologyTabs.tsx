@@ -13,22 +13,22 @@ export default function MethodologyTabs() {
   const categories: MethodologyCategory[] = [
     {
       id: 'conversation',
-      name: 'Conversation',
+      name: 'Storytelling & Documentation',
       icon: <BookOpen className="text-primary h-4 w-4" />
     },
     {
       id: 'storytelling',
-      name: 'Storytelling',
+      name: 'Learning & Tools',
       icon: <Quote className="text-primary h-4 w-4" />
     },
     {
       id: 'assessment',
-      name: 'Assessment',
+      name: 'Advisory & Community',
       icon: <Star className="text-primary h-4 w-4" />
     },
     {
       id: 'advisory',
-      name: 'Advisory',
+      name: 'Experiences & Programs',
       icon: <BookMarked className="text-primary h-4 w-4" />
     }
   ];

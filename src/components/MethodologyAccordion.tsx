@@ -15,28 +15,28 @@ export default function MethodologyAccordion() {
   const methodologies: MethodologyItem[] = [
     {
       id: 'conversation',
-      name: 'Conversation',
+      name: 'Storytelling & Documentation',
       icon: <BookOpen className="text-primary h-4 w-4" />,
       description: 'Guided dialogues and frameworks that help families connect, align, and navigate challenging topics with clarity and care.',
       relatedDimensions: ['Family Legacy', 'Storytelling & Culture', 'Transitions & Healing']
     },
     {
       id: 'storytelling',
-      name: 'Storytelling',
+      name: 'Learning & Tools',
       icon: <Quote className="text-primary h-4 w-4" />,
       description: "Capturing, preserving, and sharing the narratives that shape your family's identity and culture across generations.",
       relatedDimensions: ['Family Legacy', 'Storytelling & Culture']
     },
     {
       id: 'assessment',
-      name: 'Assessment',
+      name: 'Advisory & Community',
       icon: <Star className="text-primary h-4 w-4" />,
       description: "Tools to evaluate your family's current legacy state, uncover strengths, and identify areas for focused development.",
       relatedDimensions: ['Next-Gen Stewardship', 'Economic Empowerment', 'Transitions & Healing']
     },
     {
       id: 'advisory',
-      name: 'Advisory',
+      name: 'Experiences & Programs',
       icon: <BookMarked className="text-primary h-4 w-4" />,
       description: "Personalized guidance for families navigating succession, wealth transfer, and long-term legacy planning.",
       relatedDimensions: ['Next-Gen Stewardship', 'Economic Empowerment', 'Transitions & Healing']
