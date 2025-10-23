@@ -76,20 +76,20 @@ export default function MethodologyTabs() {
         ))}
       </div>
       
-      {/* Permanently visible description cards */}
+      {/* Permanently visible description cards with equal height */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {categories.map(category => (
           <div 
             key={category.id} 
-            className={`p-4 border border-primary/10 rounded-lg bg-white/90 transition-all ${activeCategory === category.id ? 'ring-2 ring-primary/20' : ''}`}
+            className={`p-4 border border-primary/10 rounded-lg bg-white/90 transition-all flex flex-col h-full ${activeCategory === category.id ? 'ring-2 ring-primary/20' : ''}`}
           >
-            <div className="flex items-start gap-3 mb-3">
+            <div className="flex items-start gap-3 mb-4">
               <div className="w-8 h-8 mt-0.5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                 {category.icon}
               </div>
               <h4 className="font-medium text-primary/90 text-lg">{category.name}</h4>
             </div>
-            <div className="pl-11">
+            <div className="pl-11 flex-grow">
               <p className="text-sm text-foreground/80">{category.description}</p>
             </div>
           </div>
