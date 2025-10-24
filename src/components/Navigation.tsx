@@ -102,8 +102,7 @@ export default function Navigation() {
       <NavDropdown 
         trigger="Blog" 
         items={[
-          { href: "/blog", label: "Family Stories" },
-          { href: "/blog/submit-story", label: "Submit Your Family Story" }
+          { href: "/blog", label: "Family Stories" }
         ]} 
       />
       
