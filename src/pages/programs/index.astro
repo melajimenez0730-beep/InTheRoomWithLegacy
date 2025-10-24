@@ -236,10 +236,10 @@ import familyLegacyPhoto from '../../assets/programs/family-legacy_nw_7f4ee194.j
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
           <!-- Legacy Founders Lab Card -->
-          <div class="bg-white rounded-lg border border-primary/10 shadow-sm overflow-hidden transition-all hover:shadow-md">
+          <div class="bg-white rounded-lg border border-primary/10 shadow-sm overflow-hidden transition-all hover:shadow-md flex flex-col h-full">
             <div class="relative">
               <!-- Visual Header with Foundation Image -->
-              <div class="h-48 bg-primary/5 flex items-center justify-center overflow-hidden">
+              <div class="h-52 bg-primary/5 flex items-center justify-center overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1721244654392-9c912a6eb236?w=600&h=400&auto=format&fit=crop&q=80" 
                   alt="Blueprint representing strategic foundation building"
@@ -256,41 +256,45 @@ import familyLegacyPhoto from '../../assets/programs/family-legacy_nw_7f4ee194.j
               </div>
             </div>
             
-            <div class="p-8 pt-12">
-              <div class="flex justify-between items-start mb-4">
+            <div class="p-8 pt-12 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
                 <h3 class="font-display text-2xl font-bold text-primary">Legacy Founders Lab™</h3>
-                <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Launching 2026</span>
+                <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full whitespace-nowrap ml-2">Launching 2026</span>
               </div>
               
               <h4 class="text-lg text-primary/80 font-medium mb-4">
                 Where first-generation legacy builders lay the foundation for everything to come.
               </h4>
               
-              <p class="text-foreground/80 mb-6">
-                A guided lab for entrepreneurs, creatives, and professionals who are building the "first brick" of family legacy.
-              </p>
+              <div class="flex-grow flex flex-col">
+                <p class="text-foreground/80 mb-6">
+                  A guided lab for entrepreneurs, creatives, and professionals who are building the "first brick" of family legacy.
+                </p>
+                
+                <p class="text-foreground/80 mb-8">
+                  Participants define what legacy means to them, clarify family values, and design early systems: from communication rituals to succession planning basics. Each cohort leaves with a First Brick Legacy Blueprint — a personal framework for building with intention and discipline.
+                </p>
+              </div>
               
-              <p class="text-foreground/80 mb-8">
-                Participants define what legacy means to them, clarify family values, and design early systems: from communication rituals to succession planning basics. Each cohort leaves with a First Brick Legacy Blueprint — a personal framework for building with intention and discipline.
-              </p>
-              
-              <a 
-                href="#waitlist" 
-                class={buttonVariants({
-                  variant: "outline",
-                  class: "border-primary text-primary hover:bg-primary/10"
-                })}
-              >
-                Join Waitlist
-              </a>
+              <div class="mt-auto">
+                <a 
+                  href="#waitlist" 
+                  class={buttonVariants({
+                    variant: "outline",
+                    class: "border-primary text-primary hover:bg-primary/10 w-full justify-center"
+                  })}
+                >
+                  Join Waitlist
+                </a>
+              </div>
             </div>
           </div>
           
           <!-- Cousin Corp Card -->
-          <div class="bg-white rounded-lg border border-primary/10 shadow-sm overflow-hidden transition-all hover:shadow-md">
+          <div class="bg-white rounded-lg border border-primary/10 shadow-sm overflow-hidden transition-all hover:shadow-md flex flex-col h-full">
             <div class="relative">
               <!-- Visual Header with Network Image -->
-              <div class="h-48 bg-primary/5 flex items-center justify-center overflow-hidden">
+              <div class="h-52 bg-primary/5 flex items-center justify-center overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1758873268933-e0765262e58d?w=600&h=400&auto=format&fit=crop&q=80" 
                   alt="Team collaboration representing family networks"
@@ -307,34 +311,37 @@ import familyLegacyPhoto from '../../assets/programs/family-legacy_nw_7f4ee194.j
               </div>
             </div>
             
-            <div class="p-8 pt-12">
-              <div class="flex justify-between items-start mb-4">
+            <div class="p-8 pt-12 flex flex-col flex-grow">
+              <div class="flex justify-between items-center mb-4">
                 <h3 class="font-display text-2xl font-bold text-primary">Cousin Corp™</h3>
-                <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full">Launching 2026</span>
+                <span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-xs font-semibold rounded-full whitespace-nowrap ml-2">Launching 2026</span>
               </div>
               
               <h4 class="text-lg text-primary/80 font-medium mb-4">
                 From group chat to collective enterprise.
               </h4>
               
-              <p class="text-foreground/80 mb-6">
-                Cousin Corp™ brings cousin groups together to co-create value — investing, launching ventures, and building together.
-              </p>
+              <div class="flex-grow flex flex-col">
+                <p class="text-foreground/80 mb-6">
+                  Cousin Corp™ brings cousin groups together to co-create value — investing, launching ventures, and building together.
+                </p>
+                
+                <p class="text-foreground/80 mb-8">
+                  Each cohort learns the fundamentals of collaboration, shared decision-making, and financial stewardship, leaving with a "Cousin Operating Agreement" and collective action plan. It's a lab for building trust, wealth, and a new family narrative of ownership.
+                </p>
+              </div>
               
-              <p class="text-foreground/80 mb-8">
-                Each cohort learns the fundamentals of collaboration, shared decision-making, and financial stewardship, leaving with a "Cousin Operating Agreement" and collective action plan.
-                It's a lab for building trust, wealth, and a new family narrative of ownership.
-              </p>
-              
-              <a 
-                href="#waitlist" 
-                class={buttonVariants({
-                  variant: "outline",
-                  class: "border-primary text-primary hover:bg-primary/10"
-                })}
-              >
-                Join Waitlist
-              </a>
+              <div class="mt-auto">
+                <a 
+                  href="#waitlist" 
+                  class={buttonVariants({
+                    variant: "outline",
+                    class: "border-primary text-primary hover:bg-primary/10 w-full justify-center"
+                  })}
+                >
+                  Join Waitlist
+                </a>
+              </div>
             </div>
           </div>
         </div>
