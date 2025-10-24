@@ -150,8 +150,17 @@ import legacyGiftsPhoto from "@/assets/programs/556461416_18506426296069681_7302
             
             <div class="relative border-l-4 border-[#9a4a0b] pl-6 py-2 my-8">
               <p class="text-xl md:text-2xl font-display italic text-[#9a4a0b] !leading-relaxed">
-                It's not a class or a lecture — it's a sacred space for your family to meet, speak, and heal together.
+                Our flagship guided family experience—conversations that matter most, structured and sacred.
               </p>
+            </div>
+            
+            <!-- Mobile-only image display, appears between headline and body text -->
+            <div class="block md:hidden mb-6">
+              <Image 
+                src={familyLegacyPhoto} 
+                alt="Family sharing meaningful conversation across generations" 
+                class="rounded-lg shadow-md w-full h-auto aspect-[4/3] object-cover"
+              />
             </div>
             
             <p>
@@ -162,6 +171,15 @@ import legacyGiftsPhoto from "@/assets/programs/556461416_18506426296069681_7302
             <p class="font-medium">
               Because preparing for tomorrow starts with honest conversation today.
             </p>
+          </div>
+          
+          <!-- Desktop-only image display, appears below all text -->
+          <div class="hidden md:block mt-8">
+            <Image 
+              src={familyLegacyPhoto} 
+              alt="Family sharing meaningful conversation across generations" 
+              class="rounded-lg shadow-md w-full h-auto aspect-[16/9] object-cover"
+            />
           </div>
         </div>
         
