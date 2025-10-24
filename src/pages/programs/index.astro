@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { CalendarDays, Users, Building, BookOpen, Quote, Star, DollarSign, Lightbulb, ArrowRight, CheckCircle, PlusCircle, Blocks, ChartNetwork, DraftingCompass } from "lucide-react";
+import { CalendarDays, Users, Building, BookOpen, Quote, Star, DollarSign, Lightbulb, ArrowRight, CheckCircle, PlusCircle, Blocks, ChartNetwork, DraftingCompass, BookOpenText, Tent, Milestone } from "lucide-react";
 import { Image } from 'astro:assets';
 import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
 import familyTreeLogo from '../../assets/3_nw_b5691621.png';
@@ -350,49 +350,113 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
     </div>
   </section>
   
-  <!-- Custom Programs Section -->
-  <section class="py-24 bg-[#9a4a0b]/10"> <!-- Warm Brown Accent background with transparency -->
-    <div class="container">
-      <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+  <!-- Custom Programs Section - High Design Split Panel Layout -->
+  <section class="relative py-24 overflow-hidden">
+    <!-- Angled split background -->
+    <div class="absolute inset-0 w-full h-full">
+      <!-- Left panel background - Ultra-Pale Gray -->
+      <div class="absolute top-0 left-0 w-full md:w-1/2 h-full bg-[#f8f7f2]"></div>
+      
+      <!-- Right panel background - Deep Blue/Primary -->
+      <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-primary"></div>
+      
+      <!-- Angled separator overlay -->
+      <div class="hidden md:block absolute inset-0 w-full h-full">
+        <div class="absolute top-0 left-[48%] w-[100px] h-[200%] bg-primary transform rotate-6 origin-top-left"></div>
+      </div>
+    </div>
+
+    <div class="container relative z-10">
+      <div class="max-w-7xl mx-auto">
+        <!-- Two-panel grid layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0 items-stretch relative">
           
-          <!-- Left Column: Content -->
-          <div class="lg:order-1 text-center lg:text-left">
-            <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
-              Create Your Own Legacy Experience
+          <!-- PANEL 1: Overview and Categories -->
+          <div class="p-8 md:p-12 lg:p-16 relative z-20">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-6">
+              Create Your Bespoke Legacy Experience
             </h2>
             
-            <p class="text-lg md:text-xl text-primary/80 leading-relaxed mb-8">
+            <p class="text-lg text-primary/80 leading-relaxed mb-8 max-w-xl">
               Looking for a program tailored precisely to your family's unique history, values, and goals? We design custom, high-touch experiences that honor your family's distinctive journey and aspirations.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <CustomProgramModal
-                buttonClassName="font-medium bg-primary text-white hover:bg-primary/90 transition-colors duration-300 justify-center sm:justify-start rounded-md px-4 py-2 text-base sm:text-lg"
-                buttonText="Design Your Program"
-                client:load
-              />
-            </div>
+            <h3 class="text-xl font-display font-semibold text-primary mb-4">Program Focus Areas:</h3>
+            
+            <ul class="space-y-6 mb-10">
+              <!-- Focus Area 1 -->
+              <li class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                  <BookOpenText className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-primary">Guided Storytelling & Documentation</h4>
+                  <p class="text-sm text-primary/70 mt-1">Capture and preserve the stories that define your family's journey and values</p>
+                </div>
+              </li>
+              
+              <!-- Focus Area 2 -->
+              <li class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                  <DraftingCompass className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-primary">Strategic Legacy Advisory</h4>
+                  <p class="text-sm text-primary/70 mt-1">Create frameworks and systems that align your resources with your family's long-term vision</p>
+                </div>
+              </li>
+              
+              <!-- Focus Area 3 -->
+              <li class="flex items-start gap-4">
+                <div class="w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
+                  <Tent className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <h4 class="font-semibold text-primary">Intergenerational Retreats & Experiences</h4>
+                  <p class="text-sm text-primary/70 mt-1">Curated gatherings that strengthen bonds and transfer wisdom across generations</p>
+                </div>
+              </li>
+            </ul>
           </div>
           
-          <!-- Right Column: Image -->
-          <div class="lg:order-2 relative mx-auto max-w-md lg:max-w-none">
-            <div class="bg-white p-5 rounded-xl shadow-xl relative z-10">
-              <img 
-                src="https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=600&h=400&auto=format&fit=crop&q=80" 
-                alt="Custom legacy program planning session" 
-                class="rounded-lg w-full h-auto object-cover aspect-[4/3]"
-              />
+          <!-- PANEL 2: Visual Element and CTA -->
+          <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center items-center md:items-start relative z-20">
+            <!-- Visual container with image and overlays -->
+            <div class="relative w-full max-w-md mb-12">
+              <div class="rounded-xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://images.unsplash.com/photo-1712903276040-c99b32a057eb?w=600&h=400&auto=format&fit=crop&q=80" 
+                  alt="Strategic legacy planning and design" 
+                  class="w-full h-auto object-cover aspect-video"
+                />
+              </div>
               
-              <!-- Decorative element -->
-              <div class="absolute -top-4 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center">
-                <DraftingCompass className="w-8 h-8 text-[#9a4a0b]" />
+              <!-- Decorative element - top right -->
+              <div class="absolute -top-6 -right-6 w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full"></div>
+              
+              <!-- Decorative element - bottom left -->
+              <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-[#9a4a0b] rounded-lg flex items-center justify-center shadow-lg">
+                <Milestone className="w-8 h-8 text-white" />
               </div>
             </div>
             
-            <!-- Decorative elements -->
-            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/5 rounded-lg -z-0"></div>
-            <div class="absolute top-1/2 -right-4 w-16 h-16 bg-white/50 rounded-full shadow-sm backdrop-blur-sm -z-0"></div>
+            <!-- CTA content -->
+            <div class="text-center md:text-left text-white">
+              <h3 class="text-2xl md:text-3xl font-display font-semibold mb-4">
+                Ready to design your legacy?</h3>
+              <p class="mb-8 text-white/90 max-w-lg">
+                Our expert facilitators will guide you through a personalized discovery process to create a program that honors your family's unique story and aspirations.
+              </p>
+              
+              <!-- CTA Button with modal trigger -->
+              <div>
+                <CustomProgramModal
+                  buttonClassName="font-medium bg-[#9a4a0b] text-white hover:bg-[#9a4a0b]/90 transition-colors duration-300 justify-center md:justify-start rounded-md px-8 py-4 text-lg"
+                  buttonText="Contact Us for a Custom Program"
+                  client:load
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
