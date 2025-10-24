@@ -350,113 +350,67 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
     </div>
   </section>
   
-  <!-- Custom Programs Section - High Design Split Panel Layout -->
-  <section class="relative py-24 overflow-hidden">
-    <!-- Angled split background -->
-    <div class="absolute inset-0 w-full h-full">
-      <!-- Left panel background - Ultra-Pale Gray -->
-      <div class="absolute top-0 left-0 w-full md:w-1/2 h-full bg-[#f8f7f2]"></div>
-      
-      <!-- Right panel background - Deep Blue/Primary -->
-      <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-primary"></div>
-      
-      <!-- Angled separator overlay -->
-      <div class="hidden md:block absolute inset-0 w-full h-full">
-        <div class="absolute top-0 left-[48%] w-[100px] h-[200%] bg-primary transform rotate-6 origin-top-left"></div>
-      </div>
-    </div>
-
-    <div class="container relative z-10">
-      <div class="max-w-7xl mx-auto">
-        <!-- Two-panel grid layout -->
-        <div class="grid grid-cols-1 md:grid-cols-2 md:gap-0 items-stretch relative">
+  <!-- Custom Programs Section - Clean Centered Design -->
+  <section class="py-24 bg-[#9a4a0b]"> <!-- Warm Brown Accent background -->
+    <div class="container">
+      <div class="max-w-4xl mx-auto text-center">
+        <!-- Headline -->
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
+          Create Your Bespoke Legacy Experience
+        </h2>
+        
+        <!-- Introductory Text -->
+        <p class="text-lg text-white/90 leading-relaxed mb-10 mx-auto">
+          Looking for a program tailored precisely to your family's unique history, values, and goals? We design custom, high-touch experiences that honor your family's distinctive journey and aspirations.
+        </p>
+        
+        <!-- Program Focus Areas -->
+        <div class="mb-12">
+          <h3 class="text-xl font-display font-semibold text-white mb-8">Program Focus Areas:</h3>
           
-          <!-- PANEL 1: Overview and Categories -->
-          <div class="p-8 md:p-12 lg:p-16 relative z-20">
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary mb-6">
-              Create Your Bespoke Legacy Experience
-            </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Focus Area 1 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center mb-4">
+                <BookOpenText className="w-8 h-8 text-white" />
+              </div>
+              <h4 class="font-semibold text-white text-lg">Guided Storytelling & Documentation</h4>
+              <p class="text-sm text-white/80 mt-2">Capture and preserve the stories that define your family's journey</p>
+            </div>
             
-            <p class="text-lg text-primary/80 leading-relaxed mb-8 max-w-xl">
-              Looking for a program tailored precisely to your family's unique history, values, and goals? We design custom, high-touch experiences that honor your family's distinctive journey and aspirations.
-            </p>
+            <!-- Focus Area 2 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center mb-4">
+                <DraftingCompass className="w-8 h-8 text-white" />
+              </div>
+              <h4 class="font-semibold text-white text-lg">Strategic Legacy Advisory</h4>
+              <p class="text-sm text-white/80 mt-2">Create frameworks that align your resources with your long-term vision</p>
+            </div>
             
-            <h3 class="text-xl font-display font-semibold text-primary mb-4">Program Focus Areas:</h3>
-            
-            <ul class="space-y-6 mb-10">
-              <!-- Focus Area 1 -->
-              <li class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
-                  <BookOpenText className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 class="font-semibold text-primary">Guided Storytelling & Documentation</h4>
-                  <p class="text-sm text-primary/70 mt-1">Capture and preserve the stories that define your family's journey and values</p>
-                </div>
-              </li>
-              
-              <!-- Focus Area 2 -->
-              <li class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
-                  <DraftingCompass className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 class="font-semibold text-primary">Strategic Legacy Advisory</h4>
-                  <p class="text-sm text-primary/70 mt-1">Create frameworks and systems that align your resources with your family's long-term vision</p>
-                </div>
-              </li>
-              
-              <!-- Focus Area 3 -->
-              <li class="flex items-start gap-4">
-                <div class="w-12 h-12 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center">
-                  <Tent className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 class="font-semibold text-primary">Intergenerational Retreats & Experiences</h4>
-                  <p class="text-sm text-primary/70 mt-1">Curated gatherings that strengthen bonds and transfer wisdom across generations</p>
-                </div>
-              </li>
-            </ul>
+            <!-- Focus Area 3 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-full bg-white/10 flex-shrink-0 flex items-center justify-center mb-4">
+                <Tent className="w-8 h-8 text-white" />
+              </div>
+              <h4 class="font-semibold text-white text-lg">Intergenerational Retreats</h4>
+              <p class="text-sm text-white/80 mt-2">Curated gatherings that strengthen bonds across generations</p>
+            </div>
           </div>
+        </div>
+        
+        <!-- CTA content -->
+        <div class="max-w-2xl mx-auto">
+          <p class="text-xl text-white mb-8">
+            Our expert facilitators will guide you through a personalized discovery process to create a program that honors your family's unique story and aspirations.
+          </p>
           
-          <!-- PANEL 2: Visual Element and CTA -->
-          <div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center items-center md:items-start relative z-20">
-            <!-- Visual container with image and overlays -->
-            <div class="relative w-full max-w-md mb-12">
-              <div class="rounded-xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1712903276040-c99b32a057eb?w=600&h=400&auto=format&fit=crop&q=80" 
-                  alt="Strategic legacy planning and design" 
-                  class="w-full h-auto object-cover aspect-video"
-                />
-              </div>
-              
-              <!-- Decorative element - top right -->
-              <div class="absolute -top-6 -right-6 w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full"></div>
-              
-              <!-- Decorative element - bottom left -->
-              <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-[#9a4a0b] rounded-lg flex items-center justify-center shadow-lg">
-                <Milestone className="w-8 h-8 text-white" />
-              </div>
-            </div>
-            
-            <!-- CTA content -->
-            <div class="text-center md:text-left text-white">
-              <h3 class="text-2xl md:text-3xl font-display font-semibold mb-4">
-                Ready to design your legacy?</h3>
-              <p class="mb-8 text-white/90 max-w-lg">
-                Our expert facilitators will guide you through a personalized discovery process to create a program that honors your family's unique story and aspirations.
-              </p>
-              
-              <!-- CTA Button with modal trigger -->
-              <div>
-                <CustomProgramModal
-                  buttonClassName="font-medium bg-[#9a4a0b] text-white hover:bg-[#9a4a0b]/90 transition-colors duration-300 justify-center md:justify-start rounded-md px-8 py-4 text-lg"
-                  buttonText="Contact Us for a Custom Program"
-                  client:load
-                />
-              </div>
-            </div>
+          <!-- CTA Button with modal trigger -->
+          <div class="flex justify-center">
+            <CustomProgramModal
+              buttonClassName="font-medium bg-white text-[#9a4a0b] hover:bg-white/90 transition-colors duration-300 justify-center rounded-md px-8 py-4 text-lg shadow-lg"
+              buttonText="Contact Us for a Custom Program"
+              client:load
+            />
           </div>
         </div>
       </div>
