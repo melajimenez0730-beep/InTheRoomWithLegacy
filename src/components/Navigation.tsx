@@ -99,12 +99,7 @@ export default function Navigation() {
         ]} 
       />
       
-      <NavDropdown 
-        trigger="Blog" 
-        items={[
-          { href: "/blog", label: "Family Stories" }
-        ]} 
-      />
+      <NavItem href="/blog">Blog</NavItem>
       
       <NavDropdown 
         trigger="IRL Advisors" 
