@@ -138,8 +138,10 @@ import legacyGiftsPhoto from "@/assets/programs/556461416_18506426296069681_7302
         What is While We're Still Here™?
       </h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12 items-start">
-        <div class="md:col-span-3 order-2 md:order-1">
+      <!-- Clean two-column layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-5xl mx-auto">
+        <!-- Text Column (Left on desktop, stacks first on mobile) -->
+        <div class="order-1">
           <div class="prose prose-lg max-w-none text-primary/80 space-y-6">
             <p>
               Silence is the quiet oppressor in many families — the topics we avoid are often the ones that matter most.
@@ -155,15 +157,6 @@ import legacyGiftsPhoto from "@/assets/programs/556461416_18506426296069681_7302
               </p>
             </div>
             
-            <!-- Mobile-only image display, appears between headline and body text -->
-            <div class="block md:hidden mb-6">
-              <Image 
-                src={familyLegacyPhoto} 
-                alt="Family sharing meaningful conversation across generations" 
-                class="rounded-lg shadow-md w-full h-auto aspect-[4/3] object-cover"
-              />
-            </div>
-            
             <p>
               Through storytelling and guided dialogue, families gain the
               courage and structure to talk about the things that bring peace, closure, and connection — while we still can.
@@ -173,23 +166,15 @@ import legacyGiftsPhoto from "@/assets/programs/556461416_18506426296069681_7302
               Because preparing for tomorrow starts with honest conversation today.
             </p>
           </div>
-          
-          <!-- Desktop-only image display, appears below all text -->
-          <div class="hidden md:block mt-8">
-            <Image 
-              src={familyLegacyPhoto} 
-              alt="Family sharing meaningful conversation across generations" 
-              class="rounded-lg shadow-md w-full h-auto aspect-[16/9] object-cover"
-            />
-          </div>
         </div>
         
-        <div class="md:col-span-2 order-1 md:order-2 flex justify-center md:justify-end">
-          <div class="relative rounded-lg overflow-hidden shadow-xl max-w-sm">
+        <!-- Image Column (Right on desktop, stacks second on mobile) -->
+        <div class="order-2 flex items-center justify-center">
+          <div class="relative rounded-xl overflow-hidden shadow-xl w-full max-w-md">
             <Image 
               src={whatIsWwshPhoto} 
-              alt="Historical black and white photo of children playing outdoors" 
-              class="w-full object-cover brightness-[0.95] aspect-[3/4]" 
+              alt="Historical black and white photo representing family legacy conversations" 
+              class="w-full h-auto object-cover aspect-[3/4] md:aspect-[4/5]" 
             />
             <div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent"></div>
           </div>
