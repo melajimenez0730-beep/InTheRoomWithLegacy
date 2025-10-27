@@ -801,4 +801,51 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
       }
     </style>
   </section>
+
+  <!-- Join the Room CTA Section -->
+  <section class="py-20 bg-[#9a4a0b]">
+    <div class="container">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6">
+          Ready to Build Your Legacy?
+        </h2>
+        
+        <p class="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+          Take the next step in your legacy journey. Explore our tools, programs, and community designed to help you build what matters most.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+          <a 
+            href="/programs" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium bg-white text-[#9a4a0b] hover:bg-white/90 border-0 text-lg py-6 px-8 shadow-lg"
+            })}
+          >
+            Explore Programs
+          </a>
+          
+          <a 
+            href="/join-the-room" 
+            class={buttonVariants({
+              variant: "outline",
+              size: "lg",
+              class: "font-medium border-white text-white hover:bg-white/10 border-2 text-lg py-6 px-8 shadow-md"
+            })}
+          >
+            Join The Room
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Subtle pattern overlay -->
+    <div class="absolute inset-0 bg-pattern opacity-10 pointer-events-none"></div>
+    
+    <style>
+      .bg-pattern {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      }
+    </style>
+  </section>
 </BaseLayout>
