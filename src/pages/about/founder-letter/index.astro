@@ -24,62 +24,60 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
   description="A personal letter from our founder, Lauren R. Miller, sharing her journey and the inspiration behind In the Room with Legacy™."
 >
   <div class="relative z-10 overflow-hidden">
-  <!-- Hero Section -->
-  <section class="py-16 md:py-20 bg-white overflow-hidden relative">
+  <!-- Section 1: The Welcome (High-Impact Hero Block) -->
+  <section class="py-24 md:py-32 bg-primary overflow-hidden relative">
     <div class="container relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <!-- Letter Header with Image -->
-        <div class="relative mb-16">
-          <div class="absolute inset-0 bg-primary/10 rounded-2xl"></div>
-          <div class="relative p-8 md:p-10">
-            <div class="text-center mb-8">
-              <h1 class="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
-                Letter from Our Founder
-              </h1>
-              <div class="w-32 h-0.5 bg-primary/40 mx-auto mb-4"></div>
-              <p class="font-serif italic text-xl text-primary/80 mb-6">
-                A journey of purpose, reflection, and legacy
-              </p>
-            </div>
-
-            <div class="rounded-xl overflow-hidden max-w-2xl mx-auto shadow-xl">
-              <Image 
-                src={laurenMiller} 
-                alt="Lauren Miller, Founder of In the Room with Legacy" 
-                class="w-full h-auto" 
-                width={900}
-                height={400}
-              />
-            </div>
-          </div>
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 leading-tight">
+          Letter from Our Founder
+        </h1>
+        <div class="w-24 h-1 bg-white/30 mx-auto mb-12"></div>
+        
+        <p class="text-2xl md:text-3xl lg:text-4xl font-display font-light text-white mb-10 leading-tight">
+          Truly, welcome. If you've found your way here, it's not by accident. You were meant to be in this room.
+        </p>
+        
+        <div class="max-w-2xl mx-auto">
+          <p class="text-lg md:text-xl text-white/90 leading-relaxed mb-6">
+            In the Room with Legacy was born out of love, loss, and a real need. A need for a space that honors and empowers the family, both related and chosen. A space that offers tools, resources, and frameworks that not only create generational value within a family, but also sow unity, healing, and love. 
+          </p>
+          <p class="text-lg md:text-xl text-white/90 leading-relaxed">
+            A space that encourages and uplifts us, that highlights our stories and reminds us that legacy is intentional and alive. That it's something we live and breathe every day.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Section 2: Defining Our Power (The Pivot) -->
+  <section class="py-20 bg-white overflow-hidden relative">
+    <div class="container relative z-10">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="prose prose-lg max-w-none mb-16">
+          <p class="text-xl md:text-2xl text-foreground/90 mb-6">
+            It was also born out of the need to redefine our power. Because one of our greatest weapons against systemic and economic challenges is stronger families; families moving with unity, cohesion, and intention.
+          </p>
+          
+          <p class="text-2xl md:text-3xl font-display font-medium text-primary">
+            Families are indeed the first institutions within civilization.
+          </p>
         </div>
         
-        <!-- Letter Content with the New Founder's Letter -->
+        <!-- Lauren's Photo -->
+        <div class="rounded-2xl overflow-hidden shadow-2xl mb-16">
+          <Image 
+            src={laurenMiller} 
+            alt="Lauren Miller, Founder of In the Room with Legacy" 
+            class="w-full h-auto" 
+            width={900}
+            height={400}
+          />
+        </div>
+        
+        <!-- Start of the Journey Content -->
         <div class="max-w-none">
           <!-- New Letter Content -->
-          <div class="prose prose-lg max-w-none">
-            <div class="mb-8 scroll-reveal">
-              <p class="font-medium text-primary text-2xl">Welcome.</p>
-              
-              <p>Truly, welcome. If you've found your way here, it's not by accident. You were meant to be in this room.</p>
-              
-              <div class="rounded-lg overflow-hidden shadow-lg my-8">
-                <Image 
-                  src={fatherDaughter} 
-                  alt="Father and daughter smiling together showing a personal legacy connection" 
-                  class="w-full h-auto" 
-                  width={600}
-                  height={400}
-                />
-              </div>
-              
-              <p>In the Room with Legacy was born out of love, loss, and a real need. A need for a space that honors and empowers the family, both related and chosen. A space that offers tools, resources, and frameworks that not only create generational value within a family, but also sow unity, healing, and love. A space that encourages and uplifts us, that highlights our stories and reminds us that legacy is intentional and alive. That it's something we live and breathe every day.</p>
-              
-              <p>It was also born out of the need to redefine our power. Because one of our greatest weapons against systemic and economic challenges is stronger families; families moving with unity, cohesion, and intention.</p>
-              
-              <p class="font-medium text-primary/90">Families are indeed the first institutions within civilization.</p>
-            </div>
-            
+          <div class="prose prose-lg max-w-none text-left">
             <div class="mb-8 scroll-reveal">
               <p>I created In the Room with Legacy as an offering. A labor of love.</p>
               
