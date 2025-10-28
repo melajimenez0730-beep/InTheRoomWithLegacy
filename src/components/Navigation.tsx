@@ -99,7 +99,7 @@ export default function Navigation() {
         ]} 
       />
       
-      <NavItem href="/blog">Blog</NavItem>
+      <NavItem href="/blog">Family Stories</NavItem>
       
       <NavDropdown 
         trigger="IRL Advisors" 
