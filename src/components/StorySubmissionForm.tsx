@@ -229,7 +229,7 @@ export default function StorySubmissionForm() {
         
         <div className="space-y-2">
           <label htmlFor="media" className="block text-sm font-medium text-foreground mb-1">
-            Upload Photo or Video
+            Upload Photo, Video, or Document
             <span className="ml-2 text-xs text-foreground/60">(max 2 min for video)</span>
           </label>
           <div className="relative border-2 border-dashed border-border rounded-md p-6 flex flex-col items-center justify-center bg-card/50 hover:bg-card/70 transition-colors cursor-pointer">
@@ -238,7 +238,7 @@ export default function StorySubmissionForm() {
               id="media"
               name="media"
               onChange={handleFileChange}
-              accept="image/*,video/*"
+              accept="image/*,video/*,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/rtf"
               className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
             />
             <Upload className="h-10 w-10 text-primary/60 mb-2" />
@@ -247,8 +247,8 @@ export default function StorySubmissionForm() {
                 <span className="font-medium text-primary">Selected: {fileName}</span>
               ) : (
                 <>
-                  Drag and drop or click to upload a photo or video<br />
-                  <span className="text-xs">Supported formats: JPG, PNG, MP4, MOV (max 10MB)</span>
+                  Drag and drop or click to upload a photo, video, or document<br />
+                  <span className="text-xs">Supported formats: JPG, PNG, MP4, MOV, PDF, DOC, DOCX, RTF (max 10MB)</span>
                 </>
               )}
             </p>
