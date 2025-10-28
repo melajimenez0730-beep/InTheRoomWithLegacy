@@ -123,7 +123,6 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           <MobileNavDropdown label="Programs">
             <MobileNavGroupLink href="/programs" onClick={handleClose}>Programs</MobileNavGroupLink>
             <MobileNavGroupLink href="/programs/while-were-still-here" onClick={handleClose}>While We're Still Here</MobileNavGroupLink>
-            <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
           </MobileNavDropdown>
           
           {/* Tools & Resources Dropdown */}
@@ -133,7 +132,12 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           </MobileNavDropdown>
 
           <MobileNavLink href="/blog" onClick={handleClose}>Family Stories</MobileNavLink>
-          <MobileNavLink href="/advisors" onClick={handleClose}>IRL Advisors</MobileNavLink>
+          
+          {/* IRL Advisors with dropdown */}
+          <MobileNavDropdown label="IRL Advisors">
+            <MobileNavGroupLink href="/advisors" onClick={handleClose}>Meet Our Advisors</MobileNavGroupLink>
+            <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
+          </MobileNavDropdown>
           <MobileNavLink href="/shop" onClick={handleClose}>Shop</MobileNavLink>
           <MobileNavLink href="/contact" onClick={handleClose}>Contact</MobileNavLink>
         </div>
