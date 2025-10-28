@@ -41,33 +41,43 @@ import { Quote } from "lucide-react";
   </section>
   
 
-  <!-- Featured Stories Section - Reading Section -->
+  <!-- Coming Soon Section -->
   <section id="featured-blogs" class="py-24 bg-gradient-to-b from-primary/5 to-primary/10">
     <div class="container">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
-          Featured Stories
-        </h2>
         <div class="bg-white border border-primary/20 rounded-lg p-10 shadow-sm relative overflow-hidden mb-10">
           <div class="absolute top-0 left-0 w-full h-2 bg-primary/30"></div>
           <div class="flex flex-col items-center justify-center py-6">
-            <div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+            <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
                 <path d="M12 9v4"></path>
                 <path d="M12 17h.01"></path>
                 <rect width="20" height="14" x="2" y="5" rx="2"></rect>
               </svg>
             </div>
-            <h3 class="text-2xl font-display font-bold text-primary mb-3">Coming Soon</h3>
-            <p class="text-lg text-foreground/80 max-w-2xl mx-auto">
+            <h3 class="text-3xl md:text-4xl font-display font-bold text-primary mb-4">Coming Soon</h3>
+            <p class="text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto mb-3">
               Our first featured stories are coming soon. We're building a living library of families who are preserving, creating, and reimagining legacy in their own ways.
             </p>
-            <div class="mt-6 mb-2">
+            <p class="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
+              In the meantime, share your family's story to be considered for our inaugural features.
+            </p>
+            <div class="mt-4 mb-2 flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="#submit-form" 
+                class={buttonVariants({
+                  size: "lg",
+                  class: "font-medium bg-primary text-white hover:bg-primary/90 shadow-md"
+                })}
+              >
+                Submit Your Story <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
               <a 
                 href="#newsletter-form" 
                 class={buttonVariants({
                   size: "lg",
-                  class: "font-medium"
+                  variant: "outline",
+                  class: "font-medium border-primary text-primary hover:bg-primary/5"
                 })}
               >
                 Join the Room <ArrowRight className="ml-2 h-5 w-5" />
