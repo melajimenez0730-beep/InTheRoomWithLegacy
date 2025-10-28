@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import { X, ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -12,6 +12,11 @@ interface MobileNavLinkProps {
   href: string;
   children: React.ReactNode;
   onClick?: () => void;
+}
+
+interface MobileNavDropdownProps {
+  label: string;
+  children: React.ReactNode;
 }
 
 const MobileNavLink = ({ href, children, onClick }: MobileNavLinkProps) => {
@@ -35,6 +40,30 @@ const MobileNavGroupLink = ({ href, children, onClick }: MobileNavLinkProps) => 
     >
       {children}
     </a>
+  );
+};
+
+const MobileNavDropdown = ({ label, children }: MobileNavDropdownProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  
+  const toggleDropdown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsOpen(!isOpen);
+  };
+  
+  return (
+    <div className="border-b border-[#f7f6dc]/10">
+      <button
+        onClick={toggleDropdown}
+        className="flex justify-between items-center w-full py-3 px-4 text-[#f7f6dc] hover:bg-[#f7f6dc]/10 active:bg-[#f7f6dc]/20 transition-colors text-lg font-medium"
+      >
+        {label}
+        {isOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+      </button>
+      <div className={`${isOpen ? 'block' : 'hidden'}`}>
+        {children}
+      </div>
+    </div>
   );
 };
 
@@ -82,25 +111,30 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
       <nav className="flex flex-col px-4 pb-8">
         {/* Main navigation links */}
         <div className="mb-6">
-          <MobileNavLink href="/about" onClick={handleClose}>About Us</MobileNavLink>
-          <MobileNavGroupLink href="/about/founder-letter" onClick={handleClose}>Letter from Our Founder</MobileNavGroupLink>
-          <MobileNavGroupLink href="/about/partnership-pathways" onClick={handleClose}>Partnership Pathways</MobileNavGroupLink>
-          <MobileNavGroupLink href="/about/faq" onClick={handleClose}>Frequently Asked Questions</MobileNavGroupLink>
+          {/* About Dropdown */}
+          <MobileNavDropdown label="About">
+            <MobileNavGroupLink href="/about" onClick={handleClose}>About Us</MobileNavGroupLink>
+            <MobileNavGroupLink href="/about/founder-letter" onClick={handleClose}>Letter from Our Founder</MobileNavGroupLink>
+            <MobileNavGroupLink href="/about/partnership-pathways" onClick={handleClose}>Partnership Pathways</MobileNavGroupLink>
+            <MobileNavGroupLink href="/about/faq" onClick={handleClose}>Frequently Asked Questions</MobileNavGroupLink>
+          </MobileNavDropdown>
 
-          <MobileNavLink href="/programs" onClick={handleClose}>Programs</MobileNavLink>
-          <MobileNavGroupLink href="/programs" onClick={handleClose}>Programs</MobileNavGroupLink>
-          <MobileNavGroupLink href="/programs/while-were-still-here" onClick={handleClose}>While We're Still Here</MobileNavGroupLink>
-          <MobileNavLink href="/resources" onClick={handleClose}>Tools & Resources</MobileNavLink>
-          <MobileNavGroupLink href="/resources" onClick={handleClose}>Legacy Insights, Tools, and Resources</MobileNavGroupLink>
-          <MobileNavGroupLink href="/tools/legacy-assessment" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
+          {/* Programs Dropdown */}
+          <MobileNavDropdown label="Programs">
+            <MobileNavGroupLink href="/programs" onClick={handleClose}>Programs</MobileNavGroupLink>
+            <MobileNavGroupLink href="/programs/while-were-still-here" onClick={handleClose}>While We're Still Here</MobileNavGroupLink>
+            <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
+          </MobileNavDropdown>
+          
+          {/* Tools & Resources Dropdown */}
+          <MobileNavDropdown label="Tools & Resources">
+            <MobileNavGroupLink href="/resources" onClick={handleClose}>Legacy Insights, Tools, and Resources</MobileNavGroupLink>
+            <MobileNavGroupLink href="/tools/legacy-assessment" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
+          </MobileNavDropdown>
 
           <MobileNavLink href="/blog" onClick={handleClose}>Family Stories</MobileNavLink>
-
           <MobileNavLink href="/advisors" onClick={handleClose}>IRL Advisors</MobileNavLink>
-          <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
-
           <MobileNavLink href="/shop" onClick={handleClose}>Shop</MobileNavLink>
-
           <MobileNavLink href="/contact" onClick={handleClose}>Contact</MobileNavLink>
         </div>
 
