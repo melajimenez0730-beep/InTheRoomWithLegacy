@@ -152,7 +152,7 @@ export default function StoryReferralForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3 text-base font-medium"
+        className="w-full py-3 text-base font-medium text-center mx-auto"
       >
         {isSubmitting ? "Submitting..." : "Submit Referral"}
       </Button>

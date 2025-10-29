@@ -36,12 +36,12 @@ import UpdatesSignupForm from "@/components/UpdatesSignupForm";
         <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-8 border border-primary/10 mb-10">
           <h3 class="text-xl font-display font-semibold text-primary mb-4">Here's how you can be part of the start:</h3>
           
-          <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
+          <div class="flex flex-col gap-4 w-full sm:max-w-md mx-auto px-4 sm:px-0">
             <a 
               href="#submit-profile" 
               class={buttonVariants({
                 size: "lg",
-                class: "font-medium w-full justify-center"
+                class: "font-medium w-full justify-center text-center"
               })}
             >
               Submit Your Family Business Profile
@@ -51,7 +51,7 @@ import UpdatesSignupForm from "@/components/UpdatesSignupForm";
               class={buttonVariants({
                 variant: "outline",
                 size: "lg",
-                class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center"
+                class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center text-center"
               })}
             >
               Share with Another Family Business
@@ -61,7 +61,7 @@ import UpdatesSignupForm from "@/components/UpdatesSignupForm";
               class={buttonVariants({
                 variant: "outline",
                 size: "lg",
-                class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center"
+                class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center text-center"
               })}
             >
               Sign Up for Updates
@@ -174,7 +174,7 @@ import UpdatesSignupForm from "@/components/UpdatesSignupForm";
             
             <button
               type="submit"
-              class="w-full py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium"
+              class="w-full py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium text-center mx-auto"
             >
               Submit Profile
             </button>
@@ -254,7 +254,7 @@ import UpdatesSignupForm from "@/components/UpdatesSignupForm";
         <p class="text-base sm:text-lg text-foreground/80 mb-6 sm:mb-10">
           The Black Family Business Network is just one part of our commitment to preserving and celebrating Black legacy. Thank you for helping us lay the foundation.
         </p>
-        <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
+        <div class="flex flex-col gap-4 w-full sm:max-w-md mx-auto px-4 sm:px-0">
           <a 
             href="/programs" 
             class={buttonVariants({

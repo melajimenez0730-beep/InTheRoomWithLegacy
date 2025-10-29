@@ -124,7 +124,7 @@ export default function UpdatesSignupForm() {
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full py-3 text-base font-medium"
+        className="w-full py-3 text-base font-medium text-center mx-auto"
       >
         {isSubmitting ? "Signing up..." : "Sign Up for Updates"}
       </Button>
