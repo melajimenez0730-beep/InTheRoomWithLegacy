@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { LeadCaptureForm } from "./LeadCaptureForm";
 import "../styles/modal-overrides.css";
+import "../styles/modal-design.css";
 
 interface ScrollTriggeredModalProps {
   guideName: string;
@@ -259,60 +260,31 @@ export function ScrollTriggeredModal({
   if (!isModalOpen) return null;
 
   return (
-    <div 
-      className="fixed inset-0 bg-black bg-opacity-60 z-[99999] flex items-center justify-center p-4 md:p-6 animate-fade-in overflow-y-auto mobile-modal-container"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 99999,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'rgba(0, 0, 0, 0.6)',
-        width: '100vw',
-        height: '100vh',
-        overflow: 'auto'
-      }}
-    >
+    <div className="modal-box-container mobile-modal-container animate-fade-in">
       <div 
         ref={modalRef}
-        className="bg-white rounded-xl shadow-xl max-w-md w-full relative animate-fade-in-up border border-primary/20 my-auto mobile-modal-content"
-        style={{
-          backgroundColor: 'white',
-          borderRadius: '0.75rem',
-          maxWidth: '90vw',
-          width: '100%',
-          position: 'relative',
-          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
-          transform: 'none',
-          opacity: 1,
-          visibility: 'visible'
-        }}
+        className="modal-box-content mobile-modal-content animate-fade-in-up"
       >
         {/* Close button */}
         <button 
           onClick={closeModal}
-          className="absolute top-4 right-4 text-primary/60 hover:text-primary transition-colors z-[9999] p-2"
+          className="modal-box-close"
           aria-label="Close modal"
-          style={{ touchAction: 'manipulation' }}
         >
           <X className="h-6 w-6" />
         </button>
 
-        <div className="p-5 md:p-8">
-          <div className="bg-primary/5 -m-5 md:-m-8 mb-5 md:mb-6 p-5 md:p-8 border-b border-primary/10">
-            <h2 className="text-xl md:text-2xl font-display font-bold text-primary mb-2">
-              Download the Guide for free
-            </h2>
-            
-            <p className="text-sm md:text-base text-foreground/80">
-              Enter your details below to receive your free copy of "{guideName}".
-            </p>
-          </div>
+        <div className="modal-box-header">
+          <h2 className="font-display">
+            Download the Guide for free
+          </h2>
           
+          <p>
+            Enter your details below to receive your free copy of "{guideName}".
+          </p>
+        </div>
+        
+        <div className="modal-box-body">
           <LeadCaptureForm 
             guideName={guideName}
             pdfPath={pdfPath}

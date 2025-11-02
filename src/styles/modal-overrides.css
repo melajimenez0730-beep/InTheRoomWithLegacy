@@ -1,6 +1,6 @@
 /* High-priority overrides for modal visibility on mobile devices */
 
-/* Force mobile modal visibility */
+/* Force mobile modal visibility with ultra-high priority */
 @media (max-width: 767px) {
   /* Extreme priority modal container styles */
   .mobile-modal-container {
@@ -12,18 +12,18 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    z-index: 99999 !important; /* Ultra high z-index */
-    background-color: rgba(0, 0, 0, 0.7) !important;
+    z-index: 999999 !important; /* Ultra high z-index */
+    background-color: rgba(0, 0, 0, 0.75) !important;
     width: 100vw !important;
     height: 100vh !important;
-    padding: 1rem !important;
+    padding: 1.25rem !important;
     overflow-y: auto !important;
   }
 
-  /* Modal content styles with high priority */
+  /* Box-shaped modal content styles with high priority */
   .mobile-modal-content {
     background-color: white !important;
-    border-radius: 0.75rem !important;
+    border-radius: 1rem !important;
     width: 100% !important;
     max-width: 90vw !important;
     max-height: 90vh !important;
@@ -31,8 +31,9 @@
     transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
-    border: 1px solid rgba(22, 78, 99, 0.2) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    border: none !important;
+    margin: auto !important;
   }
   
   /* Force scrollability on iOS */
@@ -40,11 +41,23 @@
     -webkit-overflow-scrolling: touch !important;
   }
 
+  /* Header styles for mobile */
+  .modal-box-header {
+    padding: 1.25rem !important;
+    text-align: center !important;
+  }
+  
+  /* Body styles for mobile */
+  .modal-box-body {
+    padding: 1.25rem !important;
+  }
+
   /* Ensure text is visible */
   .mobile-modal-content h2,
   .mobile-modal-content p,
   .mobile-modal-content label,
-  .mobile-modal-content input {
+  .mobile-modal-content input,
+  .mobile-modal-content button {
     opacity: 1 !important;
     color: inherit !important;
   }
@@ -54,5 +67,12 @@
     overflow: hidden !important;
     position: fixed !important;
     width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Close button for mobile - more touch friendly */
+  .modal-box-close {
+    padding: 0.75rem !important;
+    z-index: 9999999 !important;
   }
 }

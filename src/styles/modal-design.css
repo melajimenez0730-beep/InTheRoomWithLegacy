@@ -1,0 +1,112 @@
+/* Enhanced modal design styles */
+
+/* Base modal container */
+.modal-box-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  padding: 1.5rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Box-styled modal content */
+.modal-box-content {
+  background-color: white;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 500px; /* Controlled width for desktop */
+  margin: auto;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden; /* Ensures clean edges */
+  border: none;
+}
+
+/* Header section */
+.modal-box-header {
+  background-color: rgba(22, 78, 99, 0.05);
+  padding: 1.75rem;
+  border-bottom: 1px solid rgba(22, 78, 99, 0.1);
+  text-align: center;
+}
+
+.modal-box-header h2 {
+  color: #164E63;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.modal-box-header p {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+}
+
+/* Form section */
+.modal-box-body {
+  padding: 1.75rem;
+}
+
+/* Close button */
+.modal-box-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: rgba(22, 78, 99, 0.6);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  z-index: 9999;
+  transition: all 0.2s ease;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.modal-box-close:hover {
+  color: #164E63;
+  background-color: rgba(22, 78, 99, 0.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .modal-box-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: auto;
+  }
+  
+  .modal-box-header {
+    padding: 1.25rem;
+  }
+  
+  .modal-box-body {
+    padding: 1.25rem;
+  }
+  
+  .modal-box-header h2 {
+    font-size: 1.25rem;
+  }
+  
+  .modal-box-header p {
+    font-size: 0.9rem;
+  }
+}

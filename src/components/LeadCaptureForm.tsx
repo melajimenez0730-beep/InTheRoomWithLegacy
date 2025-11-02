@@ -84,16 +84,21 @@ export function LeadCaptureForm({
 
   if (submitStatus === "success") {
     return (
-      <div className="text-center py-4">
-        <h3 className="text-xl font-semibold mb-2 text-primary">Thank You!</h3>
-        <p className="mb-4">Your download is starting now.</p>
+      <div className="text-center py-6">
+        <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-green-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </div>
+        <h3 className="text-xl font-display font-bold mb-3 text-primary">Thank You!</h3>
+        <p className="mb-5 text-foreground/80">Your download is starting now.</p>
         <div className="flex flex-col items-center">
           <p className="text-sm text-muted-foreground mb-4">
             If your download doesn't start automatically, click the button below.
           </p>
           <Button 
             onClick={initiateDownload}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 py-2.5 px-5 rounded-lg"
             variant="secondary"
           >
             <Download className="h-4 w-4" />
@@ -105,7 +110,7 @@ export function LeadCaptureForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {/* Hidden form_name field */}
       <input 
         type="hidden" 
@@ -114,7 +119,7 @@ export function LeadCaptureForm({
       />
       
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-1">
+        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
           Name
         </label>
         <input
@@ -124,16 +129,15 @@ export function LeadCaptureForm({
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white text-base md:text-base"
+          className="w-full px-4 py-3 border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white text-base md:text-base shadow-sm"
           placeholder="Your name"
-          // Improve mobile input experience
           autoCorrect="off"
           autoComplete="name" 
         />
       </div>
       
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-1">
+        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
           Email Address
         </label>
         <input
@@ -143,9 +147,8 @@ export function LeadCaptureForm({
           value={formData.email}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white text-base md:text-base"
+          className="w-full px-4 py-3 border border-primary/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white text-base md:text-base shadow-sm"
           placeholder="Your email address"
-          // Improve mobile input experience
           inputMode="email"
           autoCapitalize="off"
           autoCorrect="off"
@@ -154,7 +157,7 @@ export function LeadCaptureForm({
       </div>
 
       {submitStatus === "error" && (
-        <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-md">
+        <div className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg">
           There was an error processing your request. Please try again.
         </div>
       )}
@@ -162,7 +165,7 @@ export function LeadCaptureForm({
       <Button 
         type="submit" 
         disabled={isSubmitting}
-        className="w-full py-3 bg-primary hover:bg-primary/90 text-white font-medium text-base"
+        className="w-full py-3 mt-2 bg-primary hover:bg-primary/90 text-white font-medium text-base rounded-lg shadow-sm"
       >
         {isSubmitting ? "Processing..." : "Download Now"}
       </Button>
