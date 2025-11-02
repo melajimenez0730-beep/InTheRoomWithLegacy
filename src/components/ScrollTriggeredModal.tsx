@@ -39,6 +39,25 @@ export function ScrollTriggeredModal({
     }
   };
 
+  // Remove hash from URL to prevent auto-scrolling
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (window.location.hash && typeof history.replaceState === 'function') {
+      // Store the current scroll position
+      const currentScrollPosition = window.scrollY;
+      
+      // Remove the hash without changing the scroll position
+      history.replaceState(
+        '', 
+        document.title, 
+        window.location.pathname + window.location.search
+      );
+      
+      // Restore the scroll position
+      window.scrollTo(0, currentScrollPosition);
+    }
+  }, []);
+
   // Force check if we're on a mobile device and should show the modal
   useEffect(() => {
     // Initial check for debug purposes - run once on component mount
@@ -71,8 +90,18 @@ export function ScrollTriggeredModal({
             console.log('[ScrollModal] Mobile scroll check:', scrollPercentage);
             if (scrollPercentage >= 30 && !hasTriggered) {
               console.log('[ScrollModal] Mobile trigger threshold reached');
-              setIsModalOpen(true);
-              setHasTriggered(true);
+              
+              // Store current scroll position
+              const currentScrollY = window.scrollY;
+              
+              // Use requestAnimationFrame to avoid layout thrashing
+              requestAnimationFrame(() => {
+                // Make sure we haven't scrolled further since the check
+                if (window.scrollY === currentScrollY) {
+                  setIsModalOpen(true);
+                  setHasTriggered(true);
+                }
+              });
             }
           };
           
@@ -150,8 +179,18 @@ export function ScrollTriggeredModal({
         // More aggressive threshold for mobile - show earlier
         if (scrollPercentage >= 40) {
           console.log('[ScrollModal] Triggering on mobile at scroll percentage:', scrollPercentage);
-          setIsModalOpen(true);
-          setHasTriggered(true);
+          
+          // Use preventDefault if it's an event-triggered scroll
+          if (window.event) {
+            window.event.preventDefault?.();
+          }
+          
+          // Use requestAnimationFrame to avoid layout thrashing
+          requestAnimationFrame(() => {
+            setIsModalOpen(true);
+            setHasTriggered(true);
+          });
+          
           return;
         }
       }
@@ -173,8 +212,17 @@ export function ScrollTriggeredModal({
           if ((rect.top <= triggerDistance && rect.bottom >= 0) || 
               (isMobile && rect.top <= window.innerHeight * 3)) {
             console.log('[ScrollModal] Triggering based on section visibility');
-            setIsModalOpen(true);
-            setHasTriggered(true);
+            
+            // Use preventDefault if it's an event-triggered scroll
+            if (window.event) {
+              window.event.preventDefault?.();
+            }
+            
+            // Use requestAnimationFrame to avoid layout thrashing
+            requestAnimationFrame(() => {
+              setIsModalOpen(true);
+              setHasTriggered(true);
+            });
           }
         } else {
           console.log(`[ScrollModal] Section ${targetSectionId} not found, falling back to scroll percentage`);
@@ -186,8 +234,17 @@ export function ScrollTriggeredModal({
           
           if ((isMobile && scrollPercentage >= 30) || scrollPercentage >= scrollThreshold) {
             console.log('[ScrollModal] Triggering on fallback scroll percentage:', scrollPercentage);
-            setIsModalOpen(true);
-            setHasTriggered(true);
+            
+            // Use preventDefault if it's an event-triggered scroll
+            if (window.event) {
+              window.event.preventDefault?.();
+            }
+            
+            // Use requestAnimationFrame to avoid layout thrashing
+            requestAnimationFrame(() => {
+              setIsModalOpen(true);
+              setHasTriggered(true);
+            });
           }
         }
       } else {
@@ -204,8 +261,17 @@ export function ScrollTriggeredModal({
         
         if (scrollPercentage >= effectiveThreshold) {
           console.log('[ScrollModal] Triggering based on scroll percentage');
-          setIsModalOpen(true);
-          setHasTriggered(true);
+          
+          // Use preventDefault if it's an event-triggered scroll
+          if (window.event) {
+            window.event.preventDefault?.();
+          }
+          
+          // Use requestAnimationFrame to avoid layout thrashing
+          requestAnimationFrame(() => {
+            setIsModalOpen(true);
+            setHasTriggered(true);
+          });
         }
       }
     };
@@ -240,16 +306,46 @@ export function ScrollTriggeredModal({
     setTimeout(() => closeModal(), 6000);
   };
 
-  // Handle body overflow when modal is open
+  // Handle body overflow and preserve scroll position when modal is open
   useEffect(() => {
     if (isModalOpen) {
+      // Store current scroll position before locking the body
+      const scrollY = window.scrollY;
+      
+      // Add scroll position as data attribute to the body
+      document.body.dataset.scrollY = scrollY.toString();
+      
+      // Apply fixed position with correct top offset to prevent visual jump
+      document.body.style.top = `-${scrollY}px`;
+      
+      // Apply modal-open class for other styling
       document.body.classList.add('modal-open');
+      
+      console.log('[ScrollModal] Saved scroll position:', scrollY);
     } else {
+      // Get the stored scroll position
+      const scrollY = parseInt(document.body.dataset.scrollY || '0');
+      
+      // Remove the modal-open class
       document.body.classList.remove('modal-open');
+      
+      // Clear the fixed positioning
+      document.body.style.top = '';
+      
+      // Restore the scroll position
+      window.scrollTo(0, scrollY);
+      
+      console.log('[ScrollModal] Restored scroll position:', scrollY);
     }
     
     return () => {
-      document.body.classList.remove('modal-open');
+      // Cleanup in case component unmounts while modal is open
+      if (document.body.classList.contains('modal-open')) {
+        const scrollY = parseInt(document.body.dataset.scrollY || '0');
+        document.body.classList.remove('modal-open');
+        document.body.style.top = '';
+        window.scrollTo(0, scrollY);
+      }
     };
   }, [isModalOpen]);
 
