@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowLeft, ChevronDown, ChevronUp, Bookmark, Share2, Quote } from "lucide-react";
 import { LeadCaptureModal } from "@/components/LeadCaptureModal";
+import { ScrollTriggeredModal } from "@/components/ScrollTriggeredModal";
 
 // Import images
 import parentingParentThumbnail from "@/assets/thumbnails/parenting-parent-thumbnail_nw_390fd864.png";
@@ -502,3 +503,11 @@ const article = await getEntryBySlug('articles', 'parenting-a-parent_nw_ed8b473b
     });
   </script>
 </BaseLayout>
+
+<!-- Add the ScrollTriggeredModal component -->
+<ScrollTriggeredModal 
+  client:load
+  guideName="Parenting a Parent: A Guide for Adult Children"
+  targetSectionId="conversation"
+  pdfPath="/pdfs/parenting-a-parent-a-guide-for-adult-children_nw_fa0eeee7.pdf"
+/>
