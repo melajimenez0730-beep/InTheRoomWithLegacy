@@ -505,9 +505,10 @@ const article = await getEntryBySlug('articles', 'parenting-a-parent_nw_ed8b473b
   
   <!-- Add the ScrollTriggeredModal component inside the BaseLayout -->
   <ScrollTriggeredModal 
-    client:load
+    client:only="react"
     guideName="Parenting a Parent: A Guide for Adult Children"
     targetSectionId="conversation"
     pdfPath="/pdfs/parenting-a-parent-a-guide-for-adult-children_nw_fa0eeee7.pdf"
+    scrollThreshold={40}
   />
 </BaseLayout>

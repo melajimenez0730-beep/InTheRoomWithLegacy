@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { LeadCaptureForm } from "./LeadCaptureForm";
+import "../styles/modal-overrides.css";
 
 interface ScrollTriggeredModalProps {
   guideName: string;
@@ -42,20 +43,67 @@ export function ScrollTriggeredModal({
     // Initial check for debug purposes - run once on component mount
     const initialDebugCheck = () => {
       const section = targetSectionId ? document.getElementById(targetSectionId) : null;
+      const isMobile = window.innerWidth < 768;
+      
       console.log(
-        `[ScrollModal Debug] Target section "${targetSectionId}" exists: ${!!section}`,
+        `[ScrollModal Debug] On mobile: ${isMobile}, Target section "${targetSectionId}" exists: ${!!section}`,
         section ? `Scroll position: ${window.scrollY}, Section position: ${section.getBoundingClientRect().top}` : ''
       );
       
-      // Force trigger a scroll event to ensure our handler runs
-      setTimeout(() => {
-        window.dispatchEvent(new Event('scroll'));
-      }, 1000);
+      // Special handling for mobile devices
+      if (isMobile) {
+        // For mobile, check localStorage first
+        try {
+          // Uncomment the following lines to force the modal to show during testing
+          // localStorage.removeItem(`scrollModal_${guideName.replace(/\s+/g, '_')}`);
+          // localStorage.removeItem(`scrollModal_${guideName.replace(/\s+/g, '_')}_date`);
+          
+          console.log('[ScrollModal] Mobile device detected - setting up enhanced triggers');
+          
+          // Set a more aggressive check for mobile
+          const checkForTrigger = () => {
+            const scrollY = window.scrollY;
+            const docHeight = document.body.clientHeight;
+            const windowHeight = window.innerHeight;
+            const scrollPercentage = (scrollY / (docHeight - windowHeight)) * 100;
+            
+            console.log('[ScrollModal] Mobile scroll check:', scrollPercentage);
+            if (scrollPercentage >= 30 && !hasTriggered) {
+              console.log('[ScrollModal] Mobile trigger threshold reached');
+              setIsModalOpen(true);
+              setHasTriggered(true);
+            }
+          };
+          
+          // Set multiple checks to ensure we catch the scroll
+          setTimeout(() => {
+            window.dispatchEvent(new Event('scroll'));
+            checkForTrigger();
+          }, 1000);
+          
+          setTimeout(() => {
+            window.dispatchEvent(new Event('scroll'));
+            checkForTrigger();
+          }, 2000);
+          
+          setTimeout(() => {
+            window.dispatchEvent(new Event('scroll'));
+            checkForTrigger();
+          }, 4000);
+        } catch (e) {
+          console.error('[ScrollModal] Error in mobile initialization:', e);
+        }
+      } else {
+        // Standard behavior for desktop
+        setTimeout(() => {
+          window.dispatchEvent(new Event('scroll'));
+        }, 1000);
+      }
     };
     
     // Run the debug check when component mounts
     initialDebugCheck();
-  }, [targetSectionId]); // Run once on mount
+  }, [targetSectionId, guideName, hasTriggered]); // Run once on mount
 
   // Check if user has already interacted with the modal in this session or in the past
   useEffect(() => {
@@ -91,17 +139,52 @@ export function ScrollTriggeredModal({
       // Detect if user is on mobile (rough approximation)
       const isMobile = window.innerWidth < 768;
       
+      // Mobile-specific hard override - show the modal when scrolled to about 40% on mobile
+      if (isMobile) {
+        const scrollY = window.scrollY;
+        const docHeight = document.body.clientHeight;
+        const windowHeight = window.innerHeight;
+        const scrollPercentage = (scrollY / (docHeight - windowHeight)) * 100;
+        
+        // More aggressive threshold for mobile - show earlier
+        if (scrollPercentage >= 40) {
+          console.log('[ScrollModal] Triggering on mobile at scroll percentage:', scrollPercentage);
+          setIsModalOpen(true);
+          setHasTriggered(true);
+          return;
+        }
+      }
+      
       // If a specific section is targeted, check if it's in view
       if (targetSectionId) {
         const section = document.getElementById(targetSectionId);
         if (section) {
           const rect = section.getBoundingClientRect();
-          // On mobile, trigger when section is closer to viewport
-          const triggerDistance = isMobile ? window.innerHeight * 1.5 : window.innerHeight;
+          
+          // Super aggressive triggering for mobile
+          const triggerDistance = isMobile 
+            ? window.innerHeight * 3  // Much earlier on mobile - almost as soon as section exists
+            : window.innerHeight;
+          
+          console.log(`[ScrollModal] Section ${targetSectionId} position:`, rect.top, 'Trigger at:', triggerDistance);
           
           // Check if the target section is approaching the viewport or in it
           if ((rect.top <= triggerDistance && rect.bottom >= 0) || 
-              (isMobile && rect.top <= window.innerHeight * 2)) {
+              (isMobile && rect.top <= window.innerHeight * 3)) {
+            console.log('[ScrollModal] Triggering based on section visibility');
+            setIsModalOpen(true);
+            setHasTriggered(true);
+          }
+        } else {
+          console.log(`[ScrollModal] Section ${targetSectionId} not found, falling back to scroll percentage`);
+          // If section not found, fallback to percentage
+          const scrollY = window.scrollY;
+          const docHeight = document.body.clientHeight;
+          const windowHeight = window.innerHeight;
+          const scrollPercentage = (scrollY / (docHeight - windowHeight)) * 100;
+          
+          if ((isMobile && scrollPercentage >= 30) || scrollPercentage >= scrollThreshold) {
+            console.log('[ScrollModal] Triggering on fallback scroll percentage:', scrollPercentage);
             setIsModalOpen(true);
             setHasTriggered(true);
           }
@@ -114,9 +197,12 @@ export function ScrollTriggeredModal({
         const scrollPercentage = (scrollY / (docHeight - windowHeight)) * 100;
         
         // Lower threshold for mobile devices to ensure it triggers
-        const effectiveThreshold = isMobile ? Math.min(40, scrollThreshold) : scrollThreshold;
+        const effectiveThreshold = isMobile ? 30 : scrollThreshold;
+        
+        console.log('[ScrollModal] Current scroll percentage:', scrollPercentage, 'Threshold:', effectiveThreshold);
         
         if (scrollPercentage >= effectiveThreshold) {
+          console.log('[ScrollModal] Triggering based on scroll percentage');
           setIsModalOpen(true);
           setHasTriggered(true);
         }
@@ -153,19 +239,65 @@ export function ScrollTriggeredModal({
     setTimeout(() => closeModal(), 6000);
   };
 
+  // Handle body overflow when modal is open
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+    
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [isModalOpen]);
+
+  // FOR TESTING: Force modal to show on mobile during development
+  // Uncomment the following line to force modal visibility for testing
+  // if (window.innerWidth < 768) setIsModalOpen(true);
+
   if (!isModalOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 z-[9999] flex items-center justify-center p-4 md:p-6 animate-fade-in overflow-y-auto">
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-60 z-[99999] flex items-center justify-center p-4 md:p-6 animate-fade-in overflow-y-auto mobile-modal-container"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 99999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+        width: '100vw',
+        height: '100vh',
+        overflow: 'auto'
+      }}
+    >
       <div 
         ref={modalRef}
-        className="bg-white rounded-xl shadow-xl max-w-md w-full relative animate-fade-in-up border border-primary/20 my-auto"
+        className="bg-white rounded-xl shadow-xl max-w-md w-full relative animate-fade-in-up border border-primary/20 my-auto mobile-modal-content"
+        style={{
+          backgroundColor: 'white',
+          borderRadius: '0.75rem',
+          maxWidth: '90vw',
+          width: '100%',
+          position: 'relative',
+          boxShadow: '0 10px 25px rgba(0, 0, 0, 0.3)',
+          transform: 'none',
+          opacity: 1,
+          visibility: 'visible'
+        }}
       >
         {/* Close button */}
         <button 
           onClick={closeModal}
-          className="absolute top-4 right-4 text-primary/60 hover:text-primary transition-colors"
+          className="absolute top-4 right-4 text-primary/60 hover:text-primary transition-colors z-[9999] p-2"
           aria-label="Close modal"
+          style={{ touchAction: 'manipulation' }}
         >
           <X className="h-6 w-6" />
         </button>
