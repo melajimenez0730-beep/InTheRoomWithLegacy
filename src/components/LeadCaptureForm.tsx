@@ -124,8 +124,11 @@ export function LeadCaptureForm({
           value={formData.name}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white"
+          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white text-base md:text-base"
           placeholder="Your name"
+          // Improve mobile input experience
+          autoCorrect="off"
+          autoComplete="name" 
         />
       </div>
       
@@ -140,8 +143,13 @@ export function LeadCaptureForm({
           value={formData.email}
           onChange={handleInputChange}
           required
-          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white"
+          className="w-full px-4 py-3 border border-primary/20 rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-white text-base md:text-base"
           placeholder="Your email address"
+          // Improve mobile input experience
+          inputMode="email"
+          autoCapitalize="off"
+          autoCorrect="off"
+          autoComplete="email"
         />
       </div>
 

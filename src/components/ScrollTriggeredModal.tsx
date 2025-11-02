@@ -37,9 +37,33 @@ export function ScrollTriggeredModal({
     }
   };
 
+  // Force check if we're on a mobile device and should show the modal
+  useEffect(() => {
+    // Initial check for debug purposes - run once on component mount
+    const initialDebugCheck = () => {
+      const section = targetSectionId ? document.getElementById(targetSectionId) : null;
+      console.log(
+        `[ScrollModal Debug] Target section "${targetSectionId}" exists: ${!!section}`,
+        section ? `Scroll position: ${window.scrollY}, Section position: ${section.getBoundingClientRect().top}` : ''
+      );
+      
+      // Force trigger a scroll event to ensure our handler runs
+      setTimeout(() => {
+        window.dispatchEvent(new Event('scroll'));
+      }, 1000);
+    };
+    
+    // Run the debug check when component mounts
+    initialDebugCheck();
+  }, [targetSectionId]); // Run once on mount
+
   // Check if user has already interacted with the modal in this session or in the past
   useEffect(() => {
     try {
+      // For debugging/testing, uncomment to clear localStorage
+      // localStorage.removeItem(`scrollModal_${guideName.replace(/\s+/g, '_')}`);
+      // localStorage.removeItem(`scrollModal_${guideName.replace(/\s+/g, '_')}_date`);
+      
       // Use a more specific key that includes the guide name to avoid conflicts
       const modalKey = `scrollModal_${guideName.replace(/\s+/g, '_')}`;
       const hasBeenShown = localStorage.getItem(modalKey);
@@ -64,13 +88,20 @@ export function ScrollTriggeredModal({
     const handleScroll = () => {
       if (hasTriggered) return;
       
+      // Detect if user is on mobile (rough approximation)
+      const isMobile = window.innerWidth < 768;
+      
       // If a specific section is targeted, check if it's in view
       if (targetSectionId) {
         const section = document.getElementById(targetSectionId);
         if (section) {
           const rect = section.getBoundingClientRect();
-          // Check if the target section is in the viewport
-          if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+          // On mobile, trigger when section is closer to viewport
+          const triggerDistance = isMobile ? window.innerHeight * 1.5 : window.innerHeight;
+          
+          // Check if the target section is approaching the viewport or in it
+          if ((rect.top <= triggerDistance && rect.bottom >= 0) || 
+              (isMobile && rect.top <= window.innerHeight * 2)) {
             setIsModalOpen(true);
             setHasTriggered(true);
           }
@@ -82,7 +113,10 @@ export function ScrollTriggeredModal({
         const windowHeight = window.innerHeight;
         const scrollPercentage = (scrollY / (docHeight - windowHeight)) * 100;
         
-        if (scrollPercentage >= scrollThreshold) {
+        // Lower threshold for mobile devices to ensure it triggers
+        const effectiveThreshold = isMobile ? Math.min(40, scrollThreshold) : scrollThreshold;
+        
+        if (scrollPercentage >= effectiveThreshold) {
           setIsModalOpen(true);
           setHasTriggered(true);
         }
@@ -93,20 +127,23 @@ export function ScrollTriggeredModal({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [targetSectionId, scrollThreshold, hasTriggered]);
 
-  // Close modal when clicking outside
+  // Close modal when clicking/touching outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
         closeModal();
       }
     };
 
     if (isModalOpen) {
+      // Add both mouse and touch events for better cross-device compatibility
       document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("touchstart", handleClickOutside);
     }
     
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, [isModalOpen]);
 
@@ -119,10 +156,10 @@ export function ScrollTriggeredModal({
   if (!isModalOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 animate-fade-in">
+    <div className="fixed inset-0 bg-black bg-opacity-60 z-[9999] flex items-center justify-center p-4 md:p-6 animate-fade-in overflow-y-auto">
       <div 
         ref={modalRef}
-        className="bg-white rounded-xl shadow-xl max-w-md w-full relative animate-fade-in-up border border-primary/20"
+        className="bg-white rounded-xl shadow-xl max-w-md w-full relative animate-fade-in-up border border-primary/20 my-auto"
       >
         {/* Close button */}
         <button 
@@ -133,13 +170,13 @@ export function ScrollTriggeredModal({
           <X className="h-6 w-6" />
         </button>
 
-        <div className="p-6 md:p-8">
-          <div className="bg-primary/5 -m-6 md:-m-8 mb-6 p-6 md:p-8 border-b border-primary/10">
-            <h2 className="text-2xl font-display font-bold text-primary mb-2">
+        <div className="p-5 md:p-8">
+          <div className="bg-primary/5 -m-5 md:-m-8 mb-5 md:mb-6 p-5 md:p-8 border-b border-primary/10">
+            <h2 className="text-xl md:text-2xl font-display font-bold text-primary mb-2">
               Download the Guide for free
             </h2>
             
-            <p className="text-foreground/80">
+            <p className="text-sm md:text-base text-foreground/80">
               Enter your details below to receive your free copy of "{guideName}".
             </p>
           </div>
