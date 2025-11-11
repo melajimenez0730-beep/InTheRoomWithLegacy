@@ -68,8 +68,8 @@ export function FamilyBusinessReferralModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-xl shadow-xl max-w-md w-full relative animate-fade-in-up">
+    <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-2 sm:p-4">
+      <div className="bg-white rounded-xl shadow-xl w-[95%] max-w-md relative animate-fade-in-up">
         {/* Close button */}
         <button 
           onClick={onClose}
@@ -79,7 +79,7 @@ export function FamilyBusinessReferralModal({
           <X className="h-6 w-6" />
         </button>
 
-        <div className="p-6 md:p-8">
+        <div className="p-4 sm:p-6 md:p-8">
           <h2 className="text-2xl font-display font-bold text-primary mb-4">
             Know a Family Business Ready for Legacy?
           </h2>
