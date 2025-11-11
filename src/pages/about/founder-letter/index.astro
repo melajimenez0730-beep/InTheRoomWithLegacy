@@ -24,90 +24,113 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
   description="A personal letter from our founder, Lauren R. Miller, sharing her journey and the inspiration behind In the Room with Legacy™."
 >
   <div class="relative z-10 overflow-hidden">
-  <!-- Hero Section -->
-  <section class="py-16 md:py-20 bg-white overflow-hidden relative">
+  <!-- 1. Hero Section with Deep Blue Background -->
+  <section class="py-28 md:py-36 bg-[#052d3f] overflow-hidden relative text-white">
     <div class="container relative z-10">
       <div class="max-w-4xl mx-auto">
-        <!-- Letter Header with Image -->
-        <div class="relative mb-16">
-          <div class="absolute inset-0 bg-primary/10 rounded-2xl"></div>
-          <div class="relative p-8 md:p-10">
-            <div class="text-center mb-8">
-              <h1 class="text-4xl md:text-5xl font-display font-bold text-primary mb-4">
-                Letter from Our Founder
-              </h1>
-              <div class="w-32 h-0.5 bg-primary/40 mx-auto mb-4"></div>
-              <p class="font-serif italic text-xl text-primary/80 mb-6">
-                A journey of purpose, reflection, and legacy
-              </p>
-            </div>
-
-            <div class="rounded-xl overflow-hidden max-w-2xl mx-auto shadow-xl">
-              <Image 
-                src={laurenMiller} 
-                alt="Lauren Miller, Founder of In the Room with Legacy" 
-                class="w-full h-auto" 
-                width={900}
-                height={400}
-              />
-            </div>
-          </div>
+        <!-- Letter Header -->
+        <div class="text-center mb-20">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8">
+            Letter from Our Founder
+          </h1>
+          <div class="w-32 h-0.5 bg-white/40 mx-auto mb-10"></div>
         </div>
         
-        <!-- Letter Content with the New Founder's Letter -->
-        <div class="max-w-none">
-          <!-- New Letter Content -->
-          <div class="prose prose-lg max-w-none">
-            <div class="mb-8 scroll-reveal">
-              <p class="font-medium text-primary text-2xl">Welcome.</p>
-              
-              <p>Truly, welcome. If you've found your way here, it's not by accident. You were meant to be in this room.</p>
-              
-              <div class="rounded-lg overflow-hidden shadow-lg my-8">
-                <Image 
-                  src={fatherDaughter} 
-                  alt="Father and daughter smiling together showing a personal legacy connection" 
-                  class="w-full h-auto" 
-                  width={600}
-                  height={400}
-                />
+        <!-- Welcome Statement - Most Prominent Text -->
+        <div class="max-w-2xl mx-auto text-center mb-16">
+          <p class="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-white leading-tight mb-10">
+            Truly, welcome. If you've found your way here, it's not by accident. You were meant to be in this room.
+          </p>
+          
+          <p class="text-lg md:text-xl leading-relaxed text-white/90 mb-8">
+            In the Room with Legacy was born out of love, loss, and a real need. A need for a space that honors and empowers the family, both related and chosen. A space that offers tools, resources, and frameworks that not only create generational value within a family, but also sow unity, healing, and love. 
+          </p>
+          
+          <p class="text-lg md:text-xl leading-relaxed text-white/90">
+            A space that encourages and uplifts us, that highlights our stories and reminds us that legacy is intentional and alive. That it's something we live and breathe every day.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Founder Image Section - Transition Area -->
+  <section class="py-20 bg-white overflow-hidden relative">
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto">
+        <!-- Founder Image -->
+        <div class="mb-16 relative">
+          <div class="rounded-xl overflow-hidden shadow-xl">
+            <Image 
+              src={laurenMiller} 
+              alt="Lauren Miller, Founder of In the Room with Legacy" 
+              class="w-full h-auto" 
+              width={900}
+              height={400}
+            />
+          </div>
+          <p class="text-center text-foreground/70 italic mt-4">Lauren R. Miller, Founder</p>
+        </div>
+        
+        <!-- Letter Content Start -->
+        <div class="prose prose-lg max-w-none">
+          <div class="mb-12 scroll-reveal">
+            <p class="text-left">It was also born out of the need to redefine our power. Because one of our greatest weapons against systemic and economic challenges is stronger families; families moving with unity, cohesion, and intention.</p>
+            
+            <p class="font-medium text-primary/90 text-xl mt-6 text-left">Families are indeed the first institutions within civilization.</p>
+          </div>
+            
+            <!-- 2. The Narrative Core: Father's Story (Warm Brown Block) -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-24 bg-[#9a4a0b]/10 overflow-hidden relative">
+    <div class="container relative z-10">
+      <div class="max-w-3xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <div class="mb-16 scroll-reveal">
+            <p class="text-left">I created In the Room with Legacy as an offering. A labor of love.</p>
+            
+            <p class="text-left">It's the fruit of everything I was taught, everything I've witnessed, and everything I now feel called to carry forward.</p>
+            
+            <div class="md:flex items-start gap-10 my-12">
+              <div class="md:w-2/5 mb-8 md:mb-0">
+                <div class="rounded-lg overflow-hidden shadow-xl">
+                  <Image 
+                    src={conversationsPhoto} 
+                    alt="Father and daughter having an important conversation" 
+                    class="w-full h-auto" 
+                    width={600}
+                    height={800}
+                  />
+                </div>
+                <p class="text-sm text-center mt-3 italic text-primary/70">My father, my teacher, my anchor.</p>
               </div>
               
-              <p>In the Room with Legacy was born out of love, loss, and a real need. A need for a space that honors and empowers the family, both related and chosen. A space that offers tools, resources, and frameworks that not only create generational value within a family, but also sow unity, healing, and love. A space that encourages and uplifts us, that highlights our stories and reminds us that legacy is intentional and alive. That it's something we live and breathe every day.</p>
-              
-              <p>It was also born out of the need to redefine our power. Because one of our greatest weapons against systemic and economic challenges is stronger families; families moving with unity, cohesion, and intention.</p>
-              
-              <p class="font-medium text-primary/90">Families are indeed the first institutions within civilization.</p>
-            </div>
-            
-            <div class="mb-8 scroll-reveal">
-              <p>I created In the Room with Legacy as an offering. A labor of love.</p>
-              
-              <p>It's the fruit of everything I was taught, everything I've witnessed, and everything I now feel called to carry forward.</p>
-              
-              <p class="font-medium text-primary/90">This work is dedicated to my father. My teacher, my anchor, the man whose life and example shaped so much of who I am, especially at the end of his life.</p>
-              
-              <div class="rounded-lg overflow-hidden shadow-lg my-8">
-                <Image 
-                  src={conversationsPhoto} 
-                  alt="Father and daughter having an important conversation" 
-                  class="w-full h-auto" 
-                  width={900}
-                  height={500}
-                />
+              <div class="md:w-3/5">
+                <p class="font-medium text-primary/90 text-xl mb-6 text-left">This work is dedicated to my father. The man whose life and example shaped so much of who I am, especially at the end of his life.</p>
+                
+                <p class="text-left">In hindsight, I can see now that my father's illness, though heartbreaking, was a divine part of my path. At the time, I couldn't understand it. I was 26, young, building my dreams, and suddenly life said, "Nah, you're about to go through the wringer."</p>
+                
+                <p class="text-left">His request, "help me live as long as possible to get you and your siblings ready for my departure."</p>
+                
+                <p class="text-left">I was devastated. Angry, even. It felt unfair. I entered a season of sacrifice, unconditional love, heartbreak, and exhaustion. But looking back, I realize it was preparation that positioned me to carry this message in a way I never could have otherwise.</p>
               </div>
-              
-              <p>In hindsight, I can see now that my father's illness, though heartbreaking, was a divine part of my path. At the time, I couldn't understand it. I was 26, young, building my dreams, and suddenly life said, "Nah, you're about to go through the wringer."</p>
-              
-              <p>His request, "help me live as long as possible to get you and your siblings ready for my departure."</p>
-              
-              <p>I was devastated. Angry, even. It felt unfair. I entered a season of sacrifice, unconditional love, heartbreak, and exhaustion. But looking back, I realize it was preparation that positioned me to carry this message in a way I never could have otherwise.</p>
             </div>
             
-            <div class="bg-primary/5 p-8 rounded-xl mb-8 scroll-reveal">
-              <div class="md:flex flex-row-reverse items-center gap-8">
+            <div class="mb-16 scroll-reveal">
+              <div class="md:flex items-start gap-10">
+                <div class="md:w-3/5 mb-8 md:mb-0">
+                  <p class="text-left">My father was a changemaker, a pioneer, a history maker, a man who helped shape Atlanta's story. A son of farmers & landowners, who rose to serve under Mayor Maynard Jackson, Atlanta's first Black mayor, helped to open doors of economic opportunity that had been closed for generations. A builder and business owner, who lived a deeply impactful life, and sowed into his lineage with intention.</p>
+                  
+                  <p class="text-left">When he fell ill, what began as caregiving became stewardship and succession. I wasn't just taking care of my dad; I was helping preserve his legacy, ensuring the business he built endured, and making sure he could leave this world with his dignity and vision intact. It was mentally, emotionally, and physically exhausting. It broke me, but it also built me.</p>
+                </div>
+                
                 <div class="md:w-2/5">
-                  <div class="rounded-lg overflow-hidden shadow-lg">
+                  <div class="rounded-lg overflow-hidden shadow-xl">
                     <Image 
                       src={youngLaurenWithDad} 
                       alt="Young Lauren Miller with her father" 
@@ -117,99 +140,139 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
                     />
                   </div>
                 </div>
-                <div class="md:w-3/5">
-                  <p>My father was a changemaker, a pioneer, a history maker, a man who helped shape Atlanta's story. A son of farmers & landowners, who rose to serve under Mayor Maynard Jackson, Atlanta's first Black mayor, helped to open doors of economic opportunity that had been closed for generations. A builder and business owner, who lived a deeply impactful life, and sowed into his lineage with intention.</p>
-                  
-                  <p>When he fell ill, what began as caregiving became stewardship and succession. I wasn't just taking care of my dad; I was helping preserve his legacy, ensuring the business he built endured, and making sure he could leave this world with his dignity and vision intact. It was mentally, emotionally, and physically exhausting. It broke me, but it also built me.</p>
-                </div>
               </div>
             </div>
             
-            <div class="mb-8 scroll-reveal">
-              <p>Through it all, I learned so much. About so much. From the 4 year experience but also because my Dad was actively teaching and training me up. I was a matriarch in the making you could say. Learning in real time about the healthcare system, how to navigate it, it's inefficiencies and what it really means to advocate and care for someone you love. I learned about stewardship, about end-of-life care and planning, about family tradition & values, about inherited responsibility, about all the moving parts that make up both legacy building and preservation.</p>
+            <div class="mb-16 scroll-reveal">
+              <p class="text-left">Through it all, I learned so much. About so much. From the 4 year experience but also because my Dad was actively teaching and training me up. I was a matriarch in the making you could say. Learning in real time about the healthcare system, how to navigate it, it's inefficiencies and what it really means to advocate and care for someone you love. I learned about stewardship, about end-of-life care and planning, about family tradition & values, about inherited responsibility, about all the moving parts that make up both legacy building and preservation.</p>
               
-              <p>Learning from my father's story, the things he had in place and the things he didn't. The areas where we had time to prepare and the ones where we didn't. The stories that needed to be preserved, the lessons that needed to be written down. The shoulda, coulda, woulda's and regrets and apologies. Every detail, every moment, every conversation became a masterclass in legacy.</p>
+              <p class="text-left">Learning from my father's story, the things he had in place and the things he didn't. The areas where we had time to prepare and the ones where we didn't. The stories that needed to be preserved, the lessons that needed to be written down. The shoulda, coulda, woulda's and regrets and apologies. Every detail, every moment, every conversation became a masterclass in legacy.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
             
-            <div class="mb-8 scroll-reveal">
-              <div class="text-center mb-6">
+    <!-- 3. The Collective Vision Section (White/Gray Blocks) -->
+    <section class="py-24 bg-white overflow-hidden relative">
+      <div class="container relative z-10">
+        <div class="max-w-3xl mx-auto">
+          <div class="prose prose-lg max-w-none">
+            <div class="mb-16 scroll-reveal">
+              <div class="text-center mb-12">
                 <h2 class="text-3xl font-display font-bold text-primary mb-3 inline-block border-b-2 border-[#9a4a0b] pb-2">
                   Family Legacy
                 </h2>
               </div>
               
-              <div class="rounded-lg overflow-hidden shadow-xl mb-8 max-w-2xl mx-auto">
-                <Image 
-                  src={heartAndStrategy} 
-                  alt="Lauren Miller surrounded by plants, representing the balance of heart and strategy in legacy work" 
-                  class="w-full h-auto" 
-                  width={800}
-                  height={1200}
-                />
+              <div class="md:flex items-start gap-12 mb-10">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                  <div class="rounded-lg overflow-hidden shadow-xl">
+                    <Image 
+                      src={heartAndStrategy} 
+                      alt="Lauren Miller surrounded by plants, representing the balance of heart and strategy in legacy work" 
+                      class="w-full h-auto" 
+                      width={600}
+                      height={900}
+                    />
+                  </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                  <p class="text-left">As he'd tell our family's history, I started to see the bigger picture, not just of my father's life, but of my family's lineage. I began noticing the through-line of stewardship in our story: the land we've owned for generations, how every era had someone who tilled, someone who planted, someone who carried the weight of keeping it all alive.</p>
+                  
+                  <p class="text-left">Farming isn't just part of our history, it's society's teacher. Watching how the land has been cared for over 150 years taught me what generational legacy really is: sowing, nurturing, protecting, harvesting, and trusting that what you plant will feed generations you'll never meet.</p>
+                  
+                  <p class="font-medium text-primary/90 text-xl mt-6 text-left">That perspective awakened a deeper passion in me.</p>
+                </div>
               </div>
-              
-              <p>As he'd tell our family's history, I started to see the bigger picture, not just of my father's life, but of my family's lineage. I began noticing the through-line of stewardship in our story: the land we've owned for generations, how every era had someone who tilled, someone who planted, someone who carried the weight of keeping it all alive. Farming isn't just part of our history, it's society's teacher. Watching how the land has been cared for over 150 years taught me what generational legacy really is: sowing, nurturing, protecting, harvesting, and trusting that what you plant will feed generations you'll never meet.</p>
-              
-              <p class="font-medium text-primary/90">That perspective awakened a deeper passion in me.</p>
             </div>
             
-            <div class="p-8 bg-[#f7f6dc]/30 rounded-xl mb-8 scroll-reveal">
-              <p>A hunger to study, to learn, to teach, to build community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pale Gray Background Section -->
+    <section class="py-24 bg-gray-50 overflow-hidden relative">
+      <div class="container relative z-10">
+        <div class="max-w-3xl mx-auto">
+          <div class="prose prose-lg max-w-none">
+            <div class="mb-16 scroll-reveal">
+              <p class="text-left">A hunger to study, to learn, to teach, to build community.</p>
               
-              <p>To study family, both enterprising and not. To explore economic empowerment through the lens of family and the systems that shape opportunity.</p>
+              <p class="text-left">To study family, both enterprising and not. To explore economic empowerment through the lens of family and the systems that shape opportunity.</p>
               
-              <p>To learn how culture, values, and heritage contribute to the growth and sustainability of a family.</p>
+              <p class="text-left">To learn how culture, values, and heritage contribute to the growth and sustainability of a family.</p>
               
-              <p>To develop and teach frameworks and infrastructure that help guide us forward.</p>
+              <p class="text-left">To develop and teach frameworks and infrastructure that help guide us forward.</p>
               
-              <div class="rounded-lg overflow-hidden shadow-lg my-8">
-                <Image 
-                  src={laurenSpeaking} 
-                  alt="Lauren Miller speaking at an event, sharing legacy wisdom with the audience" 
-                  class="w-full h-auto" 
-                  width={600}
-                  height={800}
-                />
+              <div class="md:flex items-center gap-12 my-12">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                  <div class="rounded-lg overflow-hidden shadow-xl">
+                    <Image 
+                      src={laurenSpeaking} 
+                      alt="Lauren Miller speaking at an event, sharing legacy wisdom with the audience" 
+                      class="w-full h-auto" 
+                      width={600}
+                      height={800}
+                    />
+                  </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                  <p class="text-2xl md:text-3xl font-medium text-primary leading-tight mb-6">But In the Room with Legacy isn't all about what I've learned, it's about what we can learn together.</p>
+                  
+                  <p class="text-left">This is a collective effort. A living, breathing hub of knowledge, experience, and expertise.</p>
+                  
+                  <p class="text-left">We'll be learning from elders, advisors, builders, scholars, and everyday people who've done the work, people who are living this in real time.</p>
+                </div>
               </div>
               
-              <p>But In the Room with Legacy isn't all about what I've learned, it's about what we can learn together.</p>
-              
-              <p>This is a collective effort. A living, breathing hub of knowledge, experience, and expertise.</p>
-              
-              <p>We'll be learning from elders, advisors, builders, scholars, and everyday people who've done the work, people who are living this in real time.</p>
-              
-              <p>It's a community rooted in collaboration because legacy is a shared practice. None of us can build it alone.</p>
+              <p class="text-left mt-8">It's a community rooted in collaboration because legacy is a shared practice. None of us can build it alone.</p>
             </div>
             
-            <div class="mb-8 scroll-reveal">
-              <p class="font-medium text-primary text-xl">So that's what this is.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Conclusion Section (White Background) -->
+    <section class="py-24 bg-white overflow-hidden relative">
+      <div class="container relative z-10">
+        <div class="max-w-2xl mx-auto">
+          <div class="prose prose-lg max-w-none">
+            <div class="mb-16 scroll-reveal">
+              <p class="font-medium text-primary text-2xl mb-6 text-left">So that's what this is.</p>
               
-              <p>A home for those of us building with heart.</p>
+              <p class="text-left">A home for those of us building with heart.</p>
               
-              <p>A movement for those who understand that family is the foundation of everything.</p>
+              <p class="text-left">A movement for those who understand that family is the foundation of everything.</p>
               
-              <p>A gathering place for the dreamers, the doers, the descendants, and the builders.</p>
+              <p class="text-left">A gathering place for the dreamers, the doers, the descendants, and the builders.</p>
               
-              <p>We're creating this slowly, brick by brick, because love doesn't rush, and legacy takes its time.</p>
+              <p class="text-left">We're creating this slowly, brick by brick, because love doesn't rush, and legacy takes its time.</p>
               
-              <p>Every story shared, every program offered, every tool created is made with care.</p>
+              <p class="text-left">Every story shared, every program offered, every tool created is made with care.</p>
               
-              <p>My hope is that you feel held here. That something in these words reminds you of home. Of your people, your purpose, your power.</p>
+              <p class="text-left">My hope is that you feel held here. That something in these words reminds you of home. Of your people, your purpose, your power.</p>
               
-              <p>Thank you for being here, for believing in what's possible, and for joining me in this sacred work of remembering and becoming.</p>
+              <p class="text-left">Thank you for being here, for believing in what's possible, and for joining me in this sacred work of remembering and becoming.</p>
             </div>
           </div>
           
-          <div class="text-right mt-12 p-6 bg-primary/5 rounded-lg">
-            <p class="mb-0">With love and legacy,</p>
-            <p class="font-medium text-primary text-xl mb-0">Lauren</p>
-            <p class="text-sm text-foreground/70">Founder, In the Room with Legacy™</p>
+          <div class="mt-16 border-t border-primary/20 pt-8">
+            <div class="text-right">
+              <p class="mb-2 text-lg">With love and legacy,</p>
+              <p class="font-medium text-primary text-2xl mb-0 font-serif">Lauren</p>
+              <p class="text-sm text-foreground/70">Founder, In the Room with Legacy™</p>
+            </div>
           </div>
         </div>
         
         <!-- Video Placeholder -->
-        <div class="mt-16 text-center">
-          <div class="aspect-video bg-muted/20 rounded-lg border border-primary/10 flex items-center justify-center">
+        <div class="mt-16 mb-8 text-center">
+          <div class="aspect-video bg-muted/20 rounded-lg border border-primary/10 flex items-center justify-center shadow-lg">
             <div class="text-muted-foreground/50 text-center">
               <p class="font-medium">Video Placeholder</p>
               <p class="text-sm">(Awaiting content upload)</p>
@@ -218,7 +281,7 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
         </div>
         
         <!-- Return Link -->
-        <div class="text-center mt-12">
+        <div class="text-center mt-12 mb-8">
           <a href="/about" class="text-primary hover:underline inline-flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
               <path d="m15 18-6-6 6-6"></path>
