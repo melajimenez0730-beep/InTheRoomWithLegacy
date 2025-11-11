@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Building, Users, ChevronRight, Sparkles, Clock, Award, MessageCircle, ChevronDown, Share2, Send } from "lucide-react";
 import StoryReferralForm from "@/components/StoryReferralForm";
 import UpdatesSignupForm from "@/components/UpdatesSignupForm";
+import ReferBusinessButton from "@/components/ReferBusinessButton";
 ---
 
 <BaseLayout
@@ -48,16 +49,7 @@ import UpdatesSignupForm from "@/components/UpdatesSignupForm";
             >
               Submit Your Family Business Profile
             </a>
-            <a 
-              href="#share" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "lg",
-                class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center text-center text-[15px] sm:text-sm"
-              })}
-            >
-              Share with Another Family Business
-            </a>
+            <ReferBusinessButton client:load />
             <a 
               href="#updates" 
               class={buttonVariants({
