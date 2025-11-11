@@ -24,61 +24,69 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
   description="A personal letter from our founder, Lauren R. Miller, sharing her journey and the inspiration behind In the Room with Legacy™."
 >
   <div class="relative z-10 overflow-hidden">
-  <!-- 1. Hero Section with Deep Blue Background -->
-  <section class="py-28 md:py-36 bg-[#052d3f] overflow-hidden relative text-white">
+  <!-- 1. Hero Section with Deep Blue Background - Two Column Layout -->
+  <section class="py-20 md:py-28 bg-[#052d3f] overflow-hidden relative text-white">
     <div class="container relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <!-- Letter Header -->
-        <div class="text-center mb-20">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8">
-            Letter from Our Founder
-          </h1>
-          <div class="w-32 h-0.5 bg-white/40 mx-auto mb-10"></div>
-        </div>
-        
-        <!-- Welcome Statement - Most Prominent Text -->
-        <div class="max-w-2xl mx-auto text-center mb-16">
-          <p class="text-3xl md:text-4xl lg:text-5xl font-display font-medium text-white leading-tight mb-10">
+      <!-- Letter Header -->
+      <div class="text-center mb-16 max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-8">
+          Letter from Our Founder
+        </h1>
+        <div class="w-32 h-0.5 bg-white/40 mx-auto"></div>
+      </div>
+      
+      <!-- Two-column layout -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 max-w-6xl mx-auto">
+        <!-- Left Column (Text) -->
+        <div class="prose prose-lg prose-invert max-w-none">
+          <h2 class="text-3xl md:text-4xl font-display font-medium text-white leading-tight mb-8 text-left">
+            Welcome.
+          </h2>
+          
+          <p class="text-lg md:text-xl leading-relaxed text-white/90 mb-6 text-left">
             Truly, welcome. If you've found your way here, it's not by accident. You were meant to be in this room.
           </p>
           
-          <p class="text-lg md:text-xl leading-relaxed text-white/90 mb-8">
-            In the Room with Legacy was born out of love, loss, and a real need. A need for a space that honors and empowers the family, both related and chosen. A space that offers tools, resources, and frameworks that not only create generational value within a family, but also sow unity, healing, and love. 
+          <p class="text-base md:text-lg leading-relaxed text-white/90 mb-6 text-left">
+            In the Room with Legacy was born out of love, loss, and a real need. A need for a space that honors and empowers the family, both related and chosen. A space that offers tools, resources, and frameworks that not only create generational value within a family, but also sow unity, healing, and love.
           </p>
           
-          <p class="text-lg md:text-xl leading-relaxed text-white/90">
+          <p class="text-base md:text-lg leading-relaxed text-white/90 mb-6 text-left">
             A space that encourages and uplifts us, that highlights our stories and reminds us that legacy is intentional and alive. That it's something we live and breathe every day.
           </p>
+          
+          <p class="text-base md:text-lg leading-relaxed text-white/90 mb-6 text-left">
+            It was also born out of the need to redefine our power. Because one of our greatest weapons against systemic and economic challenges is stronger families; families moving with unity, cohesion, and intention.
+          </p>
+          
+          <p class="font-medium text-white text-xl mb-0 text-left">
+            Families are indeed the first institutions within civilization.
+          </p>
+        </div>
+        
+        <!-- Right Column (Image) -->
+        <div class="order-first md:order-last">
+          <div class="rounded-xl overflow-hidden shadow-xl h-full">
+            <Image 
+              src={laurenMiller} 
+              alt="Lauren Miller, Founder of In the Room with Legacy" 
+              class="w-full h-full object-cover" 
+              width={900}
+              height={1200}
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
   
-  <!-- Founder Image Section - Transition Area -->
+  <!-- Start of Next Section -->
   <section class="py-20 bg-white overflow-hidden relative">
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto">
-        <!-- Founder Image -->
-        <div class="mb-16 relative">
-          <div class="rounded-xl overflow-hidden shadow-xl">
-            <Image 
-              src={laurenMiller} 
-              alt="Lauren Miller, Founder of In the Room with Legacy" 
-              class="w-full h-auto" 
-              width={900}
-              height={400}
-            />
-          </div>
-          <p class="text-center text-foreground/70 italic mt-4">Lauren R. Miller, Founder</p>
-        </div>
-        
         <!-- Letter Content Start -->
         <div class="prose prose-lg max-w-none">
           <div class="mb-12 scroll-reveal">
-            <p class="text-left">It was also born out of the need to redefine our power. Because one of our greatest weapons against systemic and economic challenges is stronger families; families moving with unity, cohesion, and intention.</p>
-            
-            <p class="font-medium text-primary/90 text-xl mt-6 text-left">Families are indeed the first institutions within civilization.</p>
-          </div>
             
             <!-- 2. The Narrative Core: Father's Story (Warm Brown Block) -->
           </div>
