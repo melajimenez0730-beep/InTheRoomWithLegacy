@@ -3,7 +3,6 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Building, Users, ChevronRight, Sparkles, Clock, Award, MessageCircle, ChevronDown, Share2, Send } from "lucide-react";
 import StoryReferralForm from "@/components/StoryReferralForm";
-import UpdatesSignupForm from "@/components/UpdatesSignupForm";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 ---
 
@@ -50,16 +49,6 @@ import ReferBusinessButton from "@/components/ReferBusinessButton";
               Submit Your Family Business Profile
             </a>
             <ReferBusinessButton client:load />
-            <a 
-              href="#updates" 
-              class={buttonVariants({
-                variant: "outline",
-                size: "lg",
-                class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center text-center text-[15px] sm:text-sm"
-              })}
-            >
-              Sign Up for Updates
-            </a>
           </div>
         </div>
         
@@ -208,35 +197,6 @@ import ReferBusinessButton from "@/components/ReferBusinessButton";
     </div>
   </section>
 
-  <!-- Updates Section -->
-  <section class="py-24 bg-white" id="updates">
-    <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
-          Stay Updated
-        </h2>
-        <p class="text-lg text-foreground/80 mb-10 text-center">
-          Sign up to receive updates about the Black Family Business Network, including launch announcements, events, and opportunities.
-        </p>
-
-        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 border border-primary/10">
-          <div class="flex flex-col md:flex-row gap-6 items-center mb-8">
-            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-              <Send className="text-primary w-8 h-8" />
-            </div>
-            <div class="flex-1 text-center md:text-left">
-              <h3 class="text-xl font-display font-semibold text-primary mb-2">Join Our Mailing List</h3>
-              <p class="text-foreground/80">
-                Be the first to know when we officially launch the network and gain early access to resources and events.
-              </p>
-            </div>
-          </div>
-          
-          <UpdatesSignupForm client:load />
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Closing Section -->
   <section class="py-16 sm:py-20 md:py-24 bg-primary/5">
