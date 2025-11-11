@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Building, Users, ChevronRight, Sparkles, Clock, Award, MessageCircle, ChevronDown, Share2, Send } from "lucide-react";
-import StoryReferralForm from "@/components/StoryReferralForm";
+import { Share2 } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 ---
 
@@ -19,22 +18,25 @@ import ReferBusinessButton from "@/components/ReferBusinessButton";
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center px-4">
         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-4 sm:mb-6">
-          Black Family Business Network
+          The Black Family Business Network
         </h1>
         <p class="text-base sm:text-lg md:text-xl text-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          The Black Family Business Network is a new initiative designed to honor, connect, and equip Black family business leaders across generations.
+          Celebrating Legacy. Building Connection. Amplifying Black Enterprise.
         </p>
         
         <p class="text-base sm:text-lg text-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Before our official launch, we're building a foundation: collecting stories, mapping businesses, and creating a community that reflects the richness of our legacy. This is more than a directory—it's the start of a living archive and a gathering place where Black family enterprises can be recognized, celebrated, and supported.
+          Across generations, Black families have built, led, and sustained businesses that shape our communities. The Black Family Business Network—powered by In the Room with Legacy™—exists to recognize those stories, strengthen our connections, and preserve the legacies we're still writing.
         </p>
         
         <p class="text-base sm:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
-          By sharing your story now, you'll help shape a resource that will grow into programming, convenings, and opportunities designed specifically for families like yours.
+          We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today.
         </p>
         
         <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-md p-6 md:p-8 border border-primary/10 mb-10">
-          <h3 class="text-xl font-display font-semibold text-primary mb-4">Here's how you can be part of the start:</h3>
+          <h3 class="text-xl font-display font-semibold text-primary mb-4">Join the network.</h3>
+          <p class="text-foreground/80 mb-6 text-center">
+            Be part of a growing database of changemakers building across generations. Share your family's story, connect with others, and keep the legacy alive.
+          </p>
           
           <div class="flex flex-col gap-4 w-full sm:max-w-md mx-auto px-4 sm:px-0">
             <a 
@@ -52,174 +54,9 @@ import ReferBusinessButton from "@/components/ReferBusinessButton";
           </div>
         </div>
         
-        <p class="text-lg sm:text-xl md:text-2xl font-display text-primary mb-6">
-          Together, we can link our stories, strengthen our collective voice, and build pathways to generational wealth.
+        <p class="text-lg sm:text-xl md:text-xl font-display text-primary mb-6">
+          The more of us in the room, the stronger the movement.
         </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Submit Profile Section -->
-  <section class="py-24 bg-white" id="submit-profile">
-    <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
-          Submit Your Family Business Profile
-        </h2>
-        <p class="text-lg text-foreground/80 mb-10 text-center">
-          Help us build a comprehensive archive of Black family businesses by sharing your story.
-        </p>
-
-        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 border border-primary/10">
-          <form class="space-y-5" action="https://api.new.website/api/submit-form/" method="POST" enctype="multipart/form-data">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label for="business_name" class="block text-sm font-medium text-foreground mb-1">
-                  Business Name
-                </label>
-                <input
-                  type="text"
-                  id="business_name"
-                  name="business_name"
-                  required
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-              
-              <div>
-                <label for="year_founded" class="block text-sm font-medium text-foreground mb-1">
-                  Year Founded
-                </label>
-                <input
-                  type="text"
-                  id="year_founded"
-                  name="year_founded"
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-            </div>
-            
-            <div>
-              <label for="business_description" class="block text-sm font-medium text-foreground mb-1">
-                Business Description
-              </label>
-              <textarea
-                id="business_description"
-                name="business_description"
-                rows={4}
-                required
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              ></textarea>
-            </div>
-
-            <div>
-              <label for="family_connection" class="block text-sm font-medium text-foreground mb-1">
-                Family Connection (How is your family involved in the business?)
-              </label>
-              <textarea
-                id="family_connection"
-                name="family_connection"
-                rows={3}
-                required
-                class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-              ></textarea>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label for="contact_name" class="block text-sm font-medium text-foreground mb-1">
-                  Contact Name
-                </label>
-                <input
-                  type="text"
-                  id="contact_name"
-                  name="contact_name"
-                  required
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-              
-              <div>
-                <label for="contact_email" class="block text-sm font-medium text-foreground mb-1">
-                  Contact Email
-                </label>
-                <input
-                  type="email"
-                  id="contact_email"
-                  name="contact_email"
-                  required
-                  class="w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 bg-card"
-                />
-              </div>
-            </div>
-            
-            <input name="form_name" type="hidden" value="Black Family Business Profile Submission" />
-            
-            <button
-              type="submit"
-              class="w-full py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors font-medium text-center mx-auto"
-            >
-              Submit Profile
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Share Section -->
-  <section class="py-24 bg-muted/30" id="share">
-    <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
-          Share with Another Family Business
-        </h2>
-        <p class="text-lg text-foreground/80 mb-10 text-center">
-          Help us expand our network by referring another Black family business.
-        </p>
-
-        <div class="bg-white rounded-lg shadow-md p-6 md:p-8 border border-primary/10">
-          <div class="flex flex-col md:flex-row gap-6 items-center mb-8">
-            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-              <Share2 className="text-primary w-8 h-8" />
-            </div>
-            <div class="flex-1 text-center md:text-left">
-              <h3 class="text-xl font-display font-semibold text-primary mb-2">Refer a Family Business</h3>
-              <p class="text-foreground/80 mb-4">
-                Do you know another Black family business that should be part of our network? Help us connect with them by sharing their information.
-              </p>
-            </div>
-          </div>
-          
-          <StoryReferralForm client:load />
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Closing Section -->
-  <section class="py-16 sm:py-20 md:py-24 bg-primary/5">
-    <div class="container">
-      <div class="max-w-3xl mx-auto text-center px-4">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary mb-4 sm:mb-6">
-          Building a Legacy That Lasts
-        </h2>
-        <p class="text-base sm:text-lg text-foreground/80 mb-6 sm:mb-10">
-          The Black Family Business Network is just one part of our commitment to preserving and celebrating Black legacy. Thank you for helping us lay the foundation.
-        </p>
-        <div class="flex flex-col gap-4 w-full sm:max-w-md mx-auto px-4 sm:px-0">
-          <a 
-            href="/programs" 
-            class={buttonVariants({
-              variant: "outline",
-              size: "lg",
-              class: "border-primary text-primary hover:bg-primary/10 font-medium w-full justify-center"
-            })}
-          >
-            Explore All Programs
-          </a>
-        </div>
       </div>
     </div>
   </section>
