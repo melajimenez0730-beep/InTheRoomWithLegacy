@@ -130,15 +130,12 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
             <MobileNavGroupLink href="/resources" onClick={handleClose}>Legacy Insights, Tools, and Resources</MobileNavGroupLink>
             <MobileNavGroupLink href="/tools/legacy-assessment" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
           </MobileNavDropdown>
-
-          <MobileNavLink href="/blog" onClick={handleClose}>Family Stories</MobileNavLink>
           
           {/* IRL Advisors with dropdown */}
           <MobileNavDropdown label="IRL Advisors">
             <MobileNavGroupLink href="/advisors" onClick={handleClose}>IRL Advisors</MobileNavGroupLink>
             <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
           </MobileNavDropdown>
-          <MobileNavLink href="/shop" onClick={handleClose}>Shop</MobileNavLink>
           <MobileNavLink href="/contact" onClick={handleClose}>Contact</MobileNavLink>
         </div>
 

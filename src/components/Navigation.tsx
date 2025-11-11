@@ -99,8 +99,6 @@ export default function Navigation() {
         ]} 
       />
       
-      <NavItem href="/blog">Family Stories</NavItem>
-      
       <NavDropdown 
         trigger="IRL Advisors" 
         items={[
@@ -108,8 +106,6 @@ export default function Navigation() {
           { href: "/programs/black-family-business-network", label: "Black Family Business Network" }
         ]} 
       />
-      
-      <NavItem href="/shop">Shop</NavItem>
       
       <NavItem href="/contact">Contact</NavItem>
     </nav>
