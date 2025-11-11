@@ -19,7 +19,7 @@ export default function ReferBusinessButton({ className = "" }: ReferBusinessBut
         className={buttonVariants({
           variant: "outline",
           size: "lg",
-          class: `border-primary text-primary hover:bg-primary/10 font-medium w-full block justify-center text-center text-[15px] sm:text-sm max-w-full my-1 mx-0 overflow-hidden ${className}`
+          class: `border-primary text-primary hover:bg-primary/10 font-medium w-full block justify-center text-center text-[13px] xs:text-[14px] sm:text-sm max-w-full my-1 mx-0 overflow-hidden px-2 sm:px-4 ${className}`
         })}
       >
         Share with Another Family Business
