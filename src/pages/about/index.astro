@@ -5,8 +5,8 @@ import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMa
 import { Image } from 'astro:assets';
 import legacyFamilyPhoto from '../../assets/legacy_family_photo_nw_633bbeb1.jpg';
 import youngLaurenWithDad from '../../assets/young-lauren-with-dad_nw_5c036dd2.jpg';
-import legacyPhoto from '../../assets/legacy-photo_nw_1fc58f54.jpg';
 import missionImage from '../../assets/mission_nw_e096f024.png';
+import visionImage from '../../assets/vision_nw_30412df3.png';
 import vintagePaperBg from '../../assets/vintage-paper-background_nw_b3d4f5e6.jpg';
 import businessOfFamily from '../../assets/the-business-of-family_nw_b2773ef0.png';
 import familyPorch from '../../assets/family_on_porch_nw_6bf9f9ad.jpg';
@@ -425,11 +425,11 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                 </div>
               </div>
               
-              <!-- Symbolic black and white image background -->
-              <div class="absolute inset-0 z-10 opacity-10 transition-opacity duration-500 grayscale vision-bg-image">
+              <!-- Vision photo background -->
+              <div class="absolute inset-0 z-10 opacity-15 transition-opacity duration-500 vision-bg-image">
                 <Image 
-                  src={legacyPhoto}
-                  alt=""
+                  src={visionImage}
+                  alt="Family reading together in garden with tree of knowledge mural"
                   class="w-full h-full object-cover object-center"
                 />
               </div>
