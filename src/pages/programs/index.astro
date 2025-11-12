@@ -8,6 +8,7 @@ import familyTreeLogo from '../../assets/3_nw_b5691621.png';
 import heroBackground from '../../assets/legacy-in-action-programs-rooted-in-purpose_nw_f958d1ce.png';
 import whileWereStillHereImage from '../../assets/while-were-still-here_nw_7503e0d2.png';
 import legacyFoundersLabImage from '../../assets/legacy-founders-lab_nw_f73e6c48.png';
+import cousinCorpImage from '../../assets/cousin-corp_nw_ee448cf9.png';
 import legacyPhoto from '../../assets/programs/legacy-photo_nw_1fc58f54.jpg';
 import familyLegacyPhoto from '../../assets/programs/family-legacy_nw_7f4ee194.jpg';
 import { CustomProgramModal } from "@/components/CustomProgramModal";
@@ -300,10 +301,12 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
             <div class="relative">
               <!-- Visual Header with Network Image -->
               <div class="h-52 bg-primary/5 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1758873268933-e0765262e58d?w=600&h=400&auto=format&fit=crop&q=80" 
-                  alt="Team collaboration representing family networks"
+                <Image 
+                  src={cousinCorpImage} 
+                  alt="Cousin Corp - Building collaborative family enterprises"
                   class="w-full h-full object-cover opacity-80"
+                  width={600}
+                  height={400}
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
                 
