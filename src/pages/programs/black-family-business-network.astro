@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Share2, CheckCircle } from "lucide-react";
+import { Share2, Award, Users, History } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
 import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw_a6f8d92e.jpg";
@@ -49,24 +49,53 @@ import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw
         </div>
       </div>
 
-      <!-- Why Join Section -->
-      <div class="max-w-3xl mx-auto mt-16 mb-12">
-        <h2 class="text-2xl sm:text-3xl font-display font-bold text-primary mb-6 text-center">Why Join?</h2>
-        <ul class="space-y-4 max-w-2xl mx-auto">
-          <li class="flex items-start">
-            <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
-            <p class="text-base sm:text-lg text-foreground/90">Celebrate your family's entrepreneurial journey and legacy.</p>
-          </li>
-          <li class="flex items-start">
-            <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
-            <p class="text-base sm:text-lg text-foreground/90">Connect with other Black business founders, professionals, and heirs.</p>
-          </li>
-          <li class="flex items-start">
-            <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
-            <p class="text-base sm:text-lg text-foreground/90">Uplift collective stories and ensure the history of Black enterprise endures.</p>
-          </li>
-        </ul>
+    </div>
+  </section>
+      
+  <!-- Why Join Section with Deep Blue Background -->
+  <section class="py-12 md:py-16 bg-[#052d3f] text-white">
+    <div class="container">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-10 text-center">Why Join?</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <!-- Item 1 -->
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-[#9a4a0b] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300">
+              <Award className="h-8 w-8 text-white" />
+            </div>
+            <p class="text-base sm:text-lg font-medium leading-relaxed">
+              Celebrate your family's entrepreneurial journey and legacy.
+            </p>
+          </div>
+          
+          <!-- Item 2 -->
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-[#9a4a0b] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300">
+              <Users className="h-8 w-8 text-white" />
+            </div>
+            <p class="text-base sm:text-lg font-medium leading-relaxed">
+              Connect with other Black business founders, professionals, and heirs.
+            </p>
+          </div>
+          
+          <!-- Item 3 -->
+          <div class="flex flex-col items-center text-center">
+            <div class="w-16 h-16 rounded-full bg-[#9a4a0b] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300">
+              <History className="h-8 w-8 text-white" />
+            </div>
+            <p class="text-base sm:text-lg font-medium leading-relaxed">
+              Uplift collective stories and ensure the history of Black enterprise endures.
+            </p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action Section -->
+  <section class="py-16 bg-white">
+    <div class="container relative z-10">
         
       <div class="w-[90%] mx-auto bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 border border-primary/10 mb-10">
         <h3 class="text-xl font-display font-semibold text-primary mb-4">Join the network.</h3>
