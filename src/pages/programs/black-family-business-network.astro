@@ -15,9 +15,9 @@ import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw
   <section class="py-16 sm:py-20 md:py-32 bg-white relative overflow-hidden">
 
     <div class="container relative z-10">
-      <div class="flex flex-col md:flex-row md:items-center md:space-x-8 lg:space-x-12 max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-stretch md:space-x-8 lg:space-x-12 max-w-6xl mx-auto">
         <!-- Left Column: Text Content -->
-        <div class="md:w-1/2 space-y-6 md:space-y-8 mb-8 md:mb-0">
+        <div class="md:w-1/2 space-y-6 md:space-y-8 mb-8 md:mb-0 flex flex-col justify-center">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight">
             The Black Family Business Network
           </h1>
@@ -35,12 +35,12 @@ import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw
         </div>
         
         <!-- Right Column: Image -->
-        <div class="md:w-1/2 h-full">
-          <div class="relative rounded-xl overflow-hidden shadow-xl h-full">
+        <div class="md:w-1/2 h-full flex items-stretch">
+          <div class="relative rounded-xl overflow-hidden shadow-xl w-full">
             <Image 
               src={blackFamilyBusinessImage} 
               alt="Group of Black business professionals standing together representing family enterprise" 
-              class="w-full h-auto object-cover rounded-xl"
+              class="w-full h-full object-cover rounded-xl"
               width={1200}
               height={600}
             />
