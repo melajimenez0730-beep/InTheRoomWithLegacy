@@ -163,46 +163,46 @@ import businessTeamImage from "@/assets/unsplash/carousel/black-business-team_nw
     <!-- Ticker UI Element -->
     <div class="ticker-wrap w-full overflow-hidden py-8 bg-[#0a3f58]">
       <div class="ticker inline-block whitespace-nowrap animate-ticker">
-        <span class="ticker-item text-xl sm:text-2xl md:text-3xl font-display font-medium px-6 text-white">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
-        <span class="ticker-item text-xl sm:text-2xl md:text-3xl font-display font-medium px-6 text-white">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
-        <span class="ticker-item text-xl sm:text-2xl md:text-3xl font-display font-medium px-6 text-white">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span class="ticker-item text-lg sm:text-xl md:text-2xl font-display font-medium px-6 text-white ticker-glow">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span class="ticker-item text-lg sm:text-xl md:text-2xl font-display font-medium px-6 text-white ticker-glow">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span class="ticker-item text-lg sm:text-xl md:text-2xl font-display font-medium px-6 text-white ticker-glow">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
       </div>
     </div>
   </section>
       
-  <!-- Section 4: Why Join (Distinct Background) -->
-  <section class="py-16 md:py-20 bg-[#9a4a0b] text-white">
+  <!-- Section 4: Why Join (Light Background) -->
+  <section class="py-16 md:py-20 bg-[#f8f8f9] border-t border-gray-200">
     <div class="container">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-10 text-center">Why Join?</h2>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-10 text-center text-primary">Why Join?</h2>
         
         <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <!-- Item 1 -->
           <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-[#9a4a0b] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
               <Award className="h-8 w-8 text-white" />
             </div>
-            <p class="text-base sm:text-lg font-medium leading-relaxed">
+            <p class="text-base sm:text-lg font-medium leading-relaxed text-foreground/80">
               Celebrate your family's entrepreneurial journey and legacy.
             </p>
           </div>
           
           <!-- Item 2 -->
           <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-[#9a4a0b] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
               <Users className="h-8 w-8 text-white" />
             </div>
-            <p class="text-base sm:text-lg font-medium leading-relaxed">
+            <p class="text-base sm:text-lg font-medium leading-relaxed text-foreground/80">
               Connect with other Black business founders, professionals, and heirs.
             </p>
           </div>
           
           <!-- Item 3 -->
           <div class="flex flex-col items-center text-center">
-            <div class="w-16 h-16 rounded-full bg-[#9a4a0b] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300">
+            <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
               <History className="h-8 w-8 text-white" />
             </div>
-            <p class="text-base sm:text-lg font-medium leading-relaxed">
+            <p class="text-base sm:text-lg font-medium leading-relaxed text-foreground/80">
               Uplift collective stories and ensure the history of Black enterprise endures.
             </p>
           </div>
@@ -262,6 +262,12 @@ import businessTeamImage from "@/assets/unsplash/carousel/black-business-team_nw
 
     .ticker-item {
       display: inline-block;
+    }
+
+    /* Glowing text effect for ticker */
+    .ticker-glow {
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
+      letter-spacing: 0.02em;
     }
 
     /* Carousel Animation */
