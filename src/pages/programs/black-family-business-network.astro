@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Share2 } from "lucide-react";
+import { Share2, CheckCircle } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
 import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw_a6f8d92e.jpg";
@@ -51,12 +51,31 @@ import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw
           </div>
         </div>
       </div>
+
+      <!-- Why Join Section -->
+      <div class="max-w-3xl mx-auto mt-16 mb-12">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold text-primary mb-6 text-center">Why Join?</h2>
+        <ul class="space-y-4 max-w-2xl mx-auto">
+          <li class="flex items-start">
+            <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
+            <p class="text-base sm:text-lg text-foreground/90">Celebrate your family's entrepreneurial journey and legacy.</p>
+          </li>
+          <li class="flex items-start">
+            <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
+            <p class="text-base sm:text-lg text-foreground/90">Connect with other Black business founders, professionals, and heirs.</p>
+          </li>
+          <li class="flex items-start">
+            <CheckCircle className="h-6 w-6 text-primary mr-3 mt-0.5 flex-shrink-0" />
+            <p class="text-base sm:text-lg text-foreground/90">Uplift collective stories and ensure the history of Black enterprise endures.</p>
+          </li>
+        </ul>
+      </div>
         
-        <div class="w-[90%] mx-auto bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 border border-primary/10 mb-10">
-          <h3 class="text-xl font-display font-semibold text-primary mb-4">Join the network.</h3>
-          <p class="text-foreground/80 mb-6 text-center">
-            Be part of a growing database of changemakers building across generations. Share your family's story, connect with others, and keep the legacy alive.
-          </p>
+      <div class="w-[90%] mx-auto bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 border border-primary/10 mb-10">
+        <h3 class="text-xl font-display font-semibold text-primary mb-4">Join the network.</h3>
+        <p class="text-foreground/80 mb-6 text-center">
+          Be part of a growing database of changemakers building across generations. Share your family's story, connect with others, and keep the legacy alive.
+        </p>
           
           <div class="flex flex-col gap-6 w-[95%] sm:w-full sm:max-w-md mx-auto px-0 sm:px-4 py-3">
             <a 
@@ -74,8 +93,8 @@ import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw
           </div>
         </div>
         
-        <p class="text-lg sm:text-xl md:text-xl font-display text-primary mb-6">
-          The more of us in the room, the stronger the movement.
+        <p class="text-lg sm:text-xl md:text-xl font-display text-primary mb-6 text-center">
+          The more of us in the room, the stronger our collective future becomes.
         </p>
       </div>
     </div>
