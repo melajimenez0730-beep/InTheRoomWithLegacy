@@ -1,36 +1,32 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Share2, Award, Users, History } from "lucide-react";
+import { Award, Users, History, ChevronLeft, ChevronRight } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
 import blackFamilyBusinessImage from "@/assets/unsplash/black-business-meeting_nw_a7b3c5d8.jpg";
+import businessLeaderImage from "@/assets/unsplash/carousel/black-business-leader_nw_a1b2c3d4.jpg";
+import familyMeetingImage from "@/assets/unsplash/carousel/black-family-meeting_nw_e5f6g7h8.jpg";
+import entrepreneurImage from "@/assets/unsplash/carousel/black-entrepreneur_nw_i9j0k1l2.jpg";
+import businessTeamImage from "@/assets/unsplash/carousel/black-business-team_nw_m3n4o5p6.jpg";
 ---
 
 <BaseLayout
   title="Black Family Business Network | In the Room With Legacy"
   description="A new initiative designed to honor, connect, and equip Black family business leaders across generations."
 >
-  <!-- Hero Section -->
+  <!-- Section 1: Hero Section (Header Only) -->
   <section class="py-16 sm:py-20 md:py-32 bg-white relative overflow-hidden">
 
     <div class="container relative z-10">
       <div class="flex flex-col md:flex-row md:items-stretch md:space-x-8 lg:space-x-12 max-w-6xl mx-auto">
-        <!-- Left Column: Text Content -->
+        <!-- Left Column: Text Content (Simplified) -->
         <div class="md:w-1/2 space-y-6 md:space-y-8 mb-8 md:mb-0 flex flex-col justify-center">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight">
             The Black Family Business Network
           </h1>
           <p class="text-base sm:text-lg md:text-xl text-foreground/80 max-w-xl font-medium">
             Celebrating Legacy. Building Connection. Amplifying Black Enterprise.
-          </p>
-          
-          <p class="text-base sm:text-lg text-foreground/80 max-w-xl leading-relaxed">
-            Across generations, Black families have built, led, and sustained businesses that shape our communities. The Black Family Business Network—powered by In the Room with Legacy™—exists to recognize those stories, strengthen our connections, and preserve the legacies we're still writing.
-          </p>
-          
-          <p class="text-base sm:text-lg text-foreground/80 max-w-xl leading-relaxed">
-            We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today.
           </p>
         </div>
         
@@ -48,7 +44,135 @@ import blackFamilyBusinessImage from "@/assets/unsplash/black-business-meeting_n
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
+  <!-- Section 2: Foundational Statement & Carousel -->
+  <section class="py-16 md:py-20 bg-[#f3f4f6]">
+    <div class="container">
+      <!-- Foundational Statement -->
+      <div class="max-w-3xl mx-auto text-center mb-10 px-4">
+        <p class="text-base sm:text-lg md:text-xl text-foreground/80 leading-relaxed">
+          Across generations, Black families have built, led, and sustained businesses that shape our communities. The Black Family Business Network—powered by In the Room with Legacy™—exists to recognize those stories, strengthen our connections, and preserve the legacies we're still writing.
+        </p>
+      </div>
+
+      <!-- Carousel UI Component -->
+      <div class="relative max-w-4xl mx-auto px-4 md:px-0 mb-10">
+        <div class="carousel-container overflow-hidden relative">
+          <div id="businessCarousel" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Slide 1 -->
+            <div class="flex-none w-full carousel-slide">
+              <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="relative aspect-[3/2] overflow-hidden">
+                  <Image 
+                    src={businessLeaderImage} 
+                    alt="Professional Black business leader in formal attire" 
+                    class="w-full h-full object-cover"
+                    width={600}
+                    height={400}
+                  />
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2">Leadership & Vision</h3>
+                  <p class="text-foreground/70">Black enterprise leaders are shaping the future of business across industries.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="flex-none w-full carousel-slide">
+              <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="relative aspect-[3/2] overflow-hidden">
+                  <Image 
+                    src={familyMeetingImage} 
+                    alt="Black family discussing business matters" 
+                    class="w-full h-full object-cover"
+                    width={600}
+                    height={400}
+                  />
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2">Family Connection</h3>
+                  <p class="text-foreground/70">Family foundations strengthen business values and create lasting legacies.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="flex-none w-full carousel-slide">
+              <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="relative aspect-[3/2] overflow-hidden">
+                  <Image 
+                    src={entrepreneurImage} 
+                    alt="Black entrepreneur working on laptop" 
+                    class="w-full h-full object-cover"
+                    width={600}
+                    height={400}
+                  />
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2">Innovation & Growth</h3>
+                  <p class="text-foreground/70">Black entrepreneurs are driving innovation and creating new opportunities.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="flex-none w-full carousel-slide">
+              <div class="bg-white rounded-xl overflow-hidden shadow-md">
+                <div class="relative aspect-[3/2] overflow-hidden">
+                  <Image 
+                    src={businessTeamImage} 
+                    alt="Diverse team of Black professionals in a meeting" 
+                    class="w-full h-full object-cover"
+                    width={600}
+                    height={400}
+                  />
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-display font-semibold text-primary mb-2">Collective Wisdom</h3>
+                  <p class="text-foreground/70">Collaboration and knowledge-sharing propel Black enterprises forward.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button aria-label="Previous slide" class="absolute top-1/2 left-2 md:left-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="prevSlide">
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button aria-label="Next slide" class="absolute top-1/2 right-2 md:right-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="nextSlide">
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        <!-- Carousel Indicators -->
+        <div class="flex gap-2 justify-center mt-6" id="carouselIndicators">
+          <button aria-label="Go to slide 1" class="w-2.5 h-2.5 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
+          <button aria-label="Go to slide 2" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
+          <button aria-label="Go to slide 3" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
+          <button aria-label="Go to slide 4" class="w-2.5 h-2.5 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Community Statement & Ticker -->
+  <section class="py-12 bg-[#052d3f] text-white overflow-hidden">
+    <div class="container mb-8">
+      <div class="max-w-3xl mx-auto text-center px-4">
+        <h2 class="text-2xl sm:text-3xl font-display font-bold mb-6">Building Our Community</h2>
+      </div>
+    </div>
+    
+    <!-- Ticker UI Element -->
+    <div class="ticker-wrap w-full overflow-hidden py-8 bg-[#0a3f58]">
+      <div class="ticker inline-block whitespace-nowrap animate-ticker">
+        <span class="ticker-item text-xl sm:text-2xl md:text-3xl font-display font-medium px-6">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span class="ticker-item text-xl sm:text-2xl md:text-3xl font-display font-medium px-6">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
+        <span class="ticker-item text-xl sm:text-2xl md:text-3xl font-display font-medium px-6">We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today. &nbsp;&nbsp;•&nbsp;&nbsp;</span>
+      </div>
     </div>
   </section>
       
@@ -125,4 +249,114 @@ import blackFamilyBusinessImage from "@/assets/unsplash/black-business-meeting_n
       </div>
     </div>
   </section>
+
+  <!-- CSS for Animations -->
+  <style>
+    /* Ticker Animation */
+    @keyframes ticker {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-33.33%, 0, 0);
+      }
+    }
+
+    .animate-ticker {
+      animation: ticker 30s linear infinite;
+    }
+
+    .ticker-item {
+      display: inline-block;
+    }
+
+    /* Carousel Animation */
+    @media (max-width: 768px) {
+      .carousel-slide {
+        padding: 0 16px;
+      }
+    }
+  </style>
+
+  <!-- Carousel JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get carousel elements
+      const carousel = document.getElementById('businessCarousel');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevButton = document.getElementById('prevSlide');
+      const nextButton = document.getElementById('nextSlide');
+      const indicators = document.querySelectorAll('#carouselIndicators button');
+      
+      // Set initial state
+      let currentIndex = 0;
+      const slideWidth = 100; // 100%
+
+      // Function to update carousel position
+      function updateCarousel(index) {
+        // Ensure index is within bounds
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        
+        // Update current index
+        currentIndex = index;
+        
+        // Move carousel to show current slide
+        carousel.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, i) => {
+          if (i === currentIndex) {
+            indicator.classList.remove('bg-primary/30');
+            indicator.classList.add('bg-primary');
+          } else {
+            indicator.classList.remove('bg-primary');
+            indicator.classList.add('bg-primary/30');
+          }
+        });
+      }
+
+      // Auto-rotate carousel every 5 seconds
+      let autoRotate = setInterval(() => {
+        updateCarousel(currentIndex + 1);
+      }, 5000);
+
+      // Add click handlers to navigation buttons
+      prevButton.addEventListener('click', () => {
+        clearInterval(autoRotate);
+        updateCarousel(currentIndex - 1);
+        
+        // Restart auto-rotation after manual navigation
+        autoRotate = setInterval(() => {
+          updateCarousel(currentIndex + 1);
+        }, 5000);
+      });
+      
+      nextButton.addEventListener('click', () => {
+        clearInterval(autoRotate);
+        updateCarousel(currentIndex + 1);
+        
+        // Restart auto-rotation after manual navigation
+        autoRotate = setInterval(() => {
+          updateCarousel(currentIndex + 1);
+        }, 5000);
+      });
+
+      // Add click handlers to indicator buttons
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          clearInterval(autoRotate);
+          updateCarousel(index);
+          
+          // Restart auto-rotation after manual navigation
+          autoRotate = setInterval(() => {
+            updateCarousel(currentIndex + 1);
+          }, 5000);
+        });
+      });
+      
+      // Initialize carousel
+      updateCarousel(0);
+    });
+  </script>
 </BaseLayout>
