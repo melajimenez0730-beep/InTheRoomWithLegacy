@@ -3,6 +3,8 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Share2 } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
+import { Image } from 'astro:assets';
+import blackFamilyBusinessImage from "@/assets/unsplash/black-family-business_nw_a6f8d92e.jpg";
 ---
 
 <BaseLayout
@@ -16,21 +18,39 @@ import ReferBusinessButton from "@/components/ReferBusinessButton";
     </div>
 
     <div class="container relative z-10">
-      <div class="w-[95%] sm:w-full max-w-3xl mx-auto text-center">
-        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight mb-4 sm:mb-6">
-          The Black Family Business Network
-        </h1>
-        <p class="text-base sm:text-lg md:text-xl text-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Celebrating Legacy. Building Connection. Amplifying Black Enterprise.
-        </p>
+      <div class="flex flex-col md:flex-row md:items-center md:space-x-8 lg:space-x-12 max-w-6xl mx-auto">
+        <!-- Left Column: Text Content -->
+        <div class="md:w-1/2 space-y-4 md:space-y-6 mb-8 md:mb-0">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-primary leading-tight">
+            The Black Family Business Network
+          </h1>
+          <p class="text-base sm:text-lg md:text-xl text-foreground/80 max-w-xl">
+            Celebrating Legacy. Building Connection. Amplifying Black Enterprise.
+          </p>
+          
+          <p class="text-base sm:text-lg text-foreground/80 max-w-xl">
+            Across generations, Black families have built, led, and sustained businesses that shape our communities. The Black Family Business Network—powered by In the Room with Legacy™—exists to recognize those stories, strengthen our connections, and preserve the legacies we're still writing.
+          </p>
+          
+          <p class="text-base sm:text-lg text-foreground/80 max-w-xl">
+            We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today.
+          </p>
+        </div>
         
-        <p class="text-base sm:text-lg text-foreground/80 mb-6 sm:mb-8 max-w-2xl mx-auto">
-          Across generations, Black families have built, led, and sustained businesses that shape our communities. The Black Family Business Network—powered by In the Room with Legacy™—exists to recognize those stories, strengthen our connections, and preserve the legacies we're still writing.
-        </p>
-        
-        <p class="text-base sm:text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
-          We're gathering a powerful community of Black family business professionals, founders, and heirs who are redefining what legacy looks like today.
-        </p>
+        <!-- Right Column: Image -->
+        <div class="md:w-1/2 h-full">
+          <div class="relative rounded-xl overflow-hidden shadow-xl h-full">
+            <Image 
+              src={blackFamilyBusinessImage} 
+              alt="Group of Black business professionals standing together representing family enterprise" 
+              class="w-full h-auto object-cover rounded-xl"
+              width={1200}
+              height={600}
+            />
+            <div class="absolute inset-0 bg-primary opacity-20 rounded-xl"></div>
+          </div>
+        </div>
+      </div>
         
         <div class="w-[90%] mx-auto bg-white rounded-lg shadow-md p-4 sm:p-6 md:p-8 border border-primary/10 mb-10">
           <h3 class="text-xl font-display font-semibold text-primary mb-4">Join the network.</h3>
