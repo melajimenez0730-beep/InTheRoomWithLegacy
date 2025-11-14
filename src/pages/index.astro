@@ -7,7 +7,6 @@ import DimensionsSection from '@/components/DimensionsSection.astro';
 import FounderSection from '@/components/FounderSection.astro';
 import LeadMagnetSection from '@/components/LeadMagnetSection.astro';
 import ResourcesSection from '@/components/ResourcesSection.astro';
-import { ScrollTriggeredModal } from '@/components/ScrollTriggeredModal';
 ---
 
 <BaseLayout
@@ -26,11 +25,4 @@ import { ScrollTriggeredModal } from '@/components/ScrollTriggeredModal';
       <ContactForm client:load />
     </div>
   </section>
-  
-  <!-- Lead Capture Modal that appears based on scroll depth -->
-  <ScrollTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    scrollThreshold={50}
-  />
 </BaseLayout>
