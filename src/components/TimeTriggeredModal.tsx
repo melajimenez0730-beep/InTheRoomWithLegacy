@@ -27,34 +27,37 @@ export function TimeTriggeredModal({
     if (onClose) onClose();
     
     try {
-      // Store in localStorage that this modal has been shown and closed
-      const modalKey = `timeModal_${guideName.replace(/\\s+/g, '_')}`;
-      localStorage.setItem(modalKey, "true");
-      localStorage.setItem(`${modalKey}_date`, new Date().toISOString());
+      // Use sessionStorage for temporary dismissals (only for the current browsing session)
+      // This will be reset when the user closes the browser
+      const currentPath = window.location.pathname;
+      const sessionKey = `timeModal_session_${currentPath}_${guideName.replace(/\\s+/g, '_')}`;
+      sessionStorage.setItem(sessionKey, "true");
     } catch (e) {
-      // Silent fail if localStorage is not available
-      console.error("LocalStorage error:", e);
+      // Silent fail if sessionStorage is not available
+      console.error("SessionStorage error:", e);
     }
   };
 
-  // Check if user has already interacted with the modal in this session or in the past
+  // Check if we should show the modal
   useEffect(() => {
     try {
-      // Use a more specific key that includes the guide name to avoid conflicts
-      const modalKey = `timeModal_${guideName.replace(/\\s+/g, '_')}`;
-      const hasBeenShown = localStorage.getItem(modalKey);
-      const lastShownDate = localStorage.getItem(`${modalKey}_date`);
+      // First check if the guide has been downloaded successfully (permanent flag)
+      const permanentModalKey = `timeModal_downloaded_${guideName.replace(/\\s+/g, '_')}`;
+      const hasDownloaded = localStorage.getItem(permanentModalKey) === "true";
       
-      // If shown before, check if it was more than 30 days ago
-      if (hasBeenShown === "true" && lastShownDate) {
-        const thirtyDaysInMs = 30 * 24 * 60 * 60 * 1000;
-        const lastShown = new Date(lastShownDate).getTime();
-        const now = new Date().getTime();
-        
-        // If less than 30 days, don't show again
-        if (now - lastShown < thirtyDaysInMs) {
-          return;
-        }
+      if (hasDownloaded) {
+        console.log(`[TimeModal] Guide already downloaded, not showing modal`);
+        return; // Never show again if the guide has been downloaded
+      }
+      
+      // Then check if the modal was dismissed in the current session on this page
+      const currentPath = window.location.pathname;
+      const sessionKey = `timeModal_session_${currentPath}_${guideName.replace(/\\s+/g, '_')}`;
+      const dismissedInSession = sessionStorage.getItem(sessionKey) === "true";
+      
+      if (dismissedInSession) {
+        console.log(`[TimeModal] Modal was dismissed in the current session on this page, not showing again`);
+        return; // Don't show on this page in the current session if already dismissed
       }
       
       // If we made it here, show the modal after the specified delay
@@ -70,8 +73,8 @@ export function TimeTriggeredModal({
       return () => clearTimeout(timer);
       
     } catch (e) {
-      // If localStorage access fails (e.g., in incognito mode), continue normally
-      console.error("LocalStorage error:", e);
+      // If storage access fails (e.g., in incognito mode), continue normally
+      console.error("Storage error:", e);
     }
   }, [delaySeconds, guideName, hasTriggered]);
 
@@ -97,6 +100,15 @@ export function TimeTriggeredModal({
 
   // Form submit success handler
   const handleFormSuccess = () => {
+    // Store in localStorage that the guide has been downloaded successfully (permanent flag)
+    try {
+      const permanentModalKey = `timeModal_downloaded_${guideName.replace(/\\s+/g, '_')}`;
+      localStorage.setItem(permanentModalKey, "true");
+      console.log(`[TimeModal] Guide downloaded, setting permanent flag to never show modal again`);
+    } catch (e) {
+      console.error("LocalStorage error:", e);
+    }
+    
     // Auto-close after success and download
     setTimeout(() => closeModal(), 6000);
   };
