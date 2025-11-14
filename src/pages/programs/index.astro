@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { CalendarDays, Users, Building, BookOpen, Quote, Star, DollarSign, Lightbulb, ArrowRight, CheckCircle, PlusCircle, Blocks, ChartNetwork, DraftingCompass, BookOpenText, Tent, Milestone } from "lucide-react";
 import { Image } from 'astro:assets';
+import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
 import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
 import familyTreeLogo from '../../assets/3_nw_b5691621.png';
 import heroBackground from '../../assets/legacy-in-action-programs-rooted-in-purpose_nw_f958d1ce.png';
@@ -582,4 +583,11 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
       </div>
     </div>
   </section>
+
+  <!-- Time Triggered Modal - shows after 10 seconds -->
+  <TimeTriggeredModal 
+    client:load
+    guideName="Parenting a Parent: A Guide for Adult Children"
+    delaySeconds={10}
+  />
 </BaseLayout>
