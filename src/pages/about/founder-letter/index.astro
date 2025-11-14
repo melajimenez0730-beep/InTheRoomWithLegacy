@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Image } from 'astro:assets';
+import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
 
 // Import images for storytelling mood board
 import legacyCollage from "@/assets/legacy_collage_nw_ddd335e4.png";
@@ -321,4 +322,11 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
+
+<!-- Time Triggered Modal - shows after 10 seconds -->
+<TimeTriggeredModal 
+  client:load
+  guideName="Parenting a Parent: A Guide for Adult Children"
+  delaySeconds={10}
+/>
 </BaseLayout>
