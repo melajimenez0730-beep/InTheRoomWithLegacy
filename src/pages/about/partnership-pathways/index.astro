@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Handshake, Lightbulb, Sparkles } from "lucide-react";
 import { Image } from 'astro:assets';
+import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
 import partnershipPathwaysImage from '../../../assets/partnership-pathways_nw_f2bcf814.png';
 ---
 
@@ -203,4 +204,11 @@ import partnershipPathwaysImage from '../../../assets/partnership-pathways_nw_f2
       </div>
     </div>
   </section>
+  
+  <!-- Time Triggered Modal - shows after 10 seconds -->
+  <TimeTriggeredModal 
+    client:load
+    guideName="Parenting a Parent: A Guide for Adult Children"
+    delaySeconds={10}
+  />
 </BaseLayout>
