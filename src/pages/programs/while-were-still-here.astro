@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Quote, Users, Heart, Book, Clock, DollarSign, Sparkles, MessageCircle, ChevronDown, MessageCircleMore, Archive, HandHeart, House, RefreshCw, ChevronLeft, ChevronRight, BookOpenText, BookOpenCheck, TableProperties, BookAudio, BookMarked, Speech, Video, UsersRound, ClipboardList } from "lucide-react";
 import { Image } from 'astro:assets';
+import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
 import familyVintagePhoto from "@/assets/snapinstato_509607686_18490265482069681_7611223003304458758_n_nw_a861f184.jpg";
 import familyGatheringPhoto from "@/assets/family_gathering_nw_664eb12a.jpg";
 import familyPorchPhoto from "@/assets/family_on_porch_nw_6bf9f9ad.jpg";
@@ -1416,4 +1417,10 @@ import integrationPhoto from "@/assets/integration-1_nw_d6f8bcd3.png";
     });
   </script>
 
+  <!-- Time Triggered Modal - shows after 10 seconds -->
+  <TimeTriggeredModal 
+    client:load
+    guideName="Parenting a Parent: A Guide for Adult Children"
+    delaySeconds={10}
+  />
 </BaseLayout>
