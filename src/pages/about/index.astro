@@ -3,6 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMarked, Quote, Star, HandHeart, BookOpenText, Info } from "lucide-react";
 import { Image } from 'astro:assets';
+import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
 import legacyFamilyPhoto from '../../assets/legacy_family_photo_nw_633bbeb1.jpg';
 import youngLaurenWithDad from '../../assets/young-lauren-with-dad_nw_5c036dd2.jpg';
 import missionImage from '../../assets/mission_nw_4129c880.png';
@@ -799,4 +800,11 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
   </section>
 
   <!-- Join the Room CTA Section - Temporarily Removed -->
+  
+  <!-- Time Triggered Modal - shows after 10 seconds -->
+  <TimeTriggeredModal 
+    client:load
+    guideName="Parenting a Parent: A Guide for Adult Children"
+    delaySeconds={10}
+  />
 </BaseLayout>
