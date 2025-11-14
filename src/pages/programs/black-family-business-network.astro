@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Award, Users, History, ChevronLeft, ChevronRight } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
+import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
 import blackFamilyBusinessImage from "@/assets/bfbn/the-black-family-business-network-1_nw_84484c73.png";
 import businessLeaderImage from "@/assets/bfbn/carousel/leadership-vision_nw_39a92e9e.png";
 import familyMeetingImage from "@/assets/bfbn/carousel/family-connection_nw_a59cb614.png";
@@ -389,4 +390,11 @@ import businessTeamImage from "@/assets/bfbn/carousel/collective-wisdom_nw_f4d01
       updateCarousel(0);
     });
   </script>
+
+  <!-- Time Triggered Modal - shows after 10 seconds -->
+  <TimeTriggeredModal 
+    client:load
+    guideName="Parenting a Parent: A Guide for Adult Children"
+    delaySeconds={10}
+  />
 </BaseLayout>
