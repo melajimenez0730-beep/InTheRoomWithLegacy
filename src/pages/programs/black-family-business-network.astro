@@ -226,15 +226,15 @@ import businessTeamImage from "@/assets/unsplash/carousel/black-business-team_nw
               href="https://forms.gle/C5ziQzvQdazXiTRt6" 
               target="_blank"
               rel="noopener noreferrer"
-              class={`${buttonVariants({
+              class={buttonVariants({
                 size: "lg",
                 variant: "outline",
-                class: "font-medium w-full block justify-center text-center text-[13px] xs:text-[14px] sm:text-sm max-w-full my-1 mx-0 overflow-hidden px-2 sm:px-4 transition-colors duration-300"
-              })} cta-primary-button`}
+                class: "font-medium w-full block justify-center text-center text-[13px] xs:text-[14px] sm:text-sm max-w-full my-1 mx-0 overflow-hidden px-2 sm:px-4 bg-white text-[#052d3f] hover:bg-white/90 border-white"
+              })}
             >
               Submit Your Family Business Profile
             </a>
-            <ReferBusinessButton client:load className="cta-secondary-button" />
+            <ReferBusinessButton client:load />
           </div>
         </div>
         
@@ -269,35 +269,6 @@ import businessTeamImage from "@/assets/unsplash/carousel/black-business-team_nw
     .ticker-glow {
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
       letter-spacing: 0.02em;
-    }
-    
-    /* CTA button hover styles */
-    :global(.cta-primary-button) {
-      background-color: white !important;
-      color: #052d3f !important;
-      border-color: white !important;
-      transition: all 0.3s ease-in-out !important;
-    }
-    
-    :global(.cta-primary-button:hover),
-    :global(.cta-primary-button:focus) {
-      background-color: #9a4a0b !important;
-      color: white !important;
-      border-color: #9a4a0b !important;
-    }
-    
-    :global(.cta-secondary-button) {
-      border-color: #052d3f !important;
-      color: #052d3f !important;
-      background-color: transparent !important;
-      transition: all 0.3s ease-in-out !important;
-    }
-    
-    :global(.cta-secondary-button:hover),
-    :global(.cta-secondary-button:focus) {
-      background-color: #9a4a0b !important;
-      color: white !important;
-      border-color: #9a4a0b !important;
     }
 
     /* Carousel Animation */
