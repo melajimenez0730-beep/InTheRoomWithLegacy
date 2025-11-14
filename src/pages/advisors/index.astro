@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Users, University, Network, TestTube, Wrench, Computer, BriefcaseBusiness, CheckCheck, BadgeCheck, Handshake, ListChecks } from "lucide-react";
 import { Image } from 'astro:assets';
 import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
+import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
 ---
 
 <BaseLayout title="In the Room with Legacy Advisors - In the Room With Legacy" description="In the Room with Legacy Advisors (IRL Advisors) is an advisory and innovation arm of In the Room with Legacy™. We provide the strategies, tools, and networks that families, businesses, and institutions need to sustain legacy across generations.">
@@ -340,4 +341,11 @@ import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
       </div>
     </div>
   </section>
+  
+  <!-- Time Triggered Modal - shows after 10 seconds -->
+  <TimeTriggeredModal 
+    client:load
+    guideName="Parenting a Parent: A Guide for Adult Children"
+    delaySeconds={10}
+  />
 </BaseLayout>
