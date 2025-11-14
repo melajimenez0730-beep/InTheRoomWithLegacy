@@ -8,6 +8,7 @@ import FounderSection from '@/components/FounderSection.astro';
 import LeadMagnetSection from '@/components/LeadMagnetSection.astro';
 import ResourcesSection from '@/components/ResourcesSection.astro';
 import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
+import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 ---
 
 <BaseLayout
@@ -32,5 +33,12 @@ import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
     client:load
     guideName="Parenting a Parent: A Guide for Adult Children"
     delaySeconds={10}
+  />
+  
+  <!-- Scroll Sticky CTA button that appears after scrolling -->
+  <ScrollStickyCTA 
+    client:load
+    text="Get Started with Your Snapshot"
+    href="/tools/legacy-assessment"
   />
 </BaseLayout>
