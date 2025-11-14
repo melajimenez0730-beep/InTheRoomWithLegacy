@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMarked, Quote, Star, HandHeart, BookOpenText, Info } from "lucide-react";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
+import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 import legacyFamilyPhoto from '../../assets/legacy_family_photo_nw_633bbeb1.jpg';
 import youngLaurenWithDad from '../../assets/young-lauren-with-dad_nw_5c036dd2.jpg';
 import missionImage from '../../assets/mission_nw_4129c880.png';
@@ -806,5 +807,12 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
     client:load
     guideName="Parenting a Parent: A Guide for Adult Children"
     delaySeconds={10}
+  />
+  
+  <!-- Scroll Sticky CTA button that appears after scrolling -->
+  <ScrollStickyCTA 
+    client:load
+    text="Get Started with Your Snapshot"
+    href="/tools/legacy-assessment"
   />
 </BaseLayout>
