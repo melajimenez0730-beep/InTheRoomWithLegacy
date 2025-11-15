@@ -12,6 +12,11 @@ import entrepreneurImage from "@/assets/bfbn/carousel/innovation-growth_nw_e7404
 import businessTeamImage from "@/assets/bfbn/carousel/collective-wisdom_nw_f4d016b1.png";
 import familyBusinessImage from "@/assets/bfbn/visual-blocks/black-family-business_nw_a6f8d92e.jpg";
 import familyMeetingRoomImage from "@/assets/bfbn/visual-blocks/black-family-meeting_nw_e5f6g7h8.jpg";
+// Audience Carousel Images
+import founderImage from "@/assets/bfbn/audience-carousel/family-business-founder_nw_a7b9c8d6.jpg";
+import enterpriseImage from "@/assets/bfbn/audience-carousel/family-owned-enterprise_nw_e3f4g5h2.jpg";
+import successorImage from "@/assets/bfbn/audience-carousel/business-successor_nw_j8k9l7m3.jpg";
+import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r6s8.jpg";
 ---
 
 <BaseLayout
@@ -165,73 +170,152 @@ import familyMeetingRoomImage from "@/assets/bfbn/visual-blocks/black-family-mee
   <!-- Section: WHAT IT IS -->
   <section class="py-16 md:py-20 bg-[#f8f7f2] border-t border-gray-100">
     <div class="container">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-10 text-center">
           WHAT IT IS
         </h2>
         
         <div class="prose prose-lg max-w-none">
-          <p class="mb-6">
-            The Black Family Business Network is a curated community for Black founders, successors, and stewards who are navigating the unique journey of family enterprise and wealth. It's for those who have:
+          <p class="mb-8 text-center">
+            The Black Family Business Network is an invitation- and nomination-based community for those who:
           </p>
-          
-          <ul class="space-y-2 mb-10 list-none pl-0">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>founded a family business,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>work within a family-owned enterprise,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>are inheriting and continuing the business, or</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>are stewarding their family's assets, land, or enterprise across generations.</span>
-            </li>
-          </ul>
-          
-          <p class="font-medium mb-6">The Network exists to:</p>
-          
-          <ol class="space-y-6 mb-10 pl-0">
-            <li class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-start">
-              <div class="flex h-8 w-8 rounded-full bg-primary text-white font-medium items-center justify-center flex-shrink-0">1</div>
-              <div>
-                <p class="font-bold text-primary mb-1">Connect</p>
-                <p class="m-0">Unite Black family business professionals, founders, successors, and wealth stewards in a community of practice where shared challenges and triumphs can be acknowledged.</p>
+        </div>
+        
+        <!-- 1. Community Audience Section (Carousel Implementation) -->
+        <div class="relative mb-16">
+          <div class="overflow-hidden rounded-xl shadow-lg">
+            <!-- Audience Carousel -->
+            <div id="audienceCarousel" class="flex transition-transform duration-700 ease-in-out">
+              <!-- Slide 1: Founders -->
+              <div class="flex-none w-full audience-slide">
+                <div class="relative">
+                  <Image 
+                    src={founderImage} 
+                    alt="Black entrepreneur who founded a family business" 
+                    class="w-full aspect-[16/9] object-cover"
+                    width={1200}
+                    height={675}
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Founded a family business</h3>
+                    <p class="text-white/80 text-base md:text-lg">Entrepreneurs who created businesses with the intention of building multi-generational enterprises.</p>
+                  </div>
+                </div>
               </div>
-            </li>
+              
+              <!-- Slide 2: Enterprise Workers -->
+              <div class="flex-none w-full audience-slide">
+                <div class="relative">
+                  <Image 
+                    src={enterpriseImage} 
+                    alt="Professionals working within a Black family-owned enterprise" 
+                    class="w-full aspect-[16/9] object-cover"
+                    width={1200}
+                    height={675}
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Work within a family-owned enterprise</h3>
+                    <p class="text-white/80 text-base md:text-lg">Professionals who play key roles in sustaining and growing businesses owned by their families.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Slide 3: Successors -->
+              <div class="flex-none w-full audience-slide">
+                <div class="relative">
+                  <Image 
+                    src={successorImage} 
+                    alt="Next generation Black business leaders inheriting family enterprises" 
+                    class="w-full aspect-[16/9] object-cover"
+                    width={1200}
+                    height={675}
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Are inheriting and continuing the business</h3>
+                    <p class="text-white/80 text-base md:text-lg">Next generation leaders taking the helm of businesses built by previous generations.</p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Slide 4: Stewards -->
+              <div class="flex-none w-full audience-slide">
+                <div class="relative">
+                  <Image 
+                    src={stewardImage} 
+                    alt="Black individuals stewarding family assets and enterprises across generations" 
+                    class="w-full aspect-[16/9] object-cover"
+                    width={1200}
+                    height={675}
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Are stewarding their family's assets, land, or enterprise across generations</h3>
+                    <p class="text-white/80 text-base md:text-lg">Individuals responsible for managing and growing family wealth, property, or legacy businesses.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
             
-            <li class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-start">
-              <div class="flex h-8 w-8 rounded-full bg-primary text-white font-medium items-center justify-center flex-shrink-0">2</div>
-              <div>
-                <p class="font-bold text-primary mb-1">Preserve</p>
-                <p class="m-0">Document & uplift the stories, strategies, and legacies of Black family businesses, ensuring these narratives become part of our collective business history.</p>
-              </div>
-            </li>
-            
-            <li class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-start">
-              <div class="flex h-8 w-8 rounded-full bg-primary text-white font-medium items-center justify-center flex-shrink-0">3</div>
-              <div>
-                <p class="font-bold text-primary mb-1">Collaborate</p>
-                <p class="m-0">Create pathways for shared opportunities, resource-sharing, and co-investment among Black family businesses.</p>
-              </div>
-            </li>
-            
-            <li class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-start">
-              <div class="flex h-8 w-8 rounded-full bg-primary text-white font-medium items-center justify-center flex-shrink-0">4</div>
-              <div>
-                <p class="font-bold text-primary mb-1">Inspire</p>
-                <p class="m-0">Provide a supportive environment where the next generation of Black family business leaders can see themselves reflected in others who have successfully navigated this journey.</p>
-              </div>
-            </li>
-          </ol>
+            <!-- Carousel Controls -->
+            <button aria-label="Previous audience" class="absolute top-1/2 left-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="prevAudience">
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button aria-label="Next audience" class="absolute top-1/2 right-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="nextAudience">
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
           
-          <p class="mb-0 italic text-foreground/80">
-            Membership is not application-based. It is curated to ensure alignment, trust, and shared purpose. Each member represents a lineage, a legacy, or a vision worth sustaining.
+          <!-- Carousel Indicators -->
+          <div class="flex gap-2 justify-center mt-6" id="audienceIndicators">
+            <button aria-label="Go to audience 1" class="w-3 h-3 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
+            <button aria-label="Go to audience 2" class="w-3 h-3 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
+            <button aria-label="Go to audience 3" class="w-3 h-3 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
+            <button aria-label="Go to audience 4" class="w-3 h-3 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
+          </div>
+        </div>
+        
+        <div class="prose prose-lg max-w-none text-center">
+          <p class="font-medium mb-8">The Network exists to:</p>
+        </div>
+        
+        <!-- 2. Core Purposes Section (Auto-Scrolling Box Implementation) -->
+        <div class="mb-12 bg-white rounded-xl shadow-md overflow-hidden mx-auto max-w-3xl">
+          <div class="relative">
+            <div id="purposeScroller" class="purpose-scroller">
+              <div class="purpose-item p-8 border-b border-gray-100">
+                <h3 class="text-xl font-display font-bold text-primary mb-3">Connect</h3>
+                <p class="text-foreground/80">Unite Black family business professionals across industries and generations who understand the rare lived experience of stewardship.</p>
+              </div>
+              <div class="purpose-item p-8 border-b border-gray-100">
+                <h3 class="text-xl font-display font-bold text-primary mb-3">Preserve</h3>
+                <p class="text-foreground/80">Document & uplift the stories, lessons, and models of intergenerational success so they are not lost or undervalued.</p>
+              </div>
+              <div class="purpose-item p-8 border-b border-gray-100">
+                <h3 class="text-xl font-display font-bold text-primary mb-3">Collaborate</h3>
+                <p class="text-foreground/80">Create pathways for shared opportunities that advance economic power, cultural preservation, and community impact.</p>
+              </div>
+              <div class="purpose-item p-8">
+                <h3 class="text-xl font-display font-bold text-primary mb-3">Inspire</h3>
+                <p class="text-foreground/80">Provide a supportive environment where members can learn from one another, grow together, and navigate generational leadership with clarity.</p>
+              </div>
+            </div>
+            
+            <!-- Purpose navigation dots -->
+            <div class="absolute right-4 top-0 bottom-0 flex flex-col items-center justify-center gap-2" id="purposeIndicators">
+              <button aria-label="Purpose 1" class="w-2 h-2 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
+              <button aria-label="Purpose 2" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
+              <button aria-label="Purpose 3" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
+              <button aria-label="Purpose 4" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="prose prose-lg max-w-none">
+          <p class="mb-0 italic text-foreground/80 text-center max-w-2xl mx-auto">
+            Membership is not application-based. It is curated — built through invitation, referral, and thoughtful review. Each member represents a lineage, a legacy, or a vision worth sustaining.
           </p>
         </div>
       </div>
@@ -588,6 +672,40 @@ import familyMeetingRoomImage from "@/assets/bfbn/visual-blocks/black-family-mee
       text-shadow: 0 0 8px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
       letter-spacing: 0.02em;
     }
+    
+    /* Purpose Scroller Animation */
+    .purpose-scroller {
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .purpose-item {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      pointer-events: none;
+    }
+    
+    .purpose-item.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    
+    @media (max-width: 768px) {
+      .purpose-scroller {
+        height: 360px;
+      }
+    }
 
     /* CTA button hover styles */
     :global(.cta-primary-button) {
@@ -620,15 +738,16 @@ import familyMeetingRoomImage from "@/assets/bfbn/visual-blocks/black-family-mee
 
     /* Carousel Animation */
     @media (max-width: 768px) {
-      .carousel-slide {
+      .carousel-slide, .audience-slide {
         padding: 0 16px;
       }
     }
   </style>
 
-  <!-- Carousel JS -->
+  <!-- Carousels and Animations JS -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // ====== Main Business Carousel ======
       // Get carousel elements
       const carousel = document.getElementById('businessCarousel');
       const slides = document.querySelectorAll('.carousel-slide');
@@ -670,25 +789,27 @@ import familyMeetingRoomImage from "@/assets/bfbn/visual-blocks/black-family-mee
       }, 5000);
 
       // Add click handlers to navigation buttons
-      prevButton.addEventListener('click', () => {
-        clearInterval(autoRotate);
-        updateCarousel(currentIndex - 1);
+      if (prevButton && nextButton) {
+        prevButton.addEventListener('click', () => {
+          clearInterval(autoRotate);
+          updateCarousel(currentIndex - 1);
+          
+          // Restart auto-rotation after manual navigation
+          autoRotate = setInterval(() => {
+            updateCarousel(currentIndex + 1);
+          }, 5000);
+        });
         
-        // Restart auto-rotation after manual navigation
-        autoRotate = setInterval(() => {
+        nextButton.addEventListener('click', () => {
+          clearInterval(autoRotate);
           updateCarousel(currentIndex + 1);
-        }, 5000);
-      });
-      
-      nextButton.addEventListener('click', () => {
-        clearInterval(autoRotate);
-        updateCarousel(currentIndex + 1);
-        
-        // Restart auto-rotation after manual navigation
-        autoRotate = setInterval(() => {
-          updateCarousel(currentIndex + 1);
-        }, 5000);
-      });
+          
+          // Restart auto-rotation after manual navigation
+          autoRotate = setInterval(() => {
+            updateCarousel(currentIndex + 1);
+          }, 5000);
+        });
+      }
 
       // Add click handlers to indicator buttons
       indicators.forEach((indicator, index) => {
@@ -704,7 +825,151 @@ import familyMeetingRoomImage from "@/assets/bfbn/visual-blocks/black-family-mee
       });
       
       // Initialize carousel
-      updateCarousel(0);
+      if (carousel) {
+        updateCarousel(0);
+      }
+      
+      // ====== Audience Carousel ======
+      const audienceCarousel = document.getElementById('audienceCarousel');
+      const audienceSlides = document.querySelectorAll('.audience-slide');
+      const prevAudience = document.getElementById('prevAudience');
+      const nextAudience = document.getElementById('nextAudience');
+      const audienceIndicators = document.querySelectorAll('#audienceIndicators button');
+      
+      // Set initial state
+      let currentAudienceIndex = 0;
+      
+      // Function to update audience carousel position
+      function updateAudienceCarousel(index) {
+        // Ensure index is within bounds
+        if (index < 0) index = audienceSlides.length - 1;
+        if (index >= audienceSlides.length) index = 0;
+        
+        // Update current index
+        currentAudienceIndex = index;
+        
+        // Move carousel to show current slide
+        audienceCarousel.style.transform = `translateX(-${currentAudienceIndex * slideWidth}%)`;
+        
+        // Update indicators
+        audienceIndicators.forEach((indicator, i) => {
+          if (i === currentAudienceIndex) {
+            indicator.classList.remove('bg-primary/30');
+            indicator.classList.add('bg-primary');
+          } else {
+            indicator.classList.remove('bg-primary');
+            indicator.classList.add('bg-primary/30');
+          }
+        });
+      }
+      
+      // Auto-rotate audience carousel every 6 seconds
+      let audienceAutoRotate = setInterval(() => {
+        updateAudienceCarousel(currentAudienceIndex + 1);
+      }, 6000);
+      
+      // Add click handlers to audience navigation buttons
+      if (prevAudience && nextAudience) {
+        prevAudience.addEventListener('click', () => {
+          clearInterval(audienceAutoRotate);
+          updateAudienceCarousel(currentAudienceIndex - 1);
+          
+          // Restart auto-rotation after manual navigation
+          audienceAutoRotate = setInterval(() => {
+            updateAudienceCarousel(currentAudienceIndex + 1);
+          }, 6000);
+        });
+        
+        nextAudience.addEventListener('click', () => {
+          clearInterval(audienceAutoRotate);
+          updateAudienceCarousel(currentAudienceIndex + 1);
+          
+          // Restart auto-rotation after manual navigation
+          audienceAutoRotate = setInterval(() => {
+            updateAudienceCarousel(currentAudienceIndex + 1);
+          }, 6000);
+        });
+      }
+      
+      // Add click handlers to audience indicator buttons
+      audienceIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          clearInterval(audienceAutoRotate);
+          updateAudienceCarousel(index);
+          
+          // Restart auto-rotation after manual navigation
+          audienceAutoRotate = setInterval(() => {
+            updateAudienceCarousel(currentAudienceIndex + 1);
+          }, 6000);
+        });
+      });
+      
+      // Initialize audience carousel
+      if (audienceCarousel) {
+        updateAudienceCarousel(0);
+      }
+      
+      // ====== Purpose Scroller ======
+      const purposeItems = document.querySelectorAll('.purpose-item');
+      const purposeIndicators = document.querySelectorAll('#purposeIndicators button');
+      
+      // Set initial state
+      let currentPurposeIndex = 0;
+      
+      // Function to update purpose scroller
+      function updatePurposeScroller(index) {
+        // Ensure index is within bounds
+        if (index < 0) index = purposeItems.length - 1;
+        if (index >= purposeItems.length) index = 0;
+        
+        // Update current index
+        currentPurposeIndex = index;
+        
+        // Update active purpose item
+        purposeItems.forEach((item, i) => {
+          if (i === currentPurposeIndex) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+        
+        // Update indicators
+        purposeIndicators.forEach((indicator, i) => {
+          if (i === currentPurposeIndex) {
+            indicator.classList.remove('bg-primary/30');
+            indicator.classList.add('bg-primary');
+          } else {
+            indicator.classList.remove('bg-primary');
+            indicator.classList.add('bg-primary/30');
+          }
+        });
+      }
+      
+      // Auto-rotate purpose scroller every 4 seconds
+      let purposeAutoRotate = setInterval(() => {
+        updatePurposeScroller(currentPurposeIndex + 1);
+      }, 4000);
+      
+      // Add click handlers to purpose indicator buttons
+      purposeIndicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+          clearInterval(purposeAutoRotate);
+          updatePurposeScroller(index);
+          
+          // Restart auto-rotation after manual navigation
+          purposeAutoRotate = setInterval(() => {
+            updatePurposeScroller(currentPurposeIndex + 1);
+          }, 4000);
+        });
+      });
+      
+      // Initialize purpose scroller
+      if (purposeItems.length > 0) {
+        // Set first item as active initially
+        purposeItems[0].classList.add('active');
+        updatePurposeScroller(0);
+      }
     });
   </script>
 
