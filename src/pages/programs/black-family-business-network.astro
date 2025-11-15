@@ -175,17 +175,17 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
           WHAT IT IS
         </h2>
         
-        <div class="prose prose-lg max-w-none">
-          <p class="mb-10 text-center">
-            The Black Family Business Network is an invitation- and nomination-based community for those who:
-          </p>
-        </div>
-        
         <!-- Two-column layout for dynamic elements -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
           <!-- Column A: Community Audience Section (Carousel Implementation) -->
           <div class="relative h-full">
             <div class="overflow-hidden rounded-xl shadow-lg h-full">
+              <!-- Introductory text moved inside the carousel container -->
+              <div class="bg-primary text-white p-4 text-center">
+                <p class="font-medium">
+                  The Black Family Business Network is an invitation- and nomination-based community for those who:
+                </p>
+              </div>
               <!-- Audience Carousel -->
               <div id="audienceCarousel" class="flex transition-transform duration-700 ease-in-out h-full">
                 <!-- Slide 1: Founders -->
@@ -281,7 +281,7 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
           
           <!-- Column B: Core Purposes Section (Auto-Scrolling Box Implementation) -->
           <div class="flex flex-col h-full">
-            <div class="text-center mb-4">
+            <div class="bg-primary text-white p-4 text-center">
               <p class="font-medium">The Network exists to:</p>
             </div>
             
@@ -722,7 +722,7 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
     /* Make carousel and purpose box equal height in side-by-side view */
     @media (min-width: 1024px) {
       .audience-slide, .audience-slide .relative {
-        height: 340px;
+        height: 310px;
       }
       
       #audienceCarousel, #audienceCarousel .relative {
