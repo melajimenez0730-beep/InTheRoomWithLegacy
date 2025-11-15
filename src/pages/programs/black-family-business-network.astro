@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Award, Users, History, ChevronLeft, ChevronRight, BookOpen, Milestone, Shield, HandHelping, Network, Scroll, Search, Medal, GalleryHorizontal, SquaresUnite, ScrollText, Ticket, Anchor } from "lucide-react";
+import { Award, Users, History, ChevronLeft, ChevronRight, BookOpen, Milestone, Shield, HandHelping, Network, Scroll, Search, Medal, GalleryHorizontal, SquaresUnite, ScrollText, Ticket, Anchor, User, ArrowRight, Send, MessageCircle, Workflow } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
@@ -476,52 +476,104 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
   <!-- Section: INVITATION & NOMINATION -->
   <section class="py-16 md:py-20 bg-[#f8f7f2] border-t border-gray-100">
     <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-10 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-8 text-center">
           INVITATION & NOMINATION
         </h2>
         
-        <div class="prose prose-lg max-w-none">
-          <p class="mb-6">
-            There are two primary ways to join the Black Family Business Network:
+        <div class="prose prose-lg max-w-none text-center mb-8">
+          <p>
+            Because Black family business stories come through many paths... we offer two ways to join the circle:
+          </p>
+        </div>
+
+        <!-- Interactive Process Flow Diagram -->
+        <div class="mb-12">
+          <div class="relative mb-4">
+            <!-- Horizontal Connector Line -->
+            <div class="hidden md:block absolute top-1/2 left-1/4 right-1/4 h-2 bg-gradient-to-r from-primary/20 via-primary/60 to-primary/20 transform -translate-y-1/2 z-0 rounded-full transition-all duration-500 animate-pulse"></div>
+            
+            <!-- Arrow in middle of connector -->
+            <div class="hidden md:flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary items-center justify-center z-10 shadow-lg animate-bounce">
+              <ArrowRight className="h-5 w-5 text-white" />
+            </div>
+
+            <!-- Process Flow Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 z-10 relative">
+              <!-- Path 1: Invitation Card -->
+              <div class="join-path-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] transform border-2 border-transparent hover:border-primary/30 path-card-glow" id="path1Card">
+                <div class="bg-primary text-white p-4 text-center">
+                  <p class="font-display font-bold text-lg">PATH 1</p>
+                </div>
+                <div class="p-6">
+                  <div class="w-20 h-20 rounded-full bg-[#052d3f] flex items-center justify-center mb-6 transform transition-transform hover:scale-110 duration-300 shadow-md mx-auto">
+                    <MessageCircle className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 class="text-xl font-display font-semibold text-primary mb-3 text-center">By Invitation or Referral</h3>
+                  <p class="text-foreground/80 text-base leading-relaxed text-center">
+                    Current members, advisors, and partners of In the Room with Legacy™ may extend invitations to individuals they believe would be valuable additions to the Network.
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Path 2: Share Your Story Card -->
+              <div class="join-path-card bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:scale-[1.02] transform border-2 border-transparent hover:border-primary/30 path-card-glow" id="path2Card">
+                <div class="bg-primary text-white p-4 text-center">
+                  <p class="font-display font-bold text-lg">PATH 2</p>
+                </div>
+                <div class="p-6">
+                  <div class="w-20 h-20 rounded-full bg-[#052d3f] flex items-center justify-center mb-6 transform transition-transform hover:scale-110 duration-300 shadow-md mx-auto">
+                    <Send className="h-10 w-10 text-white" />
+                  </div>
+                  <h3 class="text-xl font-display font-semibold text-primary mb-3 text-center">Share Your Story for Consideration</h3>
+                  <p class="text-foreground/80 text-base leading-relaxed text-center">
+                    If you're a Black family business founder, successor, or steward who resonates with this community's purpose, you can share information about your family's enterprise journey.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vertical Connector Line for Mobile -->
+            <div class="md:hidden absolute top-[calc(50%-1.5rem)] left-1/2 h-[calc(100%-4rem)] w-2 bg-gradient-to-b from-primary/20 via-primary/60 to-primary/20 transform -translate-x-1/2 z-0 rounded-full"></div>
+            
+            <!-- Arrow in middle of vertical connector (mobile only) -->
+            <div class="md:hidden flex absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-primary items-center justify-center z-10 shadow-lg animate-bounce">
+              <ArrowRight className="h-5 w-5 text-white rotate-90" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Destination/Network Graphic -->
+        <div class="w-24 h-24 rounded-full bg-[#052d3f] flex items-center justify-center mb-6 transform hover:scale-110 duration-300 shadow-lg mx-auto">
+          <Workflow className="h-12 w-12 text-white" />
+        </div>
+        <h3 class="text-center text-xl font-display font-semibold text-primary mb-8">Joining the Black Family Business Network</h3>
+        
+        <!-- CTA Button -->
+        <div class="flex flex-col items-center justify-center gap-3 mb-8">
+          <a 
+            href="https://forms.gle/C5ziQzvQdazXiTRt6" 
+            target="_blank"
+            rel="noopener noreferrer"
+            class={`${buttonVariants({
+              size: "lg",
+              variant: "default",
+              class: "font-medium text-center px-10"
+            })} cta-join-button`}
+          >
+            Share Your Information
+          </a>
+        </div>
+        
+        <!-- Disclaimer and Closing -->
+        <div class="prose prose-sm max-w-2xl mx-auto text-center">
+          <p class="text-sm text-center text-foreground/70 max-w-md mx-auto italic mb-8">
+            This is not a membership application. It is a pathway for us to learn your story, understand your work, and discern alignment during this Founding Circle phase.
           </p>
           
-          <ol class="space-y-6 mb-10 pl-0">
-            <li class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-start">
-              <div class="flex h-8 w-8 rounded-full bg-primary text-white font-medium items-center justify-center flex-shrink-0">1</div>
-              <div>
-                <p class="font-bold text-primary mb-1">By Invitation or Referral</p>
-                <p class="m-0">Current members, advisors, and partners of In the Room with Legacy™ may extend invitations to individuals they believe would be valuable additions to the Network.</p>
-              </div>
-            </li>
-            
-            <li class="grid grid-cols-1 md:grid-cols-[auto,1fr] gap-4 items-start">
-              <div class="flex h-8 w-8 rounded-full bg-primary text-white font-medium items-center justify-center flex-shrink-0">2</div>
-              <div>
-                <p class="font-bold text-primary mb-1">By Sharing Your Story for Consideration</p>
-                <p class="m-0">If you're a Black family business founder, successor, or steward who resonates with this community's purpose, you can share information about your family's enterprise journey.</p>
-              </div>
-            </li>
-          </ol>
-          
-          <div class="flex flex-col items-center justify-center gap-3 mb-6">
-            <a 
-              href="https://forms.gle/C5ziQzvQdazXiTRt6" 
-              target="_blank"
-              rel="noopener noreferrer"
-              class={buttonVariants({
-                size: "lg",
-                variant: "default",
-                class: "font-medium text-center"
-              })}
-            >
-              Share Your Information
-            </a>
-            
-            <p class="text-sm text-center text-foreground/70 max-w-md mt-2 italic">
-              This is not a membership application. It is a pathway for us to learn your story and understand how you might fit within the Network's vision and community.
-            </p>
-          </div>
+          <p class="text-lg sm:text-xl font-display text-primary mb-0">
+            This Network is part of our commitment to strengthening Black legacy, enterprise, and inheritance across generations.
+          </p>
         </div>
       </div>
     </div>
@@ -636,6 +688,60 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
       border-color: #9a4a0b !important;
     }
 
+    /* Join Path Card Hover Effects */
+    .join-path-card:hover {
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    /* Path Card Glow Effect */
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(5, 45, 63, 0.1); }
+      50% { box-shadow: 0 0 15px rgba(5, 45, 63, 0.3); }
+    }
+    
+    .path-card-glow {
+      animation: glow 3s ease-in-out infinite;
+    }
+    
+    /* Pulse animation for connector lines */
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+    
+    .animate-pulse {
+      animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    /* Bounce animation for arrow */
+    @keyframes bounce {
+      0%, 100% { transform: translate(-50%, -50%); }
+      50% { transform: translate(-50%, calc(-50% - 10px)); }
+    }
+    
+    .animate-bounce {
+      animation: bounce 2s infinite;
+    }
+    
+    /* CTA Join button styles */
+    :global(.cta-join-button) {
+      background-color: #052d3f !important;
+      color: white !important;
+      border: none !important;
+      padding: 1rem 2.5rem !important;
+      font-size: 1.125rem !important;
+      font-weight: 600 !important;
+      transition: all 0.3s ease-in-out !important;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    :global(.cta-join-button:hover),
+    :global(.cta-join-button:focus) {
+      background-color: #9a4a0b !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+    }
+
     /* Carousel Animation */
     @media (max-width: 768px) {
       .carousel-slide, .audience-slide {
@@ -647,6 +753,35 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
   <!-- Carousels and Animations JS -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Path Cards Hover Interaction
+      const path1Card = document.getElementById('path1Card');
+      const path2Card = document.getElementById('path2Card');
+      
+      if (path1Card && path2Card) {
+        // Enhance hover effect on path cards
+        path1Card.addEventListener('mouseenter', () => {
+          path1Card.classList.add('scale-105');
+          path1Card.classList.add('border-primary');
+          path2Card.classList.add('opacity-75');
+          setTimeout(() => {
+            path1Card.classList.remove('scale-105');
+            path1Card.classList.remove('border-primary');
+            path2Card.classList.remove('opacity-75');
+          }, 1500);
+        });
+        
+        path2Card.addEventListener('mouseenter', () => {
+          path2Card.classList.add('scale-105');
+          path2Card.classList.add('border-primary');
+          path1Card.classList.add('opacity-75');
+          setTimeout(() => {
+            path2Card.classList.remove('scale-105');
+            path2Card.classList.remove('border-primary');
+            path1Card.classList.remove('opacity-75');
+          }, 1500);
+        });
+      }
+      
       // ====== Main Business Carousel ======
       // Get carousel elements
       const carousel = document.getElementById('businessCarousel');
