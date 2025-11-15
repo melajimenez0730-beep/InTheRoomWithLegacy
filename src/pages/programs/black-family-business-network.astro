@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Award, Users, History, ChevronLeft, ChevronRight, BookOpen, Milestone, Shield, HandHelping, Network, Scroll } from "lucide-react";
+import { Award, Users, History, ChevronLeft, ChevronRight, BookOpen, Milestone, Shield, HandHelping, Network, Scroll, Search, Medal, GalleryHorizontal, SquaresUnite, ScrollText, Ticket, Anchor } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
@@ -327,15 +327,15 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
     </div>
   </section>
   
-  <!-- Section: FOUNDING CIRCLE (CURRENT PHASE) -->
+  <!-- Section: FOUNDING CIRCLE -->
   <section class="py-16 md:py-20 bg-white border-t border-gray-100">
     <div class="container">
-      <div class="max-w-3xl mx-auto">
+      <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-10 text-center">
-          FOUNDING CIRCLE (CURRENT PHASE)
+          FOUNDING CIRCLE
         </h2>
         
-        <div class="prose prose-lg max-w-none">
+        <div class="prose prose-lg max-w-none mb-12">
           <p class="mb-6">
             We are currently forming the Founding Circle of the Black Family Business Network. This initial phase is about bringing together pioneering members who will help set the foundation and direction for this community.
           </p>
@@ -343,51 +343,125 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
           <p class="mb-6">
             Our focus in this phase is on quality of connection rather than quantity - creating space for the right members to find each other and begin building. We're moving with intention, care, and strategic vision.
           </p>
+        </div>
+        
+        <!-- 1x4 Grid: Right now is about -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <!-- Connection -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform">
+            <div class="p-6 flex flex-col items-center text-center h-full">
+              <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
+                <Network className="h-8 w-8 text-white" />
+              </div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Connection</h3>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Building meaningful relationships that support growth and legacy.
+              </p>
+            </div>
+          </div>
           
-          <p class="font-medium mb-6">Right now is about:</p>
+          <!-- Discernment -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform">
+            <div class="p-6 flex flex-col items-center text-center h-full">
+              <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
+                <Search className="h-8 w-8 text-white" />
+              </div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Discernment</h3>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Making thoughtful choices about who and how we grow together.
+              </p>
+            </div>
+          </div>
           
-          <ul class="space-y-2 mb-10 list-none pl-0">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>connection,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>discernment,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>honoring the work,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>and curating the right voices for the foundation.</span>
-            </li>
-          </ul>
+          <!-- Honoring the Work -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform">
+            <div class="p-6 flex flex-col items-center text-center h-full">
+              <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
+                <Medal className="h-8 w-8 text-white" />
+              </div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Honoring the Work</h3>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Celebrating and elevating the journeys of Black family enterprises.
+              </p>
+            </div>
+          </div>
           
-          <p class="mb-6">
-            Founding Members of the Network:
-          </p>
+          <!-- Curating Voices -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform">
+            <div class="p-6 flex flex-col items-center text-center h-full">
+              <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
+                <GalleryHorizontal className="h-8 w-8 text-white" />
+              </div>
+              <h3 class="text-xl font-display font-semibold text-primary mb-2">Curating Voices</h3>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Building a foundation with the right perspectives and experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Founding Members Heading -->
+        <div class="max-w-3xl mx-auto mb-8">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-primary text-center">Founding Members of the Network</h3>
+        </div>
+        
+        <!-- 2x2 Grid: Founding Members Benefits -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
+          <!-- Shape Enterprises -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 flex flex-col md:flex-row gap-4 items-start md:items-center">
+            <div class="w-14 h-14 rounded-full bg-[#052d3f] flex flex-shrink-0 items-center justify-center transform hover:scale-110 duration-300 shadow-md">
+              <SquaresUnite className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h4 class="text-lg font-display font-semibold text-primary mb-2">Shape Collaboration</h4>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Help shape how Black family enterprises gather and collaborate across generations.
+              </p>
+            </div>
+          </div>
           
-          <ul class="space-y-2 mb-10 list-none pl-0">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>help shape how Black family enterprises gather and collaborate,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>are recognized as part of the Network's origin story,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>receive early access to upcoming convenings,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>and represent the models of stewardship that anchor this work.</span>
-            </li>
-          </ul>
+          <!-- Network Origin Story -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 flex flex-col md:flex-row gap-4 items-start md:items-center">
+            <div class="w-14 h-14 rounded-full bg-[#052d3f] flex flex-shrink-0 items-center justify-center transform hover:scale-110 duration-300 shadow-md">
+              <ScrollText className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h4 class="text-lg font-display font-semibold text-primary mb-2">Origin Story Recognition</h4>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Be recognized as part of the Network's founding story and legacy.
+              </p>
+            </div>
+          </div>
           
+          <!-- Early Access -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 flex flex-col md:flex-row gap-4 items-start md:items-center">
+            <div class="w-14 h-14 rounded-full bg-[#052d3f] flex flex-shrink-0 items-center justify-center transform hover:scale-110 duration-300 shadow-md">
+              <Ticket className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h4 class="text-lg font-display font-semibold text-primary mb-2">Early Access</h4>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Receive priority access to upcoming gatherings, convenings and events.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Model Stewardship -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden p-6 flex flex-col md:flex-row gap-4 items-start md:items-center">
+            <div class="w-14 h-14 rounded-full bg-[#052d3f] flex flex-shrink-0 items-center justify-center transform hover:scale-110 duration-300 shadow-md">
+              <Anchor className="h-7 w-7 text-white" />
+            </div>
+            <div>
+              <h4 class="text-lg font-display font-semibold text-primary mb-2">Represent Stewardship</h4>
+              <p class="text-foreground/80 text-sm leading-relaxed">
+                Embody the models of stewardship that anchor and inspire this work.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Closing Statement -->
+        <div class="prose prose-lg max-w-3xl mx-auto">
           <p class="font-bold text-center text-lg sm:text-xl mb-0 text-primary/90">
             You're being invited into something sacred and visionary — the first wave of those shaping what comes next.
           </p>
