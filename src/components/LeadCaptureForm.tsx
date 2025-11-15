@@ -16,7 +16,7 @@ export function LeadCaptureForm({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    form_name: `Guide Download: ${guideName}`
+    form_name: `Legacy Snapshot: ${guideName}`
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
@@ -91,10 +91,10 @@ export function LeadCaptureForm({
           </svg>
         </div>
         <h3 className="text-xl font-display font-bold mb-3 text-primary">Thank You!</h3>
-        <p className="mb-5 text-foreground/80">Your download is starting now.</p>
+        <p className="mb-5 text-foreground/80">Your Legacy Snapshot is being prepared.</p>
         <div className="flex flex-col items-center">
           <p className="text-sm text-muted-foreground mb-4">
-            If your download doesn't start automatically, click the button below.
+            If your snapshot doesn't load automatically, click the button below.
           </p>
           <Button 
             onClick={initiateDownload}
@@ -102,7 +102,7 @@ export function LeadCaptureForm({
             variant="secondary"
           >
             <Download className="h-4 w-4" />
-            Download PDF
+            Access Your Snapshot
           </Button>
         </div>
       </div>
@@ -167,7 +167,7 @@ export function LeadCaptureForm({
         disabled={isSubmitting}
         className="w-full py-3 mt-2 bg-primary hover:bg-primary/90 text-white font-medium text-base rounded-lg shadow-sm"
       >
-        {isSubmitting ? "Processing..." : "Download Now"}
+        {isSubmitting ? "Processing..." : "Get Your Snapshot"}
       </Button>
     </form>
   );

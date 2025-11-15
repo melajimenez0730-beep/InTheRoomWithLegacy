@@ -175,11 +175,11 @@ export function TimeTriggeredModal({
 
         <div className="modal-box-header">
           <h2 className="font-display">
-            Download the Guide for free
+            Get Your Legacy Snapshot
           </h2>
           
           <p>
-            Enter your details below to receive your free copy of "{guideName}".
+            Enter your details below to start your personalized Legacy Snapshot assessment.
           </p>
         </div>
         
