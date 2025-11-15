@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Award, Users, History, ChevronLeft, ChevronRight } from "lucide-react";
+import { Award, Users, History, ChevronLeft, ChevronRight, BookOpen, Milestone, Shield, HandHelping, Network, Scroll } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
@@ -10,6 +10,8 @@ import businessLeaderImage from "@/assets/bfbn/carousel/leadership-vision_nw_39a
 import familyMeetingImage from "@/assets/bfbn/carousel/family-connection_nw_a59cb614.png";
 import entrepreneurImage from "@/assets/bfbn/carousel/innovation-growth_nw_e740470d.png";
 import businessTeamImage from "@/assets/bfbn/carousel/collective-wisdom_nw_f4d016b1.png";
+import familyBusinessImage from "@/assets/bfbn/visual-blocks/black-family-business_nw_a6f8d92e.jpg";
+import familyMeetingRoomImage from "@/assets/bfbn/visual-blocks/black-family-meeting_nw_e5f6g7h8.jpg";
 ---
 
 <BaseLayout
@@ -57,62 +59,112 @@ import businessTeamImage from "@/assets/bfbn/carousel/collective-wisdom_nw_f4d01
         </h2>
         
         <div class="prose prose-lg max-w-none">
-          <p class="text-lg sm:text-xl font-medium text-primary/90 mb-6 text-center">
-            A story.
-          </p>
-          
           <p class="mb-6">
             The inheritance of a family business isn't just financial. It's cultural, historical, and deeply personal. When Black family businesses thrive across generations, something profound happens - both within those families and within our broader communities.
           </p>
           
-          <p class="mb-6">
-            Yet the journey of inheritance, succession, and stewardship can be isolating. The weight of carrying forward a family business - whether as founder, successor, or professional - is unique. And for Black enterprise leaders, that journey includes layers of history, responsibility, and opportunity that are rarely acknowledged in mainstream business spaces.
+          <p class="mb-10">
+            Yet the journey of inheritance, succession, and stewardship can be isolating. The weight of carrying forward a family business - whether as founder, successor, or professional - is unique. And for Black enterprise leaders, that journey includes layers of history, responsibility, and opportunity that are rarely acknowledged in mainstream business spaces. Many of us have inherited not just a business or responsibility, but a calling.
           </p>
           
-          <p class="text-lg sm:text-xl font-medium text-primary/90 mb-6 text-center">
-            A duty.
-          </p>
+          <!-- Visual Block 1: The Inherited Purpose (3-Column Layout) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 not-prose">
+            <!-- Column 1: A calling -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform">
+              <div class="p-6 flex flex-col items-center text-center h-full">
+                <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
+                  <Milestone className="h-8 w-8 text-white" />
+                </div>
+                <h3 class="text-xl font-display font-semibold text-primary mb-3">A calling.</h3>
+                <p class="text-foreground/80 text-sm leading-relaxed">
+                  A journey that calls you to steward something greater than yourself.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Column 2: A story -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform">
+              <div class="p-6 flex flex-col items-center text-center h-full">
+                <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
+                  <Scroll className="h-8 w-8 text-white" />
+                </div>
+                <h3 class="text-xl font-display font-semibold text-primary mb-3">A story.</h3>
+                <p class="text-foreground/80 text-sm leading-relaxed">
+                  A narrative rich with history, wisdom, triumph, and resilience across generations.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Column 3: A duty -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02] transform">
+              <div class="p-6 flex flex-col items-center text-center h-full">
+                <div class="w-16 h-16 rounded-full bg-[#052d3f] flex items-center justify-center mb-4 transform transition-transform hover:scale-110 duration-300 shadow-md">
+                  <Shield className="h-8 w-8 text-white" />
+                </div>
+                <h3 class="text-xl font-display font-semibold text-primary mb-3">A duty.</h3>
+                <p class="text-foreground/80 text-sm leading-relaxed">
+                  A responsibility to protect, grow, and pass on what has been entrusted to you.
+                </p>
+              </div>
+            </div>
+          </div>
           
           <p class="mb-6">
-            This network exists because we believe in making visible what's too often invisible: the strategic brilliance, visionary leadership, and generational wisdom within Black family enterprises. 
+            This network exists because we believe in making visible what's too often invisible: the strategic brilliance, visionary leadership, and generational wisdom within Black family enterprises.
           </p>
           
           <p class="mb-6">
             We believe that honoring these stories - past and present - creates the foundation for even stronger futures. And we believe that when Black business families come together in community, something transformational happens.
           </p>
           
-          <p class="text-lg sm:text-xl font-medium text-primary/90 mb-6 text-center">
-            A calling.
-          </p>
-          
-          <p class="mb-10">
+          <p class="mb-6">
             The Black Family Business Network is more than a program or an initiative. It's a room. A gathering. A community of practice where your full story - with all its complexity, triumph, challenge, and vision - belongs.
           </p>
           
-          <p class="font-medium mb-6">A room where:</p>
-          
-          <ul class="space-y-2 mb-10 list-none pl-0">
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>you don't have to downplay your inheritance,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>you don't have to apologize for your responsibility or your opportunity,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>you don't have to translate your experience,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>you don't have to shrink your story,</span>
-            </li>
-            <li class="flex items-start">
-              <span class="text-primary mr-2">•</span>
-              <span>and you don't have to carry the weight alone.</span>
-            </li>
-          </ul>
+          <!-- Visual Block 2: The Community Value (2-Column Layout) -->
+          <div class="bg-[#f8f5f0] rounded-xl shadow-md overflow-hidden my-10 not-prose border border-gray-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+              <!-- Column A: Bulleted list -->
+              <div class="p-8 md:p-10 flex flex-col justify-center">
+                <h3 class="text-xl font-display font-semibold text-primary mb-6">A room where:</h3>
+                
+                <ul class="space-y-3 list-none pl-0">
+                  <li class="flex items-start">
+                    <span class="text-primary mr-3 text-xl">•</span>
+                    <span class="text-foreground/90">you don't have to downplay your inheritance,</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-primary mr-3 text-xl">•</span>
+                    <span class="text-foreground/90">you don't have to apologize for your responsibility or your opportunity,</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-primary mr-3 text-xl">•</span>
+                    <span class="text-foreground/90">you don't have to translate your experience,</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-primary mr-3 text-xl">•</span>
+                    <span class="text-foreground/90">you don't have to shrink your story,</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="text-primary mr-3 text-xl">•</span>
+                    <span class="text-foreground/90">and you don't have to carry the weight alone.</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <!-- Column B: Visual image -->
+              <div class="relative h-full min-h-[300px] md:min-h-0">
+                <Image 
+                  src={familyMeetingRoomImage} 
+                  alt="Black family meeting around a table, sharing stories and connecting across generations" 
+                  class="w-full h-full object-cover"
+                  width={600}
+                  height={400}
+                />
+                <div class="absolute inset-0 bg-primary opacity-10"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
