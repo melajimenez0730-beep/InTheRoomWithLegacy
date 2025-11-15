@@ -176,139 +176,144 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
         </h2>
         
         <div class="prose prose-lg max-w-none">
-          <p class="mb-8 text-center">
+          <p class="mb-10 text-center">
             The Black Family Business Network is an invitation- and nomination-based community for those who:
           </p>
         </div>
         
-        <!-- 1. Community Audience Section (Carousel Implementation) -->
-        <div class="relative mb-16">
-          <div class="overflow-hidden rounded-xl shadow-lg">
-            <!-- Audience Carousel -->
-            <div id="audienceCarousel" class="flex transition-transform duration-700 ease-in-out">
-              <!-- Slide 1: Founders -->
-              <div class="flex-none w-full audience-slide">
-                <div class="relative">
-                  <Image 
-                    src={founderImage} 
-                    alt="Black entrepreneur who founded a family business" 
-                    class="w-full aspect-[16/9] object-cover"
-                    width={1200}
-                    height={675}
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Founded a family business</h3>
-                    <p class="text-white/80 text-base md:text-lg">Entrepreneurs who created businesses with the intention of building multi-generational enterprises.</p>
+        <!-- Two-column layout for dynamic elements -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
+          <!-- Column A: Community Audience Section (Carousel Implementation) -->
+          <div class="relative h-full">
+            <div class="overflow-hidden rounded-xl shadow-lg h-full">
+              <!-- Audience Carousel -->
+              <div id="audienceCarousel" class="flex transition-transform duration-700 ease-in-out h-full">
+                <!-- Slide 1: Founders -->
+                <div class="flex-none w-full audience-slide">
+                  <div class="relative h-full">
+                    <Image 
+                      src={founderImage} 
+                      alt="Black entrepreneur who founded a family business" 
+                      class="w-full h-full object-cover"
+                      width={600}
+                      height={500}
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Founded a family business</h3>
+                      <p class="text-white/80 text-sm md:text-base">Entrepreneurs who created businesses with the intention of building multi-generational enterprises.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Slide 2: Enterprise Workers -->
+                <div class="flex-none w-full audience-slide">
+                  <div class="relative h-full">
+                    <Image 
+                      src={enterpriseImage} 
+                      alt="Professionals working within a Black family-owned enterprise" 
+                      class="w-full h-full object-cover"
+                      width={600}
+                      height={500}
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Work within a family-owned enterprise</h3>
+                      <p class="text-white/80 text-sm md:text-base">Professionals who play key roles in sustaining and growing businesses owned by their families.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Slide 3: Successors -->
+                <div class="flex-none w-full audience-slide">
+                  <div class="relative h-full">
+                    <Image 
+                      src={successorImage} 
+                      alt="Next generation Black business leaders inheriting family enterprises" 
+                      class="w-full h-full object-cover"
+                      width={600}
+                      height={500}
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Are inheriting and continuing the business</h3>
+                      <p class="text-white/80 text-sm md:text-base">Next generation leaders taking the helm of businesses built by previous generations.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Slide 4: Stewards -->
+                <div class="flex-none w-full audience-slide">
+                  <div class="relative h-full">
+                    <Image 
+                      src={stewardImage} 
+                      alt="Black individuals stewarding family assets and enterprises across generations" 
+                      class="w-full h-full object-cover"
+                      width={600}
+                      height={500}
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Are stewarding their family's assets, land, or enterprise</h3>
+                      <p class="text-white/80 text-sm md:text-base">Individuals responsible for managing and growing family wealth, property, or legacy businesses.</p>
+                    </div>
                   </div>
                 </div>
               </div>
               
-              <!-- Slide 2: Enterprise Workers -->
-              <div class="flex-none w-full audience-slide">
-                <div class="relative">
-                  <Image 
-                    src={enterpriseImage} 
-                    alt="Professionals working within a Black family-owned enterprise" 
-                    class="w-full aspect-[16/9] object-cover"
-                    width={1200}
-                    height={675}
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Work within a family-owned enterprise</h3>
-                    <p class="text-white/80 text-base md:text-lg">Professionals who play key roles in sustaining and growing businesses owned by their families.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Slide 3: Successors -->
-              <div class="flex-none w-full audience-slide">
-                <div class="relative">
-                  <Image 
-                    src={successorImage} 
-                    alt="Next generation Black business leaders inheriting family enterprises" 
-                    class="w-full aspect-[16/9] object-cover"
-                    width={1200}
-                    height={675}
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Are inheriting and continuing the business</h3>
-                    <p class="text-white/80 text-base md:text-lg">Next generation leaders taking the helm of businesses built by previous generations.</p>
-                  </div>
-                </div>
-              </div>
-              
-              <!-- Slide 4: Stewards -->
-              <div class="flex-none w-full audience-slide">
-                <div class="relative">
-                  <Image 
-                    src={stewardImage} 
-                    alt="Black individuals stewarding family assets and enterprises across generations" 
-                    class="w-full aspect-[16/9] object-cover"
-                    width={1200}
-                    height={675}
-                  />
-                  <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                  <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                    <h3 class="text-xl md:text-2xl font-display font-bold tracking-tight mb-2">Are stewarding their family's assets, land, or enterprise across generations</h3>
-                    <p class="text-white/80 text-base md:text-lg">Individuals responsible for managing and growing family wealth, property, or legacy businesses.</p>
-                  </div>
-                </div>
-              </div>
+              <!-- Carousel Controls -->
+              <button aria-label="Previous audience" class="absolute top-1/2 left-2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="prevAudience">
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button aria-label="Next audience" class="absolute top-1/2 right-2 transform -translate-y-1/2 w-8 h-8 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="nextAudience">
+                <ChevronRight className="w-4 h-4" />
+              </button>
             </div>
             
-            <!-- Carousel Controls -->
-            <button aria-label="Previous audience" class="absolute top-1/2 left-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="prevAudience">
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button aria-label="Next audience" class="absolute top-1/2 right-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 shadow-md flex items-center justify-center text-primary hover:bg-white transition-colors z-10" id="nextAudience">
-              <ChevronRight className="w-5 h-5" />
-            </button>
+            <!-- Carousel Indicators -->
+            <div class="flex gap-2 justify-center mt-4" id="audienceIndicators">
+              <button aria-label="Go to audience 1" class="w-2 h-2 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
+              <button aria-label="Go to audience 2" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
+              <button aria-label="Go to audience 3" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
+              <button aria-label="Go to audience 4" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
+            </div>
           </div>
           
-          <!-- Carousel Indicators -->
-          <div class="flex gap-2 justify-center mt-6" id="audienceIndicators">
-            <button aria-label="Go to audience 1" class="w-3 h-3 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
-            <button aria-label="Go to audience 2" class="w-3 h-3 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
-            <button aria-label="Go to audience 3" class="w-3 h-3 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
-            <button aria-label="Go to audience 4" class="w-3 h-3 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
-          </div>
-        </div>
-        
-        <div class="prose prose-lg max-w-none text-center">
-          <p class="font-medium mb-8">The Network exists to:</p>
-        </div>
-        
-        <!-- 2. Core Purposes Section (Auto-Scrolling Box Implementation) -->
-        <div class="mb-12 bg-white rounded-xl shadow-md overflow-hidden mx-auto max-w-3xl">
-          <div class="relative">
-            <div id="purposeScroller" class="purpose-scroller">
-              <div class="purpose-item p-8 border-b border-gray-100">
-                <h3 class="text-xl font-display font-bold text-primary mb-3">Connect</h3>
-                <p class="text-foreground/80">Unite Black family business professionals across industries and generations who understand the rare lived experience of stewardship.</p>
-              </div>
-              <div class="purpose-item p-8 border-b border-gray-100">
-                <h3 class="text-xl font-display font-bold text-primary mb-3">Preserve</h3>
-                <p class="text-foreground/80">Document & uplift the stories, lessons, and models of intergenerational success so they are not lost or undervalued.</p>
-              </div>
-              <div class="purpose-item p-8 border-b border-gray-100">
-                <h3 class="text-xl font-display font-bold text-primary mb-3">Collaborate</h3>
-                <p class="text-foreground/80">Create pathways for shared opportunities that advance economic power, cultural preservation, and community impact.</p>
-              </div>
-              <div class="purpose-item p-8">
-                <h3 class="text-xl font-display font-bold text-primary mb-3">Inspire</h3>
-                <p class="text-foreground/80">Provide a supportive environment where members can learn from one another, grow together, and navigate generational leadership with clarity.</p>
-              </div>
+          <!-- Column B: Core Purposes Section (Auto-Scrolling Box Implementation) -->
+          <div class="flex flex-col h-full">
+            <div class="text-center mb-4">
+              <p class="font-medium">The Network exists to:</p>
             </div>
             
-            <!-- Purpose navigation dots -->
-            <div class="absolute right-4 top-0 bottom-0 flex flex-col items-center justify-center gap-2" id="purposeIndicators">
-              <button aria-label="Purpose 1" class="w-2 h-2 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
-              <button aria-label="Purpose 2" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
-              <button aria-label="Purpose 3" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
-              <button aria-label="Purpose 4" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden h-full">
+              <div class="relative h-full">
+                <div id="purposeScroller" class="purpose-scroller">
+                  <div class="purpose-item p-6 lg:p-7 border-b border-gray-100">
+                    <h3 class="text-lg md:text-xl font-display font-bold text-primary mb-3">Connect</h3>
+                    <p class="text-foreground/80 text-sm md:text-base">Unite Black family business professionals across industries and generations who understand the rare lived experience of stewardship.</p>
+                  </div>
+                  <div class="purpose-item p-6 lg:p-7 border-b border-gray-100">
+                    <h3 class="text-lg md:text-xl font-display font-bold text-primary mb-3">Preserve</h3>
+                    <p class="text-foreground/80 text-sm md:text-base">Document & uplift the stories, lessons, and models of intergenerational success so they are not lost or undervalued.</p>
+                  </div>
+                  <div class="purpose-item p-6 lg:p-7 border-b border-gray-100">
+                    <h3 class="text-lg md:text-xl font-display font-bold text-primary mb-3">Collaborate</h3>
+                    <p class="text-foreground/80 text-sm md:text-base">Create pathways for shared opportunities that advance economic power, cultural preservation, and community impact.</p>
+                  </div>
+                  <div class="purpose-item p-6 lg:p-7">
+                    <h3 class="text-lg md:text-xl font-display font-bold text-primary mb-3">Inspire</h3>
+                    <p class="text-foreground/80 text-sm md:text-base">Provide a supportive environment where members can learn from one another, grow together, and navigate generational leadership with clarity.</p>
+                  </div>
+                </div>
+                
+                <!-- Purpose navigation dots -->
+                <div class="absolute right-3 top-0 bottom-0 flex flex-col items-center justify-center gap-2" id="purposeIndicators">
+                  <button aria-label="Purpose 1" class="w-2 h-2 rounded-full bg-primary cursor-pointer transition-all duration-300" data-index="0"></button>
+                  <button aria-label="Purpose 2" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="1"></button>
+                  <button aria-label="Purpose 3" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="2"></button>
+                  <button aria-label="Purpose 4" class="w-2 h-2 rounded-full bg-primary/30 cursor-pointer transition-all duration-300" data-index="3"></button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -675,7 +680,7 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
     
     /* Purpose Scroller Animation */
     .purpose-scroller {
-      height: 320px;
+      height: 340px;
       overflow: hidden;
       position: relative;
     }
@@ -701,9 +706,27 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
       pointer-events: auto;
     }
     
+    /* Side by side responsive adjustments */
+    @media (max-width: 1023px) {
+      .purpose-scroller {
+        height: 320px;
+      }
+    }
+    
     @media (max-width: 768px) {
       .purpose-scroller {
         height: 360px;
+      }
+    }
+    
+    /* Make carousel and purpose box equal height in side-by-side view */
+    @media (min-width: 1024px) {
+      .audience-slide, .audience-slide .relative {
+        height: 340px;
+      }
+      
+      #audienceCarousel, #audienceCarousel .relative {
+        height: 100%;
       }
     }
 
