@@ -5,6 +5,7 @@ import { Award, Users, History, ChevronLeft, ChevronRight, BookOpen, Milestone, 
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
+import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 import blackFamilyBusinessImage from "@/assets/bfbn/the-black-family-business-network-1_nw_84484c73.png";
 import businessLeaderImage from "@/assets/bfbn/carousel/leadership-vision_nw_39a92e9e.png";
 import familyMeetingImage from "@/assets/bfbn/carousel/family-connection_nw_a59cb614.png";
@@ -991,6 +992,13 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
       }
     });
   </script>
+
+  <!-- Scroll Sticky CTA button that appears after scrolling -->
+  <ScrollStickyCTA 
+    client:load
+    text="Get Your Legacy Snapshot"
+    href="/tools/legacy-assessment"
+  />
 
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 

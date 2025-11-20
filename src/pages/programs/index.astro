@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { CalendarDays, Users, Building, BookOpen, Quote, Star, DollarSign, Lightbulb, ArrowRight, CheckCircle, PlusCircle, Blocks, ChartNetwork, DraftingCompass, BookOpenText, Tent, Milestone } from "lucide-react";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
+import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
 import familyTreeLogo from '../../assets/3_nw_b5691621.png';
 import heroBackground from '../../assets/legacy-in-action-programs-rooted-in-purpose_nw_f958d1ce.png';
@@ -583,6 +584,13 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
       </div>
     </div>
   </section>
+
+  <!-- Scroll Sticky CTA button that appears after scrolling -->
+  <ScrollStickyCTA 
+    client:load
+    text="Get Your Legacy Snapshot"
+    href="/tools/legacy-assessment"
+  />
 
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 

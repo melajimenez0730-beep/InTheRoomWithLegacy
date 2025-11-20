@@ -5,6 +5,7 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Use
 import { Image } from 'astro:assets';
 import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
+import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 ---
 
 <BaseLayout title="In the Room with Legacy Advisors - In the Room With Legacy" description="In the Room with Legacy Advisors (IRL Advisors) is an advisory and innovation arm of In the Room with Legacy™. We provide the strategies, tools, and networks that families, businesses, and institutions need to sustain legacy across generations.">
@@ -342,6 +343,13 @@ import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
     </div>
   </section>
   
+  <!-- Scroll Sticky CTA button that appears after scrolling -->
+  <ScrollStickyCTA 
+    client:load
+    text="Get Your Legacy Snapshot"
+    href="/tools/legacy-assessment"
+  />
+
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 
     client:load

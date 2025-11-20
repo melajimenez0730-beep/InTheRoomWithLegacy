@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText, ChevronDown, ChevronUp, ListFilter } from "lucide-react";
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
+import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 
 // Import all thumbnail images individually
 import assessmentToolThumbnail from "@/assets/ai-powered-legacy-assessment-tool_nw_f99ce436.png";
@@ -437,6 +438,13 @@ import heroBackgroundImage from "@/assets/hero-legacy-insights-tools-resources_n
       </div>
     </div>
   </section>
+
+  <!-- Scroll Sticky CTA button that appears after scrolling -->
+  <ScrollStickyCTA 
+    client:load
+    text="Get Your Legacy Snapshot"
+    href="/tools/legacy-assessment"
+  />
 
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 
