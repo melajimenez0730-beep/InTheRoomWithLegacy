@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { CalendarDays, Users, Building, BookOpen, Quote, Star, DollarSign, Lightbulb, ArrowRight, CheckCircle, PlusCircle, Blocks, ChartNetwork, DraftingCompass, BookOpenText, Tent, Milestone } from "lucide-react";
+import { CalendarDays, Users, Building, BookOpen, HeartHandshake, Star, DollarSign, Lightbulb, ArrowRight, CheckCircle, PlusCircle, Blocks, ChartNetwork, DraftingCompass, BookOpenText, Tent, Milestone } from "lucide-react";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
 import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
@@ -69,11 +69,15 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
     <div class="container">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6 text-center">
-          The Five Pillars That Guide Our Work
+          Key Practice Areas
         </h2>
 
         <p class="text-lg text-center text-foreground/80 mb-10 max-w-3xl mx-auto">
-          At In the Room with Legacy™, our offerings, from programs to tools to experiences, are built across these five foundational dimensions. These pillars represent how we approach legacy in real life.
+          Our programs are built around five critical practice domains where legacy is most actively lived and strengthened. They're designed to meet families where they are today — whether you're getting started or scaling across generations — and launch you into what's next.
+        </p>
+        
+        <p class="text-lg text-center text-foreground/80 mb-10 max-w-3xl mx-auto">
+          Each program is powered by our IRL Legacy Framework and our emerging Legacy Operating System (beta).
         </p>
 
         <!-- Pillars Cards Row -->
@@ -110,17 +114,17 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
             </div>
           </div>
 
-          <!-- Storytelling & Culture Pillar -->
+          <!-- Community & Belonging Pillar -->
           <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col">
             <div class="p-6 flex flex-col items-center text-center flex-grow">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Quote className="text-primary" size={20} />
+                <HeartHandshake className="text-primary" size={20} />
               </div>
-              <h3 class="font-display font-semibold text-primary mb-2">Storytelling & Culture</h3>
-              <p class="text-xs text-foreground/70">Oral History, Memory, Identity</p>
+              <h3 class="font-display font-semibold text-primary mb-2">Community & Belonging</h3>
+              <p class="text-xs text-foreground/70">Connection, Support, Relationships, Unity</p>
               <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
                 <p class="text-sm text-foreground/80">
-                  Honoring stories, memories, and oral history that connect generations and strengthen identity.
+                  Fostering deep connections and supportive relationships that create lasting bonds within families and communities.
                 </p>
               </div>
             </div>
