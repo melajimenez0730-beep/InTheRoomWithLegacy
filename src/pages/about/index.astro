@@ -501,13 +501,19 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         <!-- Our Nonprofit Commitment Section -->
         <div class="max-w-3xl mx-auto mt-12 px-4 text-center">
           <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-6">
-            <span class="text-yellow-400 mr-2">🔶</span> Our Nonprofit Commitment
+            Our Nonprofit Commitment
           </h3>
-          <p class="text-lg text-white/90 mb-6 leading-relaxed">
+          <p class="text-lg text-white/90 mb-8 leading-relaxed">
             Through In the Room With Legacy, Inc., our 501(c)(3) organization, we work to make legacy preparation, storytelling, and preservation accessible to all families — especially those historically excluded from generational wealth and documentation.
           </p>
-          <a href="/about/partnership-pathways" class="inline-flex items-center text-white font-medium hover:text-white/90 transition-all">
-            Donate to support access <span class="ml-1">→</span>
+          <a 
+            href="/about/partnership-pathways" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium bg-[#8a5f36] text-white hover:bg-[#8a5f36]/90 border-0 px-8 py-3"
+            })}
+          >
+            Donate to support access
           </a>
         </div>
       </div>
