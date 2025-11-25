@@ -541,35 +541,53 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           </div>
         </div>
         
-        <!-- Decorative elements -->
-        <div class="relative h-6 w-full flex justify-center items-center mb-16">
-          <div class="w-32 h-px bg-white/20"></div>
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-white/20"></div>
-        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Our Nonprofit Commitment Section -->
-        <div class="max-w-3xl mx-auto mt-12 px-4 text-center">
-          <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-6">
-            Our Nonprofit Commitment
-          </h3>
-          <p class="text-lg text-white/90 mb-8 leading-relaxed">
-            Through In the Room With Legacy, Inc., our 501(c)(3) organization, we work to make legacy preparation, storytelling, and preservation accessible to all families — especially those historically excluded from generational wealth and documentation.
-          </p>
-          <a 
-            href="/about/partnership-pathways" 
-            class={buttonVariants({
-              size: "lg",
-              class: "font-medium bg-[#8a5f36] text-white hover:bg-[#8a5f36]/90 border-0 px-8 py-3"
-            })}
-          >
-            Donate to support access
-          </a>
+  <!-- Our Nonprofit Commitment Section -->
+  <section class="py-20 bg-white">
+    <div class="container">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-[#f9f8f6] rounded-2xl shadow-md border border-primary/10 py-12 px-8 md:px-12 text-center relative overflow-hidden">
+          <!-- Decorative background pattern -->
+          <div class="absolute inset-0 opacity-5 pointer-events-none z-0">
+            <div class="w-full h-full pattern-dots"></div>
+          </div>
+          
+          <div class="relative z-10">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
+              Our Nonprofit Commitment
+            </h2>
+            
+            <p class="text-lg text-foreground/80 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Through In the Room With Legacy, Inc., our 501(c)(3) organization, we work to make legacy preparation, storytelling, and preservation accessible to all families — especially those historically excluded from generational wealth and documentation.
+            </p>
+            
+            <a 
+              href="/about/partnership-pathways" 
+              class={buttonVariants({
+                size: "lg",
+                class: "font-medium bg-[#8a5f36] text-white hover:bg-[#8a5f36]/90 border-0 px-8 py-3"
+              })}
+            >
+              Donate to support access
+            </a>
+          </div>
         </div>
       </div>
     </div>
     
-    <!-- Interactive effects for split-screen layout -->
     <style>
+      .pattern-dots {
+        background-image: radial-gradient(#052d3f 2px, transparent 2px);
+        background-size: 24px 24px;
+      }
+    </style>
+  </section>
+  
+  <!-- Mission & Vision Styles -->
+  <style>
       /* Panel hover effects for desktop */
       @media (min-width: 768px) {
         .mission-side:hover .mission-bg-image,
