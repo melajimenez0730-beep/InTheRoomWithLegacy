@@ -371,12 +371,12 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Community & Belonging Card (formerly Storytelling & Culture) -->
             <div class="legacy-dimension-card expandable-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 270px;">
               <div class="p-6">
-                <div class="flex items-start gap-4 mb-2">
+                <div class="flex items-start gap-4 mb-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <BookOpenText class="text-primary h-6 w-6" />
                   </div>
                   <div>
-                    <h4 class="font-display font-bold text-primary text-xl mb-3">Community & Belonging</h4>
+                    <h4 class="font-display font-bold text-primary text-xl mb-4">Community & Belonging</h4>
                     <div class="text-content">
                       <div class="description-container">
                         <p class="text-foreground/80 text-sm leading-relaxed full-description">
@@ -456,6 +456,12 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         window.setTimeout(() => {
           if (expandableCard) {
             expandableCard.style.height = (window.innerWidth < 768 ? '320px' : '270px');
+            
+            // Ensure toggle button is properly initialized for screen size
+            const btnText = document.querySelector('.mobile-button-text');
+            if (btnText && window.innerWidth < 768) {
+              btnText.style.display = 'inline-block';
+            }
           }
         }, 100);
         
@@ -471,13 +477,24 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           // Function to toggle card expansion
           function toggleCard() {
             const baseHeight = getBaseCardHeight();
+            const isMobile = window.innerWidth < 768;
             
             if (isExpanded) {
               // Collapse
               descContainer.classList.remove('expanded');
               expandableCard.classList.remove('expanded');
-              toggleBtn.textContent = 'See More';
+              
+              // Update button text for mobile/desktop
+              const btnText = document.querySelector('.mobile-button-text');
+              if (btnText) {
+                btnText.textContent = 'See More';
+              } else {
+                toggleBtn.textContent = 'See More';
+              }
+              
               toggleBtn.setAttribute('aria-expanded', 'false');
+              
+              // Add a small delay before animating height
               setTimeout(() => {
                 expandableCard.style.height = baseHeight + 'px';
               }, 50); // Small delay helps ensure smooth animation
@@ -485,7 +502,15 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               // Expand
               descContainer.classList.add('expanded');
               expandableCard.classList.add('expanded');
-              toggleBtn.textContent = 'See Less';
+              
+              // Update button text for mobile/desktop
+              const btnText = document.querySelector('.mobile-button-text');
+              if (btnText) {
+                btnText.textContent = 'See Less';
+              } else {
+                toggleBtn.textContent = 'See Less';
+              }
+              
               toggleBtn.setAttribute('aria-expanded', 'true');
               
               // Calculate expanded height and apply it
@@ -496,8 +521,8 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               // Force reflow
               void expandableCard.offsetHeight;
               
-              // Set final height
-              expandableCard.style.height = expandedHeight + 'px';
+              // Set final height with a slight increase on mobile for padding
+              expandableCard.style.height = (isMobile ? expandedHeight + 20 : expandedHeight) + 'px';
             }
             
             isExpanded = !isExpanded;
@@ -515,6 +540,15 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             // Prevent firing both click and touchend
             e.stopPropagation();
             toggleCard();
+            
+            // Ensure visibility of expanded content on mobile
+            if (!isExpanded) {
+              // If we just expanded, scroll slightly to ensure the expanded content is visible
+              const rect = expandableCard.getBoundingClientRect();
+              if (rect.bottom > window.innerHeight) {
+                window.scrollBy({ top: 100, behavior: 'smooth' });
+              }
+            }
           });
           
           // Additional touch support for iOS and other mobile devices
@@ -582,6 +616,18 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         max-height: 500px; /* Large enough to show full content */
       }
       
+      /* Spacing adjustments for expanded state */
+      .expandable-card.expanded .description-container {
+        margin-bottom: 16px;
+      }
+      
+      @media (max-width: 767px) {
+        .expandable-card.expanded .description-container {
+          margin-bottom: 20px; /* More spacing on mobile when expanded */
+          padding-bottom: 5px;
+        }
+      }
+      
       /* Fade-out effect for truncated text */
       .description-container::after {
         content: '';
@@ -646,10 +692,15 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         }
         
         .legacy-dimension-card .p-6 {
-          padding: 1.25rem; /* Slightly smaller padding on mobile */
+          padding: 1.5rem; /* Increased padding on mobile */
           display: flex;
           flex-direction: column;
           height: 100%;
+        }
+        
+        /* Specifically target the Community & Belonging card on mobile */
+        .expandable-card .p-6 {
+          padding: 1.75rem !important; /* Extra padding for the expandable card */
         }
         
         .legacy-dimension-card .flex.flex-wrap.gap-2 {
@@ -696,6 +747,20 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         .expandable-card.expanded {
           height: auto !important;
           min-height: 320px;
+        }
+        
+        /* Enhanced styling for the See Less button */
+        .expandable-card.expanded .toggle-btn {
+          margin-top: 8px;
+          margin-bottom: 12px;
+        }
+        
+        /* Specifically styled See Less button for better visibility */
+        .expandable-card.expanded .mobile-button-text {
+          background-color: rgba(var(--primary), 0.15) !important;
+          padding: 4px 12px !important;
+          font-weight: 600 !important;
+          box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
         }
         
         /* Additional tap state styling for mobile */
