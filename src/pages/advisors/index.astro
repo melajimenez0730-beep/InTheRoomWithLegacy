@@ -21,51 +21,63 @@ import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
     </div>
     <div class="container relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="font-display tracking-tight text-[#052d3f] leading-tight mb-8">
+        <h1 class="font-display tracking-tight text-[#052d3f] leading-tight mb-6">
           <div class="flex flex-col text-center">
             <div class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">For Advisors & Practitioners</div>
           </div>
         </h1>
-        <!-- Removed buttons - moved to dedicated intro section -->
+        <p class="text-xl md:text-2xl text-[#052d3f]/90 leading-relaxed mb-8 max-w-3xl mx-auto">
+          Equip your clients and communities with culturally rooted, emotionally intelligent legacy tools that deepen connection, clarify stewardship, and strengthen multigenerational outcomes.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Dedicated Introductory Section -->
+  <!-- New Introduction Section with Image -->
   <section class="py-16 md:py-20 bg-[#F7F7F7] border-t border-b border-[#052d3f]/10">
     <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <p class="text-xl md:text-2xl text-[#052d3f]/90 leading-relaxed mb-6 font-medium">
-          Equip your clients and communities with culturally rooted, emotionally intelligent legacy tools that deepen connection, clarify stewardship, and strengthen multigenerational outcomes.
-        </p>
-        
-        <p class="text-lg text-[#052d3f]/90 leading-relaxed mb-6">
-          IRL partners with advisors, planners, wealth professionals, family enterprise consultants, attorneys, coaches, nonprofit leaders, and institutions who support families in building, protecting, and transferring legacy.
-        </p>
-        
-        <p class="text-lg text-[#052d3f]/90 leading-relaxed mb-10">
-          Our work blends culture, emotional clarity, identity, readiness, and governance — the pieces traditional planning often misses.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="#contact" 
-            class={buttonVariants({
-              size: "lg",
-              class: "font-medium text-base px-8 bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
-            })}
-          >
-            Work With Us
-          </a>
-          <a 
-            href="#tools" 
-            class={buttonVariants({
-              variant: "outline",
-              size: "lg",
-              class: "font-medium text-base px-8 border-[#052d3f] text-[#052d3f] hover:bg-[#052d3f]/10 shadow-sm"
-            })}
-          >
-            Explore Our Tools & Network
-          </a>
+      <div class="max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div>
+            <p class="text-lg text-[#052d3f]/90 leading-relaxed mb-6">
+              IRL partners with advisors, planners, wealth professionals, family enterprise consultants, attorneys, coaches, nonprofit leaders, and institutions who support families in building, protecting, and transferring legacy.
+            </p>
+            
+            <p class="text-lg text-[#052d3f]/90 leading-relaxed mb-8">
+              Our work blends culture, emotional clarity, identity, readiness, and governance — the pieces traditional planning often misses.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="#contact" 
+                class={buttonVariants({
+                  size: "lg",
+                  class: "font-medium text-base px-8 bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+                })}
+              >
+                Work With Us
+              </a>
+              <a 
+                href="#tools" 
+                class={buttonVariants({
+                  variant: "outline",
+                  size: "lg",
+                  class: "font-medium text-base px-8 border-[#052d3f] text-[#052d3f] hover:bg-[#052d3f]/10 shadow-sm"
+                })}
+              >
+                Explore Our Tools & Network
+              </a>
+            </div>
+          </div>
+          <div class="relative rounded-xl overflow-hidden shadow-lg border border-[#052d3f]/5">
+            <img 
+              src="https://images.unsplash.com/photo-1573165231977-3f0e27806045?w=600&h=400&auto=format&fit=crop&q=80" 
+              alt="Diverse group of professionals collaborating in a meeting" 
+              class="w-full h-full object-cover aspect-[4/3]"
+            />
+            <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary/5 rounded-lg -z-10"></div>
+            <div class="absolute -top-4 -right-4 w-24 h-24 border border-primary/10 rounded-lg -z-10"></div>
+          </div>
         </div>
       </div>
     </div>
