@@ -327,7 +327,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Family Legacy Card -->
             <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 270px;">
               <div class="p-6">
-                <div class="flex items-start gap-4">
+                <div class="flex items-start gap-4 mb-2">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <HandHeart class="text-primary h-6 w-6" />
                   </div>
@@ -349,7 +349,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Next-Gen Stewardship Card -->
             <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 270px;">
               <div class="p-6">
-                <div class="flex items-start gap-4">
+                <div class="flex items-start gap-4 mb-2">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <Users class="text-primary h-6 w-6" />
                   </div>
@@ -371,7 +371,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Community & Belonging Card (formerly Storytelling & Culture) -->
             <div class="legacy-dimension-card expandable-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 270px;">
               <div class="p-6">
-                <div class="flex items-start gap-4">
+                <div class="flex items-start gap-4 mb-2">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <BookOpenText class="text-primary h-6 w-6" />
                   </div>
@@ -400,7 +400,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Economic Empowerment Card -->
             <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 270px;">
               <div class="p-6">
-                <div class="flex items-start gap-4">
+                <div class="flex items-start gap-4 mb-2">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <DollarSign class="text-primary h-6 w-6" />
                   </div>
@@ -422,7 +422,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             <!-- Transitions & Healing Card -->
             <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-1" style="height: 270px;">
               <div class="p-6">
-                <div class="flex items-start gap-4">
+                <div class="flex items-start gap-4 mb-2">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <Lightbulb class="text-primary h-6 w-6" />
                   </div>
@@ -456,8 +456,15 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           // Track expanded state
           let isExpanded = false;
           
+          // Function to get base card height based on viewport
+          function getBaseCardHeight() {
+            return window.innerWidth < 768 ? 320 : 270; // 320px on mobile, 270px on desktop
+          }
+          
           // Function to toggle card expansion
           function toggleCard() {
+            const baseHeight = getBaseCardHeight();
+            
             if (isExpanded) {
               // Collapse
               descContainer.classList.remove('expanded');
@@ -465,7 +472,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               toggleBtn.textContent = 'See More';
               toggleBtn.setAttribute('aria-expanded', 'false');
               setTimeout(() => {
-                expandableCard.style.height = '270px';
+                expandableCard.style.height = baseHeight + 'px';
               }, 50); // Small delay helps ensure smooth animation
             } else {
               // Expand
@@ -477,7 +484,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               // Calculate expanded height and apply it
               expandableCard.style.height = 'auto';
               const expandedHeight = expandableCard.scrollHeight;
-              expandableCard.style.height = '270px';
+              expandableCard.style.height = baseHeight + 'px';
               
               // Force reflow
               void expandableCard.offsetHeight;
@@ -489,31 +496,41 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             isExpanded = !isExpanded;
           }
           
-          // Toggle button click handler
+          // Toggle button click handler with improved touch support
           toggleBtn.addEventListener('click', function(e) {
             e.preventDefault();
             toggleCard();
           });
           
-          // Touch event support for mobile
+          // Improved touch event support for mobile
           toggleBtn.addEventListener('touchend', function(e) {
             e.preventDefault();
+            // Prevent firing both click and touchend
+            e.stopPropagation();
             toggleCard();
           });
           
-          // Handle window resize
+          // Handle window resize and orientation change
           let resizeTimeout;
-          window.addEventListener('resize', function() {
+          function handleResize() {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(function() {
-              if (isExpanded) {
+              const baseHeight = getBaseCardHeight();
+              
+              if (!isExpanded) {
+                // Update base height for non-expanded state
+                expandableCard.style.height = baseHeight + 'px';
+              } else {
                 // Recalculate expanded height
                 expandableCard.style.height = 'auto';
                 const newHeight = expandableCard.scrollHeight;
                 expandableCard.style.height = newHeight + 'px';
               }
             }, 100);
-          });
+          }
+          
+          window.addEventListener('resize', handleResize);
+          window.addEventListener('orientationchange', handleResize);
         }
       });
     </script>
@@ -577,11 +594,59 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         margin-top: 0;
       }
       
+      /* Mobile optimizations */
+      @media (max-width: 767px) {
+        .legacy-dimension-card {
+          height: 320px !important; /* Increase height on mobile */
+        }
+        
+        .legacy-dimension-card .p-6 {
+          padding: 1.25rem; /* Slightly smaller padding on mobile */
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+        }
+        
+        .legacy-dimension-card .flex.flex-wrap.gap-2 {
+          margin-top: auto !important; /* Push tags to the bottom */
+          padding-top: 0.75rem;
+          padding-bottom: 0.5rem;
+        }
+        
+        .description-container {
+          margin-bottom: 12px; /* Increased margin on mobile */
+        }
+        
+        /* Ensure "See More" button has enough space */
+        .text-action-wrapper {
+          margin-top: 4px;
+          margin-bottom: 8px;
+        }
+        
+        /* Better tag spacing on mobile */
+        .legacy-dimension-card .text-xs {
+          margin-bottom: 4px;
+          white-space: nowrap;
+        }
+      }
+      
       /* Ensure smooth transitions on mobile devices */
       @media (hover: none) {
         .toggle-btn {
           padding: 8px 0;
           margin: 0;
+        }
+        
+        /* Larger touch target for mobile */
+        .legacy-dimension-card .toggle-btn {
+          padding: 8px 4px;
+          margin-top: 2px;
+        }
+        
+        /* Force expanded content to appear correctly on mobile */
+        .expandable-card.expanded {
+          height: auto !important;
+          min-height: 320px;
         }
       }
       
