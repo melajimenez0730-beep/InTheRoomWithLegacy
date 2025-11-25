@@ -750,13 +750,18 @@ import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
   </section>
   
   <!-- Final CTA Section -->
-  <section id="contact" class="py-16 md:py-24 bg-[#f3f4f6] border-t border-[#052d3f]/10">
-    <div class="container">
+  <section id="contact" class="py-16 md:py-24 bg-[#052d3f] border-t border-[#052d3f]/10 relative overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none z-0">
+      <div class="w-full h-full" style="background-image: radial-gradient(rgba(255, 255, 255, 0.6) 2px, transparent 2px); background-size: 24px 24px;"></div>
+    </div>
+    
+    <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f] mb-6">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-white mb-6">
           Ready to Explore Advisor Partnerships?
         </h2>
-        <p class="text-lg md:text-xl text-[#052d3f]/80 mb-10 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
           Whether you're interested in licensing the IRL Legacy OS (beta), integrating our frameworks, partnering on programs, or exploring a strategic alliance — we'd love to connect.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
@@ -765,7 +770,7 @@ import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
             class={buttonVariants({
               size: "lg",
               variant: "default",
-              class: "font-medium text-base px-8 py-6 bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              class: "font-medium text-base px-8 py-6 bg-white text-[#052d3f] hover:bg-white/90 shadow-md"
             })}
           >
             Schedule a Consultation
@@ -775,7 +780,7 @@ import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
             class={buttonVariants({
               size: "lg",
               variant: "outline",
-              class: "font-medium text-base px-8 py-6 border-[#052d3f] bg-transparent text-[#052d3f] hover:bg-[#052d3f]/10 shadow-sm"
+              class: "font-medium text-base px-8 py-6 border-white text-white bg-transparent hover:bg-white/10 shadow-sm"
             })}
           >
             Contact Us
