@@ -325,7 +325,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           <!-- Five Dimensions of Legacy - Modern Card Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" id="dimensions-grid">
             <!-- Family Legacy Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 220px;">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -347,7 +347,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Next-Gen Stewardship Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 220px;">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -369,7 +369,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Community & Belonging Card (formerly Storytelling & Culture) -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card expandable-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 220px;">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -377,9 +377,16 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                   </div>
                   <div>
                     <h4 class="font-display font-bold text-primary text-xl mb-3">Community & Belonging</h4>
-                    <p class="text-foreground/80 text-sm leading-relaxed mb-4">
-                      Strengthening the bonds, rituals, and relationships that keep families rooted across generations, geography, and life seasons. Centering connection: how families gather, how they communicate, how they resolve conflict, and how they remain emotionally woven together even as life shifts. Helping families cultivate spaces where everyone feels seen, valued, and part of something larger than themselves.
-                    </p>
+                    <div class="text-content">
+                      <p class="text-foreground/80 text-sm leading-relaxed mb-2 truncated-content">
+                        Strengthening the bonds, rituals, and relationships that keep families rooted across generations, geography, and life seasons. Centering connection: how families gather...
+                      </p>
+                      <p class="text-foreground/80 text-sm leading-relaxed mb-4 expanded-content hidden">
+                        Strengthening the bonds, rituals, and relationships that keep families rooted across generations, geography, and life seasons. Centering connection: how families gather, how they communicate, how they resolve conflict, and how they remain emotionally woven together even as life shifts. Helping families cultivate spaces where everyone feels seen, valued, and part of something larger than themselves.
+                      </p>
+                      <button class="text-primary text-xs font-medium see-more-btn hover:underline focus:outline-none">See More</button>
+                      <button class="text-primary text-xs font-medium see-less-btn hidden hover:underline focus:outline-none">See Less</button>
+                    </div>
                   </div>
                 </div>
                 <!-- Category Tags -->
@@ -391,7 +398,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Economic Empowerment Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10" style="height: 220px;">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -413,7 +420,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Transitions & Healing Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto" style="height: 220px;">
               <div class="p-6">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
@@ -438,6 +445,62 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const expandableCard = document.querySelector('.expandable-card');
+        const seeMoreBtn = document.querySelector('.see-more-btn');
+        const seeLessBtn = document.querySelector('.see-less-btn');
+        const truncatedContent = document.querySelector('.truncated-content');
+        const expandedContent = document.querySelector('.expanded-content');
+        
+        if (seeMoreBtn && seeLessBtn && expandableCard && truncatedContent && expandedContent) {
+          // See More button click handler
+          seeMoreBtn.addEventListener('click', function() {
+            // Show full content
+            truncatedContent.classList.add('hidden');
+            expandedContent.classList.remove('hidden');
+            // Show See Less button
+            seeMoreBtn.classList.add('hidden');
+            seeLessBtn.classList.remove('hidden');
+            // Expand card height with transition
+            expandableCard.style.height = 'auto';
+            const newHeight = expandableCard.scrollHeight + 'px';
+            expandableCard.style.transition = 'height 0.3s ease';
+            expandableCard.style.height = newHeight;
+          });
+          
+          // See Less button click handler
+          seeLessBtn.addEventListener('click', function() {
+            // Hide full content
+            truncatedContent.classList.remove('hidden');
+            expandedContent.classList.add('hidden');
+            // Show See More button
+            seeMoreBtn.classList.remove('hidden');
+            seeLessBtn.classList.add('hidden');
+            // Collapse card height with transition
+            expandableCard.style.transition = 'height 0.3s ease';
+            expandableCard.style.height = '220px';
+          });
+        }
+      });
+    </script>
+
+    <style>
+      .legacy-dimension-card {
+        transition: height 0.3s ease-in-out, box-shadow 0.3s ease;
+      }
+
+      .expandable-card {
+        overflow: hidden;
+      }
+
+      .see-more-btn, .see-less-btn {
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 2px;
+      }
+    </style>
   </section>
   
   <!-- Mission & Vision Section -->
