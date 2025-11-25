@@ -378,14 +378,16 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                   <div>
                     <h4 class="font-display font-bold text-primary text-xl mb-3">Community & Belonging</h4>
                     <div class="text-content">
-                      <p class="text-foreground/80 text-sm leading-relaxed mb-6 truncated-content">
+                      <p class="text-foreground/80 text-sm leading-relaxed mb-2 truncated-content">
                         Strengthening the bonds, rituals, and relationships that keep families rooted across generations, geography, and life seasons. Centering connection: how families gather...
                       </p>
                       <p class="text-foreground/80 text-sm leading-relaxed mb-4 expanded-content hidden">
                         Strengthening the bonds, rituals, and relationships that keep families rooted across generations, geography, and life seasons. Centering connection: how families gather, how they communicate, how they resolve conflict, and how they remain emotionally woven together even as life shifts. Helping families cultivate spaces where everyone feels seen, valued, and part of something larger than themselves.
                       </p>
-                      <button class="text-primary text-xs font-medium see-more-btn hover:underline focus:outline-none mt-2 inline-block">See More</button>
-                      <button class="text-primary text-xs font-medium see-less-btn hidden hover:underline focus:outline-none mt-2 inline-block">See Less</button>
+                      <div class="text-action-wrapper">
+                        <button aria-label="Show more content" class="text-primary text-xs font-medium see-more-btn hover:underline focus:outline-none inline-block">See More</button>
+                        <button aria-label="Show less content" class="text-primary text-xs font-medium see-less-btn hidden hover:underline focus:outline-none inline-block">See Less</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -453,34 +455,96 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         const seeLessBtn = document.querySelector('.see-less-btn');
         const truncatedContent = document.querySelector('.truncated-content');
         const expandedContent = document.querySelector('.expanded-content');
+        const tagsContainer = expandableCard?.querySelector('.flex.flex-wrap.gap-2');
         
-        if (seeMoreBtn && seeLessBtn && expandableCard && truncatedContent && expandedContent) {
-          // See More button click handler
-          seeMoreBtn.addEventListener('click', function() {
+        if (seeMoreBtn && seeLessBtn && expandableCard && truncatedContent && expandedContent && tagsContainer) {
+          // Function to handle smooth expand animation
+          function expandCard() {
             // Show full content
             truncatedContent.classList.add('hidden');
             expandedContent.classList.remove('hidden');
             // Show See Less button
             seeMoreBtn.classList.add('hidden');
             seeLessBtn.classList.remove('hidden');
-            // Expand card height with transition
+            
+            // Get the current box height before expansion
+            const startHeight = expandableCard.offsetHeight;
+            
+            // Temporarily set height to auto to calculate full height
             expandableCard.style.height = 'auto';
-            const newHeight = expandableCard.scrollHeight + 'px';
-            expandableCard.style.transition = 'height 0.3s ease';
-            expandableCard.style.height = newHeight;
-          });
+            const targetHeight = expandableCard.scrollHeight;
+            
+            // Reset height to starting position before animation
+            expandableCard.style.height = startHeight + 'px';
+            
+            // Force browser to recognize the height change
+            void expandableCard.offsetHeight;
+            
+            // Apply transition and animate to target height
+            expandableCard.style.transition = 'height 0.4s ease';
+            expandableCard.style.height = targetHeight + 'px';
+            
+            // Ensure tags are fully visible
+            tagsContainer.style.opacity = '1';
+          }
           
-          // See Less button click handler
-          seeLessBtn.addEventListener('click', function() {
+          // Function to handle smooth collapse animation
+          function collapseCard() {
             // Hide full content
             truncatedContent.classList.remove('hidden');
             expandedContent.classList.add('hidden');
             // Show See More button
             seeMoreBtn.classList.remove('hidden');
             seeLessBtn.classList.add('hidden');
+            
+            // Force browser to recognize the DOM changes before measuring height
+            void expandableCard.offsetHeight;
+            
             // Collapse card height with transition
-            expandableCard.style.transition = 'height 0.3s ease';
+            expandableCard.style.transition = 'height 0.4s ease';
             expandableCard.style.height = '270px';
+            
+            // Ensure tags are fully visible
+            tagsContainer.style.opacity = '1';
+          }
+          
+          // See More button click handler
+          seeMoreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            expandCard();
+          });
+          
+          // See Less button click handler
+          seeLessBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            collapseCard();
+          });
+          
+          // Handle touch events for better mobile support
+          seeMoreBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            expandCard();
+          });
+          
+          seeLessBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            collapseCard();
+          });
+          
+          // Reset on window resize for responsive behavior
+          let resizeTimeout;
+          window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+              // If expanded, recalculate the expanded height
+              if (expandedContent.classList.contains('hidden')) {
+                expandableCard.style.height = '270px';
+              } else {
+                expandableCard.style.height = 'auto';
+                const newHeight = expandableCard.scrollHeight + 'px';
+                expandableCard.style.height = newHeight;
+              }
+            }, 100);
           });
         }
       });
@@ -488,17 +552,43 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
 
     <style>
       .legacy-dimension-card {
-        transition: height 0.3s ease-in-out, box-shadow 0.3s ease;
+        transition: height 0.4s ease-in-out, box-shadow 0.3s ease;
+        will-change: height;
       }
 
       .expandable-card {
         overflow: hidden;
+        position: relative;
       }
 
       .see-more-btn, .see-less-btn {
         display: inline-block;
         cursor: pointer;
         margin-top: 0;
+        position: relative;
+        z-index: 2;
+        user-select: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        padding: 4px 0;
+      }
+      
+      .text-content {
+        position: relative;
+      }
+      
+      /* Ensure smooth transitions on mobile devices */
+      @media (hover: none) {
+        .see-more-btn, .see-less-btn {
+          padding: 8px 0;
+          margin: 0;
+        }
+      }
+      
+      /* Ensure animation works on all browsers */
+      @supports (-webkit-overflow-scrolling: touch) {
+        .expandable-card {
+          -webkit-overflow-scrolling: touch;
+        }
       }
     </style>
   </section>
