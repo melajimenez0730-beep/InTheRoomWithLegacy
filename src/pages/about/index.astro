@@ -499,6 +499,15 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               // Add a small delay before animating height
               setTimeout(() => {
                 expandableCard.style.height = baseHeight + 'px';
+                
+                // Ensure the button is properly visible when collapsed
+                const mobileBtn = document.querySelector('.mobile-button-text');
+                if (mobileBtn) {
+                  mobileBtn.style.display = 'inline-block';
+                  mobileBtn.style.visibility = 'visible';
+                  mobileBtn.style.opacity = '1';
+                  mobileBtn.textContent = 'See More';
+                }
               }, 50); // Small delay helps ensure smooth animation
             } else {
               // Expand
@@ -510,6 +519,10 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               if (btnText) {
                 btnText.textContent = 'See Less';
                 btnText.style.display = 'inline-block'; // Ensure visibility
+                // Force visibility of the See Less button
+                btnText.style.visibility = 'visible';
+                btnText.style.opacity = '1';
+                btnText.style.zIndex = '50'; // Ensure high z-index
               } else {
                 toggleBtn.textContent = 'See Less';
               }
@@ -526,7 +539,8 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               void expandableCard.offsetHeight;
               
               // Set final height with a larger increase on mobile for padding
-              expandableCard.style.height = (isMobile ? expandedHeight + 40 : expandedHeight) + 'px';
+              // Add more padding to ensure See Less button is visible
+              expandableCard.style.height = (isMobile ? expandedHeight + 80 : expandedHeight) + 'px';
             }
             
             isExpanded = !isExpanded;
@@ -558,12 +572,22 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               setTimeout(() => {
                 const btnText = document.querySelector('.expandable-card.expanded .mobile-button-text');
                 if (btnText) {
+                  // Force visibility and appropriate styling
+                  btnText.style.display = 'inline-block';
+                  btnText.style.visibility = 'visible';
+                  btnText.style.opacity = '1';
+                  btnText.style.zIndex = '50';
+                  
+                  // Ensure button text is properly set
+                  btnText.textContent = 'See Less';
+                  
+                  // Check if button is in viewport and scroll if needed
                   const btnRect = btnText.getBoundingClientRect();
                   if (btnRect.bottom > window.innerHeight) {
-                    window.scrollBy({ top: btnRect.bottom - window.innerHeight + 20, behavior: 'smooth' });
+                    window.scrollBy({ top: btnRect.bottom - window.innerHeight + 40, behavior: 'smooth' });
                   }
                 }
-              }, 300); // Give time for the expansion animation
+              }, 400); // Give more time for the expansion animation
             }
           });
           
@@ -732,13 +756,14 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         
         /* Ensure "See More" button has enough space and visibility */
         .text-action-wrapper {
-          margin-top: 2px;
-          margin-bottom: 6px;
+          margin-top: 8px;
+          margin-bottom: 10px;
           display: block !important;
           visibility: visible !important;
           position: relative;
-          z-index: 5;
+          z-index: 30; /* Higher z-index to ensure button is clickable and visible */
           text-align: center;
+          width: 100%; /* Full width for better positioning */
         }
         
         /* Better tag spacing on mobile */
@@ -764,7 +789,10 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         /* Force expanded content to appear correctly on mobile */
         .expandable-card.expanded {
           height: auto !important;
-          min-height: 400px !important; /* Ensure enough space for expanded content */
+          min-height: 450px !important; /* Ensure enough space for expanded content and See Less button */
+          padding-bottom: 60px !important; /* Add explicit padding at the bottom to ensure space for the See Less button */
+          position: relative; /* Ensure relative positioning for absolute button positioning if needed */
+          overflow: visible !important; /* Ensure overflow is visible for the See Less button */
         }
         
         /* Enhanced styling for the See Less button */
@@ -772,17 +800,23 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           margin-top: 12px;
           margin-bottom: 16px;
           display: block !important;
+          width: 100%; /* Ensure the button takes full width */
+          text-align: center; /* Center the button text */
         }
         
         /* Specifically styled See Less button for better visibility */
         .expandable-card.expanded .mobile-button-text {
           background-color: rgba(var(--primary), 0.2) !important;
-          padding: 6px 14px !important;
+          padding: 8px 16px !important;
           font-weight: 700 !important;
           box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
           display: inline-block !important;
-          margin-top: 8px;
+          margin-top: 16px;
           width: auto;
+          color: rgb(var(--primary)) !important;
+          border-radius: 4px !important;
+          position: relative !important;
+          z-index: 50 !important; /* Higher z-index to ensure visibility */
         }
         
         /* Additional tap state styling for mobile */
@@ -802,14 +836,36 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             background-color: rgba(var(--primary), 0.2);
             color: rgb(var(--primary));
             border-radius: 4px;
-            padding: 6px 14px;
+            padding: 8px 16px;
             font-weight: 700;
-            font-size: 0.85rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.12);
-            margin-top: 4px;
+            font-size: 0.9rem;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            margin-top: 6px;
             position: relative;
-            z-index: 10;
+            z-index: 50;
             text-align: center;
+          }
+          
+          /* Specific styles for See Less button in expanded mode */
+          .expandable-card.expanded .mobile-button-text {
+            margin-top: 12px;
+            padding: 10px 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.18);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: 1px solid rgba(var(--primary), 0.15);
+            z-index: 50;
+          }
+          
+          /* Ensure button container is visible */
+          .expandable-card.expanded .text-action-wrapper {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: relative;
+            z-index: 45;
           }
         }
       }
