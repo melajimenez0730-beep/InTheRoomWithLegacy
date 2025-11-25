@@ -308,25 +308,6 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
       .legacy-dimension-card {
         transition: all 0.3s ease-in-out;
       }
-      
-      /* Thin scrollbar styling for overflow content */
-      .scrollbar-thin::-webkit-scrollbar {
-        width: 4px;
-      }
-      
-      .scrollbar-thin::-webkit-scrollbar-track {
-        background: rgba(0, 0, 0, 0.05);
-        border-radius: 3px;
-      }
-      
-      .scrollbar-thin::-webkit-scrollbar-thumb {
-        background: rgba(5, 45, 63, 0.2);
-        border-radius: 3px;
-      }
-      
-      .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-        background: rgba(5, 45, 63, 0.3);
-      }
     </style>
   </section>
 
@@ -344,13 +325,13 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           <!-- Five Dimensions of Legacy - Modern Card Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12" id="dimensions-grid">
             <!-- Family Legacy Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 h-[340px] flex flex-col">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex items-start gap-4 flex-grow">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+              <div class="p-6">
+                <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <HandHeart class="text-primary h-6 w-6" />
                   </div>
-                  <div class="flex flex-col justify-center h-full">
+                  <div>
                     <h4 class="font-display font-bold text-primary text-xl mb-3">Family Legacy</h4>
                     <p class="text-foreground/80 text-sm leading-relaxed mb-4">
                       Building a foundation of values, traditions, and practices that strengthen family identity and connection across generations.
@@ -358,7 +339,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                   </div>
                 </div>
                 <!-- Category Tags -->
-                <div class="flex flex-wrap gap-2 mt-auto">
+                <div class="flex flex-wrap gap-2 mt-2">
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Storytelling & Documentation</span>
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Learning & Tools</span>
                 </div>
@@ -366,13 +347,13 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Next-Gen Stewardship Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 h-[340px] flex flex-col">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex items-start gap-4 flex-grow">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+              <div class="p-6">
+                <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <Users class="text-primary h-6 w-6" />
                   </div>
-                  <div class="flex flex-col justify-center h-full">
+                  <div>
                     <h4 class="font-display font-bold text-primary text-xl mb-3">Next-Gen Stewardship</h4>
                     <p class="text-foreground/80 text-sm leading-relaxed mb-4">
                       Preparing future generations to receive, maintain, and grow the family's legacy through education, mentorship, and guided experience.
@@ -380,7 +361,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                   </div>
                 </div>
                 <!-- Category Tags -->
-                <div class="flex flex-wrap gap-2 mt-auto">
+                <div class="flex flex-wrap gap-2 mt-2">
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Advisory & Community</span>
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Experiences & Programs</span>
                 </div>
@@ -388,21 +369,21 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Community & Belonging Card (formerly Storytelling & Culture) -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 h-[340px] flex flex-col">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex items-start gap-4 flex-grow">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+              <div class="p-6">
+                <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <BookOpenText class="text-primary h-6 w-6" />
                   </div>
-                  <div class="flex flex-col justify-center h-full">
+                  <div>
                     <h4 class="font-display font-bold text-primary text-xl mb-3">Community & Belonging</h4>
-                    <p class="text-foreground/80 text-sm leading-relaxed mb-4 overflow-y-auto pr-1 max-h-[150px] scrollbar-thin">
+                    <p class="text-foreground/80 text-sm leading-relaxed mb-4">
                       Strengthening the bonds, rituals, and relationships that keep families rooted across generations, geography, and life seasons. Centering connection: how families gather, how they communicate, how they resolve conflict, and how they remain emotionally woven together even as life shifts. Helping families cultivate spaces where everyone feels seen, valued, and part of something larger than themselves.
                     </p>
                   </div>
                 </div>
                 <!-- Category Tags -->
-                <div class="flex flex-wrap gap-2 mt-auto">
+                <div class="flex flex-wrap gap-2 mt-2">
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Learning & Tools</span>
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Storytelling & Documentation</span>
                 </div>
@@ -410,13 +391,13 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Economic Empowerment Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 h-[340px] flex flex-col">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex items-start gap-4 flex-grow">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10">
+              <div class="p-6">
+                <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <DollarSign class="text-primary h-6 w-6" />
                   </div>
-                  <div class="flex flex-col justify-center h-full">
+                  <div>
                     <h4 class="font-display font-bold text-primary text-xl mb-3">Economic Empowerment</h4>
                     <p class="text-foreground/80 text-sm leading-relaxed mb-4">
                       Creating sustainable financial foundations and teaching principles that support multigenerational wealth stewardship and growth.
@@ -424,7 +405,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                   </div>
                 </div>
                 <!-- Category Tags -->
-                <div class="flex flex-wrap gap-2 mt-auto">
+                <div class="flex flex-wrap gap-2 mt-2">
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Experiences & Programs</span>
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Advisory & Community</span>
                 </div>
@@ -432,13 +413,13 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             </div>
             
             <!-- Transitions & Healing Card -->
-            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto h-[340px] flex flex-col">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex items-start gap-4 flex-grow">
+            <div class="legacy-dimension-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all border border-primary/10 md:col-span-2 max-w-lg mx-auto">
+              <div class="p-6">
+                <div class="flex items-start gap-4">
                   <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                     <Lightbulb class="text-primary h-6 w-6" />
                   </div>
-                  <div class="flex flex-col justify-center h-full">
+                  <div>
                     <h4 class="font-display font-bold text-primary text-xl mb-3">Transitions & Healing</h4>
                     <p class="text-foreground/80 text-sm leading-relaxed mb-4">
                       Navigating major life changes, succession planning, and healing fractured relationships to ensure continuity during pivotal moments.
@@ -446,7 +427,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                   </div>
                 </div>
                 <!-- Category Tags -->
-                <div class="flex flex-wrap gap-2 mt-auto">
+                <div class="flex flex-wrap gap-2 mt-2">
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Storytelling & Documentation</span>
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Experiences & Programs</span>
                   <span class="text-xs px-3 py-1 rounded-full bg-primary/5 text-primary/70">Advisory & Community</span>
