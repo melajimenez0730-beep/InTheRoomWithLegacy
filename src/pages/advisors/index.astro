@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
 import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
+import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
 ---
 
 <BaseLayout title="In the Room with Legacy Advisors - In the Room With Legacy" description="In the Room with Legacy Advisors (IRL Advisors) is an advisory and innovation arm of In the Room with Legacy™. We provide the strategies, tools, and networks that families, businesses, and institutions need to sustain legacy across generations.">
@@ -148,42 +149,8 @@ import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
           With access to the IRL Legacy Operating System (beta) and our advisory frameworks, you can help clients:
         </p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left max-w-2xl mx-auto mb-8">
-          <div class="flex items-start">
-            <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-            <p>navigate emotional and relational dynamics</p>
-          </div>
-          
-          <div class="flex items-start">
-            <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-            <p>strengthen intergenerational communication</p>
-          </div>
-          
-          <div class="flex items-start">
-            <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-            <p>prepare successors and next-gen leaders</p>
-          </div>
-          
-          <div class="flex items-start">
-            <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-            <p>map cultural and identity-based strengths</p>
-          </div>
-          
-          <div class="flex items-start">
-            <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-            <p>support transitions, caregiving, and aging</p>
-          </div>
-          
-          <div class="flex items-start">
-            <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-            <p>build family governance foundations</p>
-          </div>
-          
-          <div class="flex items-start md:col-span-2 justify-center">
-            <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-            <p>facilitate legacy conversations with confidence</p>
-          </div>
-        </div>
+        <FrameworkCarousel />
+        
         
         <p class="text-lg text-[#052d3f]/80 font-medium">
           Our tools help you bring the human side of legacy into your practice.
