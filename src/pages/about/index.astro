@@ -384,7 +384,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                         </p>
                       </div>
                       <div class="text-action-wrapper">
-                        <button aria-label="Toggle content visibility" class="text-primary text-xs font-medium toggle-btn hover:underline focus:outline-none">See More</button>
+                        <button aria-label="Toggle content visibility" class="text-primary text-xs font-medium toggle-btn hover:underline focus:outline-none"><span class="mobile-button-text">See More</span></button>
                       </div>
                     </div>
                   </div>
@@ -452,6 +452,13 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         const descContainer = document.querySelector('.description-container');
         const toggleBtn = document.querySelector('.toggle-btn');
         
+        // Force initialization of card height at load time
+        window.setTimeout(() => {
+          if (expandableCard) {
+            expandableCard.style.height = (window.innerWidth < 768 ? '320px' : '270px');
+          }
+        }, 100);
+        
         if (expandableCard && descContainer && toggleBtn) {
           // Track expanded state
           let isExpanded = false;
@@ -502,12 +509,23 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             toggleCard();
           });
           
-          // Improved touch event support for mobile
+          // Enhanced touch event support for mobile
           toggleBtn.addEventListener('touchend', function(e) {
             e.preventDefault();
             // Prevent firing both click and touchend
             e.stopPropagation();
             toggleCard();
+          });
+          
+          // Additional touch support for iOS and other mobile devices
+          toggleBtn.addEventListener('touchstart', function(e) {
+            // Just mark the touch to ensure it registers on all mobile devices
+            toggleBtn.classList.add('touch-active');
+          });
+          
+          // Remove touch-active class when touch ends
+          document.addEventListener('touchend', function() {
+            toggleBtn.classList.remove('touch-active');
           });
           
           // Handle window resize and orientation change
@@ -554,6 +572,12 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         margin-bottom: 8px;
       }
       
+      @media (max-width: 767px) {
+        .description-container {
+          max-height: 70px; /* Slightly smaller on mobile for better visibility of See More */
+        }
+      }
+      
       .description-container.expanded {
         max-height: 500px; /* Large enough to show full content */
       }
@@ -571,6 +595,13 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         transition: opacity 0.3s ease;
       }
       
+      @media (max-width: 767px) {
+        .description-container::after {
+          height: 30px; /* Stronger fade effect on mobile */
+          background: linear-gradient(to top, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0));
+        }
+      }
+      
       .description-container.expanded::after {
         opacity: 0;
       }
@@ -584,6 +615,17 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         user-select: none;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         padding: 4px 0;
+        font-weight: 500;
+      }
+      
+      @media (max-width: 767px) {
+        .toggle-btn {
+          padding: 6px 2px;
+          background-color: rgba(var(--primary), 0.05);
+          border-radius: 4px;
+          margin-top: 6px;
+          font-size: 0.8rem;
+        }
       }
       
       .text-content {
@@ -592,6 +634,9 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
       
       .text-action-wrapper {
         margin-top: 0;
+        display: block;
+        position: relative;
+        z-index: 5;
       }
       
       /* Mobile optimizations */
@@ -617,10 +662,14 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           margin-bottom: 12px; /* Increased margin on mobile */
         }
         
-        /* Ensure "See More" button has enough space */
+        /* Ensure "See More" button has enough space and visibility */
         .text-action-wrapper {
           margin-top: 4px;
           margin-bottom: 8px;
+          display: block !important;
+          visibility: visible !important;
+          position: relative;
+          z-index: 5;
         }
         
         /* Better tag spacing on mobile */
@@ -647,6 +696,29 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         .expandable-card.expanded {
           height: auto !important;
           min-height: 320px;
+        }
+        
+        /* Additional tap state styling for mobile */
+        .toggle-btn.touch-active {
+          opacity: 0.7;
+        }
+        
+        /* Make the button more prominent on mobile */
+        .mobile-button-text {
+          display: inline-block;
+          padding: 2px 8px;
+        }
+        
+        @media (max-width: 767px) {
+          .mobile-button-text {
+            background-color: rgba(var(--primary), 0.1);
+            color: rgb(var(--primary));
+            border-radius: 4px;
+            padding: 3px 10px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+          }
         }
       }
       
