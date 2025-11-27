@@ -455,12 +455,16 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         // Force initialization of card height at load time
         window.setTimeout(() => {
           if (expandableCard) {
+            // Set initial height
             expandableCard.style.height = (window.innerWidth < 768 ? '320px' : '270px');
             
-            // Ensure toggle button is properly initialized for screen size
+            // Ensure toggle button is properly styled and visible initially
             const btnText = document.querySelector('.mobile-button-text');
-            if (btnText && window.innerWidth < 768) {
+            if (btnText) {
               btnText.style.display = 'inline-block';
+              btnText.style.visibility = 'visible';
+              btnText.style.opacity = '1';
+              btnText.textContent = 'See More';
             }
           }
         }, 100);
@@ -480,15 +484,20 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             const isMobile = window.innerWidth < 768;
             
             if (isExpanded) {
-              // Collapse
+              // === COLLAPSE CARD ===
+              
+              // Update classes
               descContainer.classList.remove('expanded');
               expandableCard.classList.remove('expanded');
               
-              // Update button text for mobile/desktop
+              // Update button text and attributes for mobile/desktop
               const btnText = document.querySelector('.mobile-button-text');
               if (btnText) {
                 btnText.textContent = 'See More';
-                btnText.style.display = 'block'; // Ensure visibility
+                // Immediately update button styles to ensure it's visible
+                btnText.style.display = 'inline-block';
+                btnText.style.visibility = 'visible';
+                btnText.style.opacity = '1';
               } else {
                 toggleBtn.textContent = 'See More';
               }
@@ -496,11 +505,13 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               toggleBtn.setAttribute('aria-expanded', 'false');
               toggleBtn.style.display = 'block';
               
-              // Add a small delay before animating height
-              setTimeout(() => {
+              // Start animation to collapse the card
+              requestAnimationFrame(() => {
                 expandableCard.style.height = baseHeight + 'px';
-                
-                // Ensure the button is properly visible when collapsed
+              });
+              
+              // Ensure button stays visible during animation
+              const ensureButtonVisibility = () => {
                 const mobileBtn = document.querySelector('.mobile-button-text');
                 if (mobileBtn) {
                   mobileBtn.style.display = 'inline-block';
@@ -508,9 +519,16 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                   mobileBtn.style.opacity = '1';
                   mobileBtn.textContent = 'See More';
                 }
-              }, 50); // Small delay helps ensure smooth animation
+              };
+              
+              // Check multiple times to ensure button visibility throughout animation
+              setTimeout(ensureButtonVisibility, 50);
+              setTimeout(ensureButtonVisibility, 200);
+              setTimeout(ensureButtonVisibility, 400);
             } else {
-              // Expand
+              // === EXPAND CARD ===
+              
+              // Update classes
               descContainer.classList.add('expanded');
               expandableCard.classList.add('expanded');
               
@@ -518,11 +536,11 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               const btnText = document.querySelector('.mobile-button-text');
               if (btnText) {
                 btnText.textContent = 'See Less';
-                btnText.style.display = 'inline-block'; // Ensure visibility
-                // Force visibility of the See Less button
+                // Immediately update button styles
+                btnText.style.display = 'inline-block';
                 btnText.style.visibility = 'visible';
                 btnText.style.opacity = '1';
-                btnText.style.zIndex = '50'; // Ensure high z-index
+                btnText.style.zIndex = '50';
               } else {
                 toggleBtn.textContent = 'See Less';
               }
@@ -530,70 +548,91 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               toggleBtn.setAttribute('aria-expanded', 'true');
               toggleBtn.style.display = 'block';
               
-              // Calculate expanded height and apply it
+              // Calculate expanded height
               expandableCard.style.height = 'auto';
               const expandedHeight = expandableCard.scrollHeight;
               expandableCard.style.height = baseHeight + 'px';
               
-              // Force reflow
+              // Force reflow before animation
               void expandableCard.offsetHeight;
               
-              // Set final height with a larger increase on mobile for padding
-              // Add more padding to ensure See Less button is visible
-              expandableCard.style.height = (isMobile ? expandedHeight + 80 : expandedHeight) + 'px';
+              // Add extra padding to ensure See Less button has enough space
+              // More padding on mobile to ensure visibility
+              const extraPadding = isMobile ? 100 : 40;
+              
+              // Start expansion animation
+              requestAnimationFrame(() => {
+                expandableCard.style.height = (expandedHeight + extraPadding) + 'px';
+              });
+              
+              // Multiple checks to ensure button visibility throughout animation
+              const ensureLessButtonVisibility = () => {
+                const btnText = document.querySelector('.expandable-card.expanded .mobile-button-text');
+                if (btnText) {
+                  btnText.style.display = 'inline-block';
+                  btnText.style.visibility = 'visible';
+                  btnText.style.opacity = '1';
+                  btnText.style.zIndex = '50';
+                  btnText.textContent = 'See Less';
+                }
+              };
+              
+              // Check at multiple intervals to ensure visibility through animation
+              setTimeout(ensureLessButtonVisibility, 100);
+              setTimeout(ensureLessButtonVisibility, 300);
+              setTimeout(ensureLessButtonVisibility, 500);
+              
+              // Ensure card and button are visible in viewport after expansion
+              setTimeout(() => {
+                if (isMobile) {
+                  // Get updated card position
+                  const cardRect = expandableCard.getBoundingClientRect();
+                  const btnText = document.querySelector('.expandable-card.expanded .mobile-button-text');
+                  
+                  if (btnText) {
+                    const btnRect = btnText.getBoundingClientRect();
+                    
+                    // If button is below viewport, scroll to make it visible
+                    if (btnRect.bottom > window.innerHeight) {
+                      window.scrollBy({
+                        top: btnRect.bottom - window.innerHeight + 60,
+                        behavior: 'smooth'
+                      });
+                    }
+                  } else if (cardRect.bottom > window.innerHeight) {
+                    // If no button found but card is off screen, scroll to see the bottom of card
+                    window.scrollBy({
+                      top: Math.min(cardRect.bottom - window.innerHeight + 100, 200),
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+                
+                // Final check to ensure button visibility
+                ensureLessButtonVisibility();
+              }, 600);
             }
             
+            // Toggle expanded state
             isExpanded = !isExpanded;
           }
           
           // Toggle button click handler with improved touch support
           toggleBtn.addEventListener('click', function(e) {
             e.preventDefault();
+            e.stopPropagation(); // Prevent event bubbling
             toggleCard();
           });
           
-          // Enhanced touch event support for mobile
+          // Enhanced touch event support for mobile devices
           toggleBtn.addEventListener('touchend', function(e) {
             e.preventDefault();
-            // Prevent firing both click and touchend
-            e.stopPropagation();
+            e.stopPropagation(); // Prevent event bubbling
             toggleCard();
-            
-            // Ensure visibility of expanded content on mobile
-            if (!isExpanded) {
-              // If we just expanded, scroll to ensure the expanded content is fully visible
-              const rect = expandableCard.getBoundingClientRect();
-              if (rect.bottom > window.innerHeight) {
-                // Scroll to position the card better in view
-                window.scrollBy({ top: Math.min(150, rect.bottom - window.innerHeight + 50), behavior: 'smooth' });
-              }
-              
-              // For mobile, ensure the See Less button is completely visible
-              setTimeout(() => {
-                const btnText = document.querySelector('.expandable-card.expanded .mobile-button-text');
-                if (btnText) {
-                  // Force visibility and appropriate styling
-                  btnText.style.display = 'inline-block';
-                  btnText.style.visibility = 'visible';
-                  btnText.style.opacity = '1';
-                  btnText.style.zIndex = '50';
-                  
-                  // Ensure button text is properly set
-                  btnText.textContent = 'See Less';
-                  
-                  // Check if button is in viewport and scroll if needed
-                  const btnRect = btnText.getBoundingClientRect();
-                  if (btnRect.bottom > window.innerHeight) {
-                    window.scrollBy({ top: btnRect.bottom - window.innerHeight + 40, behavior: 'smooth' });
-                  }
-                }
-              }, 400); // Give more time for the expansion animation
-            }
           });
           
-          // Additional touch support for iOS and other mobile devices
+          // Visual feedback for touch interactions
           toggleBtn.addEventListener('touchstart', function(e) {
-            // Just mark the touch to ensure it registers on all mobile devices
             toggleBtn.classList.add('touch-active');
           });
           
@@ -602,7 +641,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
             toggleBtn.classList.remove('touch-active');
           });
           
-          // Handle window resize and orientation change
+          // Handle window resize and orientation changes
           let resizeTimeout;
           function handleResize() {
             clearTimeout(resizeTimeout);
@@ -612,15 +651,34 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
               if (!isExpanded) {
                 // Update base height for non-expanded state
                 expandableCard.style.height = baseHeight + 'px';
+                
+                // Ensure button is visible
+                const btnText = document.querySelector('.mobile-button-text');
+                if (btnText) {
+                  btnText.style.display = 'inline-block';
+                  btnText.style.visibility = 'visible';
+                  btnText.textContent = 'See More';
+                }
               } else {
                 // Recalculate expanded height
                 expandableCard.style.height = 'auto';
                 const newHeight = expandableCard.scrollHeight;
-                expandableCard.style.height = newHeight + 'px';
+                const extraPadding = window.innerWidth < 768 ? 100 : 40;
+                expandableCard.style.height = (newHeight + extraPadding) + 'px';
+                
+                // Ensure "See Less" button remains visible
+                const btnText = document.querySelector('.expandable-card.expanded .mobile-button-text');
+                if (btnText) {
+                  btnText.style.display = 'inline-block';
+                  btnText.style.visibility = 'visible';
+                  btnText.style.opacity = '1';
+                  btnText.textContent = 'See Less';
+                }
               }
             }, 100);
           }
           
+          // Listen for viewport changes
           window.addEventListener('resize', handleResize);
           window.addEventListener('orientationchange', handleResize);
         }
@@ -636,6 +694,16 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
       .expandable-card {
         overflow: hidden;
         position: relative;
+        transition: all 0.4s ease-in-out;
+      }
+      
+      /* Explicitly handle expanded card state */
+      .expandable-card.expanded {
+        height: auto !important;
+        min-height: 450px !important; /* Ensure enough space for expanded content and See Less button */
+        overflow: visible !important; /* Ensure overflow is visible for the See Less button */
+        z-index: 10; /* Higher z-index when expanded to ensure content is above other elements */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important; /* Enhanced shadow when expanded */
       }
       
       .description-container {
@@ -693,45 +761,91 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         opacity: 0;
       }
 
+      /* Base toggle button styles (desktop and mobile) */
       .toggle-btn {
         display: inline-block;
         cursor: pointer;
         margin-top: 0;
         position: relative;
-        z-index: 2;
+        z-index: 10; /* Higher z-index for clickability */
         user-select: none;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
-        padding: 4px 0;
+        padding: 6px 12px;
         font-weight: 500;
+        border-radius: 4px;
+        background-color: rgba(var(--primary), 0.1);
+        transition: all 0.2s ease-in-out;
       }
       
-      @media (max-width: 767px) {
-        .toggle-btn {
-          padding: 6px 2px;
-          background-color: rgba(var(--primary), 0.05);
-          border-radius: 4px;
-          margin-top: 6px;
-          font-size: 0.8rem;
-        }
+      .toggle-btn:hover {
+        background-color: rgba(var(--primary), 0.15);
       }
       
+      /* Button container positioning and visibility */
+      .text-action-wrapper {
+        margin: 10px 0;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative;
+        z-index: 40; /* Very high z-index to ensure it's above other content */
+        text-align: center;
+        width: 100%; /* Full width for better positioning */
+      }
+      
+      /* Button text styling for both states */
+      .mobile-button-text {
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background-color: rgba(var(--primary), 0.15);
+        color: rgb(var(--primary));
+        border-radius: 4px;
+        padding: 8px 16px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 50;
+        text-align: center;
+        transition: all 0.2s ease;
+      }
+      
+      /* Enhanced "See Less" button styling in expanded state */
+      .expandable-card.expanded .mobile-button-text {
+        background-color: rgba(var(--primary), 0.2) !important;
+        padding: 10px 18px !important;
+        font-weight: 700 !important;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.15) !important;
+        display: inline-block !important;
+        margin-top: 12px;
+        width: auto;
+        color: rgb(var(--primary)) !important;
+        border-radius: 4px !important;
+        position: relative !important;
+        z-index: 60 !important; /* Highest z-index to ensure visibility */
+        border: 1px solid rgba(var(--primary), 0.2);
+      }
+      
+      /* Visual feedback on active state */
+      .toggle-btn.touch-active,
+      .toggle-btn:active {
+        transform: translateY(1px);
+        opacity: 0.9;
+      }
+      
+      /* Text content container */
       .text-content {
         position: relative;
       }
       
-      .text-action-wrapper {
-        margin-top: 0;
-        display: block;
-        position: relative;
-        z-index: 5;
-      }
-      
       /* Mobile optimizations */
       @media (max-width: 767px) {
+        /* Card sizing */
         .legacy-dimension-card {
           height: 320px !important; /* Increase height on mobile */
         }
         
+        /* Card padding */
         .legacy-dimension-card .p-6 {
           padding: 1.5rem; /* Increased padding on mobile */
           display: flex;
@@ -741,144 +855,98 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         
         /* Specifically target the Community & Belonging card on mobile */
         .expandable-card .p-6 {
-          padding: 1.5rem 1.75rem 1.25rem 1.75rem !important; /* Reduced vertical padding for more text space */
+          padding: 1.5rem 1.75rem 1.75rem 1.75rem !important; /* Adjusted padding for more space */
         }
         
+        /* Tag positioning */
         .legacy-dimension-card .flex.flex-wrap.gap-2 {
           margin-top: auto !important; /* Push tags to the bottom */
           padding-top: 0.5rem;
           padding-bottom: 0.5rem;
         }
         
+        /* Content spacing */
         .description-container {
-          margin-bottom: 6px; /* Reduced margin on mobile to show more content */
+          margin-bottom: 10px; /* More space for the button */
         }
         
-        /* Ensure "See More" button has enough space and visibility */
+        /* Mobile-specific expanded card styles */
+        .expandable-card.expanded {
+          padding-bottom: 70px !important; /* Extra padding at bottom for button */
+          min-height: 480px !important; /* More space on mobile */
+          margin-bottom: 10px; /* More space below the card */
+        }
+        
+        /* Enhanced styling for buttons on mobile */
         .text-action-wrapper {
-          margin-top: 8px;
-          margin-bottom: 10px;
-          display: block !important;
-          visibility: visible !important;
-          position: relative;
-          z-index: 30; /* Higher z-index to ensure button is clickable and visible */
-          text-align: center;
-          width: 100%; /* Full width for better positioning */
+          margin-top: 12px;
+          margin-bottom: 16px;
         }
         
-        /* Better tag spacing on mobile */
+        /* Make buttons more prominent for touch */
+        .mobile-button-text {
+          padding: 10px 16px;
+          font-size: 0.95rem;
+          box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+        
+        /* Ensure expanded button is very visible */
+        .expandable-card.expanded .text-action-wrapper {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          position: relative;
+          z-index: 60;
+          display: flex !important;
+          justify-content: center;
+        }
+        
+        /* Make button super noticeable in expanded state */
+        .expandable-card.expanded .mobile-button-text {
+          padding: 12px 20px;
+          font-size: 1rem;
+          font-weight: 700;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.18);
+          border: 1px solid rgba(var(--primary), 0.25);
+        }
+        
+        /* Tag spacing */
         .legacy-dimension-card .text-xs {
           margin-bottom: 4px;
           white-space: nowrap;
         }
       }
       
-      /* Ensure smooth transitions on mobile devices */
-      @media (hover: none) {
-        .toggle-btn {
-          padding: 8px 0;
-          margin: 0;
-        }
-        
-        /* Larger touch target for mobile */
-        .legacy-dimension-card .toggle-btn {
-          padding: 8px 4px;
-          margin-top: 2px;
-        }
-        
-        /* Force expanded content to appear correctly on mobile */
-        .expandable-card.expanded {
-          height: auto !important;
-          min-height: 450px !important; /* Ensure enough space for expanded content and See Less button */
-          padding-bottom: 60px !important; /* Add explicit padding at the bottom to ensure space for the See Less button */
-          position: relative; /* Ensure relative positioning for absolute button positioning if needed */
-          overflow: visible !important; /* Ensure overflow is visible for the See Less button */
-        }
-        
-        /* Enhanced styling for the See Less button */
-        .expandable-card.expanded .toggle-btn {
-          margin-top: 12px;
-          margin-bottom: 16px;
-          display: block !important;
-          width: 100%; /* Ensure the button takes full width */
-          text-align: center; /* Center the button text */
-        }
-        
-        /* Specifically styled See Less button for better visibility */
-        .expandable-card.expanded .mobile-button-text {
-          background-color: rgba(var(--primary), 0.2) !important;
-          padding: 8px 16px !important;
-          font-weight: 700 !important;
-          box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
-          display: inline-block !important;
-          margin-top: 16px;
-          width: auto;
-          color: rgb(var(--primary)) !important;
-          border-radius: 4px !important;
-          position: relative !important;
-          z-index: 50 !important; /* Higher z-index to ensure visibility */
-        }
-        
-        /* Additional tap state styling for mobile */
-        .toggle-btn.touch-active {
-          opacity: 0.7;
-        }
-        
-        /* Make the button more prominent on mobile */
-        .mobile-button-text {
-          display: inline-block;
-          padding: 2px 8px;
-        }
-        
-        @media (max-width: 767px) {
-          .mobile-button-text {
-            display: block !important;
-            background-color: rgba(var(--primary), 0.2);
-            color: rgb(var(--primary));
-            border-radius: 4px;
-            padding: 8px 16px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
-            margin-top: 6px;
-            position: relative;
-            z-index: 50;
-            text-align: center;
-          }
-          
-          /* Specific styles for See Less button in expanded mode */
-          .expandable-card.expanded .mobile-button-text {
-            margin-top: 12px;
-            padding: 10px 18px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.18);
-            font-weight: 700;
-            font-size: 0.95rem;
-            border: 1px solid rgba(var(--primary), 0.15);
-            z-index: 50;
-          }
-          
-          /* Ensure button container is visible */
-          .expandable-card.expanded .text-action-wrapper {
-            margin-top: 16px;
-            margin-bottom: 16px;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            position: relative;
-            z-index: 45;
-          }
-        }
-      }
-      
-      /* Ensure animation works on all browsers */
+      /* iOS/Safari specific fixes */
       @supports (-webkit-overflow-scrolling: touch) {
         .expandable-card {
           -webkit-overflow-scrolling: touch;
+          transform: translateZ(0); /* Force GPU acceleration */
         }
         
         .description-container {
           -webkit-overflow-scrolling: touch;
         }
+        
+        /* iOS button enhancements */
+        .mobile-button-text {
+          -webkit-appearance: none; /* Remove default iOS button styling */
+        }
+        
+        /* Force button visibility on iOS */
+        .expandable-card.expanded .text-action-wrapper,
+        .expandable-card.expanded .mobile-button-text {
+          transform: translateZ(0); /* Force GPU acceleration */
+          backface-visibility: hidden;
+        }
+      }
+      
+      /* Use hardware acceleration for smoother animations */
+      .expandable-card,
+      .description-container,
+      .mobile-button-text {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
       }
     </style>
   </section>
