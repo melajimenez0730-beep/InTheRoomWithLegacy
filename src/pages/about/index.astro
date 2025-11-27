@@ -384,7 +384,7 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
                         </p>
                       </div>
                       <div class="text-action-wrapper">
-                        <button aria-label="Toggle content visibility" class="text-primary text-xs font-medium toggle-btn hover:underline focus:outline-none"><span class="mobile-button-text">See More</span></button>
+                        <button aria-label="Toggle content visibility" class="text-blue-600 text-xs font-medium toggle-btn hover:underline focus:outline-none"><span class="mobile-button-text">See More</span></button>
                       </div>
                     </div>
                   </div>
@@ -770,26 +770,25 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         z-index: 10; /* Higher z-index for clickability */
         user-select: none;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
-        padding: 6px 12px;
+        padding: 0;
         font-weight: 500;
-        border-radius: 4px;
-        background-color: rgba(var(--primary), 0.1);
+        background-color: transparent;
         transition: all 0.2s ease-in-out;
       }
       
       .toggle-btn:hover {
-        background-color: rgba(var(--primary), 0.15);
+        text-decoration: underline;
       }
       
       /* Button container positioning and visibility */
       .text-action-wrapper {
-        margin: 10px 0;
+        margin: 5px 0;
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
         position: relative;
         z-index: 40; /* Very high z-index to ensure it's above other content */
-        text-align: center;
+        text-align: left;
         width: 100%; /* Full width for better positioning */
       }
       
@@ -798,13 +797,11 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         display: inline-block !important;
         visibility: visible !important;
         opacity: 1 !important;
-        background-color: rgba(var(--primary), 0.15);
-        color: rgb(var(--primary));
-        border-radius: 4px;
-        padding: 8px 16px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        background-color: transparent;
+        color: #1e6bb8; /* Blue text color */
+        padding: 0;
+        font-weight: 500;
+        font-size: 0.85rem;
         z-index: 50;
         text-align: center;
         transition: all 0.2s ease;
@@ -812,25 +809,27 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
       
       /* Enhanced "See Less" button styling in expanded state */
       .expandable-card.expanded .mobile-button-text {
-        background-color: rgba(var(--primary), 0.2) !important;
-        padding: 10px 18px !important;
-        font-weight: 700 !important;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.15) !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+        font-weight: 500 !important;
         display: inline-block !important;
         margin-top: 12px;
         width: auto;
-        color: rgb(var(--primary)) !important;
-        border-radius: 4px !important;
+        color: #1e6bb8 !important; /* Blue text color */
         position: relative !important;
         z-index: 60 !important; /* Highest z-index to ensure visibility */
-        border: 1px solid rgba(var(--primary), 0.2);
+        border: none;
       }
       
       /* Visual feedback on active state */
       .toggle-btn.touch-active,
-      .toggle-btn:active {
-        transform: translateY(1px);
-        opacity: 0.9;
+      .toggle-btn:active,
+      .mobile-button-text:active {
+        opacity: 0.7;
+      }
+      
+      .mobile-button-text:hover {
+        text-decoration: underline;
       }
       
       /* Text content container */
@@ -883,11 +882,10 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           margin-bottom: 16px;
         }
         
-        /* Make buttons more prominent for touch */
+        /* Make buttons more visible for touch */
         .mobile-button-text {
-          padding: 10px 16px;
+          padding: 0;
           font-size: 0.95rem;
-          box-shadow: 0 3px 6px rgba(0,0,0,0.15);
         }
         
         /* Ensure expanded button is very visible */
@@ -900,13 +898,14 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
           justify-content: center;
         }
         
-        /* Make button super noticeable in expanded state */
+        /* Make button visible in expanded state */
         .expandable-card.expanded .mobile-button-text {
-          padding: 12px 20px;
-          font-size: 1rem;
-          font-weight: 700;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.18);
-          border: 1px solid rgba(var(--primary), 0.25);
+          padding: 0;
+          margin-top: 8px;
+          font-size: 0.85rem;
+          font-weight: 500;
+          border: none;
+          color: #1e6bb8 !important;
         }
         
         /* Tag spacing */
@@ -930,6 +929,8 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
         /* iOS button enhancements */
         .mobile-button-text {
           -webkit-appearance: none; /* Remove default iOS button styling */
+          background: transparent; /* Ensure transparent background */
+          border: none; /* Remove any border */
         }
         
         /* Force button visibility on iOS */
