@@ -4,7 +4,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
-import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 import faqsImage from '../../../assets/faqs_nw_51f94a39.png';
 ---
 
@@ -169,13 +168,7 @@ import faqsImage from '../../../assets/faqs_nw_51f94a39.png';
     });
   </script>
 
-  <!-- Scroll Sticky CTA button that appears after scrolling -->
-  <ScrollStickyCTA 
-    client:load
-    text="Get Your Legacy Snapshot"
-    href="/tools/legacy-assessment"
-  />
-
+  
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 
     client:load

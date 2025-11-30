@@ -4,7 +4,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { Handshake, Lightbulb, Sparkles } from "lucide-react";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
-import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 import partnershipPathwaysImage from '../../../assets/partnership-pathways_nw_f2bcf814.png';
 ---
 
@@ -248,12 +247,6 @@ import partnershipPathwaysImage from '../../../assets/partnership-pathways_nw_f2
     </div>
   </section>
   
-  <!-- Scroll Sticky CTA button that appears after scrolling -->
-  <ScrollStickyCTA 
-    client:load
-    text="Get Your Legacy Snapshot"
-    href="/tools/legacy-assessment"
-  />
   
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 

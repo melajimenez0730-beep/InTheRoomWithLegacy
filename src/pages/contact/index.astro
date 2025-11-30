@@ -5,7 +5,6 @@ import { MailPlus, Building, Megaphone, DollarSign, MailCheck } from "lucide-rea
 import ContactPageForm from "@/components/ContactPageForm";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
-import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 import legacyBackground from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-4_nw_2c87fa2a.png";
 ---
 
@@ -181,13 +180,7 @@ import legacyBackground from "@/assets/ash-grey-and-black-modern-professional-br
     </div>
   </section>
 
-  <!-- Scroll Sticky CTA button that appears after scrolling -->
-  <ScrollStickyCTA 
-    client:load
-    text="Get Your Legacy Snapshot"
-    href="/tools/legacy-assessment"
-  />
-
+  
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 
     client:load

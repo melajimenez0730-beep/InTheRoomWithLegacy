@@ -5,7 +5,6 @@ import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Use
 import { Image } from 'astro:assets';
 import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
-import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
 ---
 
@@ -809,13 +808,7 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
     </div>
   </section>
   
-  <!-- Scroll Sticky CTA button that appears after scrolling -->
-  <ScrollStickyCTA 
-    client:load
-    text="Get Your Legacy Snapshot"
-    href="/tools/legacy-assessment"
-  />
-
+  
   <!-- Time Triggered Modal - shows after 50 seconds -->
   <TimeTriggeredModal 
     client:load

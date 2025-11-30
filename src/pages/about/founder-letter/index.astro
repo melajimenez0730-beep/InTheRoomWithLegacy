@@ -2,7 +2,6 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Image } from 'astro:assets';
 import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
-import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
 
 // Import images for storytelling mood board
 import legacyCollage from "@/assets/legacy_collage_nw_ddd335e4.png";
@@ -324,12 +323,6 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
   }
 </style>
 
-<!-- Scroll Sticky CTA button that appears after scrolling -->
-<ScrollStickyCTA 
-  client:load
-  text="Get Your Legacy Snapshot"
-  href="/tools/legacy-assessment"
-/>
 
 <!-- Time Triggered Modal - shows after 50 seconds -->
 <TimeTriggeredModal 
