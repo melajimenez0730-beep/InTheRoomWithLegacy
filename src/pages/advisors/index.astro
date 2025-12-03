@@ -757,6 +757,47 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
     </div>
   </section>
   
+  <!-- Final CTA Section -->
+  <section class="py-20 md:py-28 bg-[#052d3f] border-t border-[#052d3f]/10 relative overflow-hidden">
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none z-0">
+      <div class="w-full h-full" style="background-image: radial-gradient(rgba(255, 255, 255, 0.6) 2px, transparent 2px); background-size: 24px 24px;"></div>
+    </div>
+    
+    <div class="container relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="sr-only">Call to Action</h2>
+        <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight text-white mb-6 leading-tight">
+          Start Building Your Family's Legacy With Intention & Integrity
+        </h3>
+        <p class="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto">
+          Whether you're preparing next-gen leadership, navigating a transition, or building something new — IRL Advisors is here to guide your journey.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a 
+            href="#contact-form" 
+            class={buttonVariants({
+              size: "lg",
+              class: "bg-white text-[#052d3f] hover:bg-white/90 border-[1px] border-[#052d3f] font-semibold text-base px-8 py-6 shadow-md"
+            })}
+          >
+            Request an Initiation Session
+          </a>
+          <a 
+            href="#contact-form" 
+            class={buttonVariants({
+              size: "lg",
+              variant: "outline",
+              class: "font-medium text-base px-8 py-6 border-white text-white bg-transparent hover:bg-white/10 shadow-sm"
+            })}
+          >
+            Request Consideration for Private Circle
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Who We Serve & Why Partner Sections -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container">
