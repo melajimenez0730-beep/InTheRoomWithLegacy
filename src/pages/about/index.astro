@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Heart, Users, BookOpen, ArrowRight, Lightbulb, DollarSign, Home, BookMarked, Quote, Star, HandHeart, BookOpenText, Info, User, BookCopy, CircleDollarSign, Sprout } from "lucide-react";
 import { Image } from 'astro:assets';
-import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
+// TimeTriggeredModal import removed to disable floating CTA on this page
 import legacyFamilyPhoto from '../../assets/legacy_family_photo_nw_633bbeb1.jpg';
 import familyLegacyPhoto from '../../assets/family_legacy_photo_nw_1911e843.jpg';
 import youngLaurenWithDad from '../../assets/young-lauren-with-dad_nw_5c036dd2.jpg';
@@ -1432,11 +1432,6 @@ import MethodologyAccordion from "@/components/MethodologyAccordion";
     </div>
   </section>
   
-  <!-- Time Triggered Modal - shows after 50 seconds -->
-  <TimeTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    delaySeconds={50}
-  />
+  <!-- Time Triggered Modal has been removed to provide a cleaner user experience on this page -->
   
   </BaseLayout>
