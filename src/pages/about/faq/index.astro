@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Image } from 'astro:assets';
-import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
+// TimeTriggeredModal import removed as requested
 import faqsImage from '../../../assets/faqs_nw_51f94a39.png';
 ---
 
@@ -169,10 +169,5 @@ import faqsImage from '../../../assets/faqs_nw_51f94a39.png';
   </script>
 
   
-  <!-- Time Triggered Modal - shows after 50 seconds -->
-  <TimeTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    delaySeconds={50}
-  />
+  <!-- Time Triggered Modal has been removed to provide a cleaner user experience on this page -->
 </BaseLayout>
