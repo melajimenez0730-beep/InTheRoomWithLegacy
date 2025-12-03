@@ -134,7 +134,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           {/* IRL Advisors with dropdown */}
           <MobileNavDropdown label="IRL Advisors">
             <MobileNavGroupLink href="/advisors" onClick={handleClose}>IRL Advisors</MobileNavGroupLink>
-            <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Black Family Business Network</MobileNavGroupLink>
+            <MobileNavGroupLink href="/programs/black-family-business-network" onClick={handleClose}>Founding Circle</MobileNavGroupLink>
           </MobileNavDropdown>
           <MobileNavLink href="/contact" onClick={handleClose}>Contact</MobileNavLink>
         </div>

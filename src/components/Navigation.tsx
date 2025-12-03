@@ -103,7 +103,7 @@ export default function Navigation() {
         trigger="IRL Advisors" 
         items={[
           { href: "/advisors", label: "IRL Advisors" },
-          { href: "/programs/black-family-business-network", label: "Black Family Business Network" }
+          { href: "/programs/black-family-business-network", label: "Founding Circle" }
         ]} 
       />
       
