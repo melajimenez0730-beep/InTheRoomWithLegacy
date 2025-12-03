@@ -17,7 +17,7 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
     <!-- Single row layout with horizontal scrolling on smaller screens -->
     <div class="relative -mx-4 px-4 md:mx-0 md:px-0 mb-10">
       <!-- Mobile: swipe-friendly carousel (no scrollbar) -->
-      <div class="md:hidden carousel-container overflow-hidden relative px-2">
+      <div class="md:hidden carousel-container overflow-hidden relative px-2" touch-action="pan-y">
         <!-- Improved mobile card carousel with swipe functionality -->
         <div id="resourceCarousel" class="flex transition-transform duration-300 ease-in-out pb-6 w-full">
           <!-- Card 1: Founders -->
@@ -243,6 +243,10 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
           const slideWidth = 100; // percentage based on container width
           let autoPlayInterval;
           let isDragging = false;
+          let autoPlayDelay = 5000; // 5 seconds between slides
+          let userInteracting = false;
+          let lastInteractionTime = 0;
+          const interactionTimeout = 3000; // Resume auto-play 3 seconds after interaction
 
           // Add visual feedback classes to carousel
           carousel.classList.add('transition-transform', 'duration-300', 'ease-in-out');
@@ -251,19 +255,33 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
           function startAutoPlay() {
             clearInterval(autoPlayInterval);
             autoPlayInterval = setInterval(() => {
-              if (isDragging) return; // Don't auto-advance during user interaction
+              // Don't auto-advance during user interaction or shortly after
+              if (isDragging || userInteracting) return;
+              if (Date.now() - lastInteractionTime < interactionTimeout) return;
               
               let nextIndex = currentIndex + 1;
               if (nextIndex >= slides.length) {
                 nextIndex = 0; // Loop back to first slide
               }
               updateCarousel(nextIndex);
-            }, 5000); // Change slide every 5 seconds
+            }, autoPlayDelay);
           }
           
           // Function to stop auto-play
           function stopAutoPlay() {
             clearInterval(autoPlayInterval);
+            userInteracting = true;
+            lastInteractionTime = Date.now();
+          }
+          
+          // Function to handle the end of user interaction
+          function handleInteractionEnd() {
+            userInteracting = false;
+            lastInteractionTime = Date.now();
+            // Start auto-play after the interaction timeout
+            setTimeout(() => {
+              if (!userInteracting) startAutoPlay();
+            }, interactionTimeout);
           }
           
           // Function to update carousel position
@@ -315,6 +333,7 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
           function handlePointerDown(e) {
             isPointerDown = true;
             isDragging = false;
+            userInteracting = true;
             
             // Get touch coordinates
             startX = e.clientX || (e.touches && e.touches[0].clientX);
@@ -372,11 +391,12 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
             const endX = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || moveX;
             if (!endX) {
               updateCarousel(currentIndex);
+              handleInteractionEnd();
               return;
             }
             
             const diff = endX - startX;
-            const threshold = carousel.offsetWidth * 0.2; // 20% of width threshold for swipe
+            const threshold = carousel.offsetWidth * 0.15; // 15% of width threshold for swipe - more sensitive
             
             if (diff > threshold) {
               // Swiped right - go to previous
@@ -391,7 +411,7 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
             
             setTimeout(() => {
               isDragging = false;
-              startAutoPlay(); // Resume auto-play after interaction
+              handleInteractionEnd(); // Handle the end of interaction properly
             }, 300);
           }
           
@@ -410,10 +430,16 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
           
           // Pause auto-play on hover/focus and resume on leave
           const carouselContainer = document.querySelector('.carousel-container');
-          carouselContainer.addEventListener('mouseenter', stopAutoPlay);
-          carouselContainer.addEventListener('mouseleave', startAutoPlay);
+          carouselContainer.addEventListener('mouseenter', () => {
+            stopAutoPlay();
+            userInteracting = true;
+          });
+          carouselContainer.addEventListener('mouseleave', () => {
+            userInteracting = false;
+            handleInteractionEnd();
+          });
           carouselContainer.addEventListener('focusin', stopAutoPlay);
-          carouselContainer.addEventListener('focusout', startAutoPlay);
+          carouselContainer.addEventListener('focusout', handleInteractionEnd);
           
           // Add keyboard navigation
           carouselContainer.setAttribute('tabindex', '0');
@@ -421,11 +447,11 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
             if (e.key === 'ArrowLeft') {
               updateCarousel(currentIndex - 1);
               stopAutoPlay();
-              startAutoPlay();
+              handleInteractionEnd();
             } else if (e.key === 'ArrowRight') {
               updateCarousel(currentIndex + 1);
               stopAutoPlay();
-              startAutoPlay();
+              handleInteractionEnd();
             }
           });
           
@@ -451,11 +477,14 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
             
             // Remove the hint after user interacts with the carousel
             const removeHint = () => {
-              swipeHint.classList.add('opacity-0');
+              swipeHint.classList.add('opacity-0', 'transition-opacity', 'duration-500');
               setTimeout(() => swipeHint.remove(), 500);
               carousel.removeEventListener('pointerdown', removeHint);
             };
             carousel.addEventListener('pointerdown', removeHint);
+            
+            // Also auto-remove the hint after 5 seconds
+            setTimeout(removeHint, 5000);
           }
         });
       </script>
