@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Handshake, Lightbulb, Sparkles } from "lucide-react";
 import { Image } from 'astro:assets';
-import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
+// TimeTriggeredModal import removed to disable floating CTA on this page
 import partnershipPathwaysImage from '../../../assets/partnership-pathways_nw_f2bcf814.png';
 ---
 
@@ -227,10 +227,5 @@ import partnershipPathwaysImage from '../../../assets/partnership-pathways_nw_f2
   </section>
   
   
-  <!-- Time Triggered Modal - shows after 50 seconds -->
-  <TimeTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    delaySeconds={50}
-  />
+  <!-- Time Triggered Modal has been removed to provide a cleaner user experience on this page -->
 </BaseLayout>
