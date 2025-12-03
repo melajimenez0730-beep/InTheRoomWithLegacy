@@ -194,10 +194,10 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
                       width={600}
                       height={500}
                     />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.95)] via-[rgba(5,45,63,0.7)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 pb-8 text-white">
                       <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Founded a family business</h3>
-                      <p class="text-white/80 text-sm md:text-base">Entrepreneurs who created businesses with the intention of building multi-generational enterprises.</p>
+                      <p class="text-white/90 text-sm md:text-base leading-snug">Entrepreneurs who created businesses with the intention of building multi-generational enterprises.</p>
                     </div>
                   </div>
                 </div>
@@ -212,10 +212,10 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
                       width={600}
                       height={500}
                     />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.95)] via-[rgba(5,45,63,0.7)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 pb-8 text-white">
                       <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Work within a family-owned enterprise</h3>
-                      <p class="text-white/80 text-sm md:text-base">Professionals who play key roles in sustaining and growing businesses owned by their families.</p>
+                      <p class="text-white/90 text-sm md:text-base leading-snug">Professionals who play key roles in sustaining and growing businesses owned by their families.</p>
                     </div>
                   </div>
                 </div>
@@ -230,10 +230,10 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
                       width={600}
                       height={500}
                     />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.95)] via-[rgba(5,45,63,0.7)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 pb-8 text-white">
                       <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Are inheriting and continuing the business</h3>
-                      <p class="text-white/80 text-sm md:text-base">Next generation leaders taking the helm of businesses built by previous generations.</p>
+                      <p class="text-white/90 text-sm md:text-base leading-snug">Next generation leaders taking the helm of businesses built by previous generations.</p>
                     </div>
                   </div>
                 </div>
@@ -248,10 +248,10 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
                       width={600}
                       height={500}
                     />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.9)] to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[rgba(5,45,63,0.95)] via-[rgba(5,45,63,0.7)] to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 pb-8 text-white">
                       <h3 class="text-lg md:text-xl font-display font-bold tracking-tight mb-2">Are stewarding their family's assets, land, or enterprise</h3>
-                      <p class="text-white/80 text-sm md:text-base">Individuals responsible for managing and growing family wealth, property, or legacy businesses.</p>
+                      <p class="text-white/90 text-sm md:text-base leading-snug">Individuals responsible for managing and growing family wealth, property, or legacy businesses.</p>
                     </div>
                   </div>
                 </div>
@@ -635,7 +635,7 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
     /* Make carousel and purpose box equal height in side-by-side view */
     @media (min-width: 1024px) {
       .audience-slide, .audience-slide .relative {
-        height: 310px;
+        height: 380px;
       }
       
       #audienceCarousel, #audienceCarousel .relative {
@@ -730,6 +730,10 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
     @media (max-width: 768px) {
       .carousel-slide, .audience-slide {
         padding: 0 16px;
+      }
+
+      .audience-slide .relative {
+        height: 420px; /* Increased height for mobile */
       }
     }
   </style>
