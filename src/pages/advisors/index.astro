@@ -674,6 +674,89 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
     </div>
   </section>
   
+  <!-- Frequently Asked Questions Section -->
+  <section class="py-16 md:py-24 bg-white border-t border-[#052d3f]/10">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f] mb-10">
+          Frequently Asked Questions
+        </h2>
+        
+        <div class="bg-white rounded-lg shadow-sm border border-border/30">
+          <!-- Custom FAQ accordion implementation -->
+          <div class="divide-y divide-border/50">
+            <!-- Question 1 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>Do we need to know exactly what we're looking for before reaching out?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>No. Many families begin without clarity. The initiation session helps identify needs and next steps.</p>
+              </div>
+            </div>
+            
+            <!-- Question 2 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>Is IRL Advisors only for families with established businesses or wealth?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>Not at all. Legacy is defined by intention, values, and vision — not size.</p>
+              </div>
+            </div>
+            
+            <!-- Question 3 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>What makes IRL Advisors unique?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>We blend cultural grounding, emotional intelligence, and strategic advisory — honoring heritage while designing long-term legacy frameworks.</p>
+              </div>
+            </div>
+            
+            <!-- Question 4 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>What happens after the initiation session?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>You receive a personalized roadmap outlining recommended next steps — no pressure or obligation.</p>
+              </div>
+            </div>
+            
+            <!-- Question 5 -->
+            <div class="faq-item">
+              <button class="faq-trigger w-full flex items-center justify-between px-6 py-4 text-left font-display font-semibold text-primary text-lg">
+                <span>How does the private circle work?</span>
+                <ChevronDown className="h-5 w-5 text-primary transform transition-transform" />
+              </button>
+              <div class="faq-content px-6 pb-6 text-foreground/80 hidden">
+                <p>It is a curated, invitation-based community for Black family enterprise leaders. Interested families may submit a request for consideration.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-12">
+          <a 
+            href="#contact-form" 
+            class={buttonVariants({
+              size: "lg",
+              class: "font-medium text-base px-8 bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+            })}
+          >
+            Still Have Questions? Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Who We Serve & Why Partner Sections -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container">
@@ -943,10 +1026,22 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
   </section>
   
   
-  <!-- Time Triggered Modal - shows after 50 seconds -->
-  <TimeTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    delaySeconds={50}
-  />
+  <!-- Client-side script for FAQ accordion functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const trigger = item.querySelector('.faq-trigger');
+        const content = item.querySelector('.faq-content');
+        const icon = trigger.querySelector('svg');
+        
+        trigger.addEventListener('click', () => {
+          // Toggle current item
+          content.classList.toggle('hidden');
+          icon.classList.toggle('rotate-180');
+        });
+      });
+    });
+  </script>
 </BaseLayout>
