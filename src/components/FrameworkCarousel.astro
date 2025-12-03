@@ -97,6 +97,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
     let currentIndex = 0;
     let cardWidth = cards[0].clientWidth + 16; // Add margin
     const totalCards = cards.length;
+    let autoPlayInterval;
+    
+    // Touch/swipe handling variables
+    let startX = 0;
+    let currentX = 0;
+    let isPointerDown = false;
+    let initialTransform = 0;
     
     // Function to update carousel position
     function updateCarousel() {
@@ -108,6 +115,9 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
       // Ensure currentIndex doesn't go beyond limits
       if (currentIndex > maxIndex) {
         currentIndex = maxIndex;
+      }
+      if (currentIndex < 0) {
+        currentIndex = 0;
       }
       
       // Calculate transform value
@@ -129,58 +139,15 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
       
       // Handle button visibility
       prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+      const containerWidth = container.parentElement.clientWidth;
+      const visibleCards = Math.floor(containerWidth / cardWidth);
+      const maxIndex = totalCards - visibleCards;
       nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
     }
     
-    // Event listeners for navigation
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-      }
-    });
-    
-    nextBtn.addEventListener('click', () => {
-      const containerWidth = container.parentElement.clientWidth;
-      const visibleCards = Math.floor(containerWidth / cardWidth);
-      const maxIndex = totalCards - visibleCards;
-      
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateCarousel();
-      }
-    });
-    
-    // Handle indicator clicks
-    indicators.forEach((indicator, index) => {
-      indicator.addEventListener('click', () => {
-        currentIndex = index;
-        updateCarousel();
-      });
-    });
-    
-    // Auto advance the carousel
-    let autoPlayInterval = setInterval(() => {
-      const containerWidth = container.parentElement.clientWidth;
-      const visibleCards = Math.floor(containerWidth / cardWidth);
-      const maxIndex = totalCards - visibleCards;
-      
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-      }
-      
-      updateCarousel();
-    }, 6000); // Change slide every 6 seconds
-    
-    // Pause auto advance on hover
-    const carouselElement = document.querySelector('.framework-carousel');
-    carouselElement.addEventListener('mouseenter', () => {
+    // Function to start auto-play
+    function startAutoPlay() {
       clearInterval(autoPlayInterval);
-    });
-    
-    carouselElement.addEventListener('mouseleave', () => {
       autoPlayInterval = setInterval(() => {
         const containerWidth = container.parentElement.clientWidth;
         const visibleCards = Math.floor(containerWidth / cardWidth);
@@ -193,8 +160,123 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
         }
         
         updateCarousel();
-      }, 6000);
+      }, 6000); // Change slide every 6 seconds
+    }
+    
+    // Function to stop auto-play
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+    
+    // Event listeners for navigation
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+        stopAutoPlay();
+        startAutoPlay(); // Restart auto-play after manual interaction
+      }
     });
+    
+    nextBtn.addEventListener('click', () => {
+      const containerWidth = container.parentElement.clientWidth;
+      const visibleCards = Math.floor(containerWidth / cardWidth);
+      const maxIndex = totalCards - visibleCards;
+      
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateCarousel();
+        stopAutoPlay();
+        startAutoPlay(); // Restart auto-play after manual interaction
+      }
+    });
+    
+    // Handle indicator clicks
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => {
+        currentIndex = index;
+        updateCarousel();
+        stopAutoPlay();
+        startAutoPlay(); // Restart auto-play after manual interaction
+      });
+    });
+    
+    // Touch/Pointer event handlers for swipe functionality
+    function handlePointerStart(e) {
+      isPointerDown = true;
+      startX = e.clientX || e.touches[0].clientX;
+      currentX = startX;
+      initialTransform = -currentIndex * cardWidth;
+      container.style.transition = 'none';
+      stopAutoPlay(); // Pause auto-play during interaction
+    }
+    
+    function handlePointerMove(e) {
+      if (!isPointerDown) return;
+      
+      e.preventDefault();
+      currentX = e.clientX || e.touches[0].clientX;
+      const deltaX = currentX - startX;
+      const newTransform = initialTransform + deltaX;
+      
+      // Apply transform with resistance at boundaries
+      const containerWidth = container.parentElement.clientWidth;
+      const visibleCards = Math.floor(containerWidth / cardWidth);
+      const maxIndex = totalCards - visibleCards;
+      const maxTransform = 0;
+      const minTransform = -maxIndex * cardWidth;
+      
+      let boundedTransform = newTransform;
+      if (newTransform > maxTransform) {
+        boundedTransform = maxTransform + (newTransform - maxTransform) * 0.3;
+      } else if (newTransform < minTransform) {
+        boundedTransform = minTransform + (newTransform - minTransform) * 0.3;
+      }
+      
+      container.style.transform = `translateX(${boundedTransform}px)`;
+    }
+    
+    function handlePointerEnd(e) {
+      if (!isPointerDown) return;
+      
+      isPointerDown = false;
+      container.style.transition = 'transform 0.5s ease-in-out';
+      
+      const deltaX = currentX - startX;
+      const threshold = cardWidth * 0.3; // 30% of card width threshold
+      
+      const containerWidth = container.parentElement.clientWidth;
+      const visibleCards = Math.floor(containerWidth / cardWidth);
+      const maxIndex = totalCards - visibleCards;
+      
+      if (deltaX > threshold && currentIndex > 0) {
+        // Swiped right - go to previous
+        currentIndex--;
+      } else if (deltaX < -threshold && currentIndex < maxIndex) {
+        // Swiped left - go to next
+        currentIndex++;
+      }
+      
+      updateCarousel();
+      startAutoPlay(); // Resume auto-play after interaction
+    }
+    
+    // Add touch/pointer event listeners
+    container.addEventListener('pointerdown', handlePointerStart);
+    container.addEventListener('pointermove', handlePointerMove);
+    container.addEventListener('pointerup', handlePointerEnd);
+    container.addEventListener('pointercancel', handlePointerEnd);
+    container.addEventListener('pointerleave', handlePointerEnd);
+    
+    // Add touch event listeners for better mobile support
+    container.addEventListener('touchstart', handlePointerStart, { passive: false });
+    container.addEventListener('touchmove', handlePointerMove, { passive: false });
+    container.addEventListener('touchend', handlePointerEnd);
+    
+    // Pause auto advance on hover
+    const carouselElement = document.querySelector('.framework-carousel');
+    carouselElement.addEventListener('mouseenter', stopAutoPlay);
+    carouselElement.addEventListener('mouseleave', startAutoPlay);
     
     // Handle window resize
     window.addEventListener('resize', () => {
@@ -203,7 +285,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
       updateCarousel();
     });
     
-    // Initial update
+    // Initial setup
     updateCarousel();
+    startAutoPlay();
   });
 </script>

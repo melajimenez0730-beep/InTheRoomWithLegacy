@@ -241,6 +241,30 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
           let startX, moveX;
           let isPointerDown = false;
           const slideWidth = 100; // percentage based on container width
+          let autoPlayInterval;
+          let isDragging = false;
+
+          // Add visual feedback classes to carousel
+          carousel.classList.add('transition-transform', 'duration-300', 'ease-in-out');
+          
+          // Function to start auto-play
+          function startAutoPlay() {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(() => {
+              if (isDragging) return; // Don't auto-advance during user interaction
+              
+              let nextIndex = currentIndex + 1;
+              if (nextIndex >= slides.length) {
+                nextIndex = 0; // Loop back to first slide
+              }
+              updateCarousel(nextIndex);
+            }, 5000); // Change slide every 5 seconds
+          }
+          
+          // Function to stop auto-play
+          function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+          }
           
           // Function to update carousel position
           function updateCarousel(index) {
@@ -251,7 +275,8 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
             // Update current index
             currentIndex = index;
             
-            // Move carousel to show current slide
+            // Move carousel to show current slide with smooth animation
+            carousel.style.transition = 'transform 300ms ease-in-out';
             carousel.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
             
             // Update indicators
@@ -259,9 +284,20 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
               if (i === currentIndex) {
                 button.classList.remove('bg-primary/30');
                 button.classList.add('bg-primary');
+                button.setAttribute('aria-current', 'true');
               } else {
                 button.classList.remove('bg-primary');
                 button.classList.add('bg-primary/30');
+                button.removeAttribute('aria-current');
+              }
+            });
+
+            // Update ARIA attributes for accessibility
+            slides.forEach((slide, i) => {
+              if (i === currentIndex) {
+                slide.setAttribute('aria-hidden', 'false');
+              } else {
+                slide.setAttribute('aria-hidden', 'true');
               }
             });
           }
@@ -270,41 +306,76 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
           indicatorButtons.forEach((button, index) => {
             button.addEventListener('click', () => {
               updateCarousel(index);
+              stopAutoPlay();
+              startAutoPlay(); // Restart auto-play after manual interaction
             });
           });
           
-          // Add touch/pointer event handlers
-          carousel.addEventListener('pointerdown', (e) => {
+          // Enhanced touch/pointer event handlers
+          function handlePointerDown(e) {
             isPointerDown = true;
-            startX = e.clientX;
-            // Prevent default to avoid scroll during swipe
-            e.preventDefault();
-          });
+            isDragging = false;
+            
+            // Get touch coordinates
+            startX = e.clientX || (e.touches && e.touches[0].clientX);
+            carousel.style.transition = 'none'; // Remove transition for responsive dragging
+            
+            stopAutoPlay(); // Pause auto-play during interaction
+            
+            // Prevent default only for pointer events to avoid scroll interference issues
+            if (e.type === 'pointerdown') {
+              e.preventDefault();
+            }
+          }
           
-          carousel.addEventListener('pointermove', (e) => {
+          function handlePointerMove(e) {
             if (!isPointerDown) return;
-            moveX = e.clientX;
+            
+            // Get current touch position
+            moveX = e.clientX || (e.touches && e.touches[0].clientX);
+            if (!moveX) return;
+            
             const diff = moveX - startX;
-            // Prevent overscroll at edges
+            if (Math.abs(diff) > 10) {
+              isDragging = true;
+            }
+            
+            // Prevent vertical scrolling when swiping horizontally
+            if (isDragging && e.cancelable) {
+              e.preventDefault();
+            }
+            
+            // Calculate movement with resistance at edges
             const minTranslate = 0;
             const maxTranslate = -(slides.length - 1) * slideWidth;
-            const translate = Math.max(
-              maxTranslate, 
-              Math.min(
-                minTranslate, 
-                -(currentIndex * slideWidth) + (diff / carousel.offsetWidth * 100)
-              )
-            );
+            let translate = -(currentIndex * slideWidth) + (diff / carousel.offsetWidth * 100);
+            
+            // Add resistance at boundaries
+            if (translate > minTranslate) {
+              translate = minTranslate + (translate - minTranslate) * 0.3;
+            } else if (translate < maxTranslate) {
+              translate = maxTranslate + (translate - maxTranslate) * 0.3;
+            }
             
             carousel.style.transform = `translateX(${translate}%)`;
-          });
+          }
           
-          // Handle pointer up and decide if to snap to next/prev slide
+          // Enhanced pointer up handling with better snap animation
           function handlePointerUp(e) {
             if (!isPointerDown) return;
             isPointerDown = false;
             
-            const diff = (e.clientX || moveX) - startX;
+            // Restore transition for smooth snapping
+            carousel.style.transition = 'transform 300ms ease-in-out';
+            
+            // Get final position
+            const endX = e.clientX || (e.changedTouches && e.changedTouches[0].clientX) || moveX;
+            if (!endX) {
+              updateCarousel(currentIndex);
+              return;
+            }
+            
+            const diff = endX - startX;
             const threshold = carousel.offsetWidth * 0.2; // 20% of width threshold for swipe
             
             if (diff > threshold) {
@@ -317,14 +388,75 @@ import { BookOpen, Building, Users, Heart, Sparkles, Briefcase } from "lucide-re
               // Not enough movement, snap back
               updateCarousel(currentIndex);
             }
+            
+            setTimeout(() => {
+              isDragging = false;
+              startAutoPlay(); // Resume auto-play after interaction
+            }, 300);
           }
           
+          // Add both pointer and touch event listeners for maximum compatibility
+          carousel.addEventListener('pointerdown', handlePointerDown, { passive: false });
+          carousel.addEventListener('pointermove', handlePointerMove, { passive: false });
           carousel.addEventListener('pointerup', handlePointerUp);
           carousel.addEventListener('pointercancel', handlePointerUp);
           carousel.addEventListener('pointerleave', handlePointerUp);
           
-          // Set initial state
+          // Add touch event listeners specifically for mobile
+          carousel.addEventListener('touchstart', handlePointerDown, { passive: true });
+          carousel.addEventListener('touchmove', handlePointerMove, { passive: false });
+          carousel.addEventListener('touchend', handlePointerUp);
+          carousel.addEventListener('touchcancel', handlePointerUp);
+          
+          // Pause auto-play on hover/focus and resume on leave
+          const carouselContainer = document.querySelector('.carousel-container');
+          carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+          carouselContainer.addEventListener('mouseleave', startAutoPlay);
+          carouselContainer.addEventListener('focusin', stopAutoPlay);
+          carouselContainer.addEventListener('focusout', startAutoPlay);
+          
+          // Add keyboard navigation
+          carouselContainer.setAttribute('tabindex', '0');
+          carouselContainer.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+              updateCarousel(currentIndex - 1);
+              stopAutoPlay();
+              startAutoPlay();
+            } else if (e.key === 'ArrowRight') {
+              updateCarousel(currentIndex + 1);
+              stopAutoPlay();
+              startAutoPlay();
+            }
+          });
+          
+          // Set initial state and start auto-play
           updateCarousel(0);
+          startAutoPlay();
+
+          // Add accessibility attributes
+          carousel.setAttribute('aria-roledescription', 'carousel');
+          carousel.setAttribute('aria-live', 'polite');
+          slides.forEach((slide, index) => {
+            slide.setAttribute('role', 'group');
+            slide.setAttribute('aria-roledescription', 'slide');
+            slide.setAttribute('aria-label', `${index + 1} of ${slides.length}`);
+          });
+
+          // Add swipe hint for mobile users
+          if (window.innerWidth < 768) {
+            const swipeHint = document.createElement('div');
+            swipeHint.className = 'text-xs text-center text-foreground/60 mt-1';
+            swipeHint.textContent = 'Swipe left or right to navigate';
+            indicators.parentNode.insertBefore(swipeHint, indicators.nextSibling);
+            
+            // Remove the hint after user interacts with the carousel
+            const removeHint = () => {
+              swipeHint.classList.add('opacity-0');
+              setTimeout(() => swipeHint.remove(), 500);
+              carousel.removeEventListener('pointerdown', removeHint);
+            };
+            carousel.addEventListener('pointerdown', removeHint);
+          }
         });
       </script>
     </div>
