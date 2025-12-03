@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
-import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Users, University, Network, TestTube, Wrench, Computer, BriefcaseBusiness, CheckCheck, BadgeCheck, Handshake, ListChecks, Star, CheckCircle } from "lucide-react";
+import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Users, University, Network, TestTube, Wrench, Computer, BriefcaseBusiness, CheckCheck, BadgeCheck, Handshake, ListChecks, Star, CheckCircle, MessageCircle } from "lucide-react";
 import { Image } from 'astro:assets';
 import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
 import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
@@ -347,79 +347,59 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
         </h2>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-        <!-- Service 1: Advisory Services -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+        <!-- Service 1: Legacy & Generational Planning -->
         <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
           <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
             <Target class="text-[#052d3f] h-8 w-8" />
           </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Advisory Services</h3>
-          <ul class="space-y-4 text-[#052d3f]/80 flex-grow">
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-              <span>Family business strategy & governance</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-              <span>Succession and transition design</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-              <span>Wealth stewardship frameworks</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-              <span>Multi-generational engagement</span>
-            </li>
-          </ul>
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Legacy & Generational Planning</h3>
+          <p class="text-[#052d3f]/80 text-center">Clarify your family's values, vision, identity, and long-term goals across generations.</p>
         </div>
         
-        <!-- Service 2: Signature Tools & Products -->
+        <!-- Service 2: Succession & Transition Strategy -->
+        <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
+          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
+            <ArrowRight class="text-[#052d3f] h-8 w-8" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Succession & Transition Strategy</h3>
+          <p class="text-[#052d3f]/80 text-center">Design smooth leadership transitions and prepare next-generation heirs for their roles.</p>
+        </div>
+        
+        <!-- Service 3: Family Governance & Structure -->
+        <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
+          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
+            <Building class="text-[#052d3f] h-8 w-8" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Family Governance & Structure</h3>
+          <p class="text-[#052d3f]/80 text-center">Establish decision-making processes, roles, communication guidelines, and systems for continuity.</p>
+        </div>
+        
+        <!-- Service 4: Stewardship & Impact Planning -->
+        <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
+          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
+            <Briefcase class="text-[#052d3f] h-8 w-8" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Stewardship & Impact Planning</h3>
+          <p class="text-[#052d3f]/80 text-center">Integrate family mission, heritage, land, philanthropy, and community legacy into a unified strategy.</p>
+        </div>
+        
+        <!-- Service 5: Family Alignment & Guided Conversations -->
+        <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
+          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
+            <MessageCircle class="text-[#052d3f] h-8 w-8" />
+          </div>
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Family Alignment & Guided Conversations</h3>
+          <p class="text-[#052d3f]/80 text-center">Facilitated values mapping and intentional conversations that support unity, respect, and clarity.</p>
+        </div>
+        
+        <!-- Service 6: The IRL Legacy Assessment Tool -->
         <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
           <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
             <TestTube class="text-[#052d3f] h-8 w-8" />
           </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Signature Tools & Products</h3>
-          <ul class="space-y-4 text-[#052d3f]/80 flex-grow">
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-              <span>In the Room with Legacy Assessment Tool – AI-powered, culturally rooted legacy assessment for families & advisors</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-              <span>Data dashboards & insights for family wealth and impact</span>
-            </li>
-            <li class="flex items-start">
-              <ArrowRight className="h-5 w-5 text-[#9a4a0b] mr-3 mt-1 flex-shrink-0" />
-              <span>Custom retreats, labs, and workshops</span>
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Service 3: Professional Network -->
-        <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm hover:shadow-lg transition-all h-full flex flex-col">
-          <div class="w-16 h-16 mb-6 rounded-full bg-[#052d3f]/10 flex items-center justify-center mx-auto">
-            <Network class="text-[#052d3f] h-8 w-8" />
-          </div>
-          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">Professional Network</h3>
-          <div class="text-[#052d3f]/80 flex-grow">
-            <div class="mb-4 text-center font-medium text-[#052d3f]">
-              Black Family Business Network (BFBN)
-            </div>
-            <p class="mb-4 text-[#052d3f]/80">
-              A first-of-its-kind hub connecting Black family business leaders, heirs, and professionals. Through curated convenings, resources, and peer-to-peer exchange, BFBN builds community while advancing the role of Black families in global enterprise and wealth creation.
-            </p>
-          </div>
-          <a 
-            href="/programs/black-family-business-network" 
-            class={buttonVariants({
-              variant: "outline",
-              size: "default",
-              class: "mt-4 w-full justify-center border-[#052d3f] text-[#052d3f] hover:bg-[#052d3f]/10"
-            })}
-          >
-            Learn More
-          </a>
+          <h3 class="text-xl font-display font-semibold mb-4 text-[#052d3f] text-center">The IRL Legacy Assessment Tool</h3>
+          <p class="text-[#052d3f]/80 text-center">A culturally grounded diagnostic that helps families understand readiness, alignment, and areas of opportunity.</p>
         </div>
       </div>
     </div>
