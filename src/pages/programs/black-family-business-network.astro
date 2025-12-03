@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Award, Users, History, ChevronLeft, ChevronRight, BookOpen, Milestone, Shield, HandHelping, Network, Scroll, Search, Medal, GalleryHorizontal, SquaresUnite, ScrollText, Ticket, Anchor, User, ArrowRight, Send, MessageCircle, Workflow } from "lucide-react";
 import ReferBusinessButton from "@/components/ReferBusinessButton";
 import { Image } from 'astro:assets';
-import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
+// TimeTriggeredModal import removed to disable floating CTA on this page
 import blackFamilyBusinessImage from "@/assets/bfbn/the-black-family-business-network-1_nw_84484c73.png";
 import businessLeaderImage from "@/assets/bfbn/carousel/leadership-vision_nw_39a92e9e.png";
 import familyMeetingImage from "@/assets/bfbn/carousel/family-connection_nw_a59cb614.png";
@@ -993,10 +993,5 @@ import stewardImage from "@/assets/bfbn/audience-carousel/asset-steward_nw_p4q5r
   </script>
 
   
-  <!-- Time Triggered Modal - shows after 50 seconds -->
-  <TimeTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    delaySeconds={50}
-  />
+  <!-- Floating CTA button has been removed to provide a cleaner user experience on this page -->
 </BaseLayout>
