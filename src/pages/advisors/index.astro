@@ -4,6 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Users, University, Network, TestTube, Wrench, Computer, BriefcaseBusiness, CheckCheck, BadgeCheck, Handshake, ListChecks, Star, CheckCircle, MessageCircle } from "lucide-react";
 import { Image } from 'astro:assets';
 import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
+import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
 import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
 ---
 
@@ -100,79 +101,6 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
             <h4 class="font-display font-semibold text-[#052d3f] text-lg">Advisors & professionals</h4>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Bespoke Family Advisory Section -->
-  <section class="py-16 md:py-24 bg-[#f8f7f2] border-t border-[#052d3f]/10">
-    <div class="container">
-      <div class="max-w-3xl mx-auto text-center">
-        <div class="inline-flex items-center justify-center mb-6">
-          <Star className="text-[#9a4a0b] h-6 w-6 mr-2" />
-          <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f]">
-            Bespoke Family Advisory
-          </h2>
-          <span class="text-sm text-[#9a4a0b] ml-3 font-medium">(Limited Availability)</span>
-        </div>
-        
-        <p class="text-xl md:text-2xl text-[#052d3f]/90 font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
-          Family legacy is multidimensional — rooted in values, wealth, land, identity, responsibility, and the stories that shape each generation.
-        </p>
-        
-        <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm text-left mb-10">
-          <p class="text-[#052d3f]/80 font-medium mb-4">IRL Advisors provides tailored guidance for:</p>
-          
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-            <div class="flex items-start">
-              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
-              <span>First-generation founders building intentional legacy from the ground up</span>
-            </div>
-            
-            <div class="flex items-start">
-              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
-              <span>Second- and third-generation successors preparing for continuity and leadership</span>
-            </div>
-            
-            <div class="flex items-start">
-              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
-              <span>Family business owners navigating governance, structure, and succession</span>
-            </div>
-            
-            <div class="flex items-start">
-              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
-              <span>Stewards of land and heritage preserving long-held assets and responsibility</span>
-            </div>
-            
-            <div class="flex items-start">
-              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
-              <span>Heirs and inheritors stepping into generational roles</span>
-            </div>
-            
-            <div class="flex items-start">
-              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
-              <span>Multibranch families seeking alignment, communication, and clarity</span>
-            </div>
-          </div>
-          
-          <p class="text-[#052d3f]/80 mb-4">
-            We help families plan with intention, structure, and care — protecting what matters and preparing those who will carry it forward.
-          </p>
-          
-          <p class="text-[#052d3f]/80 italic text-sm">
-            This service is highly selective and available by consultation only.
-          </p>
-        </div>
-        
-        <a 
-          href="#contact-form" 
-          class={buttonVariants({
-            size: "lg",
-            class: "font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
-          })}
-        >
-          Inquire About Bespoke Family Advisory
-        </a>
       </div>
     </div>
   </section>
@@ -673,6 +601,79 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
     </div>
   </section>
   
+  <!-- Bespoke Family Advisory Section -->
+  <section class="py-16 md:py-24 bg-[#f8f7f2] border-t border-[#052d3f]/10">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center justify-center mb-6">
+          <Star className="text-[#9a4a0b] h-6 w-6 mr-2" />
+          <h2 class="text-3xl md:text-4xl font-display font-bold tracking-tight text-[#052d3f]">
+            Bespoke Family Advisory
+          </h2>
+          <span class="text-sm text-[#9a4a0b] ml-3 font-medium">(Limited Availability)</span>
+        </div>
+        
+        <p class="text-xl md:text-2xl text-[#052d3f]/90 font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
+          Family legacy is multidimensional — rooted in values, wealth, land, identity, responsibility, and the stories that shape each generation.
+        </p>
+        
+        <div class="bg-white p-8 rounded-lg border border-[#052d3f]/10 shadow-sm text-left mb-10">
+          <p class="text-[#052d3f]/80 font-medium mb-4">IRL Advisors provides tailored guidance for:</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+            <div class="flex items-start">
+              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
+              <span>First-generation founders building intentional legacy from the ground up</span>
+            </div>
+            
+            <div class="flex items-start">
+              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
+              <span>Second- and third-generation successors preparing for continuity and leadership</span>
+            </div>
+            
+            <div class="flex items-start">
+              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
+              <span>Family business owners navigating governance, structure, and succession</span>
+            </div>
+            
+            <div class="flex items-start">
+              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
+              <span>Stewards of land and heritage preserving long-held assets and responsibility</span>
+            </div>
+            
+            <div class="flex items-start">
+              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
+              <span>Heirs and inheritors stepping into generational roles</span>
+            </div>
+            
+            <div class="flex items-start">
+              <ArrowRight className="h-4 w-4 text-[#9a4a0b] mr-2 mt-1 flex-shrink-0" />
+              <span>Multibranch families seeking alignment, communication, and clarity</span>
+            </div>
+          </div>
+          
+          <p class="text-[#052d3f]/80 mb-4">
+            We help families plan with intention, structure, and care — protecting what matters and preparing those who will carry it forward.
+          </p>
+          
+          <p class="text-[#052d3f]/80 italic text-sm">
+            This service is highly selective and available by consultation only.
+          </p>
+        </div>
+        
+        <a 
+          href="#contact-form" 
+          class={buttonVariants({
+            size: "lg",
+            class: "font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+          })}
+        >
+          Inquire About Bespoke Family Advisory
+        </a>
+      </div>
+    </div>
+  </section>
+  
   <!-- Who We Serve & Why Partner Sections -->
   <section class="py-16 md:py-24 bg-white">
     <div class="container">
@@ -941,4 +942,11 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
     </div>
   </section>
   
+  
+  <!-- Time Triggered Modal - shows after 50 seconds -->
+  <TimeTriggeredModal 
+    client:load
+    guideName="Parenting a Parent: A Guide for Adult Children"
+    delaySeconds={50}
+  />
 </BaseLayout>
