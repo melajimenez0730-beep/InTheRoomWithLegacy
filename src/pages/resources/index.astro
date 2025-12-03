@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Search, Download, FileText, Book, Bookmark, Filter, Settings, Tool, FileQuestion, ScrollText, ChevronDown, ChevronUp, ListFilter } from "lucide-react";
-import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
+// TimeTriggeredModal removed as requested
 
 // Import all thumbnail images individually
 import assessmentToolThumbnail from "@/assets/ai-powered-legacy-assessment-tool_nw_f99ce436.png";
@@ -439,12 +439,7 @@ import heroBackgroundImage from "@/assets/hero-legacy-insights-tools-resources_n
   </section>
 
   
-  <!-- Time Triggered Modal - shows after 50 seconds -->
-  <TimeTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    delaySeconds={50}
-  />
+  <!-- Time Triggered Modal has been removed to provide a cleaner user experience on this page -->
 </BaseLayout>
 
 <script>
