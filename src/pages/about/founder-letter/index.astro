@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { Image } from 'astro:assets';
-import { TimeTriggeredModal } from '@/components/TimeTriggeredModal';
+// TimeTriggeredModal import removed to disable floating CTA on this page
 
 // Import images for storytelling mood board
 import legacyCollage from "@/assets/legacy_collage_nw_ddd335e4.png";
@@ -324,10 +324,5 @@ import laurenSpeaking from "@/assets/founder-letter/lauren-speaking_nw_9b7032b9.
 </style>
 
 
-<!-- Time Triggered Modal - shows after 50 seconds -->
-<TimeTriggeredModal 
-  client:load
-  guideName="Parenting a Parent: A Guide for Adult Children"
-  delaySeconds={50}
-/>
+<!-- Time Triggered Modal has been removed to provide a cleaner user experience on this page -->
 </BaseLayout>
