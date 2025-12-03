@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { MailPlus, Building, Megaphone, DollarSign, MailCheck } from "lucide-react";
 import ContactPageForm from "@/components/ContactPageForm";
 import { Image } from 'astro:assets';
-import { TimeTriggeredModal } from "@/components/TimeTriggeredModal";
+// TimeTriggeredModal import removed as requested
 import legacyBackground from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-4_nw_2c87fa2a.png";
 ---
 
@@ -181,10 +181,5 @@ import legacyBackground from "@/assets/ash-grey-and-black-modern-professional-br
   </section>
 
   
-  <!-- Time Triggered Modal - shows after 50 seconds -->
-  <TimeTriggeredModal 
-    client:load
-    guideName="Parenting a Parent: A Guide for Adult Children"
-    delaySeconds={50}
-  />
+  <!-- Time Triggered Modal has been removed to provide a cleaner user experience on this page -->
 </BaseLayout>
