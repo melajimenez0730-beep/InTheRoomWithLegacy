@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
-import { LeadCaptureForm } from "./LeadCaptureForm";
 import "../styles/modal-overrides.css";
 import "../styles/modal-design.css";
 
@@ -106,19 +105,19 @@ export function TimeTriggeredModal({
     };
   }, [isModalOpen]);
 
-  // Form submit success handler
-  const handleFormSuccess = () => {
-    // Store in localStorage that the guide has been downloaded successfully (permanent flag)
+  // Handle typeform link click
+  const handleTypeformClick = () => {
+    // Store in localStorage that the user has clicked the link (permanent flag)
     try {
       const permanentModalKey = `timeModal_downloaded_${guideName.replace(/\\s+/g, '_')}`;
       localStorage.setItem(permanentModalKey, "true");
-      console.log(`[TimeModal] Guide downloaded, setting permanent flag to never show modal again`);
+      console.log(`[TimeModal] Link clicked, setting permanent flag to never show modal again`);
     } catch (e) {
       console.error("LocalStorage error:", e);
     }
     
-    // Auto-close after success and download
-    setTimeout(() => closeModal(), 6000);
+    // Close the modal
+    closeModal();
   };
 
   // Handle body overflow and preserve scroll position when modal is open
@@ -183,20 +182,29 @@ export function TimeTriggeredModal({
 
         <div className="modal-box-header">
           <h2 className="font-display">
-            Get Your Legacy Snapshot
+            Take Your Legacy Snapshot
           </h2>
           
           <p>
-            Enter your details below to start your personalized Legacy Snapshot assessment.
+            Discover your Legacy Dimensions with our complimentary assessment tool. Gain insights into your family's unique legacy approach in just minutes.
           </p>
         </div>
         
         <div className="modal-box-body">
-          <LeadCaptureForm 
-            guideName={guideName}
-            pdfPath={pdfPath}
-            onSuccess={handleFormSuccess}
-          />
+          <div className="flex flex-col items-center">
+            <p className="mb-4 text-center">
+              This assessment helps you understand your current legacy approach and provides personalized recommendations for growth.
+            </p>
+            <a 
+              href="https://form.typeform.com/to/SM7cDSbt"
+              onClick={handleTypeformClick}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-12 rounded-md px-10 py-3 bg-[#052d3f] text-white hover:bg-[#052d3f]/90 w-full sm:w-auto text-center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Start Snapshot Now
+            </a>
+          </div>
         </div>
       </div>
     </div>
