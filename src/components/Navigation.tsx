@@ -95,7 +95,7 @@ export default function Navigation() {
         trigger="Tools & Resources" 
         items={[
           { href: "/resources", label: "Legacy Insights, Tools, and Resources" },
-          { href: "/tools/legacy-assessment", label: "Legacy Assessment" }
+          { href: "https://form.typeform.com/to/SM7cDSbt", label: "Legacy Assessment" }
         ]} 
       />
       
