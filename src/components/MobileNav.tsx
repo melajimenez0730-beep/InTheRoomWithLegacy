@@ -149,7 +149,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
             )}
             onClick={handleClose}
           >
-            Take the Legacy Assessment
+            Take Your Legacy Snapshot
           </a>
           {/* Donate button temporarily removed */}
         </div>
