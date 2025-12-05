@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { Target, Building, Briefcase, ExternalLink, ArrowRight, CircleCheck, Users, University, Network, TestTube, Wrench, Computer, BriefcaseBusiness, CheckCheck, BadgeCheck, Handshake, ListChecks, Star, CheckCircle, MessageCircle, ChevronDown } from "lucide-react";
 import { Image } from 'astro:assets';
-import heroImage from "@/assets/advisory-innovation-connection_nw_950e6454.png";
+import heroImage from "@/assets/snapinstato_487796400_18475165081069681_3685359754912716180_n_nw_ecce4983.jpg";
 // TimeTriggeredModal removed as requested
 import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
 ---
@@ -11,22 +11,27 @@ import FrameworkCarousel from "@/components/FrameworkCarousel.astro";
 <BaseLayout title="In the Room with Legacy Advisors - In the Room With Legacy" description="In the Room with Legacy Advisors (IRL Advisors) is an advisory and innovation arm of In the Room with Legacy™. We provide the strategies, tools, and networks that families, businesses, and institutions need to sustain legacy across generations.">
   <!-- Hero Section -->
   <section class="py-24 md:py-32 bg-[#f3f4f6] relative overflow-hidden">
-    <div class="absolute inset-0 opacity-20 z-0">
+    <div class="absolute inset-0 z-0">
       <Image 
         src={heroImage} 
-        alt="Advisory, Innovation, and Connection concept image" 
+        alt="Photograph from the 'Black in America' series by Eli Reed (1985-1995)" 
         class="w-full h-full object-cover object-center"
       />
-      <div class="absolute inset-0 bg-[#f3f4f6]/40 mix-blend-overlay"></div>
+      <div class="absolute inset-0 bg-[#052d3f]/60"></div>
+      
+      <!-- Photo Credits -->
+      <div class="absolute bottom-4 right-4 text-white/70 text-xs z-10">
+        <p>Photographs from the 'Black in America' series by Eli Reed (1985-1995)</p>
+      </div>
     </div>
     <div class="container relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="font-display tracking-tight text-[#052d3f] leading-tight mb-6">
+        <h1 class="font-display tracking-tight text-white leading-tight mb-6">
           <div class="flex flex-col text-center">
             <div class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Legacy Advisory for Families, Built With Clarity & Intention</div>
           </div>
         </h1>
-        <p class="text-xl md:text-2xl text-[#052d3f]/90 leading-relaxed mb-8 max-w-3xl mx-auto">
+        <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 max-w-3xl mx-auto">
           IRL Advisors partners with families, family businesses, and multigenerational stewards to preserve heritage, steward generational wealth, and prepare successors with purpose and confidence. Through culturally grounded advisory and structured, thoughtful planning, we help families build legacy that stands the test of time.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
