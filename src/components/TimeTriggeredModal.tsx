@@ -41,15 +41,6 @@ export function TimeTriggeredModal({
   // Check if we should show the modal
   useEffect(() => {
     try {
-      // Check if we are on the homepage - ONLY allow the modal on the homepage
-      const currentPath = window.location.pathname;
-      const isHomepage = currentPath === "/" || currentPath === "";
-      
-      if (!isHomepage) {
-        console.log(`[TimeModal] Not on homepage (${currentPath}), preventing modal display`);
-        return; // Don't show on any page except the homepage
-      }
-      
       // First check if the guide has been downloaded successfully (permanent flag)
       const permanentModalKey = `timeModal_downloaded_${guideName.replace(/\\s+/g, '_')}`;
       const hasDownloaded = localStorage.getItem(permanentModalKey) === "true";
@@ -60,6 +51,7 @@ export function TimeTriggeredModal({
       }
       
       // Then check if the modal was dismissed in the current session on this page
+      const currentPath = window.location.pathname;
       const sessionKey = `timeModal_session_${currentPath}_${guideName.replace(/\\s+/g, '_')}`;
       const dismissedInSession = sessionStorage.getItem(sessionKey) === "true";
       
