@@ -8,7 +8,7 @@ import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
 import familyTreeLogo from '../../assets/3_nw_b5691621.png';
 import heroBackground from '../../assets/snapinstato_571445027_18513139246069681_2837516936033410283_n-1_nw_414f6809.jpg';
 import whileWereStillHereImage from '../../assets/snapinstato_487939032_18474370459069681_2507882882721367306_n_nw_44ecfd43.jpg';
-import legacyFoundersLabImage from '../../assets/legacy-founders-lab_nw_f73e6c48.png';
+import legacyFoundersLabImage from '../../assets/snapinstato_487824834_18474370510069681_5263027729272226557_n_nw_9f6c9dae.jpg';
 import cousinCorpImage from '../../assets/cousin-corp_nw_ee448cf9.png';
 import whyOurApproachWorksImage from '../../assets/why-our-approach-works_nw_488984b0.png';
 import guidedStorytellingImage from '../../assets/guided-storytelling-documentation_nw_8d2ba124.png';
@@ -269,7 +269,7 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
           <div class="bg-white rounded-lg border border-primary/10 shadow-sm overflow-hidden transition-all hover:shadow-md flex flex-col h-full">
             <div class="relative">
               <!-- Visual Header with Foundation Image -->
-              <div class="h-52 bg-primary/5 flex items-center justify-center overflow-hidden">
+              <div class="h-52 bg-primary/5 flex items-center justify-center overflow-hidden relative">
                 <Image 
                   src={legacyFoundersLabImage} 
                   alt="Legacy Founders Lab - Building family legacy foundation"
@@ -278,6 +278,11 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
                   height={400}
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent"></div>
+                
+                <!-- Photo Credits -->
+                <div class="absolute bottom-4 right-4 text-white/70 text-xs z-10">
+                  <p>Photos from Amon Carter Museum of American Art, Fort Worth, Texas collection</p>
+                </div>
                 
                 <!-- Overlay Icon -->
                 <div class="absolute bottom-0 right-0 transform translate-y-1/2 translate-x-[-15%]">
