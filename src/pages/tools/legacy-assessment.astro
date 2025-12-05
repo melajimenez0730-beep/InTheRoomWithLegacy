@@ -35,13 +35,13 @@ import { ArrowRight, Award, Brain, Lightbulb, BarChart3, Users, BookOpen, Chevro
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
-            href="#start-assessment" 
+            href="#learn-more" 
             class={buttonVariants({
               size: "lg",
               class: "font-medium"
             })}
           >
-            Take the Assessment (Beta)
+            Learn More About the Assessment
           </a>
         </div>
       </div>
@@ -142,13 +142,13 @@ import { ArrowRight, Award, Brain, Lightbulb, BarChart3, Users, BookOpen, Chevro
         
         <div class="text-center mt-16">
           <a 
-            href="#start-assessment" 
+            href="#learn-more" 
             class={buttonVariants({
               size: "lg",
               class: "font-medium shadow-md hover:shadow-lg transition-shadow"
             })}
           >
-            Start the Beta Assessment <span class="ml-1 text-xs bg-amber-500/20 text-amber-600 font-bold rounded-full px-2 py-0.5">BETA</span>
+            Learn More About the Beta Assessment <span class="ml-1 text-xs bg-amber-500/20 text-amber-600 font-bold rounded-full px-2 py-0.5">BETA</span>
           </a>
         </div>
       </div>
@@ -247,20 +247,37 @@ import { ArrowRight, Award, Brain, Lightbulb, BarChart3, Users, BookOpen, Chevro
   </section>
 
   <!-- Closing Section -->
-  <section class="py-24 bg-primary/5" id="start-assessment">
+  <section class="py-24 bg-primary/5" id="learn-more">
     <div class="container">
       <div class="max-w-3xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-display font-bold text-primary mb-6">
-          Join the Beta and take your first step today.
+          Want to learn more about the Legacy Assessment?
         </h2>
         
-        <div>
+        <p class="text-lg text-foreground/80 mb-8">
+          This detailed assessment tool is being developed to provide comprehensive insights about your family's legacy journey. The full Beta version will be available soon.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">          
           <a 
-            href="#contact" 
+            href="/contact" 
             class={buttonVariants({
               variant: "outline",
+              size: "lg",
+              class: "border-primary text-primary hover:bg-primary/10 font-medium"
+            })}
+          >
+            Contact Us for More Information
+          </a>
+        </div>
+        
+        <div class="mt-8">
+          <a 
+            href="/contact" 
+            class={buttonVariants({
+              variant: "link",
               size: "default",
-              class: "border-primary text-primary hover:bg-primary/10 font-medium text-sm"
+              class: "text-primary hover:text-primary/80 font-medium text-sm"
             })}
           >
             Join the Room
