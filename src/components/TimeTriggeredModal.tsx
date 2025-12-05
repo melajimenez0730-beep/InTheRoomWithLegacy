@@ -184,11 +184,14 @@ export function TimeTriggeredModal({
         </div>
         
         <div className="modal-box-body">
-          <LeadCaptureForm 
-            guideName={guideName}
-            pdfPath={pdfPath}
-            onSuccess={handleFormSuccess}
-          />
+          <div className="text-center py-6">
+            <p className="mb-8 text-foreground/80">Get your personalized Legacy Snapshot assessment.</p>
+            <a 
+              href="https://form.typeform.com/to/SM7cDSbt"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-white font-semibold text-base px-8 py-6 bg-[#052d3f] hover:bg-[#052d3f]/90 shadow-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring min-w-[275px] h-[56px]">
+              Take the Assessment
+            </a>
+          </div>
         </div>
       </div>
     </div>
