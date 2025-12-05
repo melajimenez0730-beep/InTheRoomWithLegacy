@@ -5,7 +5,7 @@ import { MailPlus, Building, Megaphone, DollarSign, MailCheck } from "lucide-rea
 import ContactPageForm from "@/components/ContactPageForm";
 import { Image } from 'astro:assets';
 // TimeTriggeredModal import removed as requested
-import legacyBackground from "@/assets/ash-grey-and-black-modern-professional-brand-research-presentation-4_nw_2c87fa2a.png";
+import legacyBackground from "@/assets/snapinstato_487844719_18475165156069681_1580906810521251231_n_nw_47c6ace2.jpg";
 ---
 
 <BaseLayout
@@ -17,10 +17,15 @@ import legacyBackground from "@/assets/ash-grey-and-black-modern-professional-br
     <div class="absolute inset-0 z-0">
       <Image 
         src={legacyBackground} 
-        alt="Vintage family photographs showing legacy moments" 
-        class="w-full h-full object-cover brightness-[0.8] sepia-[0.15]"
+        alt="Photograph from the 'Black in America' series by Eli Reed (1985-1995)" 
+        class="w-full h-full object-cover"
       />
-      <div class="absolute inset-0 bg-gradient-to-b from-primary/70 to-primary/60 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-primary/60"></div>
+      
+      <!-- Photo Credits -->
+      <div class="absolute bottom-4 right-4 text-white/70 text-xs z-10">
+        <p>Photographs from the 'Black in America' series by Eli Reed (1985-1995)</p>
+      </div>
     </div>
 
     <div class="container relative z-10">
