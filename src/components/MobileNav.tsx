@@ -128,7 +128,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
           {/* Tools & Resources Dropdown */}
           <MobileNavDropdown label="Tools & Resources">
             <MobileNavGroupLink href="/resources" onClick={handleClose}>Legacy Insights, Tools, and Resources</MobileNavGroupLink>
-            <MobileNavGroupLink href="https://form.typeform.com/to/SM7cDSbt" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
+            <MobileNavGroupLink href="/tools/legacy-assessment" onClick={handleClose}>Legacy Assessment</MobileNavGroupLink>
           </MobileNavDropdown>
           
           {/* IRL Advisors with dropdown */}
@@ -142,7 +142,7 @@ export default function MobileNav({ isOpen: initialIsOpen, onClose }: MobileNavP
         {/* CTAs */}
         <div className="flex flex-col gap-3 mt-4 px-4">
           <a
-            href="https://form.typeform.com/to/SM7cDSbt"
+            href="/tools/legacy-assessment"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
               "w-full text-center bg-[#f7f6dc] text-[#052d3f] font-medium border-2 border-[#052d3f] hover:bg-[#052d3f] hover:text-white transition-colors duration-300"
