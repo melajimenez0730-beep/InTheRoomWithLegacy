@@ -11,12 +11,41 @@
   align-items: center;
   justify-content: center;
   z-index: 99999;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   width: 100vw;
   height: 100vh;
   padding: 1.5rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+/* Modal overlay for full-screen effect */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.95) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Focus effect with radial gradient - fallback */
+.modal-box-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.95) 100%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* Box-styled modal content */
@@ -27,7 +56,8 @@
   max-width: 500px; /* Controlled width for desktop */
   margin: auto;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 5px 15px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  animation: modal-appear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
@@ -84,6 +114,18 @@
 .modal-box-close:hover {
   color: #164E63;
   background-color: rgba(22, 78, 99, 0.05);
+}
+
+/* Animation for modal appearance */
+@keyframes modal-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Mobile adjustments */

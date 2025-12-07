@@ -357,6 +357,7 @@ export function ScrollTriggeredModal({
 
   return (
     <div className="modal-box-container mobile-modal-container animate-fade-in">
+      <div className="modal-overlay"></div>
       <div 
         ref={modalRef}
         className="modal-box-content mobile-modal-content animate-fade-in-up"

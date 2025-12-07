@@ -13,7 +13,9 @@
     align-items: center !important;
     justify-content: center !important;
     z-index: 999999 !important; /* Ultra high z-index */
-    background-color: rgba(0, 0, 0, 0.75) !important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
     width: 100vw !important;
     height: 100vh !important;
     padding: 1.25rem !important;
