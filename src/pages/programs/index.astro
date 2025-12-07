@@ -77,14 +77,14 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
         <!-- Pillars Cards Row -->
         <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-12">
           <!-- Family Legacy Pillar -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col">
+          <div class="pillar-box bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col cursor-pointer" tabindex="0">
             <div class="p-6 flex flex-col items-center text-center flex-grow">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <BookOpen className="text-primary" size={20} />
               </div>
               <h3 class="font-display font-semibold text-primary mb-2">Family Legacy</h3>
               <p class="text-xs text-foreground/70">Preservation, Charters, Governance, Traditions, Systems</p>
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
+              <div class="pillar-description absolute inset-0 opacity-0 md:group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
                 <p class="text-sm text-foreground/80">
                   Preserving the systems, charters, governance, and traditions that help families stay aligned across generations.
                 </p>
@@ -93,14 +93,14 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
           </div>
 
           <!-- Next-Gen Stewardship Pillar -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col">
+          <div class="pillar-box bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col cursor-pointer" tabindex="0">
             <div class="p-6 flex flex-col items-center text-center flex-grow">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Users className="text-primary" size={20} />
               </div>
               <h3 class="font-display font-semibold text-primary mb-2">Next-Gen Stewardship</h3>
               <p class="text-xs text-foreground/70">Youth, Heirs, Succession, Preparation</p>
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
+              <div class="pillar-description absolute inset-0 opacity-0 md:group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
                 <p class="text-sm text-foreground/80">
                   Preparing heirs and youth to inherit with discipline, confidence, and purpose.
                 </p>
@@ -109,14 +109,14 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
           </div>
 
           <!-- Community & Belonging Pillar -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col">
+          <div class="pillar-box bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col cursor-pointer" tabindex="0">
             <div class="p-6 flex flex-col items-center text-center flex-grow">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <HeartHandshake className="text-primary" size={20} />
               </div>
               <h3 class="font-display font-semibold text-primary mb-2">Community & Belonging</h3>
               <p class="text-xs text-foreground/70">Connection, Support, Relationships, Unity</p>
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
+              <div class="pillar-description absolute inset-0 opacity-0 md:group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
                 <p class="text-sm text-foreground/80">
                   Strengthening relationships, cultivating shared cultural practices, and building purposeful connection that holds families together across generations.
                 </p>
@@ -125,14 +125,14 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
           </div>
 
           <!-- Economic Empowerment Pillar -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col">
+          <div class="pillar-box bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col cursor-pointer" tabindex="0">
             <div class="p-6 flex flex-col items-center text-center flex-grow">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <DollarSign className="text-primary" size={20} />
               </div>
               <h3 class="font-display font-semibold text-primary mb-2">Economic Empowerment</h3>
               <p class="text-xs text-foreground/70">Family Business, Wealth Building, Financial Literacy</p>
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
+              <div class="pillar-description absolute inset-0 opacity-0 md:group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
                 <p class="text-sm text-foreground/80">
                   Building wealth and enterprise that serve both the family and the broader community.
                 </p>
@@ -141,14 +141,14 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
           </div>
 
           <!-- Transitions & Healing Pillar -->
-          <div class="bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col">
+          <div class="pillar-box bg-white rounded-lg shadow-sm overflow-hidden border border-border/10 hover:shadow-md transition-all group relative h-[250px] md:aspect-[1/1.2] flex flex-col cursor-pointer" tabindex="0">
             <div class="p-6 flex flex-col items-center text-center flex-grow">
               <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
                 <Lightbulb className="text-primary" size={20} />
               </div>
               <h3 class="font-display font-semibold text-primary mb-2">Transitions & Healing</h3>
               <p class="text-xs text-foreground/70">End-of-Life, Grief, Inheritance Readiness</p>
-              <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
+              <div class="pillar-description absolute inset-0 opacity-0 md:group-hover:opacity-100 bg-white transition-opacity duration-300 flex flex-col justify-center p-4">
                 <p class="text-sm text-foreground/80">
                   Guiding families through periods of change—such as end-of-life, grief, and inheritance readiness.
                 </p>
@@ -596,4 +596,76 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
 
   
   <!-- Time Triggered Modal has been removed to provide a cleaner user experience on this page -->
+  
+  <!-- Client-side script for mobile pillar box interaction -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pillarBoxes = document.querySelectorAll('.pillar-box');
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      let activeBox = null;
+
+      // Add click event to each pillar box
+      pillarBoxes.forEach(box => {
+        const description = box.querySelector('.pillar-description');
+        
+        // Only add click events for mobile
+        if (isMobile) {
+          box.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            // If this box is already active, close it
+            if (activeBox === box) {
+              description.classList.remove('opacity-100');
+              description.classList.add('opacity-0');
+              activeBox = null;
+              return;
+            }
+            
+            // Close any previously opened box
+            if (activeBox) {
+              const activeDesc = activeBox.querySelector('.pillar-description');
+              activeDesc.classList.remove('opacity-100');
+              activeDesc.classList.add('opacity-0');
+            }
+            
+            // Open this box
+            description.classList.remove('opacity-0');
+            description.classList.add('opacity-100');
+            activeBox = box;
+          });
+          
+          // Support keyboard navigation for accessibility
+          box.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              box.click();
+            }
+          });
+        }
+      });
+      
+      // Close active box when clicking elsewhere on the page (mobile only)
+      if (isMobile) {
+        document.addEventListener('click', () => {
+          if (activeBox) {
+            const activeDesc = activeBox.querySelector('.pillar-description');
+            activeDesc.classList.remove('opacity-100');
+            activeDesc.classList.add('opacity-0');
+            activeBox = null;
+          }
+        });
+      }
+      
+      // Update mobile detection on window resize
+      window.addEventListener('resize', () => {
+        const wasDesktop = !isMobile;
+        const nowMobile = window.matchMedia('(max-width: 768px)').matches;
+        
+        // If switched from desktop to mobile
+        if (wasDesktop && nowMobile) {
+          location.reload(); // Reload page to re-initialize event handlers
+        }
+      });
+    });
+  </script>
 </BaseLayout>
