@@ -6,7 +6,7 @@ import { Image } from 'astro:assets';
 // TimeTriggeredModal import removed to disable floating CTA on this page
 import legacyCollage from '../../assets/legacy_collage_nw_ddd335e4.png';
 import familyTreeLogo from '../../assets/3_nw_b5691621.png';
-import heroBackground from '../../assets/527491788_18496449517069681_7302475918095110744_n_nw_1902b75d.jpg';
+import heroBackground from '../../assets/programs-hero-new_nw_92b9c4ca.jpg';
 import whileWereStillHereImage from '../../assets/while-were-still-here_nw_7503e0d2.png';
 import legacyFoundersLabImage from '../../assets/legacy-founders-lab_nw_f73e6c48.png';
 import cousinCorpImage from '../../assets/cousin-corp_nw_ee448cf9.png';
@@ -40,20 +40,10 @@ import { CustomProgramModal } from "@/components/CustomProgramModal";
       
       <!-- Photo Credits -->
       <div class="absolute bottom-4 right-4 text-white/70 text-xs z-10">
-        <p>Family legacy portrait via Auburn Avenue Research Library</p>
+        <p>Photos via the Ann Arbor District Library</p>
       </div>
       
-      <!-- Family tree logo overlay -->
-      <div class="absolute inset-0 z-10 flex items-center justify-center">
-        <div class="w-full mx-auto flex justify-center">
-          <Image
-            src={familyTreeLogo} 
-            alt="Family tree logo symbolizing generations and legacy"
-            class="w-[150%] md:w-[120%] max-w-none h-auto opacity-30"
-            width={1200}
-          />
-        </div>
-      </div>
+      <!-- Family tree logo overlay removed -->
     </div>
 
     <div class="container relative z-10">
