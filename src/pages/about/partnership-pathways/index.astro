@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Handshake, Lightbulb, Sparkles } from "lucide-react";
 import { Image } from 'astro:assets';
 // TimeTriggeredModal import removed to disable floating CTA on this page
-import partnershipPathwaysImage from '../../../assets/snapinstato_571833634_18512900086069681_5003885570261073469_n_nw_00a8301a.jpg';
+import partnershipPathwaysImage from '../../../assets/1-3_nw_5d0ba270.png';
 ---
 
 <BaseLayout
@@ -18,10 +18,10 @@ import partnershipPathwaysImage from '../../../assets/snapinstato_571833634_1851
       <div class="relative w-full h-full">
         <Image 
           src={partnershipPathwaysImage} 
-          alt="Hollywood Studio portrait via Auburn Avenue Research Library" 
-          class="w-full h-full object-cover" 
+          alt="Partnership Pathways" 
+          class="w-full h-full object-contain" 
         />
-        <div class="absolute inset-0 bg-primary/70 mix-blend-multiply"></div>
+        <!-- Overlay removed -->
       </div>
     </div>
 
