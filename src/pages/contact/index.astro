@@ -34,137 +34,112 @@ import legacyBackground from "@/assets/2_nw_8193fa23.png";
     </div>
   </section>
 
-  <!-- Ways to Connect Section -->
+  <!-- Contact Directory Section -->
   <section class="py-16 bg-white">
     <div class="container">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          <!-- General Inquiries -->
-          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
-            <div class="flex items-start gap-4 mb-4">
-              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
-                <MailPlus className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 class="font-display text-xl font-semibold text-primary mb-2">General Inquiries</h3>
-                <p class="text-foreground/80 mb-4">Have a question, idea, or invitation? Reach out via the contact form below.</p>
-              </div>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- Block 1: Join the Room -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm hover:shadow-md transition-all">
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Join the Room</h3>
+            <p class="text-foreground/80 mb-6">For general inquiries or to introduce yourself to the In the Room with Legacy™ community.</p>
+            <a 
+              href="https://laurenrosamiller.kit.com/25d26f1801" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class={buttonVariants({
+                class: "w-full justify-center font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              })}
+            >
+              Start Conversation
+            </a>
           </div>
           
-          <!-- Partner With Us -->
-          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
-            <div class="flex items-start gap-4 mb-4">
-              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
-                <Building className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 class="font-display text-xl font-semibold text-primary mb-2">Partner With Us</h3>
-                <p class="text-foreground/80 mb-4">Interested in sponsoring a program or co-creating an initiative?</p>
-                <a 
-                  href="#contact-form"
-                  class={buttonVariants({
-                    variant: "outline",
-                    size: "sm",
-                    class: "border-primary text-primary hover:bg-primary/10"
-                  })}
-                >
-                  Submit a Partnership Inquiry →
-                </a>
-              </div>
-            </div>
+          <!-- Block 2: Program Waitlist -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm hover:shadow-md transition-all">
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Program Waitlist</h3>
+            <p class="text-foreground/80 mb-6">Be the first to know when dates open for new foundational experiences and programs.</p>
+            <a 
+              href="https://laurenrosamiller.kit.com/d714efb37b" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class={buttonVariants({
+                class: "w-full justify-center font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              })}
+            >
+              Join Waitlist Now
+            </a>
           </div>
           
-          <!-- Speaking + Media -->
-          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
-            <div class="flex items-start gap-4 mb-4">
-              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
-                <Megaphone className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 class="font-display text-xl font-semibold text-primary mb-2">Speaking + Media</h3>
-                <p class="text-foreground/80 mb-4">For speaking requests, media features, or press inquiries —</p>
-                <a 
-                  href="#contact-form"
-                  class={buttonVariants({
-                    variant: "outline",
-                    size: "sm",
-                    class: "border-primary text-primary hover:bg-primary/10"
-                  })}
-                >
-                  Click Here →
-                </a>
-              </div>
-            </div>
+          <!-- Block 3: Request a Family Session -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm hover:shadow-md transition-all">
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Request a Family Session</h3>
+            <p class="text-foreground/80 mb-6">For families interested in scheduling a facilitated planning session for While We're Still Here™.</p>
+            <a 
+              href="https://laurenrosamiller.kit.com/111a0f854c" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class={buttonVariants({
+                class: "w-full justify-center font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              })}
+            >
+              Request Session
+            </a>
           </div>
           
-          <!-- Investor or Donor Inquiries -->
-          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm">
-            <div class="flex items-start gap-4 mb-4">
-              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
-                <DollarSign className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 class="font-display text-xl font-semibold text-primary mb-2">Investor or Donor Inquiries</h3>
-                <p class="text-foreground/80 mb-4">If you're interested in supporting this work at a foundational level, we'd love to connect.</p>
-                <a 
-                  href="#contact-form"
-                  class={buttonVariants({
-                    variant: "outline",
-                    size: "sm",
-                    class: "border-primary text-primary hover:bg-primary/10"
-                  })}
-                >
-                  Share Your Interest →
-                </a>
-              </div>
-            </div>
+          <!-- Block 4: Advisory Services -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm hover:shadow-md transition-all">
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Advisory Services</h3>
+            <p class="text-foreground/80 mb-6">To inquire about bespoke advisory support for complex family governance, wealth, or enterprise challenges.</p>
+            <a 
+              href="https://laurenrosamiller.kit.com/a818ccbe8d" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class={buttonVariants({
+                class: "w-full justify-center font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              })}
+            >
+              Inquire About Advising
+            </a>
           </div>
           
-          <!-- Stay in the Loop -->
-          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm md:col-span-2">
-            <div class="flex items-start gap-4 mb-4">
-              <div class="flex-shrink-0 mt-1 bg-primary/10 p-3 rounded-full">
-                <MailCheck className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h3 class="font-display text-xl font-semibold text-primary mb-2">Stay in the Loop</h3>
-                <p class="text-foreground/80 mb-4">Be the first to know about upcoming programs, tools, and events.</p>
-                <a 
-                  href="#contact-form"
-                  class={buttonVariants({
-                    variant: "outline",
-                    size: "sm",
-                    class: "border-primary text-primary hover:bg-primary/10"
-                  })}
-                >
-                  Join the IRL Newsletter →
-                </a>
-              </div>
-            </div>
+          <!-- Block 5: Partnership Inquiry -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm hover:shadow-md transition-all">
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Partnership Inquiry</h3>
+            <p class="text-foreground/80 mb-6">For organizations and professionals interested in strategic collaborations and partnership pathways.</p>
+            <a 
+              href="https://laurenrosamiller.kit.com/c4a6c9d83f" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class={buttonVariants({
+                class: "w-full justify-center font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              })}
+            >
+              Start Partnership Inquiry
+            </a>
+          </div>
+          
+          <!-- Block 6: Legacy Assessment Access -->
+          <div class="bg-muted/10 rounded-lg p-6 md:p-8 border border-primary/10 shadow-sm hover:shadow-md transition-all">
+            <h3 class="font-display text-xl font-bold text-primary mb-3">Legacy Assessment Access</h3>
+            <p class="text-foreground/80 mb-6">Request access to the AI-Powered Legacy Assessment Tool (Beta).</p>
+            <a 
+              href="https://laurenrosamiller.kit.com/844036749a" 
+              target="_blank"
+              rel="noopener noreferrer"
+              class={buttonVariants({
+                class: "w-full justify-center font-medium bg-[#052d3f] text-white hover:bg-[#052d3f]/90 shadow-md"
+              })}
+            >
+              Request Tool Access
+            </a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Form Section -->
-  <section class="py-16 bg-muted/10" id="contact-form">
-    <div class="container">
-      <div class="max-w-3xl mx-auto">
-        <div class="bg-white rounded-xl shadow-lg border border-primary/10 overflow-hidden">
-          <div class="p-8">
-            <h2 class="font-display text-3xl font-bold text-primary mb-4">Get in Touch</h2>
-            <p class="text-foreground/80 mb-8">
-              We read every message and take each connection seriously. Thank you for being in the room with us.
-            </p>
-            
-            <ContactPageForm client:load />
-            
-            <p class="mt-8 text-foreground/70 text-sm">
-              Prefer email? Reach out directly to <a href="mailto:hello@intheroomwithlegacy.com" class="text-primary hover:underline">hello@intheroomwithlegacy.com</a>
-            </p>
-          </div>
+        
+        <div class="text-center mt-12 text-foreground/70">
+          <p class="text-sm">
+            Prefer email? Reach out directly to <a href="mailto:hello@intheroomwithlegacy.com" class="text-primary hover:underline">hello@intheroomwithlegacy.com</a>
+          </p>
         </div>
       </div>
     </div>
