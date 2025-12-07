@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ContactForm from '@/components/ContactForm';
+import CTAButton from '@/components/CTAButton';
 import HeroSection from '@/components/HeroSection.astro';
 import MarqueeBanner from '@/components/MarqueeBanner.astro';
 import DimensionsSection from '@/components/DimensionsSection.astro';
@@ -23,8 +23,8 @@ import { ScrollStickyCTA } from '@/components/ScrollStickyCTA';
   
   <section class="py-24 bg-[#f3f4f6]">
     <div class="container max-w-3xl">
-      <!-- KEEP ALL FORMS client:load !! DO NOT USE client:visible AS THIS CAUSES HYDRATION ISSUES!!-->
-      <ContactForm client:load />
+      <!-- Replaced form with direct CTA button -->
+      <CTAButton client:load />
     </div>
   </section>
 
