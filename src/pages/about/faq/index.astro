@@ -12,33 +12,30 @@ import faqsImage from '../../../assets/2_nw_8193fa23.png';
   description="Find answers to common questions about In the Room with Legacy™ programs, services, and approach to legacy building."
 >
   <!-- Hero Section -->
-  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
+  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-white">
     <!-- Background image with overlay -->
     <div class="absolute inset-0 w-full h-full z-0">
-      <div class="relative w-full h-full">
+      <div class="relative w-full h-full bg-white">
         <Image 
           src={faqsImage} 
           alt="Frequently Asked Questions" 
           class="w-full h-full object-cover" 
         />
-        <div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60"></div>
+        <!-- Filter removed -->
       </div>
     </div>
 
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 px-4">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-black leading-tight mb-6 px-4">
           Frequently Asked Questions
         </h1>
-        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto px-4">
+        <p class="text-lg md:text-xl text-black mb-8 max-w-2xl mx-auto px-4">
           Find answers to common questions about our programs, services, and approach to legacy building.
         </p>
       </div>
     </div>
-    <!-- Photo Credits -->
-    <div class="absolute bottom-4 right-4 text-white/70 text-xs z-10">
-      <p>Portraits from the Hollywood Studio via the Auburn Avenue Research Library</p>
-    </div>
+    <!-- Photo Credits removed -->
   </section>
 
   <!-- FAQ Section -->
