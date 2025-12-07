@@ -11,7 +11,9 @@
   align-items: center;
   justify-content: center;
   z-index: 99999;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   width: 100vw;
   height: 100vh;
   padding: 1.5rem;
@@ -84,6 +86,26 @@
 .modal-box-close:hover {
   color: #164E63;
   background-color: rgba(22, 78, 99, 0.05);
+}
+
+/* Focus on modal content */
+.modal-box-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.9) 100%);
+  pointer-events: none;
+}
+
+/* Fullscreen overlay for all devices */
+@media (min-width: 768px) {
+  .modal-box-container {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 /* Mobile adjustments */

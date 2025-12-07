@@ -16,7 +16,7 @@ export function ScrollTriggeredModal({
   guideName,
   pdfPath = "/pdfs/parenting-a-parent-a-guide-for-adult-children_nw_fa0eeee7.pdf",
   targetSectionId = "conversation", // Default to conversation section
-  scrollThreshold = 60, // Default to 60% scroll depth if no section ID provided
+  scrollThreshold = 40, // Modified to 40% scroll depth for earlier trigger
   onClose
 }: ScrollTriggeredModalProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -195,22 +195,20 @@ export function ScrollTriggeredModal({
         }
       }
       
-      // If a specific section is targeted, check if it's in view
+      // If a specific section is targeted, check if we've scrolled past it
       if (targetSectionId) {
         const section = document.getElementById(targetSectionId);
         if (section) {
           const rect = section.getBoundingClientRect();
+          const sectionBottom = rect.bottom;
           
-          // Super aggressive triggering for mobile
-          const triggerDistance = isMobile 
-            ? window.innerHeight * 3  // Much earlier on mobile - almost as soon as section exists
-            : window.innerHeight;
+          // Check if we've scrolled past the bottom of the conversation section
+          const hasScrolledPastSection = sectionBottom < 0;
           
-          console.log(`[ScrollModal] Section ${targetSectionId} position:`, rect.top, 'Trigger at:', triggerDistance);
+          console.log(`[ScrollModal] Section ${targetSectionId} bottom position:`, sectionBottom, 'Past section:', hasScrolledPastSection);
           
-          // Check if the target section is approaching the viewport or in it
-          if ((rect.top <= triggerDistance && rect.bottom >= 0) || 
-              (isMobile && rect.top <= window.innerHeight * 3)) {
+          // Trigger immediately after scrolling past the section
+          if (hasScrolledPastSection) {
             console.log('[ScrollModal] Triggering based on section visibility');
             
             // Use preventDefault if it's an event-triggered scroll
@@ -356,7 +354,7 @@ export function ScrollTriggeredModal({
   if (!isModalOpen) return null;
 
   return (
-    <div className="modal-box-container mobile-modal-container animate-fade-in">
+    <div className="modal-box-container mobile-modal-container animate-fade-in" style={{ backdropFilter: 'blur(5px)' }}>
       <div 
         ref={modalRef}
         className="modal-box-content mobile-modal-content animate-fade-in-up"
