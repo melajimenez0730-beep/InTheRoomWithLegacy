@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Handshake, Lightbulb, Sparkles } from "lucide-react";
 import { Image } from 'astro:assets';
 // TimeTriggeredModal import removed to disable floating CTA on this page
-// Image import removed as we no longer need a background image
+import partnershipPathwaysImage from '../../../assets/snapinstato_571833634_18512900086069681_5003885570261073469_n_nw_00a8301a.jpg';
 ---
 
 <BaseLayout
@@ -12,21 +12,33 @@ import { Image } from 'astro:assets';
   description="Explore collaboration opportunities with In the Room with Legacy through content collaborations, program partnerships, and strategic alliances."
 >
   <!-- Hero Section -->
-  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-white">
-    <!-- Clean, minimalist background -->
-    <div class="absolute inset-0 w-full h-full z-0 bg-white"></div>
+  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 w-full h-full z-0">
+      <div class="relative w-full h-full">
+        <Image 
+          src={partnershipPathwaysImage} 
+          alt="Hollywood Studio portrait via Auburn Avenue Research Library" 
+          class="w-full h-full object-cover" 
+        />
+        <div class="absolute inset-0 bg-primary/70 mix-blend-multiply"></div>
+      </div>
+    </div>
 
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-black leading-tight mb-6 px-4">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 px-4">
           Partnership Pathways
         </h1>
-        <p class="text-lg md:text-xl text-black mb-8 max-w-2xl mx-auto px-4">
+        <p class="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto px-4">
           Create meaningful impact through strategic collaboration with In the Room with Legacy™.
         </p>
       </div>
     </div>
-    <!-- Photo Credits removed -->
+    <!-- Photo Credits -->
+    <div class="absolute bottom-4 right-4 text-white/70 text-xs z-10">
+      <p>Portraits from the Hollywood Studio via the Auburn Avenue Research Library</p>
+    </div>
   </section>
 
   <!-- Partnership Categories Section -->
