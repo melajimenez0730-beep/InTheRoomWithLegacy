@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight, Mail, ThumbsUp, Heart, BookOpen, ExternalLink, Instagram, Youtube, FileText } from "lucide-react";
-import BlogNewsletterForm from "@/components/BlogNewsletterForm";
+import BlogNewsletterCTA from "@/components/BlogNewsletterCTA";
 import StorySubmissionForm from "@/components/StorySubmissionForm";
 import { Image } from 'astro:assets';
 import familyBackground from "@/assets/snapinstato_511515285_18490157317069681_633616474964641373_n_nw_7c1699e8.jpg";
@@ -253,7 +253,7 @@ import { Quote } from "lucide-react";
   <section class="py-16 bg-white" id="newsletter-form">
     <div class="container">
       <div class="max-w-md mx-auto">
-        <BlogNewsletterForm client:load />
+        <BlogNewsletterCTA client:load />
       </div>
     </div>
   </section>
