@@ -153,9 +153,9 @@ export function LeadCaptureForm({
       <Button 
         type="submit" 
         disabled={isSubmitting}
-        className="w-full py-3 mt-2 bg-primary hover:bg-primary/90 text-white font-medium text-base rounded-lg shadow-sm"
+        className="w-full py-3 mt-2 bg-primary hover:bg-primary/90 !text-white font-medium text-base rounded-lg shadow-sm"
       >
-        {isSubmitting ? "Processing..." : "Get Your Guide"}
+        <span className="text-white">{isSubmitting ? "Processing..." : "Get Your Guide"}</span>
       </Button>
     </form>
   );
