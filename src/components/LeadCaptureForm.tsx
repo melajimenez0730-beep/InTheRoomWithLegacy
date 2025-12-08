@@ -98,7 +98,7 @@ export function LeadCaptureForm({
           </p>
           <Button 
             onClick={initiateDownload}
-            className="flex items-center gap-2 py-2.5 px-5 rounded-lg"
+            className="flex items-center gap-2 py-2.5 px-5 rounded-lg text-white"
             variant="secondary"
           >
             <Download className="h-4 w-4" />

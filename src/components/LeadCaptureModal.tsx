@@ -26,7 +26,7 @@ export function LeadCaptureModal({
       {/* Trigger Button */}
       <Button 
         onClick={openModal}
-        className={`flex items-center gap-2 ${buttonClassName}`}
+        className={`flex items-center gap-2 text-white ${buttonClassName}`}
         variant="secondary"
       >
         <Download className="h-4 w-4" />
