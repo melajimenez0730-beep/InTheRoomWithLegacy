@@ -21,10 +21,16 @@ export function ScrollTriggeredModal({
 }: ScrollTriggeredModalProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | null>(null);
   const modalRef = useRef<HTMLDivElement>(null);
 
   // Close the modal
   const closeModal = () => {
+    // If submission was successful, scroll to top before closing
+    if (submitStatus === "success") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
     setIsModalOpen(false);
     if (onClose) onClose();
     
@@ -302,8 +308,14 @@ export function ScrollTriggeredModal({
 
   // Form submit success handler
   const handleFormSuccess = () => {
-    // Auto-close after success and download
-    setTimeout(() => closeModal(), 6000);
+    // Set submit status to success
+    setSubmitStatus("success");
+    
+    // Scroll to top of page immediately
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Keep modal open a bit longer to ensure user sees success message
+    setTimeout(() => closeModal(), 8000);
   };
 
   // Handle body overflow and preserve scroll position when modal is open
@@ -323,19 +335,33 @@ export function ScrollTriggeredModal({
       
       console.log('[ScrollModal] Saved scroll position:', scrollY);
     } else {
-      // Get the stored scroll position
-      const scrollY = parseInt(document.body.dataset.scrollY || '0');
-      
-      // Remove the modal-open class
-      document.body.classList.remove('modal-open');
-      
-      // Clear the fixed positioning
-      document.body.style.top = '';
-      
-      // Restore the scroll position
-      window.scrollTo(0, scrollY);
-      
-      console.log('[ScrollModal] Restored scroll position:', scrollY);
+      // If there was a successful submission, scroll to top instead of restoring position
+      if (submitStatus === 'success') {
+        // Remove the modal-open class
+        document.body.classList.remove('modal-open');
+        
+        // Clear the fixed positioning
+        document.body.style.top = '';
+        
+        // Scroll to top of page
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        console.log('[ScrollModal] Scrolled to top after successful submission');
+      } else {
+        // Get the stored scroll position for normal closing (without submission)
+        const scrollY = parseInt(document.body.dataset.scrollY || '0');
+        
+        // Remove the modal-open class
+        document.body.classList.remove('modal-open');
+        
+        // Clear the fixed positioning
+        document.body.style.top = '';
+        
+        // Restore the scroll position
+        window.scrollTo(0, scrollY);
+        
+        console.log('[ScrollModal] Restored scroll position:', scrollY);
+      }
     }
     
     return () => {
@@ -347,7 +373,7 @@ export function ScrollTriggeredModal({
         window.scrollTo(0, scrollY);
       }
     };
-  }, [isModalOpen]);
+  }, [isModalOpen, submitStatus]);
 
   // FOR TESTING: Force modal to show on mobile during development
   // Uncomment the following line to force modal visibility for testing

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { LeadCaptureForm } from "./LeadCaptureForm";
 import { Download, X } from "lucide-react";
@@ -17,9 +17,27 @@ export function LeadCaptureModal({
   pdfPath = "/pdfs/parenting-a-parent-a-guide-for-adult-children_nw_fa0eeee7.pdf"
 }: LeadCaptureModalProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | null>(null);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+    setSubmitStatus(null);
+    
+    // Lock body scrolling while modal is open
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeModal = () => {
+    // If submission was successful, scroll to top before closing
+    if (submitStatus === "success") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    
+    setIsModalOpen(false);
+    
+    // Restore body scrolling
+    document.body.style.overflow = '';
+  };
 
   return (
     <>
@@ -35,7 +53,7 @@ export function LeadCaptureModal({
 
       {/* Modal Overlay */}
       {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black bg-opacity-85 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl shadow-xl max-w-md w-full relative animate-fade-in-up">
             {/* Close button */}
             <button 
@@ -59,8 +77,14 @@ export function LeadCaptureModal({
                 guideName={guideName}
                 pdfPath={pdfPath}
                 onSuccess={() => {
-                  // We keep the modal open to show the success message
-                  setTimeout(() => closeModal(), 6000); // Auto-close after success and download
+                  // Track successful submission
+                  setSubmitStatus("success");
+                  
+                  // Scroll to top of page immediately
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  
+                  // Keep modal open longer to ensure user sees success message
+                  setTimeout(() => closeModal(), 8000); // Extended auto-close time
                 }}
               />
             </div>

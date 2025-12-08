@@ -33,14 +33,14 @@ export function LeadCaptureForm({
     setDownloadStarted(true);
   };
 
-  // Auto-download when status changes to success
+  // Auto-download when status changes to success - immediate download
   useEffect(() => {
     if (submitStatus === "success" && !downloadStarted) {
-      // Slight delay to ensure the success message is shown first
-      const timer = setTimeout(() => {
-        initiateDownload();
-      }, 500);
-      return () => clearTimeout(timer);
+      // Download immediately without delay
+      initiateDownload();
+      
+      // Scroll to top of the page
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [submitStatus, downloadStarted]);
 
@@ -91,20 +91,8 @@ export function LeadCaptureForm({
           </svg>
         </div>
         <h3 className="text-xl font-display font-bold mb-3 text-primary">Thank You!</h3>
-        <p className="mb-5 text-foreground/80">Your Legacy Snapshot is being prepared.</p>
-        <div className="flex flex-col items-center">
-          <p className="text-sm text-muted-foreground mb-4">
-            If your snapshot doesn't load automatically, click the button below.
-          </p>
-          <Button 
-            onClick={initiateDownload}
-            className="flex items-center gap-2 py-2.5 px-5 rounded-lg text-white"
-            variant="secondary"
-          >
-            <Download className="h-4 w-4" />
-            Access Your Snapshot
-          </Button>
-        </div>
+        <p className="mb-5 text-foreground/80">Check your email for your Legacy Snapshot. Your guide has been downloaded.</p>
+        {/* Removed the Access Your Snapshot button to avoid secondary popup */}
       </div>
     );
   }
