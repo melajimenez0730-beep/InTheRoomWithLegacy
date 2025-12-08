@@ -16,7 +16,7 @@ export function LeadCaptureForm({
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    form_name: `Legacy Snapshot: ${guideName}`
+    form_name: `Legacy Guide: ${guideName}`
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
@@ -91,7 +91,7 @@ export function LeadCaptureForm({
           </svg>
         </div>
         <h3 className="text-xl font-display font-bold mb-3 text-primary">Thank You!</h3>
-        <p className="mb-5 text-foreground/80">Check your email for your Legacy Snapshot. Your guide has been downloaded.</p>
+        <p className="mb-5 text-foreground/80">Check your email for your guide. Your guide has been downloaded.</p>
         {/* Removed the Access Your Snapshot button to avoid secondary popup */}
       </div>
     );
@@ -155,7 +155,7 @@ export function LeadCaptureForm({
         disabled={isSubmitting}
         className="w-full py-3 mt-2 bg-primary hover:bg-primary/90 text-white font-medium text-base rounded-lg shadow-sm"
       >
-        {isSubmitting ? "Processing..." : "Get Your Snapshot"}
+        {isSubmitting ? "Processing..." : "Get Your Guide"}
       </Button>
     </form>
   );
