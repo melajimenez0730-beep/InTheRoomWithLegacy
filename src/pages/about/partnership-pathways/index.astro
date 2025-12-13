@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Handshake, Lightbulb, Sparkles } from "lucide-react";
 import { Image } from 'astro:assets';
 // TimeTriggeredModal import removed to disable floating CTA on this page
-import partnershipPathwaysImage from '../../../assets/1-3_nw_5d0ba270.png';
+import partnershipPathwaysImage from '../../../assets/untitled-design-9_nw_49dfeb9e.png';
 ---
 
 <BaseLayout
@@ -12,25 +12,24 @@ import partnershipPathwaysImage from '../../../assets/1-3_nw_5d0ba270.png';
   description="Explore collaboration opportunities with In the Room with Legacy through content collaborations, program partnerships, and strategic alliances."
 >
   <!-- Hero Section -->
-  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-white">
+  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-primary">
     <!-- Background image with overlay -->
     <div class="absolute inset-0 w-full h-full z-0">
-      <div class="relative w-full h-full bg-white">
-        <Image 
-          src={partnershipPathwaysImage} 
-          alt="Partnership Pathways" 
-          class="w-full h-full object-cover" 
-        />
-        <!-- Overlay removed -->
-      </div>
+      <Image 
+        src={partnershipPathwaysImage} 
+        alt="Partnership Pathways" 
+        class="w-full h-full object-cover" 
+      />
+      <!-- Dark overlay with primary brand color for better contrast -->
+      <div class="absolute inset-0 bg-primary opacity-60"></div>
     </div>
 
     <div class="container relative z-10 py-16 md:py-24">
       <div class="max-w-3xl mx-auto text-center px-4 md:px-6">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-black leading-tight mb-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 drop-shadow-sm">
           Partnership Pathways
         </h1>
-        <p class="text-lg md:text-xl text-black mb-8 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto drop-shadow-sm">
           Create meaningful impact through strategic collaboration with In the Room with Legacy™.
         </p>
       </div>
