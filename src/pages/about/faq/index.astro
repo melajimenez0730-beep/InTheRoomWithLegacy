@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Image } from 'astro:assets';
 // TimeTriggeredModal import removed as requested
-import faqsImage from '../../../assets/2_nw_8193fa23.png';
+import faqsImage from '../../../assets/untitled-presentation-1_nw_100c1b23.png';
 ---
 
 <BaseLayout
@@ -12,25 +12,24 @@ import faqsImage from '../../../assets/2_nw_8193fa23.png';
   description="Find answers to common questions about In the Room with Legacy™ programs, services, and approach to legacy building."
 >
   <!-- Hero Section -->
-  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-white">
+  <section class="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-primary">
     <!-- Background image with overlay -->
     <div class="absolute inset-0 w-full h-full z-0">
-      <div class="relative w-full h-full bg-white">
-        <Image 
-          src={faqsImage} 
-          alt="Frequently Asked Questions" 
-          class="w-full h-full object-cover" 
-        />
-        <!-- Filter removed -->
-      </div>
+      <Image 
+        src={faqsImage} 
+        alt="Frequently Asked Questions background" 
+        class="w-full h-full object-cover" 
+      />
+      <!-- Dark overlay with primary brand color at 60% opacity -->
+      <div class="absolute inset-0 bg-primary opacity-60"></div>
     </div>
 
     <div class="container relative z-10">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-black leading-tight mb-6 px-4">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6 px-4 drop-shadow-sm">
           Frequently Asked Questions
         </h1>
-        <p class="text-lg md:text-xl text-black mb-8 max-w-2xl mx-auto px-4">
+        <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto px-4 drop-shadow-sm">
           Find answers to common questions about our programs, services, and approach to legacy building.
         </p>
       </div>
