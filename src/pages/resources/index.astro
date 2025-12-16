@@ -12,7 +12,7 @@ import parentingParentThumbnail from "@/assets/parenting-a-parent-a-guide-for-ad
 import ethicalNepotismThumbnail from "@/assets/the-case-for-ethical-nepotism_nw_5c0b9ae9.png";
 
 // Import hero background image
-import heroBackgroundImage from "@/assets/ethical-nepotism-thumbnail_nw_a25135d4.png";
+import heroBackgroundImage from "@/assets/untitled-presentation-1_nw_100c1b23.png";
 ---
 
 <BaseLayout
@@ -20,7 +20,7 @@ import heroBackgroundImage from "@/assets/ethical-nepotism-thumbnail_nw_a25135d4
   description="A living library of guides, tools, and reflections to help families build and sustain legacy across every stage and generation."
 >
   <!-- Hero Section with Full-Width Background Image -->
-  <section class="relative py-16 md:py-24 border-b border-primary/10 bg-white overflow-hidden">
+  <section class="relative py-16 md:py-24 border-b border-primary/10 bg-primary overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 w-full h-full">
       <Image 
@@ -31,17 +31,16 @@ import heroBackgroundImage from "@/assets/ethical-nepotism-thumbnail_nw_a25135d4
         height={1080}
         loading="eager"
       />
-      <!-- Overlay removed for better visibility -->
-      
-      <!-- Photo Credits removed as requested -->
+      <!-- Dark overlay with primary brand color for better text contrast -->
+      <div class="absolute inset-0 bg-primary opacity-30"></div>
     </div>
     
     <div class="container relative z-10">
       <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-black leading-tight mb-6">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white leading-tight mb-6 drop-shadow-sm">
           Legacy Insights, Tools &amp; Resources
         </h1>
-        <p class="text-xl md:text-2xl text-black mb-0 max-w-2xl mx-auto font-light leading-relaxed">
+        <p class="text-xl md:text-2xl text-white mb-0 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-sm">
           A living library of guides, tools, and reflections to help families build and sustain legacy, across every stage and generation.
         </p>
       </div>
