@@ -116,38 +116,36 @@ import phillyProject from "@/assets/founder-letter/the-philly-project-604_nw_e0e
             </div>
             
             <div class="mb-8 scroll-reveal">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Group A (Left Column): Father's legacy paragraph with Philly Project photo -->
-                <div>
-                  <p class="text-base md:text-lg text-left mb-4" style="line-height: 1.8;">My father was a changemaker, a pioneer, a history maker, a man who helped shape Atlanta's story. A son of farmers & landowners, who rose to serve under Mayor Maynard Jackson, Atlanta's first Black mayor, helped to open doors of economic opportunity that had been closed for generations. A builder and business owner, who lived a deeply impactful life, and sowed into his lineage with intention.</p>
-                  
-                  <div class="mt-4 mb-6">
-                    <div class="rounded-lg overflow-hidden shadow-xl">
-                      <Image 
-                        src={phillyProject} 
-                        alt="The Philly Project - Legacy in action" 
-                        class="w-full h-full object-cover" 
-                        width={800}
-                        height={1000}
-                      />
-                    </div>
+              <div class="flex flex-col">
+                <!-- Father's legacy paragraph -->
+                <p class="text-base md:text-lg text-left mb-6" style="line-height: 1.8;">My father was a changemaker, a pioneer, a history maker, a man who helped shape Atlanta's story. A son of farmers & landowners, who rose to serve under Mayor Maynard Jackson, Atlanta's first Black mayor, helped to open doors of economic opportunity that had been closed for generations. A builder and business owner, who lived a deeply impactful life, and sowed into his lineage with intention.</p>
+                
+                <!-- Philly Project photo -->
+                <div class="mb-8">
+                  <div class="rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto">
+                    <Image 
+                      src={phillyProject} 
+                      alt="The Philly Project - Legacy in action" 
+                      class="w-full h-full object-cover" 
+                      width={800}
+                      height={1000}
+                    />
                   </div>
                 </div>
                 
-                <!-- Group B (Right Column): Caregiving paragraph with father-daughter photo -->
-                <div>
-                  <p class="text-base md:text-lg text-left mb-4" style="line-height: 1.8;">When he fell ill, what began as caregiving became stewardship and succession. I wasn't just taking care of my dad; I was helping preserve his legacy, ensuring the business he built endured, and making sure he could leave this world with his dignity and vision intact. It was mentally, emotionally, and physically exhausting. It broke me, but it also built me.</p>
-                  
-                  <div class="mt-4">
-                    <div class="rounded-lg overflow-hidden shadow-xl">
-                      <Image 
-                        src={youngLaurenWithDad} 
-                        alt="Young Lauren Miller with her father" 
-                        class="w-full h-full object-cover" 
-                        width={700}
-                        height={700}
-                      />
-                    </div>
+                <!-- Caregiving paragraph -->
+                <p class="text-base md:text-lg text-left mb-6" style="line-height: 1.8;">When he fell ill, what began as caregiving became stewardship and succession. I wasn't just taking care of my dad; I was helping preserve his legacy, ensuring the business he built endured, and making sure he could leave this world with his dignity and vision intact. It was mentally, emotionally, and physically exhausting. It broke me, but it also built me.</p>
+                
+                <!-- Father-daughter photo -->
+                <div class="mb-2">
+                  <div class="rounded-lg overflow-hidden shadow-xl max-w-2xl mx-auto">
+                    <Image 
+                      src={youngLaurenWithDad} 
+                      alt="Young Lauren Miller with her father" 
+                      class="w-full h-full object-cover" 
+                      width={700}
+                      height={700}
+                    />
                   </div>
                 </div>
               </div>
