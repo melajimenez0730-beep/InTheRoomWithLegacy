@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Handshake, Lightbulb, Sparkles } from "lucide-react";
 import { Image } from 'astro:assets';
 // TimeTriggeredModal import removed to disable floating CTA on this page
-import partnershipPathwaysImage from '../../../assets/untitled-design-11_nw_adb19aef.png';
+import partnershipPathwaysImage from '../../../assets/untitled-design-12_nw_b3e80606.png';
 ---
 
 <BaseLayout
@@ -20,15 +20,16 @@ import partnershipPathwaysImage from '../../../assets/untitled-design-11_nw_adb1
         alt="Partnership Pathways" 
         class="w-full h-full object-cover" 
       />
-      <!-- No overlay - displaying image at full brightness -->
+      <!-- Adding a light overlay for contrast -->
+      <div class="absolute inset-0 bg-black opacity-30"></div>
     </div>
 
     <div class="container relative z-10 py-16 md:py-24">
       <div class="max-w-3xl mx-auto text-center px-4 md:px-6">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-black leading-tight mb-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-white leading-tight mb-6">
           Partnership Pathways
         </h1>
-        <p class="text-lg md:text-xl text-black mb-8 max-w-2xl mx-auto">
+        <p class="text-lg md:text-xl text-white mb-8 max-w-2xl mx-auto">
           Create meaningful impact through strategic collaboration with In the Room with Legacy™.
         </p>
       </div>
