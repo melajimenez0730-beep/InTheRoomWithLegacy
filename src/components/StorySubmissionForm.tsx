@@ -105,6 +105,10 @@ export default function StorySubmissionForm() {
       const response = await fetch("https://api.new.website/api/submit-form/", {
         method: "POST",
         // No Content-Type header - browser will set it with boundary for multipart/form-data
+        headers: {
+          // Add the Referer header to identify this site
+          "Referer": window.location.origin
+        },
         body: formDataObj,
       });
 
@@ -116,6 +120,7 @@ export default function StorySubmissionForm() {
         setSubmitStatus("error");
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
